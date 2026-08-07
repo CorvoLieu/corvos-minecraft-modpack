@@ -1,0 +1,13 @@
+{
+  "effects": {
+    "lne_rogues:second_wind": {
+      "attributes": [
+        {
+          "attribute": "minecraft:generic.max_absorption",
+          "value": 2.0,
+          "operation": "ADD_VALUE"
+        }
+      ]
+    }
+  }
+}

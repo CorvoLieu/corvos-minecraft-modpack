@@ -1,0 +1,6 @@
+{
+  "disable_special_lne_weapons": false,
+  "sirens_staff_tears_debuff_chance": 0.15,
+  "sirens_staff_song_chance": 0.1,
+  "sirens_staff_song_duration": 2
+}

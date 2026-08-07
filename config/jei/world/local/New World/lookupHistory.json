@@ -1,0 +1,8 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"culturaldelights:white_eggplant"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"culturaldelights:eggplant"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"culturaldelights:smoked_eggplant"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecolonies:eggplant"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:leather"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

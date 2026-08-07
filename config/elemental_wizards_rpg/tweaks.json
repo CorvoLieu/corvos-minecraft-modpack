@@ -1,0 +1,8 @@
+{
+  "ignore_items_required_mods": false,
+  "stone_flesh_full_hp_damage_reduction": 0.5,
+  "updraft_air_spell_crit_chance_vulnerability": 0.1,
+  "updraft_air_spell_crit_damage_vulnerability": 0.35,
+  "updraft_air_damage_vulnerability": 0.1,
+  "tornado_fire_spell_vulnerability": 0.15
+}

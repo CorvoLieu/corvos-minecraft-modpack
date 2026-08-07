@@ -1,0 +1,55 @@
+{
+  "entries": {
+    "minecraft:chests/village/village_weaponsmith": {
+      "rolls": 0.5,
+      "items": [
+        {
+          "itemId": "witcher_rpg:silver_ingot",
+          "weight": 3,
+          "minAmount": 1,
+          "maxAmount": 3
+        },
+        {
+          "itemId": "witcher_rpg:steel_ingot",
+          "weight": 3,
+          "minAmount": 1,
+          "maxAmount": 3
+        },
+        {
+          "itemId": "witcher_rpg:dark_iron_ingot",
+          "weight": 1,
+          "minAmount": 1,
+          "maxAmount": 1
+        },
+        {
+          "itemId": "witcher_rpg:meteorite_ingot",
+          "weight": 1,
+          "minAmount": 1,
+          "maxAmount": 1
+        }
+      ]
+    },
+    "witcher_rpg:blocks/silver_ore": {
+      "rolls": 0.025,
+      "items": [
+        {
+          "itemId": "witcher_rpg:pure_silver",
+          "weight": 1,
+          "minAmount": 1,
+          "maxAmount": 1
+        }
+      ]
+    },
+    "witcher_rpg:blocks/deepslate_silver_ore": {
+      "rolls": 0.025,
+      "items": [
+        {
+          "itemId": "witcher_rpg:pure_silver",
+          "weight": 1,
+          "minAmount": 1,
+          "maxAmount": 1
+        }
+      ]
+    }
+  }
+}

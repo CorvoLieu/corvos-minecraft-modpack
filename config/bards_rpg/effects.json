@@ -1,0 +1,196 @@
+{
+  "effects": {
+    "bards_rpg:ballad": {
+      "attributes": [
+        {
+          "attribute": "spell_power:generic",
+          "value": 0.025,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": 0.025,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "ranged_weapon:damage",
+          "value": 0.025,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:troubadours_minuet": {
+      "attributes": [
+        {
+          "attribute": "spell_engine:damage_taken",
+          "value": -0.03,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:wanderers_minuet": {
+      "attributes": [
+        {
+          "attribute": "spell_power:critical_chance",
+          "value": 0.02,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "critical_strike:chance",
+          "value": 0.02,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "spell_power:critical_damage",
+          "value": 0.04,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "critical_strike:damage",
+          "value": 0.04,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:armys_paeon": {
+      "attributes": []
+    },
+    "bards_rpg:armys_motivation": {
+      "attributes": []
+    },
+    "bards_rpg:natures_minne": {
+      "attributes": [
+        {
+          "attribute": "spell_engine:healing_taken",
+          "value": 0.03,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:song_of_celerity": {
+      "attributes": [
+        {
+          "attribute": "minecraft:generic.movement_speed",
+          "value": 0.03,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:crescendo": {
+      "attributes": [
+        {
+          "attribute": "spell_engine:damage_taken",
+          "value": 0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:vicious_mockery": {
+      "attributes": [
+        {
+          "attribute": "spell_power:generic",
+          "value": -0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": -0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "ranged_weapon:damage",
+          "value": -0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "spell_engine:damage_taken",
+          "value": 0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:wardens_paean_harmful": {
+      "attributes": []
+    },
+    "bards_rpg:wardens_paean_beneficial": {
+      "attributes": []
+    },
+    "bards_rpg:astral_shots": {
+      "attributes": [
+        {
+          "attribute": "ranged_weapon:pull_time",
+          "value": 0.2,
+          "operation": "ADD_MULTIPLIED_TOTAL"
+        }
+      ]
+    },
+    "bards_rpg:hymn_of_the_golden_light": {
+      "attributes": [
+        {
+          "attribute": "minecraft:generic.max_absorption",
+          "value": 2.0,
+          "operation": "ADD_VALUE"
+        }
+      ]
+    },
+    "bards_rpg:song_of_the_turning_sky": {
+      "attributes": [
+        {
+          "attribute": "spell_engine:damage_taken",
+          "value": -0.02,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:discordant_note": {
+      "attributes": [
+        {
+          "attribute": "spell_power:generic",
+          "value": -0.02,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": -0.02,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "ranged_weapon:damage",
+          "value": -0.02,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:canticle_of_the_tides": {
+      "attributes": []
+    },
+    "bards_rpg:tale_of_the_dragonslayer": {
+      "attributes": [
+        {
+          "attribute": "spell_power:generic",
+          "value": 0.01,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": 0.01,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "ranged_weapon:damage",
+          "value": 0.01,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "bards_rpg:eclipse_mantle": {
+      "attributes": [
+        {
+          "attribute": "spell_engine:evasion_chance",
+          "value": 0.15,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    }
+  }
+}

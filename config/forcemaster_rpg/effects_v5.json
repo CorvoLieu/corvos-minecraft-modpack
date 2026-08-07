@@ -1,0 +1,39 @@
+{
+  "effects": {
+    "forcemaster_rpg:stone_hand": {
+      "attributes": [
+        {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": 0.25,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "forcemaster_rpg:arcane_overflow": {
+      "attributes": [
+        {
+          "attribute": "more_rpg_classes:arcane_fuse_modifier",
+          "value": 0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "spell_power:arcane",
+          "value": 0.02,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "forcemaster_rpg:barq_esna": {
+      "attributes": [
+        {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": -0.1,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "forcemaster_rpg:nen_focus": {
+      "attributes": []
+    }
+  }
+}

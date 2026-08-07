@@ -1,0 +1,104 @@
+{
+  "school_weaknesses": {
+    "spell_power:aard": [
+      {
+        "impact_type": "DAMAGE",
+        "weakness": {
+          "all_required": false,
+          "conditions": [
+            {
+              "health_percent_above": 0.0,
+              "health_percent_below": 1.0,
+              "entity_type": "#witcher_rpg:aard_vulnerable"
+            }
+          ],
+          "execute": "PASS",
+          "modifier": {
+            "power_multiplier": 0.3,
+            "critical_chance_bonus": 0.0,
+            "critical_damage_bonus": 0.0
+          }
+        }
+      }
+    ],
+    "spell_power:axii": [
+      {
+        "impact_type": "DAMAGE",
+        "weakness": {
+          "all_required": false,
+          "conditions": [
+            {
+              "health_percent_above": 0.0,
+              "health_percent_below": 1.0,
+              "entity_type": "#witcher_rpg:axii_vulnerable"
+            }
+          ],
+          "execute": "PASS",
+          "modifier": {
+            "power_multiplier": 0.3,
+            "critical_chance_bonus": 0.0,
+            "critical_damage_bonus": 0.0
+          }
+        }
+      }
+    ],
+    "spell_power:igni": [
+      {
+        "impact_type": "DAMAGE",
+        "weakness": {
+          "all_required": false,
+          "conditions": [
+            {
+              "health_percent_above": 0.0,
+              "health_percent_below": 1.0,
+              "entity_type": "#witcher_rpg:igni_vulnerable"
+            }
+          ],
+          "execute": "PASS",
+          "modifier": {
+            "power_multiplier": 0.0,
+            "critical_chance_bonus": 1.0,
+            "critical_damage_bonus": 0.0
+          }
+        }
+      }
+    ],
+    "spell_power:quen": [
+      {
+        "impact_type": "DAMAGE",
+        "weakness": {
+          "all_required": false,
+          "conditions": [
+            {
+              "health_percent_above": 0.0,
+              "health_percent_below": 1.0,
+              "entity_type": "#witcher_rpg:quen_vulnerable"
+            }
+          ],
+          "execute": "PASS",
+          "modifier": {
+            "power_multiplier": 0.3,
+            "critical_chance_bonus": 0.0,
+            "critical_damage_bonus": 0.0
+          }
+        }
+      }
+    ],
+    "spell_power:yrden": [
+      {
+        "impact_type": "DAMAGE",
+        "weakness": {
+          "all_required": false,
+          "conditions": [
+            {
+              "health_percent_above": 0.0,
+              "health_percent_below": 1.0,
+              "entity_type": "#witcher_rpg:yrden_vulnerable"
+            }
+          ],
+          "execute": "PASS"
+        }
+      }
+    ]
+  }
+}

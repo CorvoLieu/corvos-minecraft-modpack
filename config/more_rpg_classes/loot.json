@@ -1,0 +1,54 @@
+{
+  "entries": {
+    "minecraft:entities/polar_bear": {
+      "rolls": 1.0,
+      "items": [
+        {
+          "itemId": "more_rpg_classes:polar_bear_fur",
+          "weight": 1,
+          "minAmount": 1,
+          "maxAmount": 3
+        }
+      ]
+    },
+    "minecraft:entities/wolf": {
+      "rolls": 1.0,
+      "items": [
+        {
+          "itemId": "more_rpg_classes:wolf_fur",
+          "weight": 1,
+          "minAmount": 1,
+          "maxAmount": 3
+        }
+      ]
+    },
+    "minecraft:entities/ravager": {
+      "rolls": 1.0,
+      "items": [
+        {
+          "itemId": "more_rpg_classes:hardened_leather",
+          "weight": 1,
+          "minAmount": 1,
+          "maxAmount": 2
+        }
+      ]
+    },
+    "minecraft:chests/igloo_chest": {
+      "rolls": 1.0,
+      "items": [
+        {
+          "itemId": "more_rpg_classes:wolf_fur",
+          "weight": 2,
+          "minAmount": 1,
+          "maxAmount": 3
+        },
+        {
+          "itemId": "polar_bear_fur:wolf_fur",
+          "weight": 1,
+          "minAmount": 1,
+          "maxAmount": 3
+        }
+      ]
+    }
+  }
+}

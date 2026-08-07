@@ -1,0 +1,19 @@
+#General configuration for Jurassic Reborn
+[general]
+	#Determines if dinosaurs should become carcasses instead of dying instantly.
+	allowCarcass = true
+	#Enable tilting animations for vehicles such as cars.
+	enableVehicleTilting = true
+	#ENABLE ONLY IF NATURAL SPWANING ADDON IS INSTALLED!
+	naturalspawningaddon = false
+	#If true, carnivores will only attack when hungry.
+	attackOnlyWhenHungry = false
+	#Enable natural spawning for crabs.
+	spawnCrabs = true
+	#Enable natural spawning for sharks.
+	spawnSharks = true
+	#Enable natural spawning for goats.
+	spawnGoats = true
+	#Entities that cages should refuse to capture.
+	#Use fully qualified entity IDs, e.g. minecraft:pig
+	entityBlacklist = []

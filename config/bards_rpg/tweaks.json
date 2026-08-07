@@ -1,0 +1,6 @@
+{
+  "ignore_items_required_mods": false,
+  "armies_paeon_impact_multiplier": 0.035,
+  "discordant_selfdamage_chance_per_stack": 0.02,
+  "discordant_selfdamage_multiplier_per_stack": 0.1
+}

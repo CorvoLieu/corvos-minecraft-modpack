@@ -1,0 +1,13 @@
+{
+  "effects": {
+    "lne_paladins:sirens_song": {
+      "attributes": []
+    },
+    "lne_paladins:holy_weapon": {
+      "attributes": []
+    },
+    "lne_paladins:holy_prevention": {
+      "attributes": []
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "entries": {
+    "more_relics:jewel_figurine_malachite": {
+      "durability": 0,
+      "attributes": [
+        {
+          "attribute": "spell_power:earth",
+          "value": 0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "spell_power:nature",
+          "value": 0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "more_relics:jewel_figurine_aquamarine": {
+      "durability": 0,
+      "attributes": [
+        {
+          "attribute": "spell_power:air",
+          "value": 0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "spell_power:water",
+          "value": 0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "more_relics:jewel_figurine_chain": {
+      "durability": 0,
+      "attributes": [
+        {
+          "attribute": "more_rpg_classes:rage_modifier",
+          "value": 0.05,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "minecraft:generic.attack_damage",
+          "value": 0.025,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    },
+    "more_relics:lesser_proc_air_water": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:lesser_proc_earth_nature": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:lesser_use_rage": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:medium_use_air_power": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:medium_use_earth_power": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:medium_use_water_power": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:medium_use_nature_power": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:medium_proc_rage": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:medium_proc_lifesteal": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:greater_frozen_heart": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:greater_proc_rage": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:greater_kircheis_shard": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:greater_madreds_bloodrazor": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:greater_liandrys_torment": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:greater_sunfire_cape": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:superior_mejais_soulstealer": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:superior_zhonyas_hourglass": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:superior_shurelyas_battlesong": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:superior_mikaels_blessing": {
+      "durability": 0,
+      "attributes": []
+    },
+    "more_relics:superior_guardian_angel": {
+      "durability": 0,
+      "attributes": []
+    }
+  }
+}

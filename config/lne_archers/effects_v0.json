@@ -1,0 +1,28 @@
+{
+  "effects": {
+    "lne_archers:rangers_focus": {
+      "attributes": [
+        {
+          "attribute": "ranged_weapon:damage",
+          "value": 0.5,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "ranged_weapon:pull_time",
+          "value": -0.15,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "ranged_weapon:velocity",
+          "value": 0.5,
+          "operation": "ADD_MULTIPLIED_BASE"
+        },
+        {
+          "attribute": "minecraft:generic.movement_speed",
+          "value": -0.5,
+          "operation": "ADD_MULTIPLIED_BASE"
+        }
+      ]
+    }
+  }
+}
