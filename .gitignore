@@ -3,3 +3,6 @@ data
 /modpack.mrpack
 /mods/
 .DS_Store
+.venv
+__pycache__/
+.env

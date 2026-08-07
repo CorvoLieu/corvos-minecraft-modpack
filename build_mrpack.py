@@ -20,18 +20,25 @@ config, per request), since there's no "online source" for local config state.
 Pass --exclude <substring> (repeatable) to drop mods by filename match, e.g.
 for a server-only build that shouldn't ship client-only mods like freecam.
 """
+
 import argparse
 import hashlib
 import json
-import sys
+import os
 import urllib.parse
 import zipfile
 from datetime import datetime
 from pathlib import Path
 
-SK_ROOT = Path("/Users/haolieu/Library/Application Support/sklauncher")
-INSTANCE_DIR = SK_ROOT / "instances" / "creark"
-MANIFEST_PATH = SK_ROOT / "manifests" / "creark.json"
+from dotenv import load_dotenv
+
+load_dotenv()
+
+INSTANCE_NAME = os.getenv("INSTANCE_NAME", "creark")
+
+SK_ROOT = Path.home() / "Library" / "Application Support" / "sklauncher"
+INSTANCE_DIR = Path(os.getenv("SK_INSTANCE_DIR", SK_ROOT / "instances" / INSTANCE_NAME))
+MANIFEST_PATH = SK_ROOT / "manifests" / f"{INSTANCE_NAME}.json"
 INSTANCES_JSON = SK_ROOT / "instances.json"
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -56,9 +63,9 @@ def modrinth_cdn_url(project_id: str, version_id: str, filename: str) -> str:
 def load_instance_info() -> dict:
     data = json.loads(INSTANCES_JSON.read_text())
     for inst in data["instances"]:
-        if inst["id"] == "creark":
+        if inst["id"] == INSTANCE_NAME:
             return inst
-    raise SystemExit("creark instance not found in instances.json")
+    raise SystemExit(f"{INSTANCE_NAME} instance not found in instances.json")
 
 
 def load_manifest_by_path() -> dict:
@@ -98,25 +105,31 @@ def main():
     manifest_by_path = load_manifest_by_path()
 
     mods_dir = INSTANCE_DIR / "mods"
-    all_mod_files = sorted(p for p in mods_dir.iterdir() if p.is_file() and p.name != ".DS_Store")
+    all_mod_files = sorted(
+        p
+        for p in mods_dir.iterdir()
+        if p.is_file()
+        and p.name != ".DS_Store"
+        and not any(e in p.name.lower() for e in excludes)
+    )
 
-    excluded_names = [p.name for p in all_mod_files if any(e in p.name.lower() for e in excludes)]
-    mod_files = [p for p in all_mod_files if p.name not in excluded_names]
-    if excluded_names:
-        print(f"Excluding {len(excluded_names)} mod(s): {', '.join(excluded_names)}")
+    if excludes:
+        print(f"Excluding mods matching: " + ", ".join(f'"{e}"' for e in excludes))
 
     online_files = []  # for modrinth.index.json "files"
     bundled_paths = []  # relative paths (within instance dir) to copy into overrides/
 
     referenced, bundled = 0, 0
-    for mod_path in mod_files:
+    for mod_path in all_mod_files:
         rel_path = f"mods/{mod_path.name}"
         entry = manifest_by_path.get(rel_path)
 
         if entry and entry.get("source") == "modrinth":
             actual_sha1 = sha1_of(mod_path)
             if actual_sha1 == entry.get("fileHash", {}).get("sha1"):
-                url = modrinth_cdn_url(entry["projectId"], entry["versionId"], mod_path.name)
+                url = modrinth_cdn_url(
+                    entry["projectId"], entry["versionId"], mod_path.name
+                )
                 online_files.append(
                     {
                         "path": rel_path,
@@ -136,7 +149,9 @@ def main():
         bundled_paths.append(Path("mods") / mod_path.name)
         bundled += 1
 
-    print(f"Mods: {referenced} referenced online, {bundled} bundled directly (drift/local/curseforge)")
+    print(
+        f"Mods: {referenced} referenced online, {bundled} bundled directly (drift/local/curseforge)"
+    )
 
     # server config: always bundled directly, no online source for these
     if (INSTANCE_DIR / "config").exists():
@@ -171,7 +186,10 @@ def main():
             zf.write(src, arcname=f"overrides/{rel.as_posix()}")
 
     print(f"Exported: {out_path}")
-    print(f"  {len(online_files)} files referenced online, {len(bundled_paths)} files bundled in overrides/")
+    print(
+        f"  {len(online_files)} files referenced online, "
+        f"{len(bundled_paths)} files bundled in overrides/"
+    )
 
 
 if __name__ == "__main__":
