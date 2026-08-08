@@ -3210,22 +3210,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/AqaIIO6D/79c5fe2b39fc67907508b9bf9dd45c685b955062_96.webp"
     },
     {
-      "filePath": "mods/jei-1.21.1-neoforge-19.39.0.368.jar",
-      "filename": "jei-1.21.1-neoforge-19.39.0.368.jar",
+      "filePath": "mods/jei-1.21.1-neoforge-19.43.0.394.jar",
+      "filename": "jei-1.21.1-neoforge-19.43.0.394.jar",
       "contentType": "mod",
       "name": "Just Enough Items (JEI)",
+      "description": "View Items and Recipes",
+      "author": "mezz",
+      "iconUrl": "https://cdn.modrinth.com/data/u6dRKJwZ/4a3f18ac0d096c9f8e9176984c44be4e58f94c89_96.webp",
       "projectId": "u6dRKJwZ",
-      "versionId": "bEGnP8IF",
+      "versionId": "feYG503c",
+      "versionNumber": "19.43.0.394",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "82a8ee647d81c40f149c444c5d37088f035cb773",
-        "sha512": "e0fedc5dddea7f48a061053f5f3cb8e4805dbd0734ee9ae07809a1766a02c7b6ed938b1d34234628dbb73e21277d9f09dacd20902006c678180ce009f4bc07b3"
+        "sha1": "68be66a4ee1887ae3568aa2d52cae87ed6840490",
+        "sha512": "db4f47dc6be5a9283550534a8baaae6f51ee9499964c2cf4b628d1ee87424a4974f55039879f991f2f61d7363b57e76bc611eacf515557ed5c8fb47e12692014"
       },
-      "size": 1635411,
+      "size": 1685121,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-08T17:06:48.114Z",
+      "updatedAt": "2026-08-08T17:06:48.114Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -3234,11 +3238,7 @@
         "neoforge"
       ],
       "releaseType": "beta",
-      "dependencies": [],
-      "versionNumber": "19.39.0.368",
-      "description": "View Items and Recipes",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/u6dRKJwZ/4a3f18ac0d096c9f8e9176984c44be4e58f94c89_96.webp"
+      "dependencies": []
     },
     {
       "filePath": "mods/create-central-kitchen-2.5.0.jar",
@@ -7708,33 +7708,33 @@
       ]
     },
     {
-      "filePath": "mods/petrolsparts-1.21.1-1.2.10.jar",
-      "filename": "petrolsparts-1.21.1-1.2.10.jar",
+      "filePath": "mods/petrolsparts-1.21.1-1.3.0-snapshot-2.jar",
+      "filename": "petrolsparts-1.21.1-1.3.0-snapshot-2.jar",
       "contentType": "mod",
       "name": "Petrol's Parts",
       "description": "Unique kinetic components for Create",
       "author": "petrolpark",
       "iconUrl": "https://cdn.modrinth.com/data/AN0CZD9P/642d649fd0ea1f4a226129205a2657c2610d9f56_96.webp",
       "projectId": "AN0CZD9P",
-      "versionId": "PFCZOOlN",
-      "versionNumber": "1.21.1-1.2.10",
+      "versionId": "633zx74p",
+      "versionNumber": "1.21.1-1.3.0-snapshot-2",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "d228f81fb8d9f9501f0077bcbe6b62852eccf0a1",
-        "sha512": "02786c714aa166c7ad91b3ce0cdf2349b33c7489eea7694b41776034fec8a257ec93b74229c1b6e5a98e0cf4e9dc2cf2c4a32e653e9f837dadbd0d343cc95685"
+        "sha1": "b407a739fbccaefb06e11a12a43e6d7c9d1a1217",
+        "sha512": "8540f7d5634dfea8608a365dd9d3d47256df5baab21b8245837410c996fc69d73b532106aa3ea47f557b194c0fc5e46b977b15abeb64c79822cbbb691bfc881e"
       },
-      "size": 509152,
+      "size": 868522,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-07T15:34:16.113Z",
-      "updatedAt": "2026-08-07T15:34:16.113Z",
+      "installedAt": "2026-08-08T17:19:00.957Z",
+      "updatedAt": "2026-08-08T17:19:00.957Z",
       "gameVersions": [
         "1.21.1"
       ],
       "loaders": [
         "neoforge"
       ],
-      "releaseType": "release",
+      "releaseType": "beta",
       "dependencies": []
     },
     {
@@ -8034,6 +8034,65 @@
           "installed": false
         }
       ]
+    },
+    {
+      "filePath": "mods/forgified-fabric-api-0.116.15+2.3.1+1.21.1.jar",
+      "filename": "forgified-fabric-api-0.116.15+2.3.1+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Forgified Fabric API",
+      "iconUrl": "https://cdn.modrinth.com/data/Aqlf1Shp/bcdcfed483b0365807f75181eea89b7960cd3b1b_96.webp",
+      "projectId": "Aqlf1Shp",
+      "versionId": "L9bk5uA9",
+      "versionNumber": "0.116.15+2.3.1+1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "f3b5ff6e2ca338d8d9338acc5a1e47393e7b1ad2",
+        "sha512": "de6cc76a406371c6cab8600621ea9bf630a796baaa64afa2103a75cddcc8ab52e0a15a5c3dec9b2ed2cf3efcd7d93c622434eb3e8d007361fdd54f2504c09757"
+      },
+      "size": 5590061,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T17:01:38.367Z",
+      "updatedAt": "2026-08-08T17:02:36.967Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [],
+      "description": "Fabric API implemented on top of NeoForge"
+    },
+    {
+      "filePath": "mods/petrolpark-1.21.1-1.5.1.jar",
+      "filename": "petrolpark-1.21.1-1.5.1.jar",
+      "contentType": "mod",
+      "name": "Petrolpark's Library",
+      "description": "A library of shared features and utilities for my mods",
+      "author": "petrolpark",
+      "iconUrl": "https://cdn.modrinth.com/data/ik2WZkTZ/3bb407298ce168f786b56e0ddc62a7539e94846f.png",
+      "projectId": "ik2WZkTZ",
+      "versionId": "i530pYZB",
+      "versionNumber": "1.21.1-1.5.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "57a0983fa395cef6271dc4f5df751cb32c3413af",
+        "sha512": "a402256a1c51fe14c50a9a5d654a422750c6ded97cabe5f9e25235e3084a2c579cbe051bf03ed195b7760fb70cefc74308d61b8cd8431d1f0e0d18b91d6c6447"
+      },
+      "size": 6902876,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T17:19:04.663Z",
+      "updatedAt": "2026-08-08T17:19:04.663Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "beta",
+      "dependencies": []
     }
   ]
 }
