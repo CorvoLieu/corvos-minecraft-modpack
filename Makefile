@@ -1,5 +1,5 @@
 DEFAULT_GOAL := run
-.PHONY: run stop log
+.PHONY: run run-watch log stop build-client build-server build-mods-zip build-all
 
 run:
 	@echo "Starting the application..."
@@ -18,3 +18,17 @@ log:
 stop:
 	@echo "Stopping the application..."
 	@docker compose down -v
+
+build-client:
+	@echo "Building client .mrpack..."
+	@uv run python3 export_mrpack.py
+
+build-server:
+	@echo "Building server .mrpack..."
+	@uv run python3 export_mrpack_server.py
+
+build-mods-zip:
+	@echo "Building mods-only zip..."
+	@uv run python3 export_mods.py
+
+build-all: build-client build-server build-mods-zip
