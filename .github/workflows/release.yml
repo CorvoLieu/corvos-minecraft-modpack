@@ -23,13 +23,21 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen
 
-      - name: Build modpack artifacts
-        run: make build-all
-
       - name: Compute release tag
         id: tag
+        env:
+          MANIFEST_FILE: ${{ vars.MANIFEST_FILE }}
         run: |
-          echo "tag=v$(date +%Y.%m.%d)-$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          echo "tag=$(scripts/release/compute-tag.sh)" >> "$GITHUB_OUTPUT"
+
+      - name: Check for existing release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          scripts/release/check-release-exists.sh "${{ steps.tag.outputs.tag }}" "${{ github.repository }}"
+
+      - name: Build modpack artifacts
+        run: make build-all
 
       - name: Rename artifacts for release
         run: |
@@ -44,7 +52,7 @@ jobs:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: ${{ steps.tag.outputs.tag }}
           body: |
-            Automated modpack build from ${{ github.sha }}.
+            Modpack release ${{ steps.tag.outputs.tag }} from ${{ github.sha }}.
 
             ${{ github.event.head_commit.message }}
           files: |

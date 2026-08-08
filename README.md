@@ -19,16 +19,24 @@ My personal modpack for my dedicated Minecraft Server, served on my personal net
 
 # Build & release workflow
 
-This repo is the source of truth for the modpack. Modpack data (manifest, `config/`, `local-mods/`, `servers.dat`) lives here and CI builds it into distributable artifacts on every merge to `main`.
+This repo is the source of truth for the modpack. Modpack data (manifest, `config/`, `local-mods/`, `servers.dat`) lives here and CI builds it into distributable artifacts on merge to `main`.
 
 ## Updating mods (maintainer)
 
 1. Add/remove/update mods in the SKLauncher instance on your machine.
 2. `uv run sync_instance.py` — pulls the manifest, `config/`, `servers.dat`, and any non-Modrinth mod jars from SKLauncher into the repo (see the script's docstring for `--instance-dir` / `SK_INSTANCE_DIR`).
 3. Review the diff, commit, open a PR.
-4. Merge to `main` triggers `.github/workflows/release.yml`, which runs `make build-all` and publishes the results as a new GitHub Release.
+4. Merge to `main` triggers `.github/workflows/release.yml`, which runs `make build-all` and publishes the results as a new GitHub Release — but the workflow fails if `versionNumber` wasn't bumped (see "Cutting a release" below).
 
 To exclude a mod from the dedicated server build (e.g. client-only mods like freecam), add its slug/id to `server-excludes.txt`; remove it to re-include.
+
+### Cutting a release
+
+Releases are tied to a deliberate version bump, not every push to `main`. `.github/workflows/release.yml` reads `modpackLink.versionNumber` from `manifest/creark.json` and tags the release `v<versionNumber>` (e.g. `v1.0.0`). To cut a release:
+
+1. Bump `versionNumber` in `manifest/creark.json` in your commit/PR to `main`.
+2. Once merged, CI tags and publishes a GitHub Release for that version.
+3. If a release for that version already exists (i.e. `versionNumber` wasn't bumped), the workflow's "Check for existing release" step fails the job rather than skipping — bump the version and re-push to retry. The manifest path defaults to `manifest/creark.json`; override it by setting the `MANIFEST_FILE` repository/environment variable if you ever need to point at a different file.
 
 ## Contributing a mod
 
