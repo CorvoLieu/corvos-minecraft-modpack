@@ -37,11 +37,11 @@ services:
       SIMULATION_DISTANCE: "${SIMULATION_DISTANCE:-7}"
       VIEW_DISTANCE: "${VIEW_DISTANCE:-7}"
       ALLOW_FLIGHT: "${ALLOW_FLIGHT:-true}"
-      OPS: '${OPS:-CakeBoy}'
+      OPS: "${OPS:-CakeBoy}"
       RCON_CMDS_STARTUP: '${RCON_CMDS_STARTUP:-/gamerule playersSleepingPercentage 0\n/gamerule mobGriefing false}'
-      RCON_CMDS_ON_CONNECT: '${RCON_CMDS_ON_CONNECT:-/recipe give @p *}'
+      RCON_CMDS_ON_CONNECT: "${RCON_CMDS_ON_CONNECT:-/recipe give @p *}"
     volumes:
-      - data:/data
+      - ./data:/data
     deploy:
       resources:
         limits:
@@ -64,6 +64,3 @@ services:
       WATCHTOWER_LABEL_ENABLE: "true"
       WATCHTOWER_POLL_INTERVAL: "${WATCHTOWER_POLL_INTERVAL:-300}"
       WATCHTOWER_CLEANUP: "true"
-
-volumes:
-  data:

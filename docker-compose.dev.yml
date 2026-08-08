@@ -23,7 +23,7 @@ services:
       MODE: "survival"
       FORCE_GAMEMODE: "true"
       ENABLE_AUTOPAUSE: "true"
-      MODRINTH_MODPACK: "/modpack.mrpack"
+      MODRINTH_MODPACK: "/mod.mrpack"
       MODRINTH_DEFAULT_VERSION_TYPE: "release"
       MODRINTH_LOADER: "neoforge"
       LEVEL: "creark"
@@ -40,7 +40,7 @@ services:
       RCON_CMDS_ON_CONNECT: |-
         /recipe give @p *
     volumes:
-      - "./exports/client.mrpack:/modpack.mrpack:ro"
+      - "./exports/mod.mrpack:/mod.mrpack:ro"
     deploy:
       resources:
         limits:

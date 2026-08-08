@@ -1,5 +1,5 @@
-DEFAULT_GOAL := run
-.PHONY: run run-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop install-hooks
+DEFAULT_GOAL := dev
+.PHONY: dev dev-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop install-hooks
 
 # Symlinks .githooks/pre-commit into .git/hooks/ so it actually runs.
 # A prerequisite of every target below, so it self-installs (silently, once)
@@ -15,13 +15,31 @@ install-hooks:
 		echo "Git pre-commit hook installed: $$link -> .githooks/pre-commit"; \
 	fi
 
-# Dev (default): local bind-mounted modpack.mrpack, see docker-compose.dev.yml.
-run: install-hooks
+clean:
+	@echo "Cleaning up build artifacts..."
+	@rm -f exports/*.mrpack
+	@rm -f exports/mods.zip
+	@rm -f exports/modpack.mrpack
+	@rm -rf .mypy_cache
+	@rm -rf .pytest_cache
+	@rm -rf __pycache__
+	@echo "Done."
+
+clean-dev:
+	@echo "Cleaning up dev artifacts..."
+	@rm -f exports/mod.mrpack
+	@echo "Done cleaning."
+
+# Dev (default): local bind-mounted mod.mrpack (server build, staged from
+# exports/server.mrpack), see docker-compose.dev.yml.
+dev: install-hooks clean-dev build-server
 	@echo "Starting the application (dev)..."
+	@cp exports/server.mrpack exports/mod.mrpack
 	@docker compose -f docker-compose.dev.yml up -d
 
-run-watch: install-hooks
+dev-watch: install-hooks clean-dev build-server
 	@echo "Starting the application (dev)..."
+	@cp exports/server.mrpack exports/mod.mrpack
 	@docker compose -f docker-compose.dev.yml up -d
 	@echo "Tailing the application logs..."
 	@docker logs -f minecraft-server-s3
