@@ -13,8 +13,8 @@ For each mod entry in the manifest:
   - otherwise (curseforge/local source) -> the jar is expected to be
     committed under local-mods/, and gets bundled directly.
 
-config/ and servers.dat are always bundled directly in overrides/ (server
-config, per request), since there's no "online source" for local config state.
+servers.dat are always bundled directly in overrides/ (server per request),
+since there's no "online source" for local config state.
 
 Pass --exclude <substring> (repeatable) and/or --exclude-file <path>
 (newline-separated substrings) to drop mods by filename match, e.g. for a
@@ -52,7 +52,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_MANIFEST_PATH = SCRIPT_DIR / "manifest" / "creark.json"
 DEFAULT_PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"
 DEFAULT_LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
-DEFAULT_CONFIG_DIR = SCRIPT_DIR / "config"
+# DEFAULT_CONFIG_DIR = SCRIPT_DIR / "config"
 DEFAULT_SERVERS_DAT_PATH = SCRIPT_DIR / "servers.dat"
 DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "exports"
 
@@ -120,12 +120,12 @@ def parse_args(argv: list[str] | None = None):
         default=DEFAULT_LOCAL_MODS_DIR,
         help=f"dir with non-Modrinth mod jars (default: {DEFAULT_LOCAL_MODS_DIR})",
     )
-    parser.add_argument(
-        "--config-dir",
-        type=Path,
-        default=DEFAULT_CONFIG_DIR,
-        help=f"config/ dir to bundle as overrides (default: {DEFAULT_CONFIG_DIR})",
-    )
+    # parser.add_argument(
+    #     "--config-dir",
+    #     type=Path,
+    #     default=DEFAULT_CONFIG_DIR,
+    #     help=f"config/ dir to bundle as overrides (default: {DEFAULT_CONFIG_DIR})",
+    # )
     parser.add_argument(
         "--servers-dat",
         type=Path,
@@ -228,13 +228,8 @@ def resolve_bundled_mod_paths(bundled: list[tuple], local_mods_dir: Path):
     return resolved
 
 
-def build_config_and_server_overrides(config_dir: Path, servers_dat: Path):
+def build_server_overrides(servers_dat: Path):
     overrides = []
-    if config_dir.exists():
-        for p in config_dir.rglob("*"):
-            if p.is_file() and p.name != ".DS_Store":
-                rel = p.relative_to(config_dir.parent)
-                overrides.append((rel.as_posix(), p))
     if servers_dat.exists():
         overrides.append(("servers.dat", servers_dat))
     return overrides
@@ -268,7 +263,9 @@ def build_mods_zip_only(args, mod_entries, excludes, version_id):
 
     total = len(online_files) + len(bundled_resolved)
     print(f"Exported: {out_path}")
-    print(f"  {total} mod file(s): {len(online_files)} downloaded, {len(bundled_resolved)} local")
+    print(
+        f"  {total} mod file(s): {len(online_files)} downloaded, {len(bundled_resolved)} local"
+    )
 
 
 def build_mrpack(args, mod_entries, excludes, pack_info, version_id):
@@ -276,11 +273,11 @@ def build_mrpack(args, mod_entries, excludes, pack_info, version_id):
     if excluded_names:
         print(f"Excluding {len(excluded_names)} mod(s): {', '.join(excluded_names)}")
     bundled_resolved = resolve_bundled_mod_paths(bundled, args.local_mods_dir)
-    bundled_resolved += build_config_and_server_overrides(args.config_dir, args.servers_dat)
+    bundled_resolved += build_server_overrides(args.servers_dat)
 
     print(
         f"Mods: {len(online_files)} referenced online, "
-        f"{len(bundled_resolved)} bundled directly (local/curseforge/config)"
+        f"{len(bundled_resolved)} bundled directly (local/curseforge)"
     )
 
     args.output_dir.mkdir(exist_ok=True)
