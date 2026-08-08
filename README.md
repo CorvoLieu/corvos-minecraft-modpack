@@ -1,4 +1,4 @@
-# Minecraft: Creark
+# Minecraft: CreativeWorld - S4
 
 My personal modpack for my dedicated Minecraft Server, served on my personal network.
 
@@ -15,16 +15,17 @@ My personal modpack for my dedicated Minecraft Server, served on my personal net
   - Username: `blieu.dummy@gmail.com`
   - Password and 2FA Code: Ask me for this
 - Choose `hao.lieu.02@gmail.com`'s tailnet
+- Download modpack (mrpack) or Mod-Only zip in this repo [releases](../../releases)
 - See [this link](https://fileblieu.whydah-dab.ts.net/s/JkmJJGSzG47PQgL) for further info
 
 # Build & release workflow
 
-This repo is the source of truth for the modpack. Modpack data (manifest, `config/`, `local-mods/`, `servers.dat`) lives here and CI builds it into distributable artifacts on merge to `main`.
+This repo is the source of truth for the modpack. Modpack data (manifest, `local-mods/`, `servers.dat`) lives here and CI builds it into distributable artifacts on every merge to `main`.
 
 ## Updating mods (maintainer)
 
 1. Add/remove/update mods in the SKLauncher instance on your machine.
-2. `uv run sync_instance.py` — pulls the manifest, `config/`, `servers.dat`, and any non-Modrinth mod jars from SKLauncher into the repo (see the script's docstring for `--instance-dir` / `SK_INSTANCE_DIR`).
+2. `uv run sync_instance.py` — pulls the manifest, `servers.dat`, and any non-Modrinth mod jars from SKLauncher into the repo (see the script's docstring for `--instance-dir` / `SK_INSTANCE_DIR`).
 3. Review the diff, commit, open a PR.
 4. Merge to `main` triggers `.github/workflows/release.yml`, which runs `make build-all` and publishes the results as a new GitHub Release — but the workflow fails if `versionNumber` wasn't bumped (see "Cutting a release" below).
 
@@ -51,7 +52,7 @@ Same mechanics as above, as a PR workflow:
 
 ### Pre-commit sync check
 
-- `.githooks/pre-commit` (logic in `scripts/hooks/check-sync.sh`) re-runs `sync_instance.py` and blocks any commit touching `manifest/`, `config/`, `local-mods/`, or `servers.dat` if the staged content disagrees with what your local SKLauncher instance would produce (mods changed but not synced, or synced but not `git add`ed).
+- `.githooks/pre-commit` (logic in `scripts/hooks/check-sync.sh`) re-runs `sync_instance.py` and blocks any commit touching `manifest/`, `local-mods/`, or `servers.dat` if the staged content disagrees with what your local SKLauncher instance would produce (mods changed but not synced, or synced but not `git add`ed).
 - Skips with a warning (not a failure) if `SK_INSTANCE_DIR` isn't configured, so it never blocks unrelated changes (docs, CI, `Dockerfile`, etc.).
 - Installed automatically: every `make` target depends on `install-hooks`, which symlinks it into `.git/hooks/` the first time you run `make` after cloning. Nothing to run by hand.
 - **Convenience guard, not a hard guarantee** — hooks live outside version control, so this only protects contributors who've run `make` at least once, and can be bypassed with `git commit --no-verify`. No CI-side re-enforcement of the sync check yet.
@@ -60,9 +61,9 @@ Same mechanics as above, as a PR workflow:
 
 Grab the matching asset from the [latest release](../../releases) — no local build needed:
 
-- **`Creark-<version>.mrpack`** — full client modpack. Import into any `.mrpack`-compatible launcher (Modrinth App, Prism Launcher, etc.) for mods, config, and server settings in one go.
+- **`Creark-<version>.mrpack`** — full client modpack. Import into any `.mrpack`-compatible launcher (Modrinth App, Prism Launcher, etc.) for mods, and server settings in one go.
 - **`Creark-Server-<version>.mrpack`** — server-side build, same as client but with `server-excludes.txt` mods dropped. Use to set up/update the dedicated server.
-- **`Creark-Mods-Only-<version>.zip`** — just the mod jars, flattened. Drop into an existing server/client `mods/` folder to update in place without touching world data or config.
+- **`Creark-Mods-Only-<version>.zip`** — just the mod jars, flattened. Drop into an existing server/client `mods/` folder to update in place without touching world data.
 
 ## Running the dedicated server
 
