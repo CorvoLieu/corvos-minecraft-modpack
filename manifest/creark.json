@@ -7726,8 +7726,8 @@
       "size": 868522,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-08T17:06:27.390Z",
-      "updatedAt": "2026-08-08T17:06:27.390Z",
+      "installedAt": "2026-08-08T17:19:00.957Z",
+      "updatedAt": "2026-08-08T17:19:00.957Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -8065,26 +8065,26 @@
       "description": "Fabric API implemented on top of NeoForge"
     },
     {
-      "filePath": "mods/petrolpark-1.21.1-1.4.36.jar",
-      "filename": "petrolpark-1.21.1-1.4.36.jar",
+      "filePath": "mods/petrolpark-1.21.1-1.5.1.jar",
+      "filename": "petrolpark-1.21.1-1.5.1.jar",
       "contentType": "mod",
       "name": "Petrolpark's Library",
       "description": "A library of shared features and utilities for my mods",
       "author": "petrolpark",
       "iconUrl": "https://cdn.modrinth.com/data/ik2WZkTZ/3bb407298ce168f786b56e0ddc62a7539e94846f.png",
       "projectId": "ik2WZkTZ",
-      "versionId": "4NOlw0J6",
-      "versionNumber": "1.21.1-1.4.36",
+      "versionId": "i530pYZB",
+      "versionNumber": "1.21.1-1.5.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "9c2e66276896d6eb3f751fd461fa33a45c011695",
-        "sha512": "4175f52614bde092e8fd216dcb0f4dcab56a79aecdd66a45cbecedd3cd117602e065a77c3eeaeb04c66f419c81ecdd8e9a3ee3c311713f210c0526c3cdf0da95"
+        "sha1": "57a0983fa395cef6271dc4f5df751cb32c3413af",
+        "sha512": "a402256a1c51fe14c50a9a5d654a422750c6ded97cabe5f9e25235e3084a2c579cbe051bf03ed195b7760fb70cefc74308d61b8cd8431d1f0e0d18b91d6c6447"
       },
-      "size": 6518129,
+      "size": 6902876,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-08T17:12:36.446Z",
-      "updatedAt": "2026-08-08T17:12:36.446Z",
+      "installedAt": "2026-08-08T17:19:04.663Z",
+      "updatedAt": "2026-08-08T17:19:04.663Z",
       "gameVersions": [
         "1.21.1"
       ],
