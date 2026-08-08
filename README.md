@@ -16,3 +16,26 @@ This is my personal modpack for my dedicated Minecraft Server. Everything is ser
   - Password and 2FA Code: Ask me for this
 - Choose `hao.lieu.02@gmail.com`'s tailnet
 - Proceed to [this](https://fileblieu.whydah-dab.ts.net/s/JkmJJGSzG47PQgL) link for more information
+
+# Build & release workflow
+
+This repo is the source of truth for the modpack. Modpack data (manifest, config, `local-mods/`, `servers.dat`) lives in the repo and is built into distributable artifacts by CI on every merge to `main`.
+
+## Updating mods (maintainer)
+
+1. Add/remove/update mods as usual in the SKLauncher instance on your machine.
+2. Run `uv run sync_instance.py` to pull the manifest, `config/`, `servers.dat`, and any non-Modrinth mod jars from the SKLauncher instance into the repo (see the script's docstring for `--instance-dir` / `SK_INSTANCE_DIR` options).
+3. Review the diff, commit, and open a PR.
+4. Merging to `main` automatically triggers the CI workflow (`.github/workflows/release.yml`), which builds all artifacts (`make build-all`) and publishes them as a new GitHub Release.
+
+If a mod should be excluded from the dedicated server build (e.g. client-only mods like freecam), add its slug/id to `server-excludes.txt`. Remove it from that file to have it included again.
+
+## Consuming a release (friends/players)
+
+Releases are published on the repo's [GitHub Releases page](../../releases). Each release has three assets:
+
+- **`Creark-<timestamp>.mrpack`** — the full client modpack. Import it into a launcher that supports the `.mrpack` format (Modrinth App, Prism Launcher, etc.) to get mods, config, and server settings in one go.
+- **`Creark-Server-<timestamp>.mrpack`** — the server-side modpack, same as the client build but with client-only mods (see `server-excludes.txt`) dropped. Use this to set up or update a dedicated server.
+- **`Creark-Mods-Only-<version>.zip`** — just the mod jars, flattened into a zip. Drop these straight into an existing server or client's `mods/` folder to update mods in place without touching world data or config.
+
+Grab whichever asset matches what you're doing from the latest release; you generally don't need to build anything locally.
