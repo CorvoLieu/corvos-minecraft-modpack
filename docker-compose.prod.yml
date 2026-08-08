@@ -47,6 +47,23 @@ services:
         limits:
           cpus: "3.5"
           memory: "15G"
+    labels:
+      # Only this container gets touched by Watchtower (--label-enable below).
+      com.centurylinklabs.watchtower.enable: "true"
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Reuses the host docker daemon's registry auth (see README: `docker
+      # login ghcr.io` must be run once on the VM if the GHCR package is
+      # private).
+    environment:
+      WATCHTOWER_LABEL_ENABLE: "true"
+      WATCHTOWER_POLL_INTERVAL: "${WATCHTOWER_POLL_INTERVAL:-300}"
+      WATCHTOWER_CLEANUP: "true"
 
 volumes:
   data:

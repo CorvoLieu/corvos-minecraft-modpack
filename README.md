@@ -59,3 +59,12 @@ On every push to `main`, `.github/workflows/deploy.yml` builds the client modpac
 - keep it private and have the VM's Docker authenticate: `docker login ghcr.io -u <github-username> -p <PAT>` using a personal access token with `read:packages` scope, run once (or stored in Watchtower's config) so it can pull on every poll.
 
 Don't assume the package is publicly pullable without checking — confirm in the repo's Packages tab after the first CI run.
+
+### Auto-deploy on the prod VM (Watchtower)
+
+`docker-compose.prod.yml` includes a `watchtower` service that polls GHCR every 5 minutes (`WATCHTOWER_POLL_INTERVAL`, override in `.env`) and, on seeing a new `:latest` digest, pulls it and recreates the `mc-s3` container — this is the whole "auto-deploy on merge to main" mechanism, no SSH push step involved. It's scoped with `--label-enable`/`WATCHTOWER_LABEL_ENABLE` plus the `com.centurylinklabs.watchtower.enable=true` label on `mc-s3`, so it only ever touches the Minecraft server container, not anything else running on the VM. `WATCHTOWER_CLEANUP=true` prunes the superseded image after each update. World data lives in the named `data` volume, so container recreation does not wipe it.
+
+Setup on the VM is a one-time, manual step:
+
+1. If the GHCR package is private, run `docker login ghcr.io -u <github-username> -p <PAT>` once so the host Docker daemon has pull credentials — Watchtower reuses that auth via the mounted `/var/run/docker.sock`, it doesn't take its own registry credentials.
+2. `docker compose -f docker-compose.prod.yml up -d` once to start both `mc-s3` and `watchtower`. From then on, every push to `main` that lands a new image gets picked up automatically within one poll interval.
