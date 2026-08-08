@@ -45,6 +45,17 @@ Grab whichever asset matches what you're doing from the latest release; you gene
 There are two compose files:
 
 - `docker-compose.dev.yml` — local dev. Uses `itzg/minecraft-server:java21` directly with `modpack.mrpack` bind-mounted from the repo root. `make run` / `make run-watch` / `make log` / `make stop` all target this.
-- `docker-compose.prod.yml` — prod. Uses a custom image (built from the repo's `Dockerfile`, which bakes the built modpack in) instead of a bind mount, so the VM doesn't depend on local files, and world data lives in a named `data` volume so it survives image updates. `make prod-up` / `make prod-log` / `make prod-stop` run this locally for testing. Full CI build/publish and deploy setup (GHCR image, Watchtower) is covered in a follow-up task.
+- `docker-compose.prod.yml` — prod. Uses a custom image (built from the repo's `Dockerfile`, which bakes the built modpack in) instead of a bind mount, so the VM doesn't depend on local files, and world data lives in a named `data` volume so it survives image updates. `make prod-up` / `make prod-log` / `make prod-stop` run this locally for testing.
 
 Operational settings for prod (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are overridable per-deploy without rebuilding the image: copy `.env.example` to `.env` and edit it — Compose loads `.env` and substitutes `${VAR}` automatically. Anything left unset falls back to the same default baked into the `Dockerfile`.
+
+### Publishing the server image (CI)
+
+On every push to `main`, `.github/workflows/deploy.yml` builds the client modpack, bakes it into the `Dockerfile` image, and pushes `ghcr.io/corvolieu/mc-creark-modpack:latest` (plus a `:sha-<short-sha>` tag for rollback/debugging) to GitHub Container Registry using the workflow's own `GITHUB_TOKEN` — no extra secrets needed on the CI side. This is separate from `release.yml`, which publishes `.mrpack` files for players; the two can run independently off the same push.
+
+**GHCR package visibility:** packages published this way default to **private**, scoped to the repo. Watchtower on the prod VM needs pull access, so either:
+
+- make the `mc-creark-modpack` package public in its GitHub package settings ([repo] → Packages → package → Package settings), or
+- keep it private and have the VM's Docker authenticate: `docker login ghcr.io -u <github-username> -p <PAT>` using a personal access token with `read:packages` scope, run once (or stored in Watchtower's config) so it can pull on every poll.
+
+Don't assume the package is publicly pullable without checking — confirm in the repo's Packages tab after the first CI run.

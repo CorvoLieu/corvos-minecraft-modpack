@@ -13,8 +13,8 @@
 ---
 services:
   mc-s3:
-    # TODO: point at the real GHCR image once the CI publish workflow is wired up.
-    image: ghcr.io/<owner>/<repo>:latest
+    # Published by .github/workflows/deploy.yml on every push to main.
+    image: ghcr.io/corvolieu/mc-creark-modpack:latest
     tty: true
     container_name: minecraft-server-s3
     stdin_open: true
