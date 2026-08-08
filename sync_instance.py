@@ -46,7 +46,7 @@ from build_mrpack import sha1_of
 SCRIPT_DIR = Path(__file__).resolve().parent
 MANIFEST_DIR = SCRIPT_DIR / "manifest"
 LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
-CONFIG_DIR = SCRIPT_DIR / "config"
+# CONFIG_DIR = SCRIPT_DIR / "config"
 SERVERS_DAT = SCRIPT_DIR / "servers.dat"
 
 
@@ -64,7 +64,12 @@ def parse_args():
 def default_instance_dir() -> Path | None:
     if platform.system() == "Darwin":
         return (
-            Path.home() / "Library" / "Application Support" / "sklauncher" / "instances" / "creark"
+            Path.home()
+            / "Library"
+            / "Application Support"
+            / "sklauncher"
+            / "instances"
+            / "creark"
         )
     return None
 
@@ -97,7 +102,9 @@ def sync_manifest_and_pack_json(
     print("Synced manifest/creark.json")
 
     instances = json.loads(instances_json.read_text())
-    instance_info = next((i for i in instances["instances"] if i["id"] == instance_id), None)
+    instance_info = next(
+        (i for i in instances["instances"] if i["id"] == instance_id), None
+    )
     if instance_info is None:
         raise SystemExit(f"instance '{instance_id}' not found in {instances_json}")
 
@@ -114,7 +121,9 @@ def sync_local_mods(instance_dir: Path, manifest_src: Path):
     by_path = {e["filePath"]: e for e in manifest.get("content", [])}
 
     mods_dir = instance_dir / "mods"
-    all_mod_files = sorted(p for p in mods_dir.iterdir() if p.is_file() and p.name != ".DS_Store")
+    all_mod_files = sorted(
+        p for p in mods_dir.iterdir() if p.is_file() and p.name != ".DS_Store"
+    )
 
     LOCAL_MODS_DIR.mkdir(exist_ok=True)
     # clear stale copies so removed/renamed mods don't linger
@@ -141,15 +150,15 @@ def sync_local_mods(instance_dir: Path, manifest_src: Path):
     )
 
 
-def sync_config(instance_dir: Path):
-    src = instance_dir / "config"
-    if CONFIG_DIR.exists():
-        shutil.rmtree(CONFIG_DIR)
-    if src.exists():
-        shutil.copytree(src, CONFIG_DIR, ignore=shutil.ignore_patterns(".DS_Store"))
-    else:
-        CONFIG_DIR.mkdir()
-    print("Synced config/")
+# def sync_config(instance_dir: Path):
+#     src = instance_dir / "config"
+#     if CONFIG_DIR.exists():
+#         shutil.rmtree(CONFIG_DIR)
+#     if src.exists():
+#         shutil.copytree(src, CONFIG_DIR, ignore=shutil.ignore_patterns(".DS_Store"))
+#     else:
+#         CONFIG_DIR.mkdir()
+#     print("Synced config/")
 
 
 def sync_servers_dat(instance_dir: Path):
@@ -186,7 +195,7 @@ def main():
     print(f"Syncing from: {instance_dir}")
     sync_manifest_and_pack_json(instance_id, manifest_src, instances_json)
     sync_local_mods(instance_dir, manifest_src)
-    sync_config(instance_dir)
+    # sync_config(instance_dir)
     sync_servers_dat(instance_dir)
     print("Done.")
 

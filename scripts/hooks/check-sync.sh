@@ -12,7 +12,7 @@ set -euo pipefail
 repo_root=$(git rev-parse --show-toplevel)
 cd "$repo_root"
 
-tracked_paths_re='^(manifest/|config/|local-mods/|servers\.dat$)'
+tracked_paths_re='^(manifest/|local-mods/|servers\.dat$)'
 staged_files=$(git diff --cached --name-only)
 
 if ! grep -qE "$tracked_paths_re" <<<"$staged_files"; then
