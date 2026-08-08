@@ -30,6 +30,17 @@ This repo is the source of truth for the modpack. Modpack data (manifest, config
 
 If a mod should be excluded from the dedicated server build (e.g. client-only mods like freecam), add its slug/id to `server-excludes.txt`. Remove it from that file to have it included again.
 
+## Contributing a mod
+
+Want to propose adding or updating a mod? Same mechanics as [Updating mods (maintainer)](#updating-mods-maintainer) above, framed as a PR workflow:
+
+1. Add/update the mod in your own local SKLauncher instance as usual.
+2. Run `uv run sync_instance.py --instance-dir <path>` (or set `SK_INSTANCE_DIR`) to pull the manifest, `config/`, `servers.dat`, and any non-Modrinth-sourced jar (into `local-mods/`) from your instance into the repo. Modrinth-sourced mods aren't committed as jars — they're referenced by hash/URL in the manifest.
+3. Build and test locally before opening a PR: `make build-client` (or `make build-all`) to produce `modpack.mrpack`, then `make run` to spin up `docker-compose.dev.yml` and confirm the mod actually loads and works.
+4. Review your own diff. Expect a new/changed entry in `manifest/creark.json`, and possibly a new jar under `local-mods/` if the mod isn't on Modrinth. If the mod is client-only (e.g. a minimap or freecam-style mod that shouldn't run on the dedicated server), add its slug to `server-excludes.txt`.
+5. Commit on a branch and open a PR against the appropriate base branch for review.
+6. After merge, `release.yml` and `deploy.yml` trigger automatically, publishing new release assets and eventually rolling out to prod via Watchtower — nothing further needed on your end.
+
 ## Consuming a release (friends/players)
 
 Releases are published on the repo's [GitHub Releases page](../../releases). Each release has three assets:
