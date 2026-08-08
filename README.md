@@ -22,6 +22,18 @@ My personal modpack for my dedicated Minecraft Server, served on my personal net
 
 This repo is the source of truth for the modpack. Modpack data (manifest, `local-mods/`, `servers.dat`) lives here and CI builds it into distributable artifacts on every merge to `main`.
 
+## Setting up your local instance (maintainer)
+
+`sync_instance.py` only copies *from* a local SKLauncher instance *into* the repo — there's no reverse script to populate a fresh instance from the repo. To bootstrap one:
+
+1. Install [SKLauncher](https://next.skmedix.pl/) (4.0 beta; the repo's `sync_instance.py` targets its `instances/` layout, not 3.2's `.minecraft`-based profiles).
+2. Check `manifest/pack.json` for the current target Minecraft version and NeoForge loader version (at time of writing: Minecraft 1.21.1, NeoForge 21.1.247) — the file, not this README, is the source of truth if they've since changed.
+3. Grab `Creark-<version>.mrpack` from the [latest release](../../releases) (see "Consuming a release" below), then drag the file onto the SKlauncher window (or use its Import flow) to create a new instance from it — SKLauncher creates the instance with the matching mod list, loader, and Minecraft version set automatically.
+4. `config/` is **not** bundled into the `.mrpack` (bundling is commented out in `build_mrpack.py`/`sync_instance.py`), so the imported instance starts with stock configs, not this repo's committed state. That's expected — configs currently live only on the maintainer's original machine.
+5. Find the instance directory SKlauncher created (macOS default: `~/Library/Application Support/sklauncher/instances/creark`; Windows/Linux vary, no safe default — locate it via SKlauncher's instance settings). Point `sync_instance.py` at it going forward by copying `.env.example` to `.env` and setting `SK_INSTANCE_DIR`, or passing `--instance-dir <path>` per invocation.
+6. Sanity-check: `uv run sync_instance.py --instance-dir <path>` (or with `SK_INSTANCE_DIR` set). A fresh import should produce little to no manifest diff; don't commit any unexpected changes.
+7. From here, follow "Updating mods (maintainer)" below for the day-to-day workflow.
+
 ## Updating mods (maintainer)
 
 1. Add/remove/update mods in the SKLauncher instance on your machine.
