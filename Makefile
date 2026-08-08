@@ -40,7 +40,7 @@ build-client: install-hooks
 
 build-server: install-hooks
 	@echo "Building server .mrpack..."
-	@uv run python3 build_mrpack.py --pack-name Creark-Server --exclude-file server-excludes.txt
+	@uv run python3 build_mrpack.py --pack-name Creark-Server --output-name server --exclude-file server-excludes.txt
 
 build-mods-zip: install-hooks
 	@echo "Building mods-only zip..."
@@ -49,11 +49,9 @@ build-mods-zip: install-hooks
 build-all: build-client build-server build-mods-zip
 
 # Prod (local testing only, see docker-compose.prod.yml). Builds the client
-# mrpack, stages it as exports/modpack.mrpack for the Dockerfile, and builds
-# the image locally -- doesn't push anywhere.
+# mrpack (exports/client.mrpack, which the Dockerfile COPYs directly) and
+# builds the image locally -- doesn't push anywhere.
 build-image: build-client
-	@echo "Staging modpack for image build..."
-	@cp $$(ls -t exports/Creark-*.mrpack | grep -v -- '-Server-' | head -1) exports/modpack.mrpack
 	@echo "Building local image..."
 	@docker build -t creark-modpack:local .
 

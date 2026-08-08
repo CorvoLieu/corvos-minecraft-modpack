@@ -2,12 +2,12 @@
 # the VM doesn't need a bind-mounted modpack.mrpack and Watchtower can just
 # swap the whole image on update.
 #
-# Build a modpack first (`make build-client`, or `make build-image` which
-# does both steps), then:
+# Build the client modpack first (`make build-client`, or `make build-image`
+# which does both steps), then:
 #   docker build -t ghcr.io/<owner>/<repo>:latest .
 FROM itzg/minecraft-server:java21
 
-COPY exports/modpack.mrpack /modpack.mrpack
+COPY exports/client.mrpack /modpack.mrpack
 
 # Defaults mirroring docker-compose.dev.yml's environment block -- keep in
 # sync. FORCE_REDOWNLOAD / FORCE_REINSTALL are intentionally omitted here:

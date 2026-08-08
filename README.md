@@ -36,7 +36,7 @@ Same mechanics as above, as a PR workflow:
 
 1. Add/update the mod in your own local SKLauncher instance.
 2. `uv run sync_instance.py --instance-dir <path>` (or set `SK_INSTANCE_DIR`). Modrinth-sourced mods are referenced by hash/URL in the manifest, not committed as jars; non-Modrinth jars land in `local-mods/`.
-3. Build and test locally before opening a PR: `make build-client` (or `make build-all`), then `make run` to spin up `docker-compose.dev.yml` and confirm the mod loads and works.
+3. Build and test locally before opening a PR: `make build-client` (or `make build-all`) to produce `exports/client.mrpack`, then `make run` to spin up `docker-compose.dev.yml` and confirm the mod loads and works.
 4. Review your diff — expect a changed entry in `manifest/creark.json`, possibly a new jar under `local-mods/`. Add client-only mods to `server-excludes.txt`.
 5. Commit on a branch, open a PR.
 6. After merge, `release.yml` and `deploy.yml` publish new release assets and roll out to prod via Watchtower automatically — nothing further needed.
@@ -52,15 +52,15 @@ Same mechanics as above, as a PR workflow:
 
 Grab the matching asset from the [latest release](../../releases) — no local build needed:
 
-- **`Creark-<timestamp>.mrpack`** — full client modpack. Import into any `.mrpack`-compatible launcher (Modrinth App, Prism Launcher, etc.) for mods, config, and server settings in one go.
-- **`Creark-Server-<timestamp>.mrpack`** — server-side build, same as client but with `server-excludes.txt` mods dropped. Use to set up/update the dedicated server.
+- **`Creark-<version>.mrpack`** — full client modpack. Import into any `.mrpack`-compatible launcher (Modrinth App, Prism Launcher, etc.) for mods, config, and server settings in one go.
+- **`Creark-Server-<version>.mrpack`** — server-side build, same as client but with `server-excludes.txt` mods dropped. Use to set up/update the dedicated server.
 - **`Creark-Mods-Only-<version>.zip`** — just the mod jars, flattened. Drop into an existing server/client `mods/` folder to update in place without touching world data or config.
 
 ## Running the dedicated server
 
 Two compose files:
 
-- `docker-compose.dev.yml` — local dev. `itzg/minecraft-server:java21` with `modpack.mrpack` bind-mounted from the repo root. Targeted by `make run` / `make run-watch` / `make log` / `make stop`.
+- `docker-compose.dev.yml` — local dev. `itzg/minecraft-server:java21` with `exports/client.mrpack` bind-mounted (built by `make build-client`). Targeted by `make run` / `make run-watch` / `make log` / `make stop`.
 - `docker-compose.prod.yml` — prod. Custom image (built from the repo `Dockerfile`, which bakes in the built modpack) instead of a bind mount, so the VM has no local-file dependency; world data lives in a named `data` volume so it survives image updates. Targeted locally by `make prod-up` / `make prod-log` / `make prod-stop`.
 
 Prod settings (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are overridable per-deploy without rebuilding: copy `.env.example` to `.env` and edit — Compose loads it and substitutes `${VAR}` automatically. Unset vars fall back to the `Dockerfile` defaults.

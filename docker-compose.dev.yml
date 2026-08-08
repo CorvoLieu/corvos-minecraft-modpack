@@ -40,9 +40,7 @@ services:
       RCON_CMDS_ON_CONNECT: |-
         /recipe give @p *
     volumes:
-      # - data:/data
-      # - ./mods:/data/mods
-      - "./modpack.mrpack:/modpack.mrpack:ro"
+      - "./exports/client.mrpack:/modpack.mrpack:ro"
     deploy:
       resources:
         limits:

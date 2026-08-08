@@ -24,6 +24,12 @@ Pass --mods-zip-only to skip the .mrpack entirely and instead produce a flat
 zip of every mod jar (downloading Modrinth-sourced ones, copying the rest
 from local-mods/).
 
+Output filenames are stable (exports/client.mrpack, exports/server.mrpack,
+exports/mods-only.zip via --output-name), not versioned -- build steps and
+the Dockerfile reference them directly. Version info still lives inside the
+build (the mrpack's versionId); GitHub Releases apply a versioned name only
+when staging the upload (see release.yml).
+
 See the build-client/build-server/build-mods-zip targets in the Makefile
 for the common preset invocations of this script.
 """
@@ -149,12 +155,23 @@ def parse_args(argv: list[str] | None = None):
     parser.add_argument(
         "--pack-name",
         default="Creark",
-        help="pack name / output filename prefix (default: Creark)",
+        help="pack name recorded inside the build (modrinth.index.json "
+        "name/summary); does not affect the output filename (default: Creark)",
     )
     parser.add_argument(
         "--mods-zip-only",
         action="store_true",
         help="skip the .mrpack and produce a flat zip of every mod jar instead",
+    )
+    parser.add_argument(
+        "--output-name",
+        default=None,
+        help="output filename stem, written as exports/<name>.mrpack (or "
+        ".zip with --mods-zip-only). Default: 'mods-only' with "
+        "--mods-zip-only, else 'client'. Stable/unversioned by design -- "
+        "build steps reference it directly; version info lives inside the "
+        "build (versionId) and gets applied to the filename only when "
+        "staging a GitHub Release upload.",
     )
     return parser.parse_args(argv)
 
@@ -235,7 +252,8 @@ def build_mods_zip_only(args, mod_entries, excludes, version_id):
     bundled_resolved = resolve_bundled_mod_paths(bundled, args.local_mods_dir)
 
     args.output_dir.mkdir(exist_ok=True)
-    out_path = args.output_dir / f"{args.pack_name}-Mods-Only-{version_id}.zip"
+    output_name = args.output_name or "mods-only"
+    out_path = args.output_dir / f"{output_name}.zip"
 
     with zipfile.ZipFile(out_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for entry in online_files:
@@ -266,8 +284,8 @@ def build_mrpack(args, mod_entries, excludes, pack_info, version_id):
     )
 
     args.output_dir.mkdir(exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    out_path = args.output_dir / f"{args.pack_name}-{timestamp}.mrpack"
+    output_name = args.output_name or "client"
+    out_path = args.output_dir / f"{output_name}.mrpack"
 
     index = {
         "formatVersion": 1,

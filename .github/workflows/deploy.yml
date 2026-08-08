@@ -34,9 +34,6 @@ jobs:
       - name: Build client modpack
         run: make build-client
 
-      - name: Stage modpack for image build
-        run: cp "$(ls -t exports/Creark-*.mrpack | grep -v -- '-Server-' | head -1)" exports/modpack.mrpack
-
       - name: Compute lowercase image name and short SHA
         id: image
         run: |
