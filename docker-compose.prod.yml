@@ -1,0 +1,52 @@
+# Prod deploy: uses the custom image built from ./Dockerfile (modpack baked
+# in) instead of a bind-mounted modpack.mrpack. Published by CI to GHCR;
+# Watchtower replaces the container on every new image push, so world data
+# lives in a named volume rather than a bind mount.
+#
+# Operational settings below (OPS, MEMORY, LEVEL, difficulty, etc.) are
+# overridable per-deploy via a .env file next to this compose file -- Compose
+# loads .env and substitutes ${VAR} automatically, no envsubst step needed.
+# Copy .env.example to .env and edit as needed; unset vars fall back to the
+# same defaults baked into the Dockerfile. VERSION / NEOFORGE_VERSION are
+# tied to what the baked modpack was built against -- only override those if
+# you know the image's mods actually support the version you're setting.
+---
+services:
+  mc-s3:
+    # TODO: point at the real GHCR image once the CI publish workflow is wired up.
+    image: ghcr.io/<owner>/<repo>:latest
+    tty: true
+    container_name: minecraft-server-s3
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - "25565:25565"
+      - "24454:24454"
+      - "24454:24454/udp"
+    environment:
+      VERSION: "${VERSION:-1.21.1}"
+      NEOFORGE_VERSION: "${NEOFORGE_VERSION:-21.1.233}"
+      MEMORY: "${MEMORY:-15360M}"
+      LEVEL: "${LEVEL:-creark}"
+      DIFFICULTY: "${DIFFICULTY:-normal}"
+      MODE: "${MODE:-survival}"
+      ONLINE_MODE: "${ONLINE_MODE:-false}"
+      FORCE_GAMEMODE: "${FORCE_GAMEMODE:-true}"
+      ENABLE_AUTOPAUSE: "${ENABLE_AUTOPAUSE:-true}"
+      ENTITY_BROADCAST_RANGE_PERCENTAGE: "${ENTITY_BROADCAST_RANGE_PERCENTAGE:-70}"
+      SIMULATION_DISTANCE: "${SIMULATION_DISTANCE:-7}"
+      VIEW_DISTANCE: "${VIEW_DISTANCE:-7}"
+      ALLOW_FLIGHT: "${ALLOW_FLIGHT:-true}"
+      OPS: '${OPS:-CakeBoy}'
+      RCON_CMDS_STARTUP: '${RCON_CMDS_STARTUP:-/gamerule playersSleepingPercentage 0\n/gamerule mobGriefing false}'
+      RCON_CMDS_ON_CONNECT: '${RCON_CMDS_ON_CONNECT:-/recipe give @p *}'
+    volumes:
+      - data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: "3.5"
+          memory: "15G"
+
+volumes:
+  data:

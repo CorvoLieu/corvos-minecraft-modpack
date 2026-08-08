@@ -39,3 +39,12 @@ Releases are published on the repo's [GitHub Releases page](../../releases). Eac
 - **`Creark-Mods-Only-<version>.zip`** — just the mod jars, flattened into a zip. Drop these straight into an existing server or client's `mods/` folder to update mods in place without touching world data or config.
 
 Grab whichever asset matches what you're doing from the latest release; you generally don't need to build anything locally.
+
+## Running the dedicated server
+
+There are two compose files:
+
+- `docker-compose.dev.yml` — local dev. Uses `itzg/minecraft-server:java21` directly with `modpack.mrpack` bind-mounted from the repo root. `make run` / `make run-watch` / `make log` / `make stop` all target this.
+- `docker-compose.prod.yml` — prod. Uses a custom image (built from the repo's `Dockerfile`, which bakes the built modpack in) instead of a bind mount, so the VM doesn't depend on local files, and world data lives in a named `data` volume so it survives image updates. `make prod-up` / `make prod-log` / `make prod-stop` run this locally for testing. Full CI build/publish and deploy setup (GHCR image, Watchtower) is covered in a follow-up task.
+
+Operational settings for prod (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are overridable per-deploy without rebuilding the image: copy `.env.example` to `.env` and edit it — Compose loads `.env` and substitutes `${VAR}` automatically. Anything left unset falls back to the same default baked into the `Dockerfile`.
