@@ -41,6 +41,28 @@ Want to propose adding or updating a mod? Same mechanics as [Updating mods (main
 5. Commit on a branch and open a PR against the appropriate base branch for review.
 6. After merge, `release.yml` and `deploy.yml` trigger automatically, publishing new release assets and eventually rolling out to prod via Watchtower — nothing further needed on your end.
 
+### Pre-commit sync check
+
+A pre-commit hook (`.githooks/pre-commit`, logic in
+`scripts/hooks/check-sync.sh`) re-runs `sync_instance.py` and blocks any
+commit that touches `manifest/`, `config/`, `local-mods/`, or `servers.dat`
+if the staged content disagrees with what your local SKLauncher instance
+would produce (e.g. you changed mods in SKLauncher but forgot to sync, or
+synced but forgot to `git add` the result). It skips gracefully (with a
+warning, not a failure) if you don't have a local SKLauncher instance
+configured (`SK_INSTANCE_DIR`) -- so it won't block contributors making
+unrelated changes (docs, CI, `Dockerfile`, etc.).
+
+It's installed automatically: every `make` target depends on
+`install-hooks`, which symlinks it into `.git/hooks/` the first time you run
+any `make` command after cloning. Nothing to run by hand.
+
+This is a **convenience guard, not a hard guarantee**: git hooks live outside
+version control, so this only protects contributors who've run `make` at
+least once, and can always be bypassed with `git commit --no-verify`. There's
+currently no CI-side enforcement re-running the sync logic against committed
+data on PRs -- that would be stronger, but isn't built yet.
+
 ## Consuming a release (friends/players)
 
 Releases are published on the repo's [GitHub Releases page](../../releases). Each release has three assets:

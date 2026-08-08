@@ -1,34 +1,48 @@
 DEFAULT_GOAL := run
-.PHONY: run run-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop
+.PHONY: run run-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop install-hooks
+
+# Symlinks .githooks/pre-commit into .git/hooks/ so it actually runs.
+# A prerequisite of every target below, so it self-installs (silently, once)
+# the first time anyone runs any `make` command after cloning -- no separate
+# setup step to remember. See README's "Pre-commit sync check" section.
+install-hooks:
+	@hooks_dir=$$(git rev-parse --git-path hooks 2>/dev/null) || exit 0; \
+	target="$$(git rev-parse --show-toplevel)/.githooks/pre-commit"; \
+	link="$$hooks_dir/pre-commit"; \
+	if [ "$$(readlink "$$link" 2>/dev/null)" != "$$target" ]; then \
+		mkdir -p "$$hooks_dir"; \
+		ln -sf "$$target" "$$link"; \
+		echo "Git pre-commit hook installed: $$link -> .githooks/pre-commit"; \
+	fi
 
 # Dev (default): local bind-mounted modpack.mrpack, see docker-compose.dev.yml.
-run:
+run: install-hooks
 	@echo "Starting the application (dev)..."
 	@docker compose -f docker-compose.dev.yml up -d
 
-run-watch:
+run-watch: install-hooks
 	@echo "Starting the application (dev)..."
 	@docker compose -f docker-compose.dev.yml up -d
 	@echo "Tailing the application logs..."
 	@docker logs -f minecraft-server-s3
 
-log:
+log: install-hooks
 	@echo "Tailing the application logs..."
 	@docker compose -f docker-compose.dev.yml logs -f
 
-stop:
+stop: install-hooks
 	@echo "Stopping the application..."
 	@docker compose -f docker-compose.dev.yml down -v
 
-build-client:
+build-client: install-hooks
 	@echo "Building client .mrpack..."
 	@uv run python3 build_mrpack.py
 
-build-server:
+build-server: install-hooks
 	@echo "Building server .mrpack..."
 	@uv run python3 build_mrpack.py --pack-name Creark-Server --exclude-file server-excludes.txt
 
-build-mods-zip:
+build-mods-zip: install-hooks
 	@echo "Building mods-only zip..."
 	@uv run python3 build_mrpack.py --mods-zip-only
 
@@ -43,14 +57,14 @@ build-image: build-client
 	@echo "Building local image..."
 	@docker build -t creark-modpack:local .
 
-prod-up:
+prod-up: install-hooks
 	@echo "Starting the application (prod compose, local test)..."
 	@docker compose -f docker-compose.prod.yml up -d
 
-prod-log:
+prod-log: install-hooks
 	@echo "Tailing the application logs (prod)..."
 	@docker compose -f docker-compose.prod.yml logs -f
 
-prod-stop:
+prod-stop: install-hooks
 	@echo "Stopping the application (prod)..."
 	@docker compose -f docker-compose.prod.yml down

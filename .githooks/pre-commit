@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Git pre-commit entry point. Enabled via `make install-hooks`
+# (core.hooksPath=.githooks). Keep this file a thin dispatcher; put actual
+# check logic in scripts/hooks/ so it's easy to add more checks later.
+set -euo pipefail
+
+repo_root=$(git rev-parse --show-toplevel)
+"$repo_root/scripts/hooks/check-sync.sh"
