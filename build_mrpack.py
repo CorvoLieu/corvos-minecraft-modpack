@@ -24,8 +24,8 @@ Pass --mods-zip-only to skip the .mrpack entirely and instead produce a flat
 zip of every mod jar (downloading Modrinth-sourced ones, copying the rest
 from local-mods/).
 
-See export_mrpack.py, export_mrpack_server.py, and export_mods.py for the
-common preset invocations of this script.
+See the build-client/build-server/build-mods-zip targets in the Makefile
+for the common preset invocations of this script.
 """
 
 import argparse

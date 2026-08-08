@@ -22,15 +22,15 @@ stop:
 
 build-client:
 	@echo "Building client .mrpack..."
-	@uv run python3 export_mrpack.py
+	@uv run python3 build_mrpack.py
 
 build-server:
 	@echo "Building server .mrpack..."
-	@uv run python3 export_mrpack_server.py
+	@uv run python3 build_mrpack.py --pack-name Creark-Server --exclude-file server-excludes.txt
 
 build-mods-zip:
 	@echo "Building mods-only zip..."
-	@uv run python3 export_mods.py
+	@uv run python3 build_mrpack.py --mods-zip-only
 
 build-all: build-client build-server build-mods-zip
 
