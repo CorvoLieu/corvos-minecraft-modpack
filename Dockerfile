@@ -7,7 +7,7 @@
 #   docker build -t ghcr.io/<owner>/<repo>:latest .
 FROM itzg/minecraft-server:java21
 
-COPY exports/client.mrpack /modpack.mrpack
+COPY exports/server.mrpack /modpack.mrpack
 
 # Defaults mirroring docker-compose.dev.yml's environment block -- keep in
 # sync. FORCE_REDOWNLOAD / FORCE_REINSTALL are intentionally omitted here:

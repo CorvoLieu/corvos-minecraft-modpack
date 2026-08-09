@@ -32,8 +32,8 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen
 
-      - name: Build client modpack
-        run: make build-client
+      - name: Build server modpack
+        run: make build-server
 
       - name: Compute lowercase image name and short SHA
         id: image
