@@ -24,15 +24,15 @@ This repo is the source of truth for the modpack. Modpack data (manifest, `local
 
 ## Setting up your local instance (maintainer)
 
-`sync_instance.py` only copies *from* a local SKLauncher instance *into* the repo — there's no reverse script to populate a fresh instance from the repo. To bootstrap one:
+`init_instance.py` populates a fresh SKLauncher instance directly from this repo's committed state (manifest, `local-mods/`, `config/`, `servers.dat`) — no need to wait for a published release. See its docstring (`uv run init_instance.py --help` or the top of `init_instance.py`) for full details; summary below.
 
-1. Install [SKLauncher](https://next.skmedix.pl/) (4.0 beta; the repo's `sync_instance.py` targets its `instances/` layout, not 3.2's `.minecraft`-based profiles).
-2. Check `manifest/pack.json` for the current target Minecraft version and NeoForge loader version (at time of writing: Minecraft 1.21.1, NeoForge 21.1.247) — the file, not this README, is the source of truth if they've since changed.
-3. Grab `Creark-<version>.mrpack` from the [latest release](../../releases) (see "Consuming a release" below), then drag the file onto the SKlauncher window (or use its Import flow) to create a new instance from it — SKLauncher creates the instance with the matching mod list, loader, and Minecraft version set automatically.
-4. `config/` is **not** bundled into the `.mrpack` (bundling is commented out in `build_mrpack.py`/`sync_instance.py`), so the imported instance starts with stock configs, not this repo's committed state. That's expected — configs currently live only on the maintainer's original machine.
-5. Find the instance directory SKlauncher created (macOS default: `~/Library/Application Support/sklauncher/instances/creark`; Windows/Linux vary, no safe default — locate it via SKlauncher's instance settings). Point `sync_instance.py` at it going forward by copying `.env.example` to `.env` and setting `SK_INSTANCE_DIR`, or passing `--instance-dir <path>` per invocation.
-6. Sanity-check: `uv run sync_instance.py --instance-dir <path>` (or with `SK_INSTANCE_DIR` set). A fresh import should produce little to no manifest diff; don't commit any unexpected changes.
-7. From here, follow "Updating mods (maintainer)" below for the day-to-day workflow.
+1. Install [SKLauncher](https://next.skmedix.pl/) (4.0 beta; the repo's scripts target its `instances/` layout, not 3.2's `.minecraft`-based profiles).
+2. Create a new, empty instance via SKLauncher's "New Instance" UI (any mod loader/version — `init_instance.py` overwrites `minecraftVersion`/`loaderVersion` to match `manifest/pack.json`, currently Minecraft 1.21.1, NeoForge 21.1.247 at time of writing; the file, not this README, is the source of truth if that's changed). `init_instance.py` can't safely create the instance registration itself (SKLauncher-internal fields like icon/groups/java args aren't reverse-engineered), so this manual step is still required.
+3. Find the instance directory SKlauncher created (macOS default: `~/Library/Application Support/sklauncher/instances/creark`; Windows/Linux vary, no safe default — locate it via SKlauncher's instance settings). Copy `.env.example` to `.env` and set `SK_INSTANCE_DIR` to it (or pass `--instance-dir <path>` per invocation) — this is the same resolution `sync_instance.py` uses.
+4. `uv run init_instance.py` — previews everything it would add/update/remove, then prompts to confirm before touching the instance (pass `--yes` to skip the prompt). This downloads/copies mods into `mods/`, reconciles `config/`, and copies `servers.dat` and the manifest into place.
+5. From here, follow "Updating mods (maintainer)" below for the day-to-day workflow — `sync_instance.py` is already pointed at the same instance via the `SK_INSTANCE_DIR` you set in step 3.
+
+If you'd rather bootstrap from a published build instead (e.g. no repo checkout yet), grab `Creark-<version>.mrpack` from the [latest release](../../releases) and drag it onto the SKlauncher window to create the instance directly — then set `SK_INSTANCE_DIR` as in step 3 and skip `init_instance.py`. Note this path won't populate `config/`, since `config/` bundling into the `.mrpack` is currently commented out in `build_mrpack.py`/`sync_instance.py`.
 
 ## Updating mods (maintainer)
 
