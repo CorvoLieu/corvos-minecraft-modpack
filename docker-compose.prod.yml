@@ -12,11 +12,11 @@
 # you know the image's mods actually support the version you're setting.
 ---
 services:
-  mc-s3:
+  mc:
     # Published by .github/workflows/deploy.yml on every push to main.
-    image: ghcr.io/corvolieu/mc-creark-modpack:latest
+    image: ghcr.io/corvolieu/mc-creark-modpack:v4
     tty: true
-    container_name: minecraft-server-s3
+    container_name: minecraft-server
     stdin_open: true
     restart: unless-stopped
     ports:

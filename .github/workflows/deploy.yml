@@ -57,7 +57,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ steps.image.outputs.name }}:latest
+            ${{ steps.image.outputs.name }}:v4
             ${{ steps.image.outputs.name }}:sha-${{ steps.image.outputs.sha }}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
