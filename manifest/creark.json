@@ -163,8 +163,12 @@
       "filename": "accessories-neoforge-1.1.0-beta.53+1.21.1.jar",
       "contentType": "mod",
       "name": "Accessories",
+      "description": "An extendable and data-driven Accessory Mod for Minecraft",
+      "author": "chyzman",
+      "iconUrl": "https://cdn.modrinth.com/data/jtmvUHXj/14fabf4859e845b0bd6659daf2375be3e88f59ec.png",
       "projectId": "jtmvUHXj",
       "versionId": "Fb55Fgjz",
+      "versionNumber": "1.1.0-beta.53+1.21.1",
       "source": "modrinth",
       "fileHash": {
         "sha1": "77d75c2e13cfdf56a45cdd29806c1c97c3d250fc",
@@ -172,9 +176,9 @@
       },
       "size": 1078697,
       "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "origin": "user",
+      "installedAt": "2026-08-09T03:09:30.824Z",
+      "updatedAt": "2026-08-09T03:09:30.824Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -188,11 +192,7 @@
           "type": "required",
           "installed": false
         }
-      ],
-      "versionNumber": "1.1.0-beta.53+1.21.1",
-      "description": "An extendable and data-driven Accessory Mod for Minecraft",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/jtmvUHXj/14fabf4859e845b0bd6659daf2375be3e88f59ec.png"
+      ]
     },
     {
       "filePath": "mods/clientsort-neoforge-2.2.2+1.21.1.jar",
@@ -3724,8 +3724,12 @@
       "filename": "owo-lib-neoforge-0.12.15.5-beta.1+1.21.jar",
       "contentType": "mod",
       "name": "oωo (owo-lib)",
+      "description": "A general utility, GUI and config library for modding on Fabric and Quilt",
+      "author": "BasiqueEvangelist",
+      "iconUrl": "https://cdn.modrinth.com/data/ccKDOlHs/42c9fe358c72dd5afda078271c574c325e963d19_96.webp",
       "projectId": "ccKDOlHs",
       "versionId": "NMCHU6DZ",
+      "versionNumber": "0.12.15.5-beta.1+1.21",
       "source": "modrinth",
       "fileHash": {
         "sha1": "48dda11a6710591cf162bdbedf982ea21dd1f2ed",
@@ -3733,9 +3737,9 @@
       },
       "size": 1221583,
       "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "origin": "user",
+      "installedAt": "2026-08-09T03:09:30.423Z",
+      "updatedAt": "2026-08-09T03:09:30.423Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -3749,11 +3753,7 @@
           "type": "embedded",
           "installed": false
         }
-      ],
-      "versionNumber": "0.12.15.5-beta.1+1.21",
-      "description": "A general utility, GUI and config library for modding on Fabric and Quilt",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/ccKDOlHs/42c9fe358c72dd5afda078271c574c325e963d19_96.webp"
+      ]
     },
     {
       "filePath": "mods/bundle-api-neoforge-1.1.0.jar",
@@ -4131,26 +4131,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/K3yHebFL/11ec8985032c8b274cd5c22c3a1a55d699870b56_96.webp"
     },
     {
-      "filePath": "mods/chat_heads-0.15.5-neoforge-1.21.jar",
-      "filename": "chat_heads-0.15.5-neoforge-1.21.jar",
+      "filePath": "mods/chat_heads-0.15.6-neoforge-1.21.jar",
+      "filename": "chat_heads-0.15.6-neoforge-1.21.jar",
       "contentType": "mod",
       "name": "Chat Heads",
       "description": "See who you're chatting with!",
       "author": "Fourmisain",
       "iconUrl": "https://cdn.modrinth.com/data/Wb5oqrBJ/icon.png",
       "projectId": "Wb5oqrBJ",
-      "versionId": "Wpigy2EQ",
-      "versionNumber": "0.15.5",
+      "versionId": "HcpZ0l88",
+      "versionNumber": "0.15.6",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "ac2c09021ea041df6a5c30cef04862f4428edbe3",
-        "sha512": "99627f1cec214a94458a3bb7e15086dc37da2e2aa4dd02ac009c792f7dbab5ddee8fe5b17860cb3e7d60456b4b48b7787568ae0906250ffe4d7efd79d498b6f1"
+        "sha1": "37f276ee3449e785a32b68ba6260d6992974cf19",
+        "sha512": "4a127e5a7e24c2bcbfe8049b84296be78d342f38e2acd3386f5ee240c072106d83e7f4f0ba1041e28192af7f8c033093d7694f3ba81a6571fde80beb4ee95aed"
       },
-      "size": 91201,
+      "size": 91825,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-08T13:37:25.535Z",
-      "updatedAt": "2026-08-08T13:37:25.535Z",
+      "installedAt": "2026-08-09T17:28:06.291Z",
+      "updatedAt": "2026-08-09T17:28:06.291Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -7353,26 +7353,26 @@
       ]
     },
     {
-      "filePath": "mods/sophisticatedcore-1.21.1-1.4.82.2230.jar",
-      "filename": "sophisticatedcore-1.21.1-1.4.82.2230.jar",
+      "filePath": "mods/sophisticatedcore-1.21.1-1.4.84.2244.jar",
+      "filename": "sophisticatedcore-1.21.1-1.4.84.2244.jar",
       "contentType": "mod",
       "name": "Sophisticated Core",
       "description": "Library mod for Sophisticated mods",
       "author": "P3pp3rF1y",
       "iconUrl": "https://cdn.modrinth.com/data/nmoqTijg/83f980596761b59f5c3e4e4d2c90d031d9d69ff6.png",
       "projectId": "nmoqTijg",
-      "versionId": "JoVN8649",
-      "versionNumber": "1.21.1-1.4.82.2230",
+      "versionId": "3gsRsDmO",
+      "versionNumber": "1.21.1-1.4.84.2244",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "dfef717426cd6811f06ad3579acfba65a3c6c384",
-        "sha512": "dd34d817dd48ce0c6ea8f213608f5132b0df7d9a25f3b334eebdcf1003f956949903a3eb5b55cb74c76710d457c528a2d84fc75edb9a665f95bd3f752051d4d7"
+        "sha1": "8cbc5761784a7595f81c021a7ece9fea49ac499a",
+        "sha512": "c33715ad50e1ca20a5af0fc75e02f1f0655b0d4e308936f3a874e7a7ddcf036d758097e1baa0fa17ffde72fb2f3fd4bba5a77207b64ddc457e92c118e38cae9d"
       },
-      "size": 1676065,
+      "size": 1676746,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-07T10:14:28.116Z",
-      "updatedAt": "2026-08-07T10:14:28.116Z",
+      "installedAt": "2026-08-09T17:28:08.522Z",
+      "updatedAt": "2026-08-09T17:28:08.522Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7805,26 +7805,26 @@
       ]
     },
     {
-      "filePath": "mods/moonlight-1.21.1-3.3.2-neoforge.jar",
-      "filename": "moonlight-1.21.1-3.3.2-neoforge.jar",
+      "filePath": "mods/moonlight-1.21.1-3.3.3-neoforge.jar",
+      "filename": "moonlight-1.21.1-3.3.3-neoforge.jar",
       "contentType": "mod",
       "name": "Moonlight Lib",
       "description": "dynamic data pack and registration, villager activities, custom map marker and a lot more",
       "author": "xelbayria",
       "iconUrl": "https://cdn.modrinth.com/data/twkfQtEc/icon.png",
       "projectId": "twkfQtEc",
-      "versionId": "in1fCzCm",
-      "versionNumber": "1.21.1-3.3.2",
+      "versionId": "Gh4IJiwq",
+      "versionNumber": "1.21.1-3.3.3",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "066461830cba209098c70fde4c31c74ae8f64aed",
-        "sha512": "6fde59eaef7b1ec8919f112f3f73908dd575ad7cb42ed34191c4f402664b2b3a4252d362af406f459353b4549ffea40e21b6aa2e98224573bee92e5f4e260ad8"
+        "sha1": "3b149a020b5d8c398712adfa5fe7d8f10bc9c9c9",
+        "sha512": "6882c178f302c31551ceb2dcf9f2b8fddac28a03ba171576a7525483129cf2ba2b853f36f200b17c5ea7a5c47147ba926f6d197be4ed38c39b4087ec63e648e5"
       },
-      "size": 2143736,
+      "size": 2144662,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-08T12:17:37.522Z",
-      "updatedAt": "2026-08-08T12:17:37.522Z",
+      "installedAt": "2026-08-09T17:28:07.464Z",
+      "updatedAt": "2026-08-09T17:28:07.464Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -8129,6 +8129,1180 @@
         },
         {
           "projectId": "T9PomCSv",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/Cobblemon-neoforge-1.7.3+1.21.1.jar",
+      "filename": "Cobblemon-neoforge-1.7.3+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Cobblemon",
+      "description": "A Pokémon mod for Fabric and NeoForge",
+      "author": "BlazingBRO",
+      "iconUrl": "https://cdn.modrinth.com/data/MdwFAVRL/abfca1654a2d09bab85cbffcc9869938c951ee0e_96.webp",
+      "projectId": "MdwFAVRL",
+      "versionId": "S1TrAn8c",
+      "versionNumber": "1.7.3",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "580ea363bbc391c98e548962a47c683155522f38",
+        "sha512": "609b435cf0cfedbfb8d54f6355b37b547306c0d3a3aab241ba5643ed8dc82e084d5a7d80d9661b786f9a0fa295b506be78e608281f5972019e6cff691aee50df"
+      },
+      "size": 128748941,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:09:15.061Z",
+      "updatedAt": "2026-08-09T03:09:15.061Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "ordsPcFz",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/mega_showdown-neoforge-1.9.3+1.7.3+1.21.1.jar",
+      "filename": "mega_showdown-neoforge-1.9.3+1.7.3+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Cobblemon: Mega Showdown",
+      "description": "Adding mega evolutions, z-moves, teralization, dynamax, ultra burst and fusions to the game",
+      "author": "YajatKaul",
+      "iconUrl": "https://cdn.modrinth.com/data/SszvX85I/62338ad15814a49df76dfbece1edba24ebca4135.png",
+      "projectId": "SszvX85I",
+      "versionId": "g5RUs6ml",
+      "versionNumber": "1.9.3+1.7.3+1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "2f2876b75d11ab6300e29153fc589dfbbf781511",
+        "sha512": "8a7bdd4b368fcf62479fbc3a6eec040bd5b4479b8b110ed0c5f5bae78ead9eddca9a418091791ee21ab534a5e6255e1bada1da4e95512a5be295cb71bc66d16b"
+      },
+      "size": 18992788,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:09:29.826Z",
+      "updatedAt": "2026-08-09T03:09:29.826Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "ccKDOlHs",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "jtmvUHXj",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cobblenav-neoforge-2.3.3.jar",
+      "filename": "cobblenav-neoforge-2.3.3.jar",
+      "contentType": "mod",
+      "name": "Cobblemon Pokenav",
+      "description": "The Cobblenav mod is inspired by the item and related mechanics featured in the games Pokémon RSE and Pokémon ORAS",
+      "author": "gatekeep06",
+      "iconUrl": "https://cdn.modrinth.com/data/bI8Nt3uA/ddfdb17c516e97c28941acb153bf0f051b7d02d5.png",
+      "projectId": "bI8Nt3uA",
+      "versionId": "yCSofpNb",
+      "versionNumber": "2.3.3",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "329349ecd8dd08130d967a4706374571cf193119",
+        "sha512": "86299cb3db5be5241442d7460e04c990fdb42bad9192a516a00832369ceadc739bcd857416700c1e1991225934b4b67b9993a73ebf94476dac9b15d56d6d6b11"
+      },
+      "size": 1098652,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:11:16.038Z",
+      "updatedAt": "2026-08-08T18:11:16.038Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/Cobbreeding-neoforge-2.2.2.jar",
+      "filename": "Cobbreeding-neoforge-2.2.2.jar",
+      "contentType": "mod",
+      "name": "Cobbreeding",
+      "description": "A side-mod for Cobblemon to add Pokémon breeding early.",
+      "author": "Fuzuki",
+      "iconUrl": "https://cdn.modrinth.com/data/ItmVb4zY/ebc4d6da1c80aaa93ce20639056ded4c35fd0222.png",
+      "projectId": "ItmVb4zY",
+      "versionId": "9bPk2DC3",
+      "versionNumber": "2.2.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "5e031dde496b447b4aa9b51bd63c3f6f9a78be86",
+        "sha512": "4af4f23a294b641a1f4129c96e38dde048ef760108713d5b5a73ac61817bac20b5c39a03d340a42f1a5dc4beb92d7ec40d3e10b9e556ac744c835865ce96a7ca"
+      },
+      "size": 468045,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:11:23.257Z",
+      "updatedAt": "2026-08-08T18:11:23.257Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/fightorflight-neoforge-0.10.9.jar",
+      "filename": "fightorflight-neoforge-0.10.9.jar",
+      "contentType": "mod",
+      "name": "Cobblemon Fight or Flight Reborn",
+      "description": "New version of an addon for Cobblemon that makes pokemon run away or fight back when agitated and much more.",
+      "author": "LyquidQrystal",
+      "iconUrl": "https://cdn.modrinth.com/data/cTdIg5HZ/364ee57a92f7f6208393ebfb57a7e7d24427f735.png",
+      "projectId": "cTdIg5HZ",
+      "versionId": "2MLFzPz6",
+      "versionNumber": "0.10.9",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "96218ac07f938669bb6e5b57e6d5aca1cdbb30a6",
+        "sha512": "9e6519a345c6d9f3bff318f5ac152e0baff192486f835b9396e7ff14b6941f31e40ee12a996cab763bd565661ba41aa9e910ec8f97117d82de1ea5b1fe3f6443"
+      },
+      "size": 1427757,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:11:32.326Z",
+      "updatedAt": "2026-08-08T18:11:32.326Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/capturexp-neoforge-1.7.3-1.3.0.jar",
+      "filename": "capturexp-neoforge-1.7.3-1.3.0.jar",
+      "contentType": "mod",
+      "name": "Cobblemon Capture XP",
+      "description": "Grants EXP for your team when you capture a wild Pokemon.",
+      "author": "tmetcalfe89",
+      "iconUrl": "https://cdn.modrinth.com/data/LBl4Qguc/1c43abde13c8f411c877a596522438ff3eb79415.png",
+      "projectId": "LBl4Qguc",
+      "versionId": "nP29aFGP",
+      "versionNumber": "1.7.3-neoforge-1.3.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "49bd6e318afc2d9f99d1bbd753012738ecc3c7ed",
+        "sha512": "d64cb6d3a8aedbbcb2fd53637d637d02c3f7eed36aa7906f2cb41f648a5859067517bdfd70d2379e10be2bf03aec4030637be7c56a54afecb5aff4784cd30e3b"
+      },
+      "size": 22895,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:11:33.207Z",
+      "updatedAt": "2026-08-08T18:11:33.207Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "lVP9aUaY",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/timcore-neoforge-1.7.3-1.32.0.jar",
+      "filename": "timcore-neoforge-1.7.3-1.32.0.jar",
+      "contentType": "mod",
+      "name": "Cobblemon Tim Core",
+      "description": "What if my Cobblemon mods worked without a bunch of copy/pasting?",
+      "author": "tmetcalfe89",
+      "iconUrl": "https://cdn.modrinth.com/data/lVP9aUaY/8532a93f1341800bc6c2b2b567e5834b624bf2f2_96.webp",
+      "projectId": "lVP9aUaY",
+      "versionId": "QQO61rRS",
+      "versionNumber": "1.7.3-neoforge-1.32.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "741eb2aeac006f87d0d413965b2d965118ddae22",
+        "sha512": "ef26aca74367631f2202bef22319f61cfe32845d7cef6a4319c25b3731380e061f735b6d7db6b063a2f70b56bf685b07bc6b141a30ff543d345f4d9f44511629"
+      },
+      "size": 306328,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:11:34.512Z",
+      "updatedAt": "2026-08-08T18:11:34.512Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cobblemonraiddens-neoforge-0.11.5+1.21.1.jar",
+      "filename": "cobblemonraiddens-neoforge-0.11.5+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Cobblemon Raid Dens",
+      "description": "Introduces raid dens to Cobblemon!",
+      "author": "necroso1",
+      "iconUrl": "https://cdn.modrinth.com/data/GebWh45l/5b10c72afcadd5db4031c6b87fe86ccc9309f756_96.webp",
+      "projectId": "GebWh45l",
+      "versionId": "GrZ3WR83",
+      "versionNumber": "0.11.5+1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "b09fe380f535ba05dc369fcc97db40b4c23071a6",
+        "sha512": "3e959aa4be4570cd7d231f220015b0788ad38691f264a4ca7ed0754de109fb171662023bf8d5bcdb134f044f8976c4c558f6caf4d6b6328611bd34c6619e626b"
+      },
+      "size": 2716904,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:11:46.858Z",
+      "updatedAt": "2026-08-08T18:11:46.858Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "8BmcQJ2H",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "SszvX85I",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "nvQzSEkH",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "s7N7AsqL",
+          "type": "optional",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/SafePastures-1.1.1+1.21.1.jar",
+      "filename": "SafePastures-1.1.1+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Cobblemon: SafePastures",
+      "description": "Make your pastures safe! Decorate to your heart's desires without the worry of your pokemon getting in danger!",
+      "author": "chadlymasterson",
+      "iconUrl": "https://cdn.modrinth.com/data/qpe01spE/7aa6cfd294ab0004d2fd7cbe7878ba54025961b9.png",
+      "projectId": "qpe01spE",
+      "versionId": "s58N9Vy1",
+      "versionNumber": "1.1.1+1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "e2084f5e675cec071029492e13774f7ab71c9c1f",
+        "sha512": "f71dd4bba4d186db0e77dcad1929eecf4b9364cda6339b6d4f196d07bfba8d8701ae6eb2a2d938f3b7896beaeb12b3805bbef8aca1e14a82b3a5a90d589fc06e"
+      },
+      "size": 8154,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:12:01.944Z",
+      "updatedAt": "2026-08-08T18:12:01.944Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "resourcepacks/E19 Cobblemon Minimap Icons.zip",
+      "filename": "E19 Cobblemon Minimap Icons.zip",
+      "contentType": "resourcepack",
+      "name": "E19 - Cobblemon Minimap Icons",
+      "description": "Cobblemon icons from MBCMechachu for Xaero's Minimap.",
+      "author": "Emery319",
+      "iconUrl": "https://cdn.modrinth.com/data/Va3BanZa/cc0f6a4a8f279148d4e8b65212d67fe47000d6e7.png",
+      "projectId": "Va3BanZa",
+      "versionId": "YGgixlha",
+      "versionNumber": "1.4.4",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "1aefc7a313b3c6f719d2fa53916afff18cd0792f",
+        "sha512": "8c7d5b964ee28456f8bd5ad6d8d0905e72b5287d38872b75e24762f9cbee6664d61c41ac52443283688dc939c6f9d36512e9a849af0f9118e69d64a55fece196"
+      },
+      "size": 19398814,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:12:20.173Z",
+      "updatedAt": "2026-08-08T18:12:20.173Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "minecraft"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "BlIiMzsQ",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "1bokaNcj",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "2PwY98im",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "nHMcH3tj",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cobblemon_autobattle-neoforge-1.21.1-1.1.0.jar",
+      "filename": "cobblemon_autobattle-neoforge-1.21.1-1.1.0.jar",
+      "contentType": "mod",
+      "name": "Cobblemon Autobattle",
+      "description": "A client side mod to automate battles in Cobblemon.",
+      "author": "hd42",
+      "iconUrl": "https://cdn.modrinth.com/data/flgS4XbV/81b953f53bd6d624e4327e27069d11b1d2c5a7fa_96.webp",
+      "projectId": "flgS4XbV",
+      "versionId": "xpXa20IY",
+      "versionNumber": "1.1.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "800e7897739f56ffa5854eaaf32a2025a4170757",
+        "sha512": "ae9d064a5c5acb4e9c349986e2c5f719801051c2ecc9e45d6250a4359a454b9beeab3450beb44b8ccf05dec4d0f1dd4befbf3826853e28c2d4b2b1de5c76783b"
+      },
+      "size": 38310,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:14:03.746Z",
+      "updatedAt": "2026-08-08T18:14:03.746Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cobblemon_manufactory-0.3.2.jar",
+      "filename": "cobblemon_manufactory-0.3.2.jar",
+      "contentType": "mod",
+      "name": "Create: Cobblemon Manufactory",
+      "description": "Automate your Cobblemon world with machines from Create 6.0!",
+      "author": "Ramen5914",
+      "iconUrl": "https://cdn.modrinth.com/data/FMcIBFPB/761db8462c678c3e3f919e5aa5a232d839fb8cec_96.webp",
+      "projectId": "FMcIBFPB",
+      "versionId": "WoMe3OLU",
+      "versionNumber": "0.3.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "cacd2ba6d5be3be0ffbad75a2e19a609575cc3b4",
+        "sha512": "92e31a5c872806fd1de30936601102bfeab888a7594b4e8e4c762625273950d04175ad9e60642012b8e402243d8a6f7d50d82d285ca511182ee069aa9839264c"
+      },
+      "size": 457316,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:14:06.524Z",
+      "updatedAt": "2026-08-08T18:14:06.524Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "LNytGWDc",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "fRiHVvU7",
+          "type": "optional",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/createcobblemonballsoverhaul-0.0.4.jar",
+      "filename": "createcobblemonballsoverhaul-0.0.4.jar",
+      "contentType": "mod",
+      "name": "Create: Cobblemon Balls Overhaul",
+      "description": "Addon for Create and Cobblemon that balance and add recipes for Cobblemon balls to work with Create.",
+      "author": "xKcinnay",
+      "iconUrl": "https://cdn.modrinth.com/data/aXSKKweV/3024cc8c3e652be163e6fbbffff5aa059b09eb5d_96.webp",
+      "projectId": "aXSKKweV",
+      "versionId": "mEtG7FfP",
+      "versionNumber": "0.0.4",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "92f9da9d765ef0e0317bbaac690133b07b6f141e",
+        "sha512": "1ff64dd3157968aa4c33c6fa2d18422f245fd59885c7c898c6836ff3a3ff9cfc583c5cf26f52ea6d8273569ecc56349703d8b05bc63962b463fcedf8c29fdcb6"
+      },
+      "size": 334794,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:14:42.949Z",
+      "updatedAt": "2026-08-08T18:14:42.949Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "LNytGWDc",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cobbleworkers-neoforge-2.0.5+1.7.0.jar",
+      "filename": "cobbleworkers-neoforge-2.0.5+1.7.0.jar",
+      "contentType": "mod",
+      "name": "Cobbleworkers",
+      "description": "Pasture block can now be used as a utility block that gives Pokémon jobs!",
+      "author": "Accieo",
+      "iconUrl": "https://cdn.modrinth.com/data/i3XVG2gn/4e9a562ddae06a682f7c58de5630beda3a3bdfde.png",
+      "projectId": "i3XVG2gn",
+      "versionId": "tjHzDTL4",
+      "versionNumber": "2.0.5+1.7.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "1baf760c9cfd35e3fc41337c38540dfc0364cee3",
+        "sha512": "a331f2bed5f49c4907eda57f5803737da2b00abe806eb0b19c9ec5015a1e96e37a331899f638cdb66f5fce9a04344f7775aad0e6549f904e623f70ce5d2bed32"
+      },
+      "size": 272724,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:16:04.864Z",
+      "updatedAt": "2026-08-08T18:16:04.864Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/cobblemon_industries-neoforge-1.5.0.jar",
+      "filename": "cobblemon_industries-neoforge-1.5.0.jar",
+      "contentType": "mod",
+      "name": "Cobblemon: Create Industries (3D Production Models)",
+      "description": "Create + Cobblemon : 3D Production of Balls, Candy, Mochi's.",
+      "author": "Cobblemore_Studio",
+      "iconUrl": "https://cdn.modrinth.com/data/7BX9lbH9/7b236013b1ef1db9cfe5f5e4b96e6d7be0a32eb5_96.webp",
+      "projectId": "7BX9lbH9",
+      "versionId": "EOMncLWr",
+      "versionNumber": "1.5.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "78f715e905a8d7083ee0a5a495d6d000af9fda77",
+        "sha512": "3dbb6f9ae75c9c174c401156e43d2e6ec1258ed04451258b7d191d30c143ffa569d0aed78dd811056c28a17c9ba3949258381fc622554f19b0fbd384a3724ef6"
+      },
+      "size": 115057,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:30:32.176Z",
+      "updatedAt": "2026-08-08T18:30:32.176Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "LNytGWDc",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "VYP2vmDS",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cobblemore_lib-neoforge-1.2.10.jar",
+      "filename": "cobblemore_lib-neoforge-1.2.10.jar",
+      "contentType": "mod",
+      "name": "Cobblemore Lib",
+      "description": "System that stores all the items/assets/recipes/codes in common between my mods.",
+      "author": "Cobblemore_Studio",
+      "iconUrl": "https://cdn.modrinth.com/data/VYP2vmDS/f011fcc85a4c13284b7ef112e7187c78d5229541_96.webp",
+      "projectId": "VYP2vmDS",
+      "versionId": "Ypz0g6qz",
+      "versionNumber": "1.2.10",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "56ba13ef84c288670cc8de11bc8e63b48901fca7",
+        "sha512": "62996b3d0526a324d52bc5585b6c8a5b40184d66f321923783ca371a3a631101fe00de4bfafae3daa136f2d718753d08f299f8f4fed990d9c11959317ae436ad"
+      },
+      "size": 699489,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:30:35.413Z",
+      "updatedAt": "2026-08-08T18:30:35.413Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/berryharvester-1.21.1-1.0.jar",
+      "filename": "berryharvester-1.21.1-1.0.jar",
+      "contentType": "mod",
+      "name": "Berry Harvester",
+      "description": "Create-compatible Cobblemon berry harvesting",
+      "author": "QueIvan",
+      "iconUrl": "https://cdn.modrinth.com/data/wZks2uy6/a28794a3573b06e3b3b1f86f7329900d37a240b4_96.webp",
+      "projectId": "wZks2uy6",
+      "versionId": "k4JGytTq",
+      "versionNumber": "1.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "482a671c530969925a13ff56f3cde864b75cac74",
+        "sha512": "04f8eb489e90571dcdb622819ff90af0db76b3ce41c2fa14ccdeb98ff64e882929b4e5da8cf8c7158c57858e3718892af63d81e5ea9042cda39c362f630068a7"
+      },
+      "size": 67698,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-08T18:30:52.934Z",
+      "updatedAt": "2026-08-08T18:30:52.934Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "LNytGWDc",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/rctmod-neoforge-1.21.1-0.18.1-beta.jar",
+      "filename": "rctmod-neoforge-1.21.1-0.18.1-beta.jar",
+      "contentType": "mod",
+      "name": "Radical Cobblemon Trainers",
+      "description": "Over 1500 unique and challenging trainers, from the Pokemon ROM hacks Radical Red (v3.02) and Unbound (v2.0.3.2) as well as the main series games Brilliant Diamond/Shining Pearl, that will spawn naturally in your world.",
+      "author": "hd42",
+      "iconUrl": "https://cdn.modrinth.com/data/lRwTUnD7/2dddc192eaa5c7200a0df0b316ef9c67b77ec0d4.png",
+      "projectId": "lRwTUnD7",
+      "versionId": "qyxrdzND",
+      "versionNumber": "0.18.1-beta",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "98afe295a4ac17dc6fd1427df623b721fbf11b50",
+        "sha512": "5169e5839348c766724ea3a0d18dbcfd78c105afadb4584eb8b05ec2392d7e5a2ea28f1a58e005cf9ba71409e7f26efe5ede86cabe85f077a9d2065427c5f75f"
+      },
+      "size": 7536984,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:09:42.583Z",
+      "updatedAt": "2026-08-09T03:09:42.583Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "beta",
+      "dependencies": [
+        {
+          "projectId": "CBfM2yw7",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/rctapi-neoforge-1.21.1-0.15.2-beta.jar",
+      "filename": "rctapi-neoforge-1.21.1-0.15.2-beta.jar",
+      "contentType": "mod",
+      "name": "Radical Cobblemon Trainers API",
+      "description": "Trainer management and battle API for Cobblemon.",
+      "author": "hd42",
+      "iconUrl": "https://cdn.modrinth.com/data/CBfM2yw7/addefa9670f7f19f039ba0cf45cc9621ba83ad70_96.webp",
+      "projectId": "CBfM2yw7",
+      "versionId": "zpphgptV",
+      "versionNumber": "0.15.2-beta",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "06914d0d3dde9e92d14b5944db4e494527d89df0",
+        "sha512": "0dd820eda43fe09974bc144d3cd029135472aa1d3e46eec76f9b2ed9d2e7fe9b429f4b247d7bedf59878a9959ad19123aba7ad4642105922527dcf6685c59902"
+      },
+      "size": 235207,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:09:43.101Z",
+      "updatedAt": "2026-08-09T03:09:43.101Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "beta",
+      "dependencies": [
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": false
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "datapacks/RCT-Badges-CobblemonPokemonBadges-0.15+1.1.2.zip",
+      "filename": "RCT-Badges-CobblemonPokemonBadges-0.15+1.1.2.zip",
+      "contentType": "datapack",
+      "name": "RCT Badges - Cobblemon Pokemon Badges",
+      "description": "Leaders from Radical Cobblemon Trainers will drop badges from the Cobblemon Pokemon Badges mod.",
+      "author": "hd42",
+      "iconUrl": "https://cdn.modrinth.com/data/3w9Vewuj/1dd083a571d617b423b9816a775e3b5283d126ad_96.webp",
+      "projectId": "3w9Vewuj",
+      "versionId": "pDsbqEcN",
+      "versionNumber": "1.1.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "6fa9f537a6da556de186603c2962aa0cca30a621",
+        "sha512": "c6397e36cee06cc4286f703b029430c3f0dbb465f27e20dbab72947ee192c31d79b4d0f0d0e1a33512398e537e98d8b38d8605c2501c41e78dc906649b5ec2f0"
+      },
+      "size": 76100,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:04:59.196Z",
+      "updatedAt": "2026-08-09T03:04:59.196Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "datapack"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "lRwTUnD7",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "pPldOOeY",
+          "type": "required",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/rbrctai-neoforge-1.21.1-0.15.3-beta.jar",
+      "filename": "rbrctai-neoforge-1.21.1-0.15.3-beta.jar",
+      "contentType": "mod",
+      "name": "Cobblemon: Run & Bun(Advanced Trainer AI)",
+      "description": "A much more advanced trainer AI API following the Run and Bun 1.07 community doc and beyond. \n\nDependent on Radical Cobblemon Trainers and COBBLEMON 1.7\n\nReplaces RCT API",
+      "author": "jghooten",
+      "iconUrl": "https://cdn.modrinth.com/data/KWljXemF/585b1b7f1fd22b1004fb894418d9610e5cd6718b.jpeg",
+      "projectId": "KWljXemF",
+      "versionId": "D5b4Ml5S",
+      "versionNumber": "0.15.3-beta",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "dabcfd7cb0cd4a7968fc75bf2d376f54d13b51a2",
+        "sha512": "5cd4419c34b930aafab9847dfcd1711e947eff56050353e287dcb196c37544cb87b8a1da64c57cfce8d5d4e3eba8d6c06b67464ebc394a11b897835e9332554b"
+      },
+      "size": 105093,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:06:34.770Z",
+      "updatedAt": "2026-08-09T03:06:34.770Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "beta",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/more-radical-trainers-1.8.jar",
+      "filename": "more-radical-trainers-1.8.jar",
+      "contentType": "mod",
+      "name": "More Radical Trainers: SV",
+      "description": "Additional Trainers for the Radical Cobblemon Trainers mod",
+      "author": "fyre520",
+      "iconUrl": "https://cdn.modrinth.com/data/kXl4B00S/1a4b33316fd5939544cd714b07efff8701de79bb.png",
+      "projectId": "kXl4B00S",
+      "versionId": "m86zprpd",
+      "versionNumber": "1.8+mod",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "37af99ff1c7992310f4fa02b8ae31374a2f19915",
+        "sha512": "e671f000c1bc2f6ed0bfcc615f7b55bb5d25be90b9b03e41cc69b77c4043a27807aeafb4b74132b6eb87953843b89fef60df1d40e672afc5c3d9b6ca6e82d19b"
+      },
+      "size": 1077199,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:06:59.137Z",
+      "updatedAt": "2026-08-09T03:06:59.137Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "fabric",
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "lRwTUnD7",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "yFqR0DNc",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "SszvX85I",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "pPldOOeY",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/SimpleTMs-neoforge-2.3.3.jar",
+      "filename": "SimpleTMs-neoforge-2.3.3.jar",
+      "contentType": "mod",
+      "name": "SimpleTMs: TMs and TRs for Cobblemon",
+      "description": "This Minecraft mod is an expansion to the Cobblemon mod, integrating TMs (Technical Machines) and TRs (Technical Records) from the Pokémon universe. The mod allows players to teach moves to their Pokémon, with either a TM or TR.",
+      "author": "Dragomordor",
+      "iconUrl": "https://cdn.modrinth.com/data/yFqR0DNc/3cb121935ae585117aba27bbb0ece08b5a5efd6c_96.webp",
+      "projectId": "yFqR0DNc",
+      "versionId": "uaKfPMYS",
+      "versionNumber": "2.3.3",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "f30723c57a72ff9c9f4b54fe1652430273355607",
+        "sha512": "9adb638419e08c05fc1eb123903848c3e999cfea9b3e111f22f4869891be282fc18b4a17066027757bbb0a5ee3ef0be0a7d278d7f593f26a5dd68280ef0edc01"
+      },
+      "size": 825317,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:07:13.887Z",
+      "updatedAt": "2026-08-09T03:07:13.887Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": false
+        },
+        {
+          "projectId": "ordsPcFz",
+          "type": "required",
+          "installed": false
+        },
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cobblemonpokemonbadges-neoforge-0.1.1.jar",
+      "filename": "cobblemonpokemonbadges-neoforge-0.1.1.jar",
+      "contentType": "mod",
+      "name": "Cobblemon Pokemon Badges",
+      "description": "This mod adds all main-line Pokemon badges into Minecraft!",
+      "author": "Jamesssssssssssssss",
+      "iconUrl": "https://cdn.modrinth.com/data/pPldOOeY/63ca036f8ba5e98b7918bea17b8bb6aa6ef18033.png",
+      "projectId": "pPldOOeY",
+      "versionId": "xCPOrDQJ",
+      "versionNumber": "0.1.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "e4154f434613cdc382169d575300ef66dd1c3076",
+        "sha512": "d5f1697282ce4a2334b3a3975ac25c5d26b00d93736b78fa70c8ab5f780dcc870fff7405d238a74298f9420f28f11d26529cdddb9ece8f341a1043b6880d9741"
+      },
+      "size": 125742,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:07:20.382Z",
+      "updatedAt": "2026-08-09T03:07:20.382Z",
+      "gameVersions": [
+        "1.21.1",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "8J7TR166",
+          "type": "optional",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "datapacks/Failrun 1.1.zip",
+      "filename": "Failrun 1.1.zip",
+      "contentType": "datapack",
+      "name": "RCT Custom Series: Failrun",
+      "description": "a challenging cobblemon series with trainers, custom trials, and gym battles.",
+      "author": "Failsafe",
+      "iconUrl": "https://cdn.modrinth.com/data/3dd6IyNK/4be0c5732de3f3948f3bd75a7577575ede2c7d8d_96.webp",
+      "projectId": "3dd6IyNK",
+      "versionId": "OWTdlvgQ",
+      "versionNumber": "1.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "d80ee8e3b52dd53066ac26f52eedb7118643a8ca",
+        "sha512": "c9d3785dc94eebca38089306ff91b3b783025ed2a987e0b9dd9607065656578294ca5a244604a7d060a8365d671c5e36c73979c8abb792599145b30890868a54"
+      },
+      "size": 1097755,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:07:27.403Z",
+      "updatedAt": "2026-08-09T03:07:27.403Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "datapack"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "resourcepacks/RCT Trainers+ [1.6] v2.1.zip",
+      "filename": "RCT Trainers+ [1.6] v2.1.zip",
+      "contentType": "resourcepack",
+      "name": "Radical Cobblemon Trainer Textures Plus",
+      "description": "A resource pack for the latest version of the Radical Cobblemon Trainers mod.",
+      "author": "forestfire",
+      "iconUrl": "https://cdn.modrinth.com/data/ARGDWSQq/0eddd91a58141336fb0c2e038f9eeae60f9caba1_96.webp",
+      "projectId": "ARGDWSQq",
+      "versionId": "2PwkXMie",
+      "versionNumber": "2.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "a9fc89788c172f5963adbeabcfb688846e5e46e4",
+        "sha512": "3b3e22864e14661652bac6632023d3294fccc84d66b54e0b6e365f1fa5d2c901ec5491662c7de6252cae6b63c777c67d992268c6411841d576a14252a1a4ba4e"
+      },
+      "size": 4905355,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:07:44.665Z",
+      "updatedAt": "2026-08-09T03:07:44.665Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "minecraft"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "lRwTUnD7",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "CBfM2yw7",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "datapacks/CobbleCuisineDelight1.1.zip",
+      "filename": "CobbleCuisineDelight1.1.zip",
+      "contentType": "datapack",
+      "name": "CobbleCuisine Delight",
+      "description": "A datapack addon for CobbleCuisine that provides compatibility with the Farmer's Delight mod.",
+      "author": "fyre520",
+      "iconUrl": "https://cdn.modrinth.com/data/F9kN1Ue1/e01a9a3a88368097be98586b94927ec48ed6e31d.png",
+      "projectId": "F9kN1Ue1",
+      "versionId": "pI9b1ybD",
+      "versionNumber": "1.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "b310372d65049f82726d953091c561e96555f675",
+        "sha512": "b698d9fcf473849257733b1b7b669ef96572d16515f54c56ccbde7daa7dd524fab090fbb86a310709dc8070c60a81c036ba0233d0ffc7a2bccf7dafaf7776bbb"
+      },
+      "size": 22041,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T03:38:12.562Z",
+      "updatedAt": "2026-08-09T03:38:12.562Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "datapack"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "dlx62Wp3",
+          "type": "required",
+          "installed": false
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/trmt-0.5.1-1.21.1-neoforge.jar",
+      "filename": "trmt-0.5.1-1.21.1-neoforge.jar",
+      "contentType": "mod",
+      "name": "The Roads More Travelled [TRMT]",
+      "description": "Make your world feel more immersive by adding a gradual erosion system to the terrain you walk on.",
+      "author": "milkucha",
+      "iconUrl": "https://cdn.modrinth.com/data/74oZhrEe/b3a487389372038bef9f7142893777abc25ccfab.png",
+      "projectId": "74oZhrEe",
+      "versionId": "JbhahSQp",
+      "versionNumber": "0.5.1-1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "3d2a0b7c28390a8ebe590945aea9fa1208d88c36",
+        "sha512": "9f9c621358216896493e5e7d042f86d41eeef3297b056e93b50b840710e834b9eb0db5baa7227c379a6c0ad08227f8176300953001e38b47bbce283d51e952e3"
+      },
+      "size": 130176,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T17:27:01.087Z",
+      "updatedAt": "2026-08-09T17:27:01.087Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "beta",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/cobblemonoutbreaks-neoforge-1.0.1-1.21.1.jar",
+      "filename": "cobblemonoutbreaks-neoforge-1.0.1-1.21.1.jar",
+      "contentType": "mod",
+      "name": "Cobblemon Mass Outbreaks",
+      "description": "The \"Cobblemon Mass Outbreaks\" mod is a Cobblemon addon that introduces Mass Outbreaks.",
+      "author": "Scouter567",
+      "iconUrl": "https://cdn.modrinth.com/data/ZrvT3v2D/180cc96b1038c28925c537aa58e153338a76a03e.png",
+      "projectId": "ZrvT3v2D",
+      "versionId": "glUkZOVz",
+      "versionNumber": "1.0.1-1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "2e9182e2fe9eac12490db12f1442ceda0ad10e74",
+        "sha512": "0385a31a61409c00edbcb218c07cd16b7e2d82270ecc0a99af0116a87d0c8cdb22f96d6fe4a90dcbbeef0f22a29e569a330275fa3a46b77f101c0cd9960eba5f"
+      },
+      "size": 256610,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-09T17:27:14.321Z",
+      "updatedAt": "2026-08-09T17:27:14.321Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
           "type": "required",
           "installed": true
         }
