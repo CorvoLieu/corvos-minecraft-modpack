@@ -10,8 +10,13 @@ For each mod entry in the manifest:
   - if source is "modrinth" -> reference it via Modrinth's CDN (keeps the
     .mrpack small; downloaded on install like a normal mrpack, or downloaded
     by this script itself in --mods-zip-only mode).
-  - otherwise (curseforge/local source) -> the jar is expected to be
-    committed under local-mods/, and gets bundled directly.
+  - if source is "curseforge" -> reference it via CurseForge's forgecdn.net
+    CDN the same way, unless the mod author disabled "Allow third-party
+    downloads" (detected by probing the URL), in which case it falls back
+    to being bundled like a local mod.
+  - otherwise (local source, or curseforge with third-party downloads off)
+    -> the jar is expected to be committed under local-mods/, and gets
+    bundled directly.
 
 servers.dat are always bundled directly in overrides/ (server per request),
 since there's no "online source" for local config state.
@@ -38,6 +43,7 @@ import argparse
 import hashlib
 import json
 import tempfile
+import urllib.error
 import urllib.parse
 import urllib.request
 import zipfile
@@ -70,6 +76,28 @@ def modrinth_cdn_url(project_id: str, version_id: str, filename: str) -> str:
         f"https://cdn.modrinth.com/data/{project_id}/versions/{version_id}/"
         f"{urllib.parse.quote(filename)}"
     )
+
+
+def curseforge_cdn_url(file_id: str, filename: str) -> str:
+    # forgecdn.net serves files at /files/{fileId // 1000}/{fileId % 1000}/{name},
+    # the same deterministic layout MultiMC/Prism use for CurseForge mods.
+    fid = int(file_id)
+    return (
+        f"https://edge.forgecdn.net/files/{fid // 1000}/{fid % 1000}/"
+        f"{urllib.parse.quote(filename)}"
+    )
+
+
+def url_is_downloadable(url: str) -> bool:
+    """Checks a CDN URL actually resolves -- CurseForge mod authors can
+    disable "Allow third-party downloads", which 403s the forgecdn.net URL
+    even though the file exists."""
+    req = urllib.request.Request(url, method="HEAD")
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return resp.status == 200
+    except (urllib.error.HTTPError, urllib.error.URLError):
+        return False
 
 
 def load_pack_info(pack_json_path: Path) -> dict:
@@ -204,6 +232,27 @@ def build_mod_lists(mod_entries: list[dict], excludes: list[str]):
                     "fileSize": entry["size"],
                 }
             )
+        elif entry.get("source") == "curseforge":
+            url = curseforge_cdn_url(entry["versionId"], filename)
+            if url_is_downloadable(url):
+                online_files.append(
+                    {
+                        "path": rel_path,
+                        "hashes": {
+                            "sha1": entry["fileHash"]["sha1"],
+                            "sha512": entry["fileHash"]["sha512"],
+                        },
+                        "env": {"client": "required", "server": "required"},
+                        "downloads": [url],
+                        "fileSize": entry["size"],
+                    }
+                )
+            else:
+                print(
+                    f"  {filename}: third-party downloads disabled on CurseForge, "
+                    "bundling locally instead"
+                )
+                bundled.append((rel_path, filename, entry))
         else:
             bundled.append((rel_path, filename, entry))
 
@@ -277,7 +326,8 @@ def build_mrpack(args, mod_entries, excludes, pack_info, version_id):
 
     print(
         f"Mods: {len(online_files)} referenced online, "
-        f"{len(bundled_resolved)} bundled directly (local/curseforge)"
+        f"{len(bundled_resolved)} bundled directly (local, or curseforge "
+        "with third-party downloads disabled)"
     )
 
     args.output_dir.mkdir(exist_ok=True)

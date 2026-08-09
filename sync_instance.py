@@ -11,12 +11,15 @@ What gets synced:
                            from SKLauncher's instances.json
   config/                - recursive copy of the instance's config/ dir
   servers.dat             - copy
-  local-mods/            - ONLY mod jars whose manifest entry has
-                           source != "modrinth" (curseforge/local), using the
-                           same source/sha1 cross-check build_mrpack.py uses.
-                           Modrinth-sourced jars are intentionally NOT copied
-                           here; they're fetched from Modrinth's CDN at build
-                           time so we don't commit ~600MB of jars to git.
+  local-mods/            - mod jars that build_mrpack.py can't reference from
+                           an online CDN: local-sourced mods, drifted files
+                           (sha1 no longer matches the manifest), and
+                           CurseForge-sourced mods whose author disabled
+                           "Allow third-party downloads". Modrinth-sourced
+                           jars and downloadable CurseForge-sourced jars are
+                           intentionally NOT copied here; they're fetched
+                           from their CDN at build time instead, so we don't
+                           commit hundreds of MB of jars to git.
 
 Configure which SKLauncher instance directory to sync from, in priority order:
   1. --instance-dir <path> (or -i <path>) CLI flag
@@ -41,7 +44,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from build_mrpack import sha1_of
+from build_mrpack import curseforge_cdn_url, sha1_of, url_is_downloadable
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 MANIFEST_DIR = SCRIPT_DIR / "manifest"
@@ -136,8 +139,14 @@ def sync_local_mods(instance_dir: Path, manifest_src: Path):
         rel_path = f"mods/{mod_path.name}"
         entry = by_path.get(rel_path)
 
-        if entry and entry.get("source") == "modrinth":
-            if sha1_of(mod_path) == entry.get("fileHash", {}).get("sha1"):
+        if entry and sha1_of(mod_path) == entry.get("fileHash", {}).get("sha1"):
+            source = entry.get("source")
+            if source == "modrinth":
+                referenced += 1
+                continue
+            if source == "curseforge" and url_is_downloadable(
+                curseforge_cdn_url(entry["versionId"], mod_path.name)
+            ):
                 referenced += 1
                 continue
 
@@ -145,8 +154,8 @@ def sync_local_mods(instance_dir: Path, manifest_src: Path):
         copied += 1
 
     print(
-        f"Synced local-mods/: {copied} bundled (curseforge/local/drifted), "
-        f"{referenced} left to Modrinth CDN"
+        f"Synced local-mods/: {copied} bundled (local/drifted/curseforge "
+        f"with third-party downloads disabled), {referenced} left to CDN"
     )
 
 
