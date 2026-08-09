@@ -35,6 +35,11 @@ sync-instance:
 	@uv run python3 sync_instance.py
 	@echo "Done."
 
+init-instance:
+	@echo "Populating/resyncing local SKLauncher instance from repo state..."
+	@uv run python3 init_instance.py
+	@echo "Done."
+
 # Dev (default): local bind-mounted mod.mrpack (server build, staged from
 # exports/server.mrpack), see docker-compose.dev.yml.
 dev: install-hooks clean-dev build-server
