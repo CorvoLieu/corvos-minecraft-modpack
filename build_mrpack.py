@@ -83,8 +83,7 @@ def curseforge_cdn_url(file_id: str, filename: str) -> str:
     # the same deterministic layout MultiMC/Prism use for CurseForge mods.
     fid = int(file_id)
     return (
-        f"https://edge.forgecdn.net/files/{fid // 1000}/{fid % 1000}/"
-        f"{urllib.parse.quote(filename)}"
+        f"https://edge.forgecdn.net/files/{fid // 1000}/{fid % 1000}/{urllib.parse.quote(filename)}"
     )
 
 
@@ -96,7 +95,7 @@ def url_is_downloadable(url: str) -> bool:
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
             return resp.status == 200
-    except (urllib.error.HTTPError, urllib.error.URLError):
+    except urllib.error.HTTPError, urllib.error.URLError:
         return False
 
 
@@ -312,9 +311,7 @@ def build_mods_zip_only(args, mod_entries, excludes, version_id):
 
     total = len(online_files) + len(bundled_resolved)
     print(f"Exported: {out_path}")
-    print(
-        f"  {total} mod file(s): {len(online_files)} downloaded, {len(bundled_resolved)} local"
-    )
+    print(f"  {total} mod file(s): {len(online_files)} downloaded, {len(bundled_resolved)} local")
 
 
 def build_mrpack(args, mod_entries, excludes, pack_info, version_id):
