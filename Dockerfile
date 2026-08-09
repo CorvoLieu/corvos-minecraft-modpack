@@ -1,13 +1,13 @@
-# Bakes the built client modpack into the itzg image for prod deploys, so
+# Bakes the built server modpack into the itzg image for prod deploys, so
 # the VM doesn't need a bind-mounted modpack.mrpack and Watchtower can just
 # swap the whole image on update.
 #
-# Build the client modpack first (`make build-client`, or `make build-image`
+# Build the server modpack first (`make build-server`, or `make build-image`
 # which does both steps), then:
 #   docker build -t ghcr.io/<owner>/<repo>:latest .
 FROM itzg/minecraft-server:java21
 
-COPY exports/client.mrpack /modpack.mrpack
+COPY exports/server.mrpack /modpack.mrpack
 
 # Defaults mirroring docker-compose.dev.yml's environment block -- keep in
 # sync. FORCE_REDOWNLOAD / FORCE_REINSTALL are intentionally omitted here:

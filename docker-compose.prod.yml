@@ -12,11 +12,11 @@
 # you know the image's mods actually support the version you're setting.
 ---
 services:
-  mc-s3:
+  mc:
     # Published by .github/workflows/deploy.yml on every push to main.
     image: ghcr.io/corvolieu/mc-creark-modpack:latest
     tty: true
-    container_name: minecraft-server-s3
+    container_name: minecraft-server
     stdin_open: true
     restart: unless-stopped
     ports:
@@ -27,19 +27,20 @@ services:
       VERSION: "${VERSION:-1.21.1}"
       NEOFORGE_VERSION: "${NEOFORGE_VERSION:-21.1.233}"
       MEMORY: "${MEMORY:-15360M}"
-      LEVEL: "${LEVEL:-creark}"
-      DIFFICULTY: "${DIFFICULTY:-normal}"
-      MODE: "${MODE:-survival}"
-      ONLINE_MODE: "${ONLINE_MODE:-false}"
-      FORCE_GAMEMODE: "${FORCE_GAMEMODE:-true}"
-      ENABLE_AUTOPAUSE: "${ENABLE_AUTOPAUSE:-true}"
-      ENTITY_BROADCAST_RANGE_PERCENTAGE: "${ENTITY_BROADCAST_RANGE_PERCENTAGE:-70}"
-      SIMULATION_DISTANCE: "${SIMULATION_DISTANCE:-7}"
-      VIEW_DISTANCE: "${VIEW_DISTANCE:-7}"
-      ALLOW_FLIGHT: "${ALLOW_FLIGHT:-true}"
+      LEVEL: "${LEVEL:-world}"
+      DIFFICULTY: "normal"
+      MODE: "survival"
+      ONLINE_MODE: "false"
+      FORCE_GAMEMODE: "true"
+      ENABLE_AUTOPAUSE: "true"
+      ENTITY_BROADCAST_RANGE_PERCENTAGE: "70"
+      SIMULATION_DISTANCE: "7"
+      VIEW_DISTANCE: "7"
+      ALLOW_FLIGHT: "true"
       OPS: "${OPS:-CakeBoy}"
       RCON_CMDS_STARTUP: '${RCON_CMDS_STARTUP:-/gamerule playersSleepingPercentage 0\n/gamerule mobGriefing false}'
       RCON_CMDS_ON_CONNECT: "${RCON_CMDS_ON_CONNECT:-/recipe give @p *}"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: "false"
     volumes:
       - ./data:/data
     deploy:
@@ -62,5 +63,5 @@ services:
       # private).
     environment:
       WATCHTOWER_LABEL_ENABLE: "true"
-      WATCHTOWER_POLL_INTERVAL: "${WATCHTOWER_POLL_INTERVAL:-300}"
+      WATCHTOWER_POLL_INTERVAL: "60"
       WATCHTOWER_CLEANUP: "true"
