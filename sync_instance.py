@@ -22,17 +22,22 @@ What gets synced:
                            commit hundreds of MB of jars to git.
 
 Configure which SKLauncher instance directory to sync from, in priority order:
-  1. --instance-dir <path> (or -i <path>) CLI flag
-  2. SK_INSTANCE_DIR environment variable (also read from .env, see .env.example)
-  3. OS default:
-       macOS: ~/Library/Application Support/sklauncher/instances/creark
+  1. --instance-dir <path> (or -i <path>) CLI flag -- full path override
+  2. SK_INSTANCE_DIR environment variable (also read from .env, see
+     .env.example) -- full path override, same as --instance-dir
+  3. OS default directory with a custom instance name:
+       --instance-name <name> (or -n <name>) CLI flag, or the INSTANCE_NAME
+       environment variable (also read from .env). Defaults to "creark".
+       macOS: ~/Library/Application Support/sklauncher/instances/<name>
        Windows/Linux: SKLauncher's install layout differs there and there's
        no safe default -- set SK_INSTANCE_DIR or pass --instance-dir.
 
 Usage:
   uv run sync_instance.py
   uv run sync_instance.py --instance-dir "/path/to/sklauncher/instances/creark"
+  uv run sync_instance.py --instance-name my-other-instance
   SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run sync_instance.py
+  INSTANCE_NAME="my-other-instance" uv run sync_instance.py
 """
 
 import argparse
@@ -51,6 +56,7 @@ MANIFEST_DIR = SCRIPT_DIR / "manifest"
 LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
 # CONFIG_DIR = SCRIPT_DIR / "config"
 SERVERS_DAT = SCRIPT_DIR / "servers.dat"
+DEFAULT_INSTANCE_NAME = "creark"
 
 
 def parse_args():
@@ -59,12 +65,20 @@ def parse_args():
         "--instance-dir",
         "-i",
         default=None,
-        help="path to the SKLauncher instance dir (overrides SK_INSTANCE_DIR)",
+        help="path to the SKLauncher instance dir (overrides SK_INSTANCE_DIR and --instance-name)",
+    )
+    parser.add_argument(
+        "--instance-name",
+        "-n",
+        default=None,
+        help="instance name to look up under the OS default SKLauncher "
+        f"instances dir (overrides INSTANCE_NAME, default: {DEFAULT_INSTANCE_NAME}). "
+        "Ignored if --instance-dir/SK_INSTANCE_DIR is set.",
     )
     return parser.parse_args()
 
 
-def default_instance_dir() -> Path | None:
+def default_instance_dir(instance_name: str) -> Path | None:
     if platform.system() == "Darwin":
         return (
             Path.home()
@@ -72,12 +86,12 @@ def default_instance_dir() -> Path | None:
             / "Application Support"
             / "sklauncher"
             / "instances"
-            / "creark"
+            / instance_name
         )
     return None
 
 
-def resolve_instance_dir(cli_arg: str | None) -> Path:
+def resolve_instance_dir(cli_arg: str | None, cli_instance_name: str | None = None) -> Path:
     if cli_arg:
         return Path(cli_arg)
 
@@ -85,7 +99,8 @@ def resolve_instance_dir(cli_arg: str | None) -> Path:
     if env_value:
         return Path(env_value)
 
-    default = default_instance_dir()
+    instance_name = cli_instance_name or os.environ.get("INSTANCE_NAME") or DEFAULT_INSTANCE_NAME
+    default = default_instance_dir(instance_name)
     if default is not None:
         return default
 
@@ -105,9 +120,7 @@ def sync_manifest_and_pack_json(
     print("Synced manifest/creark.json")
 
     instances = json.loads(instances_json.read_text())
-    instance_info = next(
-        (i for i in instances["instances"] if i["id"] == instance_id), None
-    )
+    instance_info = next((i for i in instances["instances"] if i["id"] == instance_id), None)
     if instance_info is None:
         raise SystemExit(f"instance '{instance_id}' not found in {instances_json}")
 
@@ -124,9 +137,7 @@ def sync_local_mods(instance_dir: Path, manifest_src: Path):
     by_path = {e["filePath"]: e for e in manifest.get("content", [])}
 
     mods_dir = instance_dir / "mods"
-    all_mod_files = sorted(
-        p for p in mods_dir.iterdir() if p.is_file() and p.name != ".DS_Store"
-    )
+    all_mod_files = sorted(p for p in mods_dir.iterdir() if p.is_file() and p.name != ".DS_Store")
 
     LOCAL_MODS_DIR.mkdir(exist_ok=True)
     # clear stale copies so removed/renamed mods don't linger
@@ -181,7 +192,7 @@ def main():
     load_dotenv()
     args = parse_args()
 
-    instance_dir = resolve_instance_dir(args.instance_dir)
+    instance_dir = resolve_instance_dir(args.instance_dir, args.instance_name)
     if not instance_dir.is_dir():
         raise SystemExit(
             f"Error: SKLauncher instance directory not found: {instance_dir}\n\n"
