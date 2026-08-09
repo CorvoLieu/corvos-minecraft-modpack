@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - main-s4
 
 permissions:
   contents: write
