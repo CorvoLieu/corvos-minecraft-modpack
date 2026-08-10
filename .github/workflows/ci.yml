@@ -1,0 +1,58 @@
+name: CI security/quality scans
+
+# Static analysis (CodeQL) and code quality/security scanning (SonarCloud).
+# Independent of deploy.yml/release.yml -- does not gate either of them.
+#
+# SonarCloud SETUP REQUIRED before that job will pass:
+#   1. Create a SonarCloud account/organization at https://sonarcloud.io
+#      (sign in with GitHub, import this repository).
+#   2. Note the generated Organization Key and Project Key -- fill them
+#      into sonar-project.properties (sonar.organization / sonar.projectKey).
+#   3. Generate a SonarCloud token (My Account > Security) and add it to
+#      this repo's GitHub Actions secrets as SONAR_TOKEN.
+# Until those three steps are done, the sonarcloud job will fail at the
+# scan step for lack of a valid token/project.
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  codeql:
+    name: CodeQL analyze (python)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: python
+          build-mode: none
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:python"
+
+  sonarcloud:
+    name: SonarCloud scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # SonarCloud wants full history for blame/PR analysis
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@22918119ff8e1ca75a623e15c8296b6ea4fbe28f # v8.2.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # placeholder: create at sonarcloud.io, add as repo secret
