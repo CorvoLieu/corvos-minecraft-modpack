@@ -18,12 +18,25 @@ For each mod entry in the manifest:
     -> the jar is expected to be committed under local-mods/, and gets
     bundled directly.
 
+Datapack entries (filePath under datapacks/) are handled the same way, with
+one difference: datapacks are per-world, not instance-root, so they can't be
+installed at their manifest filePath ("datapacks/foo.zip") the way mods can.
+They're placed at <DATAPACK_WORLD_NAME>/datapacks/foo.zip instead, matching
+the world/level name this pack's server always runs as (LEVEL=creark in the
+Dockerfile/docker-compose.dev.yml/.env.example) -- that's the path the itzg
+server image's overrides/ extraction (and mrpack "files" downloads) actually
+land at world-load time. Datapacks are marked client-"unsupported" in the
+built index since they're server/world-authoritative content a client
+install has no use for. If LEVEL is ever changed, DATAPACK_WORLD_NAME must
+be updated to match, or datapacks will silently stop taking effect again.
+
 servers.dat are always bundled directly in overrides/ (server per request),
 since there's no "online source" for local config state.
 
 Pass --exclude <substring> (repeatable) and/or --exclude-file <path>
-(newline-separated substrings) to drop mods by filename match, e.g. for a
-server-only build that shouldn't ship client-only mods like freecam.
+(newline-separated substrings) to drop mods/datapacks by filename match,
+e.g. for a server-only build that shouldn't ship client-only mods like
+freecam.
 
 Pass --mods-zip-only to skip the .mrpack entirely and instead produce a flat
 zip of every mod jar (downloading Modrinth-sourced ones, copying the rest
@@ -58,9 +71,14 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_MANIFEST_PATH = SCRIPT_DIR / "manifest" / "creark.json"
 DEFAULT_PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"
 DEFAULT_LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
+DEFAULT_LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
 # DEFAULT_CONFIG_DIR = SCRIPT_DIR / "config"
 DEFAULT_SERVERS_DAT_PATH = SCRIPT_DIR / "servers.dat"
 DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "exports"
+
+# World/level name this pack's server always runs as (see docstring above).
+# Datapacks must land at <DATAPACK_WORLD_NAME>/datapacks/ to actually load.
+DATAPACK_WORLD_NAME = "creark"
 
 
 def sha1_of(path: Path) -> str:
@@ -103,16 +121,24 @@ def load_pack_info(pack_json_path: Path) -> dict:
     return json.loads(pack_json_path.read_text())
 
 
-def load_mod_entries(manifest_path: Path) -> list[dict]:
+def load_content_entries(manifest_path: Path, path_prefix: str) -> list[dict]:
     data = json.loads(manifest_path.read_text())
     # dedupe by filePath (last entry wins), same as SKLauncher's own semantics --
     # the manifest can carry stale duplicate entries when a mod's source changes
     # (e.g. re-added from CurseForge after originally coming from Modrinth).
     by_path: dict[str, dict] = {}
     for e in data.get("content", []):
-        if e.get("filePath", "").startswith("mods/") and e.get("enabled", True):
+        if e.get("filePath", "").startswith(path_prefix) and e.get("enabled", True):
             by_path[e["filePath"]] = e
     return list(by_path.values())
+
+
+def load_mod_entries(manifest_path: Path) -> list[dict]:
+    return load_content_entries(manifest_path, "mods/")
+
+
+def load_datapack_entries(manifest_path: Path) -> list[dict]:
+    return load_content_entries(manifest_path, "datapacks/")
 
 
 def load_excludes(exclude: list[str], exclude_file: Path | None) -> list[str]:
@@ -146,6 +172,12 @@ def parse_args(argv: list[str] | None = None):
         type=Path,
         default=DEFAULT_LOCAL_MODS_DIR,
         help=f"dir with non-Modrinth mod jars (default: {DEFAULT_LOCAL_MODS_DIR})",
+    )
+    parser.add_argument(
+        "--local-datapacks-dir",
+        type=Path,
+        default=DEFAULT_LOCAL_DATAPACKS_DIR,
+        help=f"dir with non-Modrinth datapack zips (default: {DEFAULT_LOCAL_DATAPACKS_DIR})",
     )
     # parser.add_argument(
     #     "--config-dir",
@@ -203,30 +235,37 @@ def parse_args(argv: list[str] | None = None):
     return parser.parse_args(argv)
 
 
-def build_mod_lists(mod_entries: list[dict], excludes: list[str]):
+def build_content_lists(
+    entries: list[dict],
+    excludes: list[str],
+    dest_path_fn,
+    env: dict,
+):
     """Returns (online_files, bundled, excluded_names) where bundled is a
-    list of (arcname, source_path) for non-Modrinth mods."""
+    list of (dest_path, filename, entry) for non-Modrinth content.
+    dest_path_fn(entry) computes where the file needs to end up (instance-
+    root-relative for mods, world-relative for datapacks)."""
     online_files = []
     bundled = []
     excluded_names = []
 
-    for entry in mod_entries:
+    for entry in entries:
         filename = entry["filename"]
         if any(e in filename.lower() for e in excludes):
             excluded_names.append(filename)
             continue
 
-        rel_path = entry["filePath"]
+        dest_path = dest_path_fn(entry)
         if entry.get("source") == "modrinth":
             url = modrinth_cdn_url(entry["projectId"], entry["versionId"], filename)
             online_files.append(
                 {
-                    "path": rel_path,
+                    "path": dest_path,
                     "hashes": {
                         "sha1": entry["fileHash"]["sha1"],
                         "sha512": entry["fileHash"]["sha512"],
                     },
-                    "env": {"client": "required", "server": "required"},
+                    "env": env,
                     "downloads": [url],
                     "fileSize": entry["size"],
                 }
@@ -236,12 +275,12 @@ def build_mod_lists(mod_entries: list[dict], excludes: list[str]):
             if url_is_downloadable(url):
                 online_files.append(
                     {
-                        "path": rel_path,
+                        "path": dest_path,
                         "hashes": {
                             "sha1": entry["fileHash"]["sha1"],
                             "sha512": entry["fileHash"]["sha512"],
                         },
-                        "env": {"client": "required", "server": "required"},
+                        "env": env,
                         "downloads": [url],
                         "fileSize": entry["size"],
                     }
@@ -251,28 +290,52 @@ def build_mod_lists(mod_entries: list[dict], excludes: list[str]):
                     f"  {filename}: third-party downloads disabled on CurseForge, "
                     "bundling locally instead"
                 )
-                bundled.append((rel_path, filename, entry))
+                bundled.append((dest_path, filename, entry))
         else:
-            bundled.append((rel_path, filename, entry))
+            bundled.append((dest_path, filename, entry))
 
     return online_files, bundled, excluded_names
 
 
-def resolve_bundled_mod_paths(bundled: list[tuple], local_mods_dir: Path):
-    """Resolves each (rel_path, filename, entry) to (arcname, abs_path),
+def build_mod_lists(mod_entries: list[dict], excludes: list[str]):
+    return build_content_lists(
+        mod_entries,
+        excludes,
+        dest_path_fn=lambda entry: entry["filePath"],
+        env={"client": "required", "server": "required"},
+    )
+
+
+def datapack_dest_path(filename: str) -> str:
+    return f"{DATAPACK_WORLD_NAME}/datapacks/{filename}"
+
+
+def build_datapack_lists(datapack_entries: list[dict], excludes: list[str]):
+    return build_content_lists(
+        datapack_entries,
+        excludes,
+        dest_path_fn=lambda entry: datapack_dest_path(entry["filename"]),
+        # Datapacks are server/world-authoritative -- a client install has no
+        # use for the file itself (only the server's world needs it).
+        env={"client": "unsupported", "server": "required"},
+    )
+
+
+def resolve_bundled_content_paths(bundled: list[tuple], content_dir: Path, label: str):
+    """Resolves each (dest_path, filename, entry) to (dest_path, abs_path),
     verifying the file exists locally and its hash matches the manifest."""
     resolved = []
-    for rel_path, filename, entry in bundled:
-        local_path = local_mods_dir / filename
+    for dest_path, filename, entry in bundled:
+        local_path = content_dir / filename
         if not local_path.exists():
             raise SystemExit(
-                f"Missing local mod file: {local_path} "
+                f"Missing local {label} file: {local_path} "
                 f"(source={entry.get('source')}, expected from manifest)"
             )
         expected_sha1 = entry.get("fileHash", {}).get("sha1")
         if expected_sha1 and sha1_of(local_path) != expected_sha1:
             raise SystemExit(f"sha1 mismatch for {local_path} vs manifest entry")
-        resolved.append((rel_path, local_path))
+        resolved.append((dest_path, local_path))
     return resolved
 
 
@@ -292,7 +355,7 @@ def build_mods_zip_only(args, mod_entries, excludes, version_id):
     online_files, bundled, excluded_names = build_mod_lists(mod_entries, excludes)
     if excluded_names:
         print(f"Excluding {len(excluded_names)} mod(s): {', '.join(excluded_names)}")
-    bundled_resolved = resolve_bundled_mod_paths(bundled, args.local_mods_dir)
+    bundled_resolved = resolve_bundled_content_paths(bundled, args.local_mods_dir, "mod")
 
     args.output_dir.mkdir(exist_ok=True)
     output_name = args.output_name or "mods-only"
@@ -314,18 +377,33 @@ def build_mods_zip_only(args, mod_entries, excludes, version_id):
     print(f"  {total} mod file(s): {len(online_files)} downloaded, {len(bundled_resolved)} local")
 
 
-def build_mrpack(args, mod_entries, excludes, pack_info, version_id):
-    online_files, bundled, excluded_names = build_mod_lists(mod_entries, excludes)
+def build_mrpack(args, mod_entries, datapack_entries, excludes, pack_info, version_id):
+    online_mods, bundled_mods, excluded_mod_names = build_mod_lists(mod_entries, excludes)
+    online_datapacks, bundled_datapacks, excluded_datapack_names = build_datapack_lists(
+        datapack_entries, excludes
+    )
+    excluded_names = excluded_mod_names + excluded_datapack_names
     if excluded_names:
-        print(f"Excluding {len(excluded_names)} mod(s): {', '.join(excluded_names)}")
-    bundled_resolved = resolve_bundled_mod_paths(bundled, args.local_mods_dir)
+        print(f"Excluding {len(excluded_names)} file(s): {', '.join(excluded_names)}")
+
+    bundled_resolved = resolve_bundled_content_paths(bundled_mods, args.local_mods_dir, "mod")
+    bundled_resolved += resolve_bundled_content_paths(
+        bundled_datapacks, args.local_datapacks_dir, "datapack"
+    )
     bundled_resolved += build_server_overrides(args.servers_dat)
 
     print(
-        f"Mods: {len(online_files)} referenced online, "
-        f"{len(bundled_resolved)} bundled directly (local, or curseforge "
+        f"Mods: {len(online_mods)} referenced online, "
+        f"{len(bundled_mods)} bundled directly (local, or curseforge "
         "with third-party downloads disabled)"
     )
+    print(
+        f"Datapacks: {len(online_datapacks)} referenced online, "
+        f"{len(bundled_datapacks)} bundled directly, "
+        f"landing at {DATAPACK_WORLD_NAME}/datapacks/"
+    )
+
+    online_files = online_mods + online_datapacks
 
     args.output_dir.mkdir(exist_ok=True)
     output_name = args.output_name or "client"
@@ -372,7 +450,8 @@ def main(argv: list[str] | None = None):
         build_mods_zip_only(args, mod_entries, excludes, version_id)
     else:
         pack_info = load_pack_info(args.pack_json)
-        build_mrpack(args, mod_entries, excludes, pack_info, version_id)
+        datapack_entries = load_datapack_entries(args.manifest)
+        build_mrpack(args, mod_entries, datapack_entries, excludes, pack_info, version_id)
 
 
 if __name__ == "__main__":

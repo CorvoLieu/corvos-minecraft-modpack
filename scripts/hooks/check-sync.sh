@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# Verifies manifest/config/local-mods/servers.dat staged for commit match
-# what the contributor's local SKLauncher instance would produce via
-# push_instance.py. Invoked by .githooks/pre-commit; see that file and the
-# README's "Pre-commit sync check" section for the full picture.
+# Verifies manifest/config/local-mods/local-datapacks/servers.dat staged for
+# commit match what the contributor's local SKLauncher instance would
+# produce via push_instance.py. Invoked by .githooks/pre-commit; see that
+# file and the README's "Pre-commit sync check" section for the full
+# picture.
 #
 # Exit codes:
 #   0 - nothing to check, or staged data matches a fresh sync
@@ -12,7 +13,7 @@ set -euo pipefail
 repo_root=$(git rev-parse --show-toplevel)
 cd "$repo_root"
 
-tracked_paths_re='^(manifest/|local-mods/|servers\.dat$)'
+tracked_paths_re='^(manifest/|local-mods/|local-datapacks/|servers\.dat$)'
 staged_files=$(git diff --cached --name-only)
 
 if ! grep -qE "$tracked_paths_re" <<<"$staged_files"; then
@@ -39,21 +40,22 @@ if ! uv run push_instance.py >"$sync_output" 2>&1; then
     exit 0
 fi
 
-if ! git diff --quiet -- manifest/ config/ local-mods/ servers.dat; then
+if ! git diff --quiet -- manifest/ config/ local-mods/ local-datapacks/ servers.dat; then
     {
         echo "----------------------------------------------------------------"
-        echo "pre-commit: staged manifest/config/local-mods/servers.dat data is"
-        echo "out of sync with your local SKLauncher instance."
+        echo "pre-commit: staged manifest/config/local-mods/local-datapacks/"
+        echo "servers.dat data is out of sync with your local SKLauncher"
+        echo "instance."
         echo
         echo "Re-running push_instance.py produced different content than what's"
-        echo "currently staged for this commit. This usually means mods were"
-        echo "changed in SKLauncher but push_instance.py wasn't (re-)run before"
-        echo "staging, or was run but the results weren't staged."
+        echo "currently staged for this commit. This usually means mods/"
+        echo "datapacks were changed in SKLauncher but push_instance.py wasn't"
+        echo "(re-)run before staging, or was run but the results weren't staged."
         echo
         echo "push_instance.py has already regenerated the files below in your"
         echo "working tree -- review the diff and 'git add' what's correct:"
         echo
-        git diff --stat -- manifest/ config/ local-mods/ servers.dat | sed 's/^/  /'
+        git diff --stat -- manifest/ config/ local-mods/ local-datapacks/ servers.dat | sed 's/^/  /'
         echo
         echo "If push_instance.py disagrees because your local instance is"
         echo "stale/wrong, fix that instead of forcing the commit."

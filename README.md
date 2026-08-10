@@ -20,28 +20,28 @@ My personal modpack for my dedicated Minecraft Server, served on my personal net
 
 # Build & release workflow
 
-This repo is the source of truth for the modpack. Modpack data (manifest, `local-mods/`, `servers.dat`) lives here and CI builds it into distributable artifacts on every merge to `main`.
+This repo is the source of truth for the modpack. Modpack data (manifest, `local-mods/`, `local-datapacks/`, `servers.dat`) lives here and CI builds it into distributable artifacts on every merge to `main`.
 
 ## Setting up your local instance (maintainer)
 
-`pull_instance.py` populates a fresh SKLauncher instance directly from this repo's committed state (manifest, `local-mods/`, `config/`, `servers.dat`) — no need to wait for a published release. See its docstring (`uv run pull_instance.py --help` or the top of `pull_instance.py`) for full details; summary below.
+`pull_instance.py` populates a fresh SKLauncher instance directly from this repo's committed state (manifest, `local-mods/`, `local-datapacks/`, `config/`, `servers.dat`) — no need to wait for a published release. See its docstring (`uv run pull_instance.py --help` or the top of `pull_instance.py`) for full details; summary below.
 
 1. Install [SKLauncher](https://next.skmedix.pl/) (4.0 beta; the repo's scripts target its `instances/` layout, not 3.2's `.minecraft`-based profiles).
 2. Create a new, empty instance via SKLauncher's "New Instance" UI (any mod loader/version — `pull_instance.py` overwrites `minecraftVersion`/`loaderVersion` to match `manifest/pack.json`, currently Minecraft 1.21.1, NeoForge 21.1.247 at time of writing; the file, not this README, is the source of truth if that's changed). `pull_instance.py` can't safely create the instance registration itself (SKLauncher-internal fields like icon/groups/java args aren't reverse-engineered), so this manual step is still required.
 3. Find the instance directory SKlauncher created (macOS default: `~/Library/Application Support/sklauncher/instances/creark`; Windows/Linux vary, no safe default — locate it via SKlauncher's instance settings). Copy `.env.example` to `.env` and set `SK_INSTANCE_DIR` to it (or pass `--instance-dir <path>` per invocation) — this is the same resolution `push_instance.py` uses.
-4. `make pull` (or `uv run pull_instance.py`) — previews everything it would add/update/remove, then prompts to confirm before touching the instance (pass `--yes` to skip the prompt, e.g. `uv run pull_instance.py --yes`). This downloads/copies mods into `mods/`, reconciles `config/`, and copies `servers.dat` and the manifest into place.
+4. `make pull` (or `uv run pull_instance.py`) — previews everything it would add/update/remove, then prompts to confirm before touching the instance (pass `--yes` to skip the prompt, e.g. `uv run pull_instance.py --yes`). This downloads/copies mods into `mods/`, datapacks into `datapacks/`, reconciles `config/`, and copies `servers.dat` and the manifest into place.
 5. From here, follow "Updating mods (maintainer)" below for the day-to-day workflow — `push_instance.py` is already pointed at the same instance via the `SK_INSTANCE_DIR` you set in step 3.
 
 If you'd rather bootstrap from a published build instead (e.g. no repo checkout yet), grab `Creark-<version>.mrpack` from the [latest release](../../releases) and drag it onto the SKlauncher window to create the instance directly — then set `SK_INSTANCE_DIR` as in step 3 and skip `pull_instance.py`. Note this path won't populate `config/`, since `config/` bundling into the `.mrpack` is currently commented out in `build_mrpack.py`/`push_instance.py`.
 
 ## Updating mods (maintainer)
 
-1. Add/remove/update mods in the SKLauncher instance on your machine.
-2. `make push` (or `uv run push_instance.py`) — pushes the manifest, `servers.dat`, and any non-Modrinth mod jars from SKLauncher into the repo (see the script's docstring for `--instance-dir` / `SK_INSTANCE_DIR`).
+1. Add/remove/update mods or datapacks in the SKLauncher instance on your machine.
+2. `make push` (or `uv run push_instance.py`) — pushes the manifest, `servers.dat`, and any non-Modrinth mod jars/datapack zips from SKLauncher into the repo (see the script's docstring for `--instance-dir` / `SK_INSTANCE_DIR`).
 3. Review the diff, commit, open a PR.
 4. Merge to `main` triggers `.github/workflows/release.yml`, which runs `make build-all` and publishes the results as a new GitHub Release — but the workflow fails if `versionNumber` wasn't bumped (see "Cutting a release" below).
 
-To exclude a mod from the dedicated server build (e.g. client-only mods like freecam), add its slug/id to `server-excludes.txt`; remove it to re-include.
+To exclude a mod from the dedicated server build (e.g. client-only mods like freecam), add its slug/id to `server-excludes.txt`; remove it to re-include. Datapacks are world/server-side content, so this generally shouldn't apply to them, but the same mechanism works if one ever needs excluding.
 
 ### Cutting a release
 
@@ -55,16 +55,16 @@ Releases are tied to a deliberate version bump, not every push to `main`. `.gith
 
 Same mechanics as above, as a PR workflow:
 
-1. Add/update the mod in your own local SKLauncher instance.
-2. `uv run push_instance.py --instance-dir <path>` (or set `SK_INSTANCE_DIR`, then `make push`). Modrinth-sourced mods are referenced by hash/URL in the manifest, not committed as jars; non-Modrinth jars land in `local-mods/`.
-3. Build and test locally before opening a PR: `make build-client` (or `make build-all`) to produce `exports/client.mrpack`, then `make run` to spin up `docker-compose.dev.yml` and confirm the mod loads and works.
-4. Review your diff — expect a changed entry in `manifest/creark.json`, possibly a new jar under `local-mods/`. Add client-only mods to `server-excludes.txt`.
+1. Add/update the mod or datapack in your own local SKLauncher instance.
+2. `uv run push_instance.py --instance-dir <path>` (or set `SK_INSTANCE_DIR`, then `make push`). Modrinth-sourced mods/datapacks are referenced by hash/URL in the manifest, not committed as files; non-Modrinth jars land in `local-mods/`, non-Modrinth datapack zips in `local-datapacks/`.
+3. Build and test locally before opening a PR: `make build-client` (or `make build-all`) to produce `exports/client.mrpack`, then `make run` to spin up `docker-compose.dev.yml` and confirm the mod/datapack loads and works.
+4. Review your diff — expect a changed entry in `manifest/creark.json`, possibly a new jar under `local-mods/` or zip under `local-datapacks/`. Add client-only mods to `server-excludes.txt`.
 5. Commit on a branch, open a PR.
 6. After merge, `release.yml` and `deploy.yml` publish new release assets and roll out to prod via Watchtower automatically — nothing further needed.
 
 ### Pre-commit sync check
 
-- `.githooks/pre-commit` (logic in `scripts/hooks/check-sync.sh`) re-runs `push_instance.py` and blocks any commit touching `manifest/`, `local-mods/`, or `servers.dat` if the staged content disagrees with what your local SKLauncher instance would produce (mods changed but not synced, or synced but not `git add`ed).
+- `.githooks/pre-commit` (logic in `scripts/hooks/check-sync.sh`) re-runs `push_instance.py` and blocks any commit touching `manifest/`, `local-mods/`, `local-datapacks/`, or `servers.dat` if the staged content disagrees with what your local SKLauncher instance would produce (mods/datapacks changed but not synced, or synced but not `git add`ed).
 - Skips with a warning (not a failure) if `SK_INSTANCE_DIR` isn't configured, so it never blocks unrelated changes (docs, CI, `Dockerfile`, etc.).
 - Installed automatically: every `make` target depends on `install-hooks`, which symlinks it into `.git/hooks/` the first time you run `make` after cloning. Nothing to run by hand.
 - **Convenience guard, not a hard guarantee** — hooks live outside version control, so this only protects contributors who've run `make` at least once, and can be bypassed with `git commit --no-verify`. No CI-side re-enforcement of the sync check yet.
@@ -85,6 +85,8 @@ Two compose files:
 - `docker-compose.prod.yml` — prod. Custom image (built from the repo `Dockerfile`, which bakes in the built modpack) instead of a bind mount, so the VM has no local-file dependency; world data lives in a named `data` volume so it survives image updates. Targeted locally by `make prod-up` / `make prod-log` / `make prod-stop`.
 
 Prod settings (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are overridable per-deploy without rebuilding: copy `.env.example` to `.env` and edit — Compose loads it and substitutes `${VAR}` automatically. Unset vars fall back to the `Dockerfile` defaults.
+
+**`LEVEL` and datapacks:** manifest datapacks are baked into the built `.mrpack` at `overrides/<world>/datapacks/`, matching the world/level name Minecraft actually loads per-world datapacks from — hardcoded to `creark` (`build_mrpack.py`'s `DATAPACK_WORLD_NAME`) to match the `LEVEL=creark` default used everywhere else in this repo. If you ever override `LEVEL` to something else, datapacks will stop taking effect until `DATAPACK_WORLD_NAME` is updated to match.
 
 ### Publishing the server image (CI)
 

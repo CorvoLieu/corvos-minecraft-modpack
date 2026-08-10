@@ -21,6 +21,11 @@ What gets pushed:
                            intentionally NOT copied here; they're fetched
                            from their CDN at build time instead, so we don't
                            commit hundreds of MB of jars to git.
+  local-datapacks/       - same idea as local-mods/, but for the instance's
+                           top-level datapacks/ dir (SKLauncher's own bucket
+                           for datapack content, not a per-world folder).
+                           Empty today since every datapack we ship is
+                           Modrinth-sourced.
 
 Configure which SKLauncher instance directory to push from, in priority order:
   1. --instance-dir <path> (or -i <path>) CLI flag -- full path override
@@ -55,6 +60,7 @@ from build_mrpack import curseforge_cdn_url, sha1_of, url_is_downloadable
 SCRIPT_DIR = Path(__file__).resolve().parent
 MANIFEST_DIR = SCRIPT_DIR / "manifest"
 LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
+LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
 # CONFIG_DIR = SCRIPT_DIR / "config"
 SERVERS_DAT = SCRIPT_DIR / "servers.dat"
 DEFAULT_INSTANCE_NAME = "creark"
@@ -133,42 +139,64 @@ def sync_manifest_and_pack_json(
     print(f"Synced manifest/pack.json: {pack}")
 
 
-def sync_local_mods(instance_dir: Path, manifest_src: Path):
+def sync_local_content(
+    instance_dir: Path,
+    manifest_src: Path,
+    content_subdir: str,
+    path_prefix: str,
+    local_dir: Path,
+):
+    """Mirrors instance_dir/content_subdir into local_dir for every file that
+    build_mrpack.py can't reference from an online CDN (local source,
+    drifted sha1, or curseforge with third-party downloads disabled). Used
+    for both mods/ and datapacks/."""
     manifest = json.loads(manifest_src.read_text())
     by_path = {e["filePath"]: e for e in manifest.get("content", [])}
 
-    mods_dir = instance_dir / "mods"
-    all_mod_files = sorted(p for p in mods_dir.iterdir() if p.is_file() and p.name != ".DS_Store")
+    content_dir = instance_dir / content_subdir
+    all_files = (
+        sorted(p for p in content_dir.iterdir() if p.is_file() and p.name != ".DS_Store")
+        if content_dir.is_dir()
+        else []
+    )
 
-    LOCAL_MODS_DIR.mkdir(exist_ok=True)
-    # clear stale copies so removed/renamed mods don't linger
-    for p in LOCAL_MODS_DIR.iterdir():
+    local_dir.mkdir(exist_ok=True)
+    # clear stale copies so removed/renamed files don't linger
+    for p in local_dir.iterdir():
         if p.is_file():
             p.unlink()
 
     copied, referenced = 0, 0
-    for mod_path in all_mod_files:
-        rel_path = f"mods/{mod_path.name}"
+    for file_path in all_files:
+        rel_path = f"{path_prefix}{file_path.name}"
         entry = by_path.get(rel_path)
 
-        if entry and sha1_of(mod_path) == entry.get("fileHash", {}).get("sha1"):
+        if entry and sha1_of(file_path) == entry.get("fileHash", {}).get("sha1"):
             source = entry.get("source")
             if source == "modrinth":
                 referenced += 1
                 continue
             if source == "curseforge" and url_is_downloadable(
-                curseforge_cdn_url(entry["versionId"], mod_path.name)
+                curseforge_cdn_url(entry["versionId"], file_path.name)
             ):
                 referenced += 1
                 continue
 
-        shutil.copy2(mod_path, LOCAL_MODS_DIR / mod_path.name)
+        shutil.copy2(file_path, local_dir / file_path.name)
         copied += 1
 
     print(
-        f"Synced local-mods/: {copied} bundled (local/drifted/curseforge "
+        f"Synced {local_dir.name}/: {copied} bundled (local/drifted/curseforge "
         f"with third-party downloads disabled), {referenced} left to CDN"
     )
+
+
+def sync_local_mods(instance_dir: Path, manifest_src: Path):
+    sync_local_content(instance_dir, manifest_src, "mods", "mods/", LOCAL_MODS_DIR)
+
+
+def sync_local_datapacks(instance_dir: Path, manifest_src: Path):
+    sync_local_content(instance_dir, manifest_src, "datapacks", "datapacks/", LOCAL_DATAPACKS_DIR)
 
 
 # def sync_config(instance_dir: Path):
@@ -216,6 +244,7 @@ def main():
     print(f"Syncing from: {instance_dir}")
     sync_manifest_and_pack_json(instance_id, manifest_src, instances_json)
     sync_local_mods(instance_dir, manifest_src)
+    sync_local_datapacks(instance_dir, manifest_src)
     # sync_config(instance_dir)
     sync_servers_dat(instance_dir)
     print("Done.")
