@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Verifies manifest/config/local-mods/servers.dat staged for commit match
 # what the contributor's local SKLauncher instance would produce via
-# sync_instance.py. Invoked by .githooks/pre-commit; see that file and the
+# push_instance.py. Invoked by .githooks/pre-commit; see that file and the
 # README's "Pre-commit sync check" section for the full picture.
 #
 # Exit codes:
@@ -28,12 +28,12 @@ fi
 sync_output=$(mktemp)
 trap 'rm -f "$sync_output"' EXIT
 
-if ! uv run sync_instance.py >"$sync_output" 2>&1; then
+if ! uv run push_instance.py >"$sync_output" 2>&1; then
     if grep -qE 'instance directory not found|no default SKLauncher instance path known' "$sync_output"; then
         echo "warning: pre-commit sync check skipped (no local SKLauncher instance found)" >&2
-        echo "  set SK_INSTANCE_DIR or pass --instance-dir to sync_instance.py to enable this check" >&2
+        echo "  set SK_INSTANCE_DIR or pass --instance-dir to push_instance.py to enable this check" >&2
     else
-        echo "warning: pre-commit sync check skipped (sync_instance.py failed):" >&2
+        echo "warning: pre-commit sync check skipped (push_instance.py failed):" >&2
         sed 's/^/  /' "$sync_output" >&2
     fi
     exit 0
@@ -45,17 +45,17 @@ if ! git diff --quiet -- manifest/ config/ local-mods/ servers.dat; then
         echo "pre-commit: staged manifest/config/local-mods/servers.dat data is"
         echo "out of sync with your local SKLauncher instance."
         echo
-        echo "Re-running sync_instance.py produced different content than what's"
+        echo "Re-running push_instance.py produced different content than what's"
         echo "currently staged for this commit. This usually means mods were"
-        echo "changed in SKLauncher but sync_instance.py wasn't (re-)run before"
+        echo "changed in SKLauncher but push_instance.py wasn't (re-)run before"
         echo "staging, or was run but the results weren't staged."
         echo
-        echo "sync_instance.py has already regenerated the files below in your"
+        echo "push_instance.py has already regenerated the files below in your"
         echo "working tree -- review the diff and 'git add' what's correct:"
         echo
         git diff --stat -- manifest/ config/ local-mods/ servers.dat | sed 's/^/  /'
         echo
-        echo "If sync_instance.py disagrees because your local instance is"
+        echo "If push_instance.py disagrees because your local instance is"
         echo "stale/wrong, fix that instead of forcing the commit."
         echo
         echo "To bypass this check: git commit --no-verify"
