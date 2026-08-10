@@ -7282,26 +7282,26 @@
       ]
     },
     {
-      "filePath": "mods/sophisticatedbackpacks-1.21.1-3.25.74.2048.jar",
-      "filename": "sophisticatedbackpacks-1.21.1-3.25.74.2048.jar",
+      "filePath": "mods/sophisticatedbackpacks-1.21.1-3.25.74.2056.jar",
+      "filename": "sophisticatedbackpacks-1.21.1-3.25.74.2056.jar",
       "contentType": "mod",
       "name": "Sophisticated Backpacks",
       "description": "Yet another backpack mod this time with backpack you can place in world, color in different color combinations, upgrade with more inventory and enhance with many functional upgrades",
       "author": "P3pp3rF1y",
       "iconUrl": "https://cdn.modrinth.com/data/TyCTlI4b/e31c7e2f8769d317339e25b2a8d1b40fbf312729_96.webp",
       "projectId": "TyCTlI4b",
-      "versionId": "f5qtL9Ld",
-      "versionNumber": "1.21.1-3.25.74.2048",
+      "versionId": "4Ju8Y2P9",
+      "versionNumber": "1.21.1-3.25.74.2056",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "92744ee8314166b47db0826340cc76d7f90a8be9",
-        "sha512": "c1149db88895c5ea9980f0bbbfe0d8575a3d1226d79b7aa3445833bd0c4a8f02b5284a94e8bfa2482f8480983b0e9a9acfb7f940b9b62dd6983616371d11f1e5"
+        "sha1": "0d96b718cd032f77feeb320abad96ed6e45b24c7",
+        "sha512": "bf48bff7764a85766e93b130e28513c8ac161828b322e1beb74d7dd924fddbefde156a96aea66b08b1642a28ffc3bc5550341fb70957df6a7e22193fc1f480c5"
       },
-      "size": 1166538,
+      "size": 1170985,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-07T10:14:26.396Z",
-      "updatedAt": "2026-08-07T10:14:26.396Z",
+      "installedAt": "2026-08-10T05:51:06.979Z",
+      "updatedAt": "2026-08-10T05:51:06.979Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7311,17 +7311,12 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "nmoqTijg",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "b1fMg6sH",
+          "projectId": "vRYk0bv7",
           "type": "optional",
           "installed": false
         },
         {
-          "projectId": "vRYk0bv7",
+          "projectId": "b1fMg6sH",
           "type": "optional",
           "installed": false
         },
@@ -7331,17 +7326,12 @@
           "installed": false
         },
         {
+          "projectId": "nmoqTijg",
+          "type": "required",
+          "installed": false
+        },
+        {
           "projectId": "u6dRKJwZ",
-          "type": "optional",
-          "installed": true
-        },
-        {
-          "projectId": "vvuO3ImH",
-          "type": "optional",
-          "installed": true
-        },
-        {
-          "projectId": "DMu0oBKf",
           "type": "optional",
           "installed": false
         },
@@ -7349,30 +7339,40 @@
           "projectId": "WRaRZdTd",
           "type": "optional",
           "installed": false
+        },
+        {
+          "projectId": "vvuO3ImH",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "DMu0oBKf",
+          "type": "optional",
+          "installed": false
         }
       ]
     },
     {
-      "filePath": "mods/sophisticatedcore-1.21.1-1.4.84.2244.jar",
-      "filename": "sophisticatedcore-1.21.1-1.4.84.2244.jar",
+      "filePath": "mods/sophisticatedcore-1.21.1-1.4.84.2248.jar",
+      "filename": "sophisticatedcore-1.21.1-1.4.84.2248.jar",
       "contentType": "mod",
       "name": "Sophisticated Core",
       "description": "Library mod for Sophisticated mods",
       "author": "P3pp3rF1y",
       "iconUrl": "https://cdn.modrinth.com/data/nmoqTijg/83f980596761b59f5c3e4e4d2c90d031d9d69ff6.png",
       "projectId": "nmoqTijg",
-      "versionId": "3gsRsDmO",
-      "versionNumber": "1.21.1-1.4.84.2244",
+      "versionId": "suP9XdTv",
+      "versionNumber": "1.21.1-1.4.84.2248",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "8cbc5761784a7595f81c021a7ece9fea49ac499a",
-        "sha512": "c33715ad50e1ca20a5af0fc75e02f1f0655b0d4e308936f3a874e7a7ddcf036d758097e1baa0fa17ffde72fb2f3fd4bba5a77207b64ddc457e92c118e38cae9d"
+        "sha1": "a65a2a4b80307934b76595386a90896b3e607d97",
+        "sha512": "c81a68002b24f8c81cbf072fa51e753430eac7fdfacf4441a5dc38e8b673f37711e2e7d2ae7bceca03e9f246729eb878abbc409474bd0998deb8819075a5d1b3"
       },
-      "size": 1676746,
+      "size": 1676747,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-09T17:28:08.522Z",
-      "updatedAt": "2026-08-09T17:28:08.522Z",
+      "installedAt": "2026-08-10T05:50:36.339Z",
+      "updatedAt": "2026-08-10T05:50:36.339Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -9303,6 +9303,371 @@
       "dependencies": [
         {
           "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/legendarymonuments-neoforge-1.21.1-8.1-Love_for_All.jar",
+      "filename": "legendarymonuments-neoforge-1.21.1-8.1-Love_for_All.jar",
+      "contentType": "mod",
+      "name": "Cobblemon: Legendary Monuments",
+      "description": "Adds special spawning methods for Legendaries and Mythicals (Zacian, Zamazenta, Reshiram, Zekrom, Kyurem, Hoopa, Cosmog, Keldeo, Regigigas, All Regis, Cobalion, Virizion, Terrakion, Moltres, Articuno, Zapdos, more soon...)",
+      "author": "JorgaoMC",
+      "iconUrl": "https://cdn.modrinth.com/data/m6RyHSbV/84611dc76bd01f9cb3f67213ec37c88707eb0ece_96.webp",
+      "projectId": "m6RyHSbV",
+      "versionId": "UNW6ItXN",
+      "versionNumber": "8.1-Love-for-All",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "ac26efbe785d56cfc4f76dcbe4901b2e1c7c9da4",
+        "sha512": "1e0ef76098549a6de83679acb34193b8ca9da8349e618624f968fcd1f2cf9ba6cd508d88f5264b74675037c235d302e7ac2d065851cbb06a499ac526e3424a41"
+      },
+      "size": 16600936,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-10T05:45:58.313Z",
+      "updatedAt": "2026-08-10T05:45:58.313Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "jtmvUHXj",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "XaDC71GB",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "SszvX85I",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "BAscRYKm",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/chipped-neoforge-1.21.1-4.0.2.jar",
+      "filename": "chipped-neoforge-1.21.1-4.0.2.jar",
+      "contentType": "mod",
+      "name": "Chipped",
+      "description": "Every block deserves a friend.",
+      "author": "Kekie6",
+      "iconUrl": "https://cdn.modrinth.com/data/BAscRYKm/4faa514b4824672a0877d026bcd5a94bc8aad985_96.webp",
+      "projectId": "BAscRYKm",
+      "versionId": "eqVowbGc",
+      "versionNumber": "4.0.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "6f5395f58139802edfde7cb9170279f92f291971",
+        "sha512": "f3083b01267e7c674c4b42f45a317c93ee7723443cba2051fe5bc593638b533b0fe90699e2101661c934dff458eab693cce4e188533bfe977778c249563a2fa5"
+      },
+      "size": 15020578,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-10T05:46:09.448Z",
+      "updatedAt": "2026-08-10T05:46:09.448Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "b1ZV3DIJ",
+          "type": "required",
+          "installed": false
+        },
+        {
+          "projectId": "G1hIVOrD",
+          "type": "required",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/zamega-neoforge-1.7.5-hotfix.jar",
+      "filename": "zamega-neoforge-1.7.5-hotfix.jar",
+      "contentType": "mod",
+      "name": "Navas ZA Megas",
+      "description": "Adds All Megas from Pokemon Legends ZA into Cobblemon! (MSD Required)",
+      "author": "natusue233",
+      "iconUrl": "https://cdn.modrinth.com/data/2V1Y86sc/c0f10eeeb1a3e5824ecfedc39b9a78a32652572e_96.webp",
+      "projectId": "2V1Y86sc",
+      "versionId": "MFuRZOBA",
+      "versionNumber": "1.7.5-hotfix",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "944a31d9246e49da7eb89564004b9529937efbab",
+        "sha512": "9b328c07a50f16718cf828201a6a5d4d14cffbd3f64bf950d54d44a470308d7420c8c9903c70d89cf81b3c74530a5b62f1614ebeb0e45f0225b44320e1ce7490"
+      },
+      "size": 848730,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-10T05:47:30.889Z",
+      "updatedAt": "2026-08-10T05:47:30.889Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "SszvX85I",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "jtmvUHXj",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "ccKDOlHs",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/MoreCobblemonTweaks-neoforge-1.3.3.jar",
+      "filename": "MoreCobblemonTweaks-neoforge-1.3.3.jar",
+      "contentType": "mod",
+      "name": "MoreCobblemonTweaks",
+      "description": "A qol cobblemon client mod introducing various qol improvements!",
+      "author": "justahuman-xd",
+      "iconUrl": "https://cdn.modrinth.com/data/5KWlJ2HC/c115bfd4eec5611b29ea9598689633490689e7e3.png",
+      "projectId": "5KWlJ2HC",
+      "versionId": "LDMOCVN8",
+      "versionNumber": "1.3.3-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "dcfce07ad4604a2a8a3a97f6c505ae6e015210d9",
+        "sha512": "58a4d777af8986350ead08691c6b7680b162bb3b7160588203ecf151045edfb700c9f099398e52d5cd4b753ed59ef58d14ff11ef791a0dbc1d1ca8a2db0a5fbc"
+      },
+      "size": 138756,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-10T05:48:13.768Z",
+      "updatedAt": "2026-08-10T05:48:13.768Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "mOgUt4GM",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "ItmVb4zY",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "9s6osm5g",
+          "type": "optional",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/missingmons-cobblemon-3.6.1.jar",
+      "filename": "missingmons-cobblemon-3.6.1.jar",
+      "contentType": "mod",
+      "name": "MissingMons [cobblemon]",
+      "description": "MissingMons adds textures, models, animations and spawn for cobblemon that's curently not in the game yet but the catch is you guys get to vote for what i will be adding!",
+      "author": "Alonzurro",
+      "iconUrl": "https://cdn.modrinth.com/data/jbbBrQVa/a926df3952f62c1d289cf1b15a89b5a750a10de2.png",
+      "projectId": "jbbBrQVa",
+      "versionId": "8MaQRS0b",
+      "versionNumber": "3.6.1+mod",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "d85f1e653d311e852fd79377c32034a8b0c9f46c",
+        "sha512": "c950a8d854c1a0fa3cdee3f204f152533a5bdcde772e588b55d325c7c312880718f3867fba23766757ddcf43a274cf5e5e60d3f2131d12f38593ccbf22af5d95"
+      },
+      "size": 3540078,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-10T05:50:06.576Z",
+      "updatedAt": "2026-08-10T05:50:06.576Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/sophisticatedstorage-1.21.1-1.5.85.2071.jar",
+      "filename": "sophisticatedstorage-1.21.1-1.5.85.2071.jar",
+      "contentType": "mod",
+      "name": "Sophisticated Storage",
+      "description": "Storage mod with multiple tiers and functional upgrades",
+      "author": "P3pp3rF1y",
+      "iconUrl": "https://cdn.modrinth.com/data/hMlaZH8f/8c041db5cf8062e7471d5e239836c8b807853def_96.webp",
+      "projectId": "hMlaZH8f",
+      "versionId": "GIf3F0BG",
+      "versionNumber": "1.21.1-1.5.85.2071",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "79ac76d0875a9dc28d9923d8e6464ad1c5571ea5",
+        "sha512": "922609bcc6afcd2999a7407d4981a72e1fab54eb95d73e546d271c03304b9ab0a84f8a9cc234c9d69148897d4b13a8633bf58ddcc8134a3d45e1847f1fc829a0"
+      },
+      "size": 1865074,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-10T05:50:34.492Z",
+      "updatedAt": "2026-08-10T05:50:34.492Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "WRaRZdTd",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "DMu0oBKf",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "qnQsVE2z",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "b1fMg6sH",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "u6dRKJwZ",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "BAscRYKm",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "nmoqTijg",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "vRYk0bv7",
+          "type": "optional",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/sophisticatedbackpackscreateintegration-1.21.1-0.1.8.134.jar",
+      "filename": "sophisticatedbackpackscreateintegration-1.21.1-0.1.8.134.jar",
+      "contentType": "mod",
+      "name": "Sophisticated Backpacks Create Integration",
+      "description": "Sophisticated Backpacks on create contraptions",
+      "author": "P3pp3rF1y",
+      "iconUrl": "https://cdn.modrinth.com/data/s85zLEDe/63fd83994b39feceeec20241531d0f31cd096182_96.webp",
+      "projectId": "s85zLEDe",
+      "versionId": "ljF9gEMb",
+      "versionNumber": "1.21.1-0.1.8.134",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "0896d95a20a799c130a665c4ca16778aa6a9a355",
+        "sha512": "6b331668d85f421d64e85adce71ba3952b80c4ffecc38b86268d87dfcf16447c20e060b110c398ede4e5b95e18d8e59dd7304eab8a51860b1c82cb01ca6c6c9d"
+      },
+      "size": 82627,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-10T05:51:04.384Z",
+      "updatedAt": "2026-08-10T05:51:04.384Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "LNytGWDc",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "nmoqTijg",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "u6dRKJwZ",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "TyCTlI4b",
           "type": "required",
           "installed": true
         }
