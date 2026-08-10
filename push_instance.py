@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Syncs source-of-truth data from a local SKLauncher instance into repo-relative
-locations (manifest/, config/, servers.dat, local-mods/) so build_mrpack.py
-(and eventually CI) can build the modpack without needing access to the
+Pushes state from a local SKLauncher instance (the "working copy") up into
+repo-relative locations (manifest/, config/, servers.dat, local-mods/) --
+the repo is the "remote" source of truth -- so build_mrpack.py (and
+eventually CI) can build the modpack without needing access to the
 maintainer's machine.
 
-What gets synced:
+What gets pushed:
   manifest/creark.json  - copy of the SKLauncher manifest, as-is
   manifest/pack.json    - just {minecraftVersion, loaderVersion}, extracted
                            from SKLauncher's instances.json
@@ -21,7 +22,7 @@ What gets synced:
                            from their CDN at build time instead, so we don't
                            commit hundreds of MB of jars to git.
 
-Configure which SKLauncher instance directory to sync from, in priority order:
+Configure which SKLauncher instance directory to push from, in priority order:
   1. --instance-dir <path> (or -i <path>) CLI flag -- full path override
   2. SK_INSTANCE_DIR environment variable (also read from .env, see
      .env.example) -- full path override, same as --instance-dir
@@ -33,11 +34,11 @@ Configure which SKLauncher instance directory to sync from, in priority order:
        no safe default -- set SK_INSTANCE_DIR or pass --instance-dir.
 
 Usage:
-  uv run sync_instance.py
-  uv run sync_instance.py --instance-dir "/path/to/sklauncher/instances/creark"
-  uv run sync_instance.py --instance-name my-other-instance
-  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run sync_instance.py
-  INSTANCE_NAME="my-other-instance" uv run sync_instance.py
+  uv run push_instance.py
+  uv run push_instance.py --instance-dir "/path/to/sklauncher/instances/creark"
+  uv run push_instance.py --instance-name my-other-instance
+  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run push_instance.py
+  INSTANCE_NAME="my-other-instance" uv run push_instance.py
 """
 
 import argparse
@@ -197,9 +198,9 @@ def main():
         raise SystemExit(
             f"Error: SKLauncher instance directory not found: {instance_dir}\n\n"
             'Point this script at your own local SKLauncher "creark" instance via:\n'
-            '  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run sync_instance.py\n'
+            '  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run push_instance.py\n'
             "or:\n"
-            '  uv run sync_instance.py --instance-dir "/path/to/sklauncher/instances/creark"'
+            '  uv run push_instance.py --instance-dir "/path/to/sklauncher/instances/creark"'
         )
 
     instance_id = instance_dir.name

@@ -2,8 +2,8 @@
 """
 Builds a .mrpack (or a mods-only zip) from the repo's synced modpack data.
 
-Source of truth is manifest/creark.json (synced from SKLauncher via
-sync_instance.py), not a local SKLauncher install -- this lets the script run
+Source of truth is manifest/creark.json (pushed from SKLauncher via
+push_instance.py), not a local SKLauncher install -- this lets the script run
 identically on a maintainer's machine or in CI.
 
 For each mod entry in the manifest:

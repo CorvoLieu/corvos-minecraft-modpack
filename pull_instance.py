@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Makes a local SKLauncher instance match this repo's currently-checked-out
-state -- the reverse of sync_instance.py, which copies FROM an instance INTO
+Pulls repo state (the "remote" source of truth) down into a local SKLauncher
+instance (the "working copy") so it matches this repo's currently-checked-out
+state -- the reverse of push_instance.py, which pushes FROM an instance INTO
 the repo. This script copies FROM the repo INTO an instance.
 
 Two use cases:
@@ -14,7 +15,7 @@ Two use cases:
      no longer in the manifest get PRUNED from the instance's mods/, not just
      left stale alongside newly-added ones.
 
-What gets synced INTO the instance, from repo state:
+What gets pulled INTO the instance, from repo state:
   manifest/creark.json  -> copied as-is into the instance's SKLauncher
                             manifest file (manifests/<id>.json in the
                             SKLauncher root), so SKLauncher's own UI reflects
@@ -49,7 +50,7 @@ anything. Pass --yes to skip the preview and prompt and apply immediately
 (e.g. for non-interactive/scripted use).
 
 Configure which SKLauncher instance directory to target, in priority order
-(same resolution as sync_instance.py):
+(same resolution as push_instance.py):
   1. --instance-dir <path> (or -i <path>) CLI flag -- full path override
   2. SK_INSTANCE_DIR environment variable (also read from .env, see
      .env.example) -- full path override, same as --instance-dir
@@ -61,11 +62,11 @@ Configure which SKLauncher instance directory to target, in priority order
        no safe default -- set SK_INSTANCE_DIR or pass --instance-dir.
 
 Usage:
-  uv run init_instance.py               # preview, then prompt to confirm
-  uv run init_instance.py --yes         # apply without prompting
-  uv run init_instance.py --instance-dir "/path/to/sklauncher/instances/creark"
-  uv run init_instance.py --instance-name my-other-instance
-  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run init_instance.py
+  uv run pull_instance.py               # preview, then prompt to confirm
+  uv run pull_instance.py --yes         # apply without prompting
+  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/creark"
+  uv run pull_instance.py --instance-name my-other-instance
+  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run pull_instance.py
 
 Design decisions (flagged for review, see PR description):
   - Instance registration (instances.json) isn't reverse-engineered enough
@@ -75,12 +76,12 @@ Design decisions (flagged for review, see PR description):
     SKLauncher's "New Instance" UI (any mod loader/version; this script
     overwrites minecraftVersion/loaderVersion to match manifest/pack.json).
     It then only ever *updates* fields it already knows the shape of, the
-    same fields sync_instance.py reads. This keeps the bootstrap workaround
+    same fields push_instance.py reads. This keeps the bootstrap workaround
     to "create an empty instance in the UI, then run this script" instead of
     "manually import the latest .mrpack".
   - config/ syncing defaults to ON if the repo has a config/ directory, even
     though config/ bundling into the .mrpack itself is currently disabled in
-    build_mrpack.py/sync_instance.py. Rationale: a maintainer's local dev
+    build_mrpack.py/push_instance.py. Rationale: a maintainer's local dev
     instance benefits from matching config/ across branch switches even
     though the shipped pack doesn't bundle it (yet). Pass --skip-config to
     opt out.
@@ -101,7 +102,7 @@ from build_mrpack import (
     sha1_of,
     url_is_downloadable,
 )
-from sync_instance import resolve_instance_dir
+from push_instance import resolve_instance_dir
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 MANIFEST_PATH = SCRIPT_DIR / "manifest" / "creark.json"
@@ -302,7 +303,7 @@ def sync_manifest_and_pack_json(
     if instance_info is None:
         raise SystemExit(
             f"Error: instance '{instance_id}' not found in {instances_json}.\n\n"
-            "init_instance.py only ever populates/resyncs an EXISTING SKLauncher\n"
+            "pull_instance.py only ever populates/resyncs an EXISTING SKLauncher\n"
             "instance -- it won't guess at instances.json's full schema to create\n"
             "one from scratch. Create the instance once via SKLauncher's "
             '"New Instance"\nUI (any loader/version is fine, this script will '
@@ -335,9 +336,9 @@ def main():
             f"Error: SKLauncher instance directory not found: {instance_dir}\n\n"
             'Create the instance once via SKLauncher\'s "New Instance" UI first,\n'
             "then point this script at it via:\n"
-            '  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run init_instance.py\n'
+            '  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run pull_instance.py\n'
             "or:\n"
-            '  uv run init_instance.py --instance-dir "/path/to/sklauncher/instances/creark"'
+            '  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/creark"'
         )
 
     instance_id = instance_dir.name

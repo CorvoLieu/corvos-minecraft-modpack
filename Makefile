@@ -1,5 +1,5 @@
 DEFAULT_GOAL := dev
-.PHONY: dev dev-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop install-hooks
+.PHONY: dev dev-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop install-hooks push pull
 
 # Symlinks .githooks/pre-commit into .git/hooks/ so it actually runs.
 # A prerequisite of every target below, so it self-installs (silently, once)
@@ -30,14 +30,14 @@ clean-dev:
 	@rm -f exports/mod.mrpack
 	@echo "Done cleaning."
 
-sync-instance:
-	@echo "Syncing instance from local Minecraft instance..."
-	@uv run python3 sync_instance.py
+push:
+	@echo "Pushing local SKLauncher instance state into the repo..."
+	@uv run python3 push_instance.py
 	@echo "Done."
 
-init-instance:
-	@echo "Populating/resyncing local SKLauncher instance from repo state..."
-	@uv run python3 init_instance.py
+pull:
+	@echo "Pulling repo state into the local SKLauncher instance..."
+	@uv run python3 pull_instance.py
 	@echo "Done."
 
 # Dev (default): local bind-mounted mod.mrpack (server build, staged from
