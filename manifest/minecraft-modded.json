@@ -6,7 +6,7 @@
     "projectId": "local:blank",
     "versionId": "local:blank",
     "name": "CreativeWorld",
-    "versionNumber": "5.0.5",
+    "versionNumber": "5.0.6",
     "summary": "",
     "installedAt": "2026-08-01T08:30:46.145Z",
     "updatedAt": "2026-08-01T08:30:46.145Z",
@@ -9740,6 +9740,36 @@
       ],
       "loaders": [
         "fabric"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/crabbersdelight-1.21.1-1.2.6.jar",
+      "filename": "crabbersdelight-1.21.1-1.2.6.jar",
+      "contentType": "mod",
+      "name": "Crabber's Delight",
+      "description": "Crabber's Delight is an addon for the popular food mod, Farmer's Delight",
+      "author": "AlabasterLeking",
+      "iconUrl": "https://cdn.modrinth.com/data/gBGdVBJy/dda9137ec6e5a1abccbf921e100c20dcfa5cba2d.png",
+      "projectId": "gBGdVBJy",
+      "versionId": "uwSpUkrQ",
+      "versionNumber": "1.2.6",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "ca13cbc55ff56b8453a2e8882221e7a7be39f117",
+        "sha512": "26225d7926c0cc45a58de75ca89ec8c4b6f6bdcc03a76918ffc5094ee52fb9d0c38040213af37ee41c22494fafeaf5b862591f47523c497632425f18b3dde434"
+      },
+      "size": 634794,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-11T15:52:17.071Z",
+      "updatedAt": "2026-08-11T15:52:17.071Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
       ],
       "releaseType": "release",
       "dependencies": []
