@@ -5363,42 +5363,6 @@
       ]
     },
     {
-      "filePath": "mods/alexsmobs-1.22.17.jar",
-      "filename": "alexsmobs-1.22.17.jar",
-      "contentType": "mod",
-      "name": "Alex's Mobs (Unofficial Port)",
-      "projectId": "EmNhnNnt",
-      "versionId": "KSgki4uc",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "5070e8070f60650d773bfd9f1d031496f8f50259",
-        "sha512": "9f57f20693bb187c54f6d68dc34592b87d0e55a5a4628ad097b0aa39afe165f4a834b83b6590d803e64bac0b1230a8f46369bfe45851a3cc964cf3d88f235277"
-      },
-      "size": 26620546,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
-      "gameVersions": [
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "XjY0RcQj",
-          "type": "required",
-          "installed": false
-        }
-      ],
-      "versionNumber": "1.22.17",
-      "description": "85+ New mobs with stylistic quality above the default game.",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/EmNhnNnt/d22c02c846e2a319969bccc119c79e4ca5f81715_96.webp"
-    },
-    {
       "filePath": "mods/lne_wizards-neoforge-1.1.2+1.21.1.jar",
       "filename": "lne_wizards-neoforge-1.1.2+1.21.1.jar",
       "contentType": "mod",
@@ -7052,42 +7016,6 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/alexscaves-2.0.10.jar",
-      "filename": "alexscaves-2.0.10.jar",
-      "contentType": "mod",
-      "name": "Alex's Caves (Unofficial Port)",
-      "description": "Explore five new rare cave biomes hidden under the surface of the Overworld...",
-      "author": "Raguto",
-      "iconUrl": "https://cdn.modrinth.com/data/kSsLSjEt/4165eef78a7efa0f5acda964dd094c08ee0e5680.png",
-      "projectId": "kSsLSjEt",
-      "versionId": "pC1MYhqR",
-      "versionNumber": "2.0.10",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "366ddaac40f14cd0102f026b4d999753fc1db2a4",
-        "sha512": "5d933f9276ecc721ea67585e56149cbc9450c0036fc6f8a6fbed041d48ebfb8c286cd762477ef63efc2c0a186d0c5598a853002c9524c229d7f55ddee5d21651"
-      },
-      "size": 74900204,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-07T09:58:34.082Z",
-      "updatedAt": "2026-08-07T09:58:34.082Z",
-      "gameVersions": [
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "XjY0RcQj",
-          "type": "required",
-          "installed": true
-        }
-      ]
-    },
-    {
       "filePath": "mods/createmetallurgy-1.0.3-1.21.1.jar",
       "filename": "createmetallurgy-1.0.3-1.21.1.jar",
       "contentType": "mod",
@@ -8678,36 +8606,6 @@
       ]
     },
     {
-      "filePath": "mods/cobbleworkers-neoforge-2.0.5+1.7.0.jar",
-      "filename": "cobbleworkers-neoforge-2.0.5+1.7.0.jar",
-      "contentType": "mod",
-      "name": "Cobbleworkers",
-      "description": "Pasture block can now be used as a utility block that gives Pokémon jobs!",
-      "author": "Accieo",
-      "iconUrl": "https://cdn.modrinth.com/data/i3XVG2gn/4e9a562ddae06a682f7c58de5630beda3a3bdfde.png",
-      "projectId": "i3XVG2gn",
-      "versionId": "tjHzDTL4",
-      "versionNumber": "2.0.5+1.7.0",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "1baf760c9cfd35e3fc41337c38540dfc0364cee3",
-        "sha512": "a331f2bed5f49c4907eda57f5803737da2b00abe806eb0b19c9ec5015a1e96e37a331899f638cdb66f5fce9a04344f7775aad0e6549f904e623f70ce5d2bed32"
-      },
-      "size": 272724,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-08T18:16:04.864Z",
-      "updatedAt": "2026-08-08T18:16:04.864Z",
-      "gameVersions": [
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": []
-    },
-    {
       "filePath": "mods/cobblemon_industries-neoforge-1.5.0.jar",
       "filename": "cobblemon_industries-neoforge-1.5.0.jar",
       "contentType": "mod",
@@ -9668,6 +9566,52 @@
         },
         {
           "projectId": "TyCTlI4b",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cobblebase-neoforge-2.0.0+1.7.0.jar",
+      "filename": "cobblebase-neoforge-2.0.0+1.7.0.jar",
+      "contentType": "mod",
+      "name": "Cobblebase",
+      "description": "Palworld-style Pokemon base management for Cobblemon. Job system with unique per-Pokemon skills, abilities, and base mechanics.",
+      "author": "notlown",
+      "iconUrl": "https://cdn.modrinth.com/data/kPojQdms/8abe13cd13327c01f0e68160e79ef7740c58222e_96.webp",
+      "projectId": "kPojQdms",
+      "versionId": "GxjyJtBD",
+      "versionNumber": "2.0.0+1.7.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "552a42dd54262ceb72db3367948d99c7a72ebced",
+        "sha512": "46b6761f2f56d3f537d68271b62272c60b63a7af87f2888b0d7bd8c0846b05f9167395a850991c8e3c521671ab82ffe2e49f660b207a13fe67ead5119cac715e"
+      },
+      "size": 16340412,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-10T06:12:04.140Z",
+      "updatedAt": "2026-08-10T06:12:04.140Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "9s6osm5g",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "ItmVb4zY",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "1bokaNcj",
           "type": "required",
           "installed": true
         }
