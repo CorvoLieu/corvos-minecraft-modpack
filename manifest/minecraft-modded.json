@@ -6,7 +6,7 @@
     "projectId": "local:blank",
     "versionId": "local:blank",
     "name": "CreativeWorld",
-    "versionNumber": "5.0.1",
+    "versionNumber": "5.0.2",
     "summary": "",
     "installedAt": "2026-08-01T08:30:46.145Z",
     "updatedAt": "2026-08-01T08:30:46.145Z",
@@ -9673,6 +9673,76 @@
           "installed": true
         }
       ]
+    },
+    {
+      "filePath": "mods/mebahelrpgrquest-2.0.0-fabric-1.21.1.jar",
+      "filename": "mebahelrpgrquest-2.0.0-fabric-1.21.1.jar",
+      "contentType": "mod",
+      "name": "Mebahel's RPG - Villager Quests and Companions",
+      "description": "Mebahel's RPG: Villager Quests & Companions adds story-driven villager quests, branching choices, named enemies, rumors, quest tracking, companion recruitment, and RPG-style notifications to your world.",
+      "author": "Mebahel",
+      "iconUrl": "https://cdn.modrinth.com/data/jNqtpcJu/e74a782532bcb4d4e1866313fa958e7cc3fbe8a2_96.webp",
+      "projectId": "jNqtpcJu",
+      "versionId": "pGluLEX0",
+      "versionNumber": "2.0.0-fabric-1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "cfdef73a8ef02e00f3d13376d6d73549dfbc1657",
+        "sha512": "76ebfa72866e00c02b7c7fbfb051d94481056a7672c0525bfd4633c789e53417d15bde3c8685d223f09f1fffb7ba7019240d9d5723a82f8ce5dc0ba5e631490b"
+      },
+      "size": 1161789,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-11T14:45:01.823Z",
+      "updatedAt": "2026-08-11T14:45:01.823Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "P7dR8mSH",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/fabric-api-0.116.15+1.21.1.jar",
+      "filename": "fabric-api-0.116.15+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Fabric API",
+      "description": "Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.",
+      "author": "Player7457",
+      "iconUrl": "https://cdn.modrinth.com/data/P7dR8mSH/icon.png",
+      "projectId": "P7dR8mSH",
+      "versionId": "Nlt8gI9z",
+      "versionNumber": "0.116.15+1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "d25c793833a90cc028c9a61bc4546cd578a70ce1",
+        "sha512": "d5dcf28a05676b1436f7ccce76e2f36495ab058f7c3b6f87a5b5cf5abaaf943ef7f37cd4ce72ff1080965a3d11899cd0bf11121e49c4a651daca20f6338043f7"
+      },
+      "size": 2452718,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-11T14:45:03.023Z",
+      "updatedAt": "2026-08-11T14:45:03.023Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "fabric"
+      ],
+      "releaseType": "release",
+      "dependencies": []
     }
   ]
 }
