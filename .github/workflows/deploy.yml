@@ -1,4 +1,4 @@
-name: Build and publish server image
+name: "[PROD] Build and publish server image"
 
 # Builds the modpack, bakes it into the Dockerfile's image, and pushes it to
 # GHCR so the prod VM's Watchtower can pick it up. Separate from

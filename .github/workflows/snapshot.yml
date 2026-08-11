@@ -1,4 +1,4 @@
-name: Release snapshot modpack artifacts
+name: "[STAGING] Release snapshot modpack artifacts"
 
 on:
   push:
