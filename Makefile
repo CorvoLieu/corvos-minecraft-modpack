@@ -5,7 +5,11 @@ DEFAULT_GOAL := dev
 # stay in sync with the same single value the Python scripts read via
 # python-dotenv. See .env.example.
 -include .env
-PACK_NAME ?= minecraft-modded
+# `?=` alone doesn't catch an already-exported-but-empty PACK_NAME (e.g. CI
+# setting it from an unset `vars.PACK_NAME`), so check for blank explicitly.
+ifeq ($(strip $(PACK_NAME)),)
+PACK_NAME := minecraft-modded
+endif
 export PACK_NAME
 
 # Symlinks .githooks/pre-commit into .git/hooks/ so it actually runs.
