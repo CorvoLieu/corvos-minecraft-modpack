@@ -119,7 +119,7 @@ from push_instance import resolve_instance_dir
 SCRIPT_DIR = Path(__file__).resolve().parent
 # build_mrpack's import above triggers its module-level load_dotenv(), so
 # .env is already loaded by the time this reads PACK_NAME.
-PACK_NAME = os.environ.get("PACK_NAME", "minecraft-modded")
+PACK_NAME = os.environ.get("PACK_NAME") or "minecraft-modded"
 MANIFEST_PATH = SCRIPT_DIR / "manifest" / f"{PACK_NAME}.json"
 PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"
 LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"

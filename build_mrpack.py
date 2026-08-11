@@ -75,7 +75,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 
 # Name of the modpack/instance -- the single value that renaming the pack
 # requires changing (see .env.example). Everything below derives from it.
-PACK_NAME = os.environ.get("PACK_NAME", "minecraft-modded")
+PACK_NAME = os.environ.get("PACK_NAME") or "minecraft-modded"
 
 DEFAULT_MANIFEST_PATH = SCRIPT_DIR / "manifest" / f"{PACK_NAME}.json"
 DEFAULT_PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"

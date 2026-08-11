@@ -66,7 +66,7 @@ LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
 SERVERS_DAT = SCRIPT_DIR / "servers.dat"
 # build_mrpack's import above triggers its module-level load_dotenv(), so
 # .env is already loaded by the time this reads PACK_NAME.
-PACK_NAME = os.environ.get("PACK_NAME", "minecraft-modded")
+PACK_NAME = os.environ.get("PACK_NAME") or "minecraft-modded"
 DEFAULT_INSTANCE_NAME = PACK_NAME
 
 
