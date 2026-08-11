@@ -6,7 +6,7 @@
     "projectId": "local:blank",
     "versionId": "local:blank",
     "name": "CreativeWorld",
-    "versionNumber": "5.0.6",
+    "versionNumber": "5.0.7",
     "summary": "",
     "installedAt": "2026-08-01T08:30:46.145Z",
     "updatedAt": "2026-08-01T08:30:46.145Z",
@@ -9713,36 +9713,6 @@
           "installed": true
         }
       ]
-    },
-    {
-      "filePath": "mods/fabric-api-0.116.15+1.21.1.jar",
-      "filename": "fabric-api-0.116.15+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Fabric API",
-      "description": "Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.",
-      "author": "Player7457",
-      "iconUrl": "https://cdn.modrinth.com/data/P7dR8mSH/icon.png",
-      "projectId": "P7dR8mSH",
-      "versionId": "Nlt8gI9z",
-      "versionNumber": "0.116.15+1.21.1",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "d25c793833a90cc028c9a61bc4546cd578a70ce1",
-        "sha512": "d5dcf28a05676b1436f7ccce76e2f36495ab058f7c3b6f87a5b5cf5abaaf943ef7f37cd4ce72ff1080965a3d11899cd0bf11121e49c4a651daca20f6338043f7"
-      },
-      "size": 2452718,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-11T14:45:03.023Z",
-      "updatedAt": "2026-08-11T14:45:03.023Z",
-      "gameVersions": [
-        "1.21.1"
-      ],
-      "loaders": [
-        "fabric"
-      ],
-      "releaseType": "release",
-      "dependencies": []
     },
     {
       "filePath": "mods/crabbersdelight-1.21.1-1.2.6.jar",
