@@ -15,6 +15,7 @@ services:
   mc:
     # Published by .github/workflows/deploy.yml on every push to main.
     image: ghcr.io/corvolieu/mc-creark-modpack:latest
+    pull_policy: always
     tty: true
     container_name: minecraft-server
     stdin_open: true
