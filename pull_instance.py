@@ -16,7 +16,7 @@ Two use cases:
      left stale alongside newly-added ones.
 
 What gets pulled INTO the instance, from repo state:
-  manifest/creark.json  -> copied as-is into the instance's SKLauncher
+  manifest/<PACK_NAME>.json -> copied as-is into the instance's SKLauncher
                             manifest file (manifests/<id>.json in the
                             SKLauncher root), so SKLauncher's own UI reflects
                             the same enabled/disabled mod list.
@@ -65,7 +65,8 @@ Configure which SKLauncher instance directory to target, in priority order
      .env.example) -- full path override, same as --instance-dir
   3. OS default directory with a custom instance name:
        --instance-name <name> (or -n <name>) CLI flag, or the INSTANCE_NAME
-       environment variable (also read from .env). Defaults to "creark".
+       environment variable (also read from .env). Defaults to the PACK_NAME
+       env var (also read from .env), or "minecraft-modded" if that's unset too.
        macOS: ~/Library/Application Support/sklauncher/instances/<name>
        Windows/Linux: SKLauncher's install layout differs there and there's
        no safe default -- set SK_INSTANCE_DIR or pass --instance-dir.
@@ -73,9 +74,9 @@ Configure which SKLauncher instance directory to target, in priority order
 Usage:
   uv run pull_instance.py               # preview, then prompt to confirm
   uv run pull_instance.py --yes         # apply without prompting
-  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/creark"
+  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/minecraft-modded"
   uv run pull_instance.py --instance-name my-other-instance
-  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run pull_instance.py
+  SK_INSTANCE_DIR="/path/to/sklauncher/instances/minecraft-modded" uv run pull_instance.py
 
 Design decisions (flagged for review, see PR description):
   - Instance registration (instances.json) isn't reverse-engineered enough
@@ -98,6 +99,7 @@ Design decisions (flagged for review, see PR description):
 
 import argparse
 import json
+import os
 import shutil
 import urllib.request
 from pathlib import Path
@@ -115,7 +117,10 @@ from build_mrpack import (
 from push_instance import resolve_instance_dir
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-MANIFEST_PATH = SCRIPT_DIR / "manifest" / "creark.json"
+# build_mrpack's import above triggers its module-level load_dotenv(), so
+# .env is already loaded by the time this reads PACK_NAME.
+PACK_NAME = os.environ.get("PACK_NAME", "minecraft-modded")
+MANIFEST_PATH = SCRIPT_DIR / "manifest" / f"{PACK_NAME}.json"
 PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"
 LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
 LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
@@ -138,8 +143,8 @@ def parse_args():
         "-n",
         default=None,
         help="instance name to look up under the OS default SKLauncher "
-        "instances dir (overrides INSTANCE_NAME, default: creark). Ignored "
-        "if --instance-dir/SK_INSTANCE_DIR is set.",
+        "instances dir (overrides INSTANCE_NAME, default: PACK_NAME env var, "
+        'or "minecraft-modded" if unset). Ignored if --instance-dir/SK_INSTANCE_DIR is set.',
     )
     parser.add_argument(
         "--yes",
@@ -369,9 +374,9 @@ def main():
             f"Error: SKLauncher instance directory not found: {instance_dir}\n\n"
             'Create the instance once via SKLauncher\'s "New Instance" UI first,\n'
             "then point this script at it via:\n"
-            '  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run pull_instance.py\n'
+            f'  SK_INSTANCE_DIR="/path/to/sklauncher/instances/{PACK_NAME}" uv run pull_instance.py\n'
             "or:\n"
-            '  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/creark"'
+            f'  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/{PACK_NAME}"'
         )
 
     instance_id = instance_dir.name

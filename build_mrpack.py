@@ -2,9 +2,10 @@
 """
 Builds a .mrpack (or a mods-only zip) from the repo's synced modpack data.
 
-Source of truth is manifest/creark.json (pushed from SKLauncher via
+Source of truth is manifest/<PACK_NAME>.json (pushed from SKLauncher via
 push_instance.py), not a local SKLauncher install -- this lets the script run
-identically on a maintainer's machine or in CI.
+identically on a maintainer's machine or in CI. PACK_NAME is read from the
+environment (also read from .env, see .env.example), defaulting to "minecraft-modded".
 
 For each mod entry in the manifest:
   - if source is "modrinth" -> reference it via Modrinth's CDN (keeps the
@@ -22,13 +23,15 @@ Datapack entries (filePath under datapacks/) are handled the same way, with
 one difference: datapacks are per-world, not instance-root, so they can't be
 installed at their manifest filePath ("datapacks/foo.zip") the way mods can.
 They're placed at <DATAPACK_WORLD_NAME>/datapacks/foo.zip instead, matching
-the world/level name this pack's server always runs as (LEVEL=creark in the
-Dockerfile/docker-compose.dev.yml/.env.example) -- that's the path the itzg
-server image's overrides/ extraction (and mrpack "files" downloads) actually
-land at world-load time. Datapacks are marked client-"unsupported" in the
-built index since they're server/world-authoritative content a client
-install has no use for. If LEVEL is ever changed, DATAPACK_WORLD_NAME must
-be updated to match, or datapacks will silently stop taking effect again.
+the world/level name this pack's server always runs as (LEVEL defaults to
+PACK_NAME in the Dockerfile/docker-compose.dev.yml/.env.example) -- that's
+the path the itzg server image's overrides/ extraction (and mrpack "files"
+downloads) actually land at world-load time. Datapacks are marked
+client-"unsupported" in the built index since they're server/world-
+authoritative content a client install has no use for. If LEVEL is ever
+overridden to something other than PACK_NAME, DATAPACK_WORLD_NAME must be
+updated to match (i.e. PACK_NAME must track it too), or datapacks will
+silently stop taking effect again.
 
 servers.dat are always bundled directly in overrides/ (server per request),
 since there's no "online source" for local config state.
@@ -55,6 +58,7 @@ for the common preset invocations of this script.
 import argparse
 import hashlib
 import json
+import os
 import tempfile
 import urllib.error
 import urllib.parse
@@ -68,7 +72,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_MANIFEST_PATH = SCRIPT_DIR / "manifest" / "creark.json"
+
+# Name of the modpack/instance -- the single value that renaming the pack
+# requires changing (see .env.example). Everything below derives from it.
+PACK_NAME = os.environ.get("PACK_NAME", "minecraft-modded")
+
+DEFAULT_MANIFEST_PATH = SCRIPT_DIR / "manifest" / f"{PACK_NAME}.json"
 DEFAULT_PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"
 DEFAULT_LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
 DEFAULT_LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
@@ -78,7 +87,7 @@ DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "exports"
 
 # World/level name this pack's server always runs as (see docstring above).
 # Datapacks must land at <DATAPACK_WORLD_NAME>/datapacks/ to actually load.
-DATAPACK_WORLD_NAME = "creark"
+DATAPACK_WORLD_NAME = PACK_NAME
 
 
 def sha1_of(path: Path) -> str:
@@ -213,9 +222,10 @@ def parse_args(argv: list[str] | None = None):
     )
     parser.add_argument(
         "--pack-name",
-        default="Creark",
+        default=PACK_NAME.capitalize(),
         help="pack name recorded inside the build (modrinth.index.json "
-        "name/summary); does not affect the output filename (default: Creark)",
+        f"name/summary); does not affect the output filename (default: "
+        f"{PACK_NAME.capitalize()}, derived from the PACK_NAME env var)",
     )
     parser.add_argument(
         "--mods-zip-only",

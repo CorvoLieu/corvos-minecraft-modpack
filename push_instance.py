@@ -7,7 +7,7 @@ eventually CI) can build the modpack without needing access to the
 maintainer's machine.
 
 What gets pushed:
-  manifest/creark.json  - copy of the SKLauncher manifest, as-is
+  manifest/<PACK_NAME>.json - copy of the SKLauncher manifest, as-is
   manifest/pack.json    - just {minecraftVersion, loaderVersion}, extracted
                            from SKLauncher's instances.json
   config/                - recursive copy of the instance's config/ dir
@@ -33,16 +33,17 @@ Configure which SKLauncher instance directory to push from, in priority order:
      .env.example) -- full path override, same as --instance-dir
   3. OS default directory with a custom instance name:
        --instance-name <name> (or -n <name>) CLI flag, or the INSTANCE_NAME
-       environment variable (also read from .env). Defaults to "creark".
+       environment variable (also read from .env). Defaults to the PACK_NAME
+       env var (also read from .env), or "minecraft-modded" if that's unset too.
        macOS: ~/Library/Application Support/sklauncher/instances/<name>
        Windows/Linux: SKLauncher's install layout differs there and there's
        no safe default -- set SK_INSTANCE_DIR or pass --instance-dir.
 
 Usage:
   uv run push_instance.py
-  uv run push_instance.py --instance-dir "/path/to/sklauncher/instances/creark"
+  uv run push_instance.py --instance-dir "/path/to/sklauncher/instances/minecraft-modded"
   uv run push_instance.py --instance-name my-other-instance
-  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run push_instance.py
+  SK_INSTANCE_DIR="/path/to/sklauncher/instances/minecraft-modded" uv run push_instance.py
   INSTANCE_NAME="my-other-instance" uv run push_instance.py
 """
 
@@ -63,7 +64,10 @@ LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
 LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
 # CONFIG_DIR = SCRIPT_DIR / "config"
 SERVERS_DAT = SCRIPT_DIR / "servers.dat"
-DEFAULT_INSTANCE_NAME = "creark"
+# build_mrpack's import above triggers its module-level load_dotenv(), so
+# .env is already loaded by the time this reads PACK_NAME.
+PACK_NAME = os.environ.get("PACK_NAME", "minecraft-modded")
+DEFAULT_INSTANCE_NAME = PACK_NAME
 
 
 def parse_args():
@@ -123,8 +127,8 @@ def sync_manifest_and_pack_json(
     instances_json: Path,
 ):
     MANIFEST_DIR.mkdir(exist_ok=True)
-    shutil.copy2(manifest_src, MANIFEST_DIR / "creark.json")
-    print("Synced manifest/creark.json")
+    shutil.copy2(manifest_src, MANIFEST_DIR / f"{PACK_NAME}.json")
+    print(f"Synced manifest/{PACK_NAME}.json")
 
     instances = json.loads(instances_json.read_text())
     instance_info = next((i for i in instances["instances"] if i["id"] == instance_id), None)
@@ -225,10 +229,10 @@ def main():
     if not instance_dir.is_dir():
         raise SystemExit(
             f"Error: SKLauncher instance directory not found: {instance_dir}\n\n"
-            'Point this script at your own local SKLauncher "creark" instance via:\n'
-            '  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run push_instance.py\n'
+            f'Point this script at your own local SKLauncher "{PACK_NAME}" instance via:\n'
+            f'  SK_INSTANCE_DIR="/path/to/sklauncher/instances/{PACK_NAME}" uv run push_instance.py\n'
             "or:\n"
-            '  uv run push_instance.py --instance-dir "/path/to/sklauncher/instances/creark"'
+            f'  uv run push_instance.py --instance-dir "/path/to/sklauncher/instances/{PACK_NAME}"'
         )
 
     instance_id = instance_dir.name

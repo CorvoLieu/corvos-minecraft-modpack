@@ -7,6 +7,11 @@
 #   docker build -t ghcr.io/<owner>/<repo>:latest .
 FROM itzg/minecraft-server:java21
 
+# Modpack/instance name -- see .env.example. Passed via `make build-image`
+# (--build-arg PACK_NAME=$(PACK_NAME)); defaults to "minecraft-modded" to match the
+# repo's other defaults if built directly with plain `docker build`.
+ARG PACK_NAME=minecraft-modded
+
 COPY exports/server.mrpack /modpack.mrpack
 
 # Defaults mirroring docker-compose.dev.yml's environment block -- keep in
@@ -32,7 +37,7 @@ ENV EULA="TRUE" \
     MODRINTH_MODPACK="/modpack.mrpack" \
     MODRINTH_DEFAULT_VERSION_TYPE="release" \
     MODRINTH_LOADER="neoforge" \
-    LEVEL="creark" \
+    LEVEL="${PACK_NAME}" \
     ENTITY_BROADCAST_RANGE_PERCENTAGE="70" \
     SIMULATION_DISTANCE="7" \
     VIEW_DISTANCE="7" \

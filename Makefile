@@ -1,6 +1,13 @@
 DEFAULT_GOAL := dev
 .PHONY: dev dev-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop install-hooks push pull
 
+# Loads PACK_NAME (and anything else) from .env if present, so `make` targets
+# stay in sync with the same single value the Python scripts read via
+# python-dotenv. See .env.example.
+-include .env
+PACK_NAME ?= minecraft-modded
+export PACK_NAME
+
 # Symlinks .githooks/pre-commit into .git/hooks/ so it actually runs.
 # A prerequisite of every target below, so it self-installs (silently, once)
 # the first time anyone runs any `make` command after cloning -- no separate
@@ -68,7 +75,7 @@ build-client: install-hooks
 
 build-server: install-hooks
 	@echo "Building server .mrpack..."
-	@uv run python3 build_mrpack.py --pack-name Creark-Server --output-name server --exclude-file server-excludes.txt
+	@uv run python3 build_mrpack.py --pack-name "$$(printf '%s' "$(PACK_NAME)" | awk '{print toupper(substr($$0,1,1)) substr($$0,2)}')-Server" --output-name server --exclude-file server-excludes.txt
 
 build-mods-zip: install-hooks
 	@echo "Building mods-only zip..."
@@ -81,7 +88,7 @@ build-all: build-client build-server build-mods-zip
 # builds the image locally -- doesn't push anywhere.
 build-image: build-client
 	@echo "Building local image..."
-	@docker build -t creark-modpack:local .
+	@docker build --build-arg PACK_NAME=$(PACK_NAME) -t $(PACK_NAME)-modpack:local .
 
 stg-up: install-hooks
 	@echo "Starting the application (staging compose, local test)..."
