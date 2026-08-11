@@ -92,9 +92,9 @@ Prod settings (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are ov
 
 ### Publishing the server image (CI)
 
-On every push to `main`, `.github/workflows/deploy.yml` builds the client modpack, bakes it into the `Dockerfile` image, and pushes `ghcr.io/<owner>/<repo>:latest` (plus `:sha-<short-sha>` for rollback/debugging) to GHCR using the workflow's own `GITHUB_TOKEN` — no extra secrets needed; the image name is derived from the GitHub repository, not `PACK_NAME` (default: `ghcr.io/corvolieu/mc-creark-modpack`). Independent of `release.yml` (which publishes `.mrpack` files for players); both can run off the same push.
+On every push to `main`, `.github/workflows/deploy.yml` builds the client modpack, bakes it into the `Dockerfile` image, and pushes `ghcr.io/<owner>/<repo>:latest` (plus `:sha-<short-sha>` for rollback/debugging) to GHCR using the workflow's own `GITHUB_TOKEN` — no extra secrets needed; the image name is derived from the GitHub repository, not `PACK_NAME` (default: `ghcr.io/corvolieu/corvos-minecraft-modpack`). Independent of `release.yml` (which publishes `.mrpack` files for players); both can run off the same push.
 
-`docker-compose.stg.yml`/`docker-compose.prod.yml` pull that same image, via an `IMAGE_NAME` override in `.env` (defaults to `ghcr.io/corvolieu/mc-creark-modpack`, see `.env.example`) — set it if you've forked the repo under a different name.
+`docker-compose.stg.yml`/`docker-compose.prod.yml` pull that same image, via an `IMAGE_NAME` override in `.env` (defaults to `ghcr.io/corvolieu/corvos-minecraft-modpack`, see `.env.example`) — set it if you've forked the repo under a different name.
 
 **GHCR package visibility:** packages default to **private**, scoped to the repo. Watchtower on the prod VM needs pull access — either:
 
