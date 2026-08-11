@@ -83,6 +83,18 @@ build-image: build-client
 	@echo "Building local image..."
 	@docker build -t creark-modpack:local .
 
+stg-up: install-hooks
+	@echo "Starting the application (staging compose, local test)..."
+	@docker compose -f docker-compose.stg.yml up -d
+
+stg-log: install-hooks
+	@echo "Tailing the application logs (staging)..."
+	@docker compose -f docker-compose.stg.yml logs -f
+
+stg-stop: install-hooks
+	@echo "Stopping the application (staging)..."
+	@docker compose -f docker-compose.stg.yml down -v
+
 prod-up: install-hooks
 	@echo "Starting the application (prod compose, local test)..."
 	@docker compose -f docker-compose.prod.yml up -d
