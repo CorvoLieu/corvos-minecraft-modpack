@@ -16,7 +16,7 @@ Two use cases:
      left stale alongside newly-added ones.
 
 What gets pulled INTO the instance, from repo state:
-  manifest/creark.json  -> copied as-is into the instance's SKLauncher
+  manifest/<PACK_NAME>.json -> copied as-is into the instance's SKLauncher
                             manifest file (manifests/<id>.json in the
                             SKLauncher root), so SKLauncher's own UI reflects
                             the same enabled/disabled mod list.
@@ -35,6 +35,15 @@ What gets pulled INTO the instance, from repo state:
                             cross-check build_mrpack.py uses). Any jar
                             already in the instance's mods/ with NO
                             corresponding manifest entry is REMOVED.
+  datapacks/             -> reconciled the same way as mods/, from the
+                            manifest's datapacks/ entries into the instance's
+                            top-level datapacks/ dir, falling back to
+                            local-datapacks/ for non-Modrinth sources. Note
+                            this is SKLauncher's own instance-root datapacks/
+                            bucket, not a per-world saves/<world>/datapacks/
+                            folder -- see build_mrpack.py's docstring for why
+                            the .mrpack build itself has to place these
+                            differently to actually take effect.
   config/                - if config/ exists in the repo, reconciled the same
                             additive/subtractive way as mods/ (see "Design
                             decisions" below).
@@ -56,7 +65,8 @@ Configure which SKLauncher instance directory to target, in priority order
      .env.example) -- full path override, same as --instance-dir
   3. OS default directory with a custom instance name:
        --instance-name <name> (or -n <name>) CLI flag, or the INSTANCE_NAME
-       environment variable (also read from .env). Defaults to "creark".
+       environment variable (also read from .env). Defaults to the PACK_NAME
+       env var (also read from .env), or "minecraft-modded" if that's unset too.
        macOS: ~/Library/Application Support/sklauncher/instances/<name>
        Windows/Linux: SKLauncher's install layout differs there and there's
        no safe default -- set SK_INSTANCE_DIR or pass --instance-dir.
@@ -64,9 +74,9 @@ Configure which SKLauncher instance directory to target, in priority order
 Usage:
   uv run pull_instance.py               # preview, then prompt to confirm
   uv run pull_instance.py --yes         # apply without prompting
-  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/creark"
+  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/minecraft-modded"
   uv run pull_instance.py --instance-name my-other-instance
-  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run pull_instance.py
+  SK_INSTANCE_DIR="/path/to/sklauncher/instances/minecraft-modded" uv run pull_instance.py
 
 Design decisions (flagged for review, see PR description):
   - Instance registration (instances.json) isn't reverse-engineered enough
@@ -89,6 +99,7 @@ Design decisions (flagged for review, see PR description):
 
 import argparse
 import json
+import os
 import shutil
 import urllib.request
 from pathlib import Path
@@ -97,6 +108,7 @@ from dotenv import load_dotenv
 
 from build_mrpack import (
     curseforge_cdn_url,
+    load_datapack_entries,
     load_mod_entries,
     modrinth_cdn_url,
     sha1_of,
@@ -105,9 +117,13 @@ from build_mrpack import (
 from push_instance import resolve_instance_dir
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-MANIFEST_PATH = SCRIPT_DIR / "manifest" / "creark.json"
+# build_mrpack's import above triggers its module-level load_dotenv(), so
+# .env is already loaded by the time this reads PACK_NAME.
+PACK_NAME = os.environ.get("PACK_NAME", "minecraft-modded")
+MANIFEST_PATH = SCRIPT_DIR / "manifest" / f"{PACK_NAME}.json"
 PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"
 LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
+LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
 CONFIG_DIR = SCRIPT_DIR / "config"
 SERVERS_DAT = SCRIPT_DIR / "servers.dat"
 
@@ -127,8 +143,8 @@ def parse_args():
         "-n",
         default=None,
         help="instance name to look up under the OS default SKLauncher "
-        "instances dir (overrides INSTANCE_NAME, default: creark). Ignored "
-        "if --instance-dir/SK_INSTANCE_DIR is set.",
+        "instances dir (overrides INSTANCE_NAME, default: PACK_NAME env var, "
+        'or "minecraft-modded" if unset). Ignored if --instance-dir/SK_INSTANCE_DIR is set.',
     )
     parser.add_argument(
         "--yes",
@@ -192,18 +208,29 @@ def reconcile_dir(
     return added, updated, removed
 
 
-def sync_mods(instance_dir: Path, mod_entries: list[dict], apply: bool):
-    mods_dir = instance_dir / "mods"
-    mods_dir.mkdir(exist_ok=True)
+def sync_content(
+    instance_dir: Path,
+    content_subdir: str,
+    entries: list[dict],
+    local_dir: Path,
+    label: str,
+    apply: bool,
+):
+    """Reconciles instance_dir/content_subdir to match `entries` exactly:
+    Modrinth/downloadable-CurseForge entries are downloaded from their CDN,
+    everything else is copied from local_dir (matched by sha1). Files present
+    but not in `entries` are removed. Used for both mods/ and datapacks/."""
+    target_dir = instance_dir / content_subdir
+    target_dir.mkdir(exist_ok=True)
 
-    existing = {p.name: p for p in mods_dir.iterdir() if p.is_file() and p.name != ".DS_Store"}
-    wanted_names = {e["filename"] for e in mod_entries}
+    existing = {p.name: p for p in target_dir.iterdir() if p.is_file() and p.name != ".DS_Store"}
+    wanted_names = {e["filename"] for e in entries}
 
     added, updated, skipped, removed = 0, 0, 0, 0
 
-    for entry in mod_entries:
+    for entry in entries:
         filename = entry["filename"]
-        dest = mods_dir / filename
+        dest = target_dir / filename
         expected_sha1 = entry.get("fileHash", {}).get("sha1")
 
         if dest.exists() and expected_sha1 and sha1_of(dest) == expected_sha1:
@@ -221,20 +248,20 @@ def sync_mods(instance_dir: Path, mod_entries: list[dict], apply: bool):
                 cdn_url = candidate_url
 
         if cdn_url is not None:
-            print(f"  [mods] {'Downloading' if is_new else 'Updating'}: {filename}")
+            print(f"  [{content_subdir}] {'Downloading' if is_new else 'Updating'}: {filename}")
             if apply:
                 download(cdn_url, dest)
         else:
             # local source, or curseforge with third-party downloads disabled
-            local_path = LOCAL_MODS_DIR / filename
+            local_path = local_dir / filename
             if not local_path.exists():
                 raise SystemExit(
-                    f"Missing local mod file: {local_path} "
+                    f"Missing local {label} file: {local_path} "
                     f"(source={source}, expected from manifest)"
                 )
             if expected_sha1 and sha1_of(local_path) != expected_sha1:
                 raise SystemExit(f"sha1 mismatch for {local_path} vs manifest entry")
-            print(f"  [mods] {'Copying' if is_new else 'Updating'}: {filename}")
+            print(f"  [{content_subdir}] {'Copying' if is_new else 'Updating'}: {filename}")
             if apply:
                 shutil.copy2(local_path, dest)
 
@@ -245,15 +272,26 @@ def sync_mods(instance_dir: Path, mod_entries: list[dict], apply: bool):
 
     for name, path in existing.items():
         if name not in wanted_names:
-            print(f"  [mods] Removing (not in manifest): {name}")
+            print(f"  [{content_subdir}] Removing (not in manifest): {name}")
             removed += 1
             if apply:
                 path.unlink()
 
     print(
-        f"mods/: {added} added, {updated} updated, {skipped} already up to date, {removed} removed"
+        f"{content_subdir}/: {added} added, {updated} updated, "
+        f"{skipped} already up to date, {removed} removed"
     )
     return added, updated, removed
+
+
+def sync_mods(instance_dir: Path, mod_entries: list[dict], apply: bool):
+    return sync_content(instance_dir, "mods", mod_entries, LOCAL_MODS_DIR, "mod", apply)
+
+
+def sync_datapacks(instance_dir: Path, datapack_entries: list[dict], apply: bool):
+    return sync_content(
+        instance_dir, "datapacks", datapack_entries, LOCAL_DATAPACKS_DIR, "datapack", apply
+    )
 
 
 def sync_config(instance_dir: Path, apply: bool) -> tuple[int, int, int]:
@@ -336,9 +374,9 @@ def main():
             f"Error: SKLauncher instance directory not found: {instance_dir}\n\n"
             'Create the instance once via SKLauncher\'s "New Instance" UI first,\n'
             "then point this script at it via:\n"
-            '  SK_INSTANCE_DIR="/path/to/sklauncher/instances/creark" uv run pull_instance.py\n'
+            f'  SK_INSTANCE_DIR="/path/to/sklauncher/instances/{PACK_NAME}" uv run pull_instance.py\n'
             "or:\n"
-            '  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/creark"'
+            f'  uv run pull_instance.py --instance-dir "/path/to/sklauncher/instances/{PACK_NAME}"'
         )
 
     instance_id = instance_dir.name
@@ -354,13 +392,18 @@ def main():
         raise SystemExit(f"Error: repo pack.json not found: {PACK_JSON_PATH}")
 
     mod_entries = load_mod_entries(MANIFEST_PATH)
+    datapack_entries = load_datapack_entries(MANIFEST_PATH)
 
     def run(apply: bool) -> tuple[int, bool]:
         """Runs every sync step in the given mode. Returns (removed mod jar
-        count, whether anything changed) -- used to decide the confirmation
-        prompt and the final summary."""
-        mods_added, mods_updated, removed = sync_mods(instance_dir, mod_entries, apply)
-        changed = bool(mods_added or mods_updated or removed)
+        + datapack count, whether anything changed) -- used to decide the
+        confirmation prompt and the final summary."""
+        mods_added, mods_updated, mods_removed = sync_mods(instance_dir, mod_entries, apply)
+        dp_added, dp_updated, dp_removed = sync_datapacks(instance_dir, datapack_entries, apply)
+        removed = mods_removed + dp_removed
+        changed = bool(
+            mods_added or mods_updated or mods_removed or dp_added or dp_updated or dp_removed
+        )
 
         if not args.skip_config:
             cfg_added, cfg_updated, cfg_removed = sync_config(instance_dir, apply)
@@ -391,7 +434,7 @@ def main():
 
     prompt = "\nApply these changes?"
     if removed:
-        prompt += f" This will DELETE {removed} mod jar(s) not in the manifest."
+        prompt += f" This will DELETE {removed} mod jar(s)/datapack(s) not in the manifest."
     answer = input(prompt + " [y/N] ").strip().lower()
     if answer not in ("y", "yes"):
         print("Aborted -- no changes made.")

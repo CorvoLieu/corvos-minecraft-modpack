@@ -27,6 +27,7 @@ jobs:
         id: tag
         env:
           MANIFEST_FILE: ${{ vars.MANIFEST_FILE }}
+          PACK_NAME: ${{ vars.PACK_NAME }}
         run: |
           echo "tag=$(scripts/release/compute-tag.sh)" >> "$GITHUB_OUTPUT"
 
@@ -37,14 +38,20 @@ jobs:
           scripts/release/check-release-exists.sh "${{ steps.tag.outputs.tag }}" "${{ github.repository }}"
 
       - name: Build modpack artifacts
+        env:
+          PACK_NAME: ${{ vars.PACK_NAME }}
         run: make build-all
 
       - name: Rename artifacts for release
+        env:
+          PACK_NAME: ${{ vars.PACK_NAME }}
         run: |
           tag="${{ steps.tag.outputs.tag }}"
-          mv exports/client.mrpack "exports/Creark-$tag.mrpack"
-          mv exports/server.mrpack "exports/Creark-Server-$tag.mrpack"
-          mv exports/mods-only.zip "exports/Creark-Mods-Only-$tag.zip"
+          pack_name="${PACK_NAME:-minecraft-modded}"
+          pack_name="$(printf '%s' "$pack_name" | awk '{print toupper(substr($0,1,1)) substr($0,2)}')"
+          mv exports/client.mrpack "exports/${pack_name}-$tag.mrpack"
+          mv exports/server.mrpack "exports/${pack_name}-Server-$tag.mrpack"
+          mv exports/mods-only.zip "exports/${pack_name}-Mods-Only-$tag.zip"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

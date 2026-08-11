@@ -11,7 +11,7 @@ repo="${2:?usage: check-release-exists.sh <tag> <owner/repo>}"
 
 if gh release view "$tag" --repo "$repo" >/dev/null 2>&1; then
     echo "error: release $tag already exists for $repo." >&2
-    echo "Bump versionNumber in the manifest (manifest/creark.json, or \$MANIFEST_FILE) before merging to main." >&2
+    echo "Bump versionNumber in the manifest (manifest/<PACK_NAME>.json, or \$MANIFEST_FILE) before merging to main." >&2
     exit 1
 fi
 
