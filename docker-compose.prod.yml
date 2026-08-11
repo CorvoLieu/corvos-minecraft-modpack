@@ -14,7 +14,7 @@
 services:
   mc:
     # Published by .github/workflows/deploy.yml on every push to main.
-    image: ${IMAGE_NAME:-ghcr.io/corvolieu/mc-creark-modpack}:latest
+    image: ghcr.io/corvolieu/mc-creark-modpack:latest
     tty: true
     container_name: minecraft-server
     stdin_open: true
@@ -24,8 +24,8 @@ services:
       - "24454:24454"
       - "24454:24454/udp"
     environment:
-      VERSION: "${VERSION:-1.21.1}"
-      NEOFORGE_VERSION: "${NEOFORGE_VERSION:-21.1.233}"
+      VERSION: "1.21.1"
+      NEOFORGE_VERSION: "21.1.248"
       MEMORY: "${MEMORY:-15360M}"
       LEVEL: "${LEVEL:-world}"
       DIFFICULTY: "normal"
@@ -38,8 +38,11 @@ services:
       VIEW_DISTANCE: "7"
       ALLOW_FLIGHT: "true"
       OPS: "${OPS:-CakeBoy}"
-      RCON_CMDS_STARTUP: '${RCON_CMDS_STARTUP:-/gamerule playersSleepingPercentage 0\n/gamerule mobGriefing false}'
-      RCON_CMDS_ON_CONNECT: "${RCON_CMDS_ON_CONNECT:-/recipe give @p *}"
+      RCON_CMDS_STARTUP: |
+        /gamerule playersSleepingPercentage 0
+        /gamerule mobGriefing false
+      RCON_CMDS_ON_CONNECT: |
+        /recipe give @p *
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "false"
     volumes:
       - ./data:/data

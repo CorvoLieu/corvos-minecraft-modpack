@@ -1,4 +1,4 @@
-name: Release modpack artifacts
+name: "[PROD] Release modpack artifacts"
 
 on:
   push:
