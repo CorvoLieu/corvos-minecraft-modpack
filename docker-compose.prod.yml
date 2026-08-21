@@ -46,6 +46,11 @@ services:
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "false"
       MAX_TICK_TIME: "1200000"
       USE_AIKAR_FLAGS: "true"
+      # See docker-compose.dev.yml: this image's baked-in MODRINTH_MODPACK
+      # install still runs on first container start and fetches each mod
+      # jar from the Modrinth CDN, so it's exposed to the same
+      # ReadTimeoutException on a slow/stalled file without this.
+      FETCH_RESPONSE_TIMEOUT: "PT120S"
     volumes:
       - ./data:/data
     deploy:
