@@ -6,7 +6,7 @@
     "projectId": "local:blank",
     "versionId": "local:blank",
     "name": "CreativeWorld",
-    "versionNumber": "5.0.7",
+    "versionNumber": "5.0.9",
     "summary": "",
     "installedAt": "2026-08-01T08:30:46.145Z",
     "updatedAt": "2026-08-01T08:30:46.145Z",
@@ -382,22 +382,25 @@
       "iconUrl": "https://cdn.modrinth.com/data/n2fvCDlM/e764bf33a0a9d94fd33af84a63d8a47da7c85561_96.webp"
     },
     {
-      "filePath": "mods/copycats-3.0.4+mc.1.21.1-neoforge.jar",
-      "filename": "copycats-3.0.4+mc.1.21.1-neoforge.jar",
+      "filePath": "mods/copycats-3.0.7+mc.1.21.1-neoforge.jar",
+      "filename": "copycats-3.0.7+mc.1.21.1-neoforge.jar",
       "contentType": "mod",
       "name": "Create: Copycats+",
+      "description": "All the copycats you've ever wanted, combined into a single mod!",
+      "iconUrl": "https://cdn.modrinth.com/data/UT2M39wf/17960b56556c644249686a22172eda0924f8bbe0_96.webp",
       "projectId": "UT2M39wf",
-      "versionId": "kecZ0sl7",
+      "versionId": "8cABiKTp",
+      "versionNumber": "3.0.7+mc.1.21.1-neoforge",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "6a11d5806bcf521e08faba1ee6ef5f31af55ca0f",
-        "sha512": "ecc98e659be66a71af0aee66a9f4c7c8838f4f0101402644929079ce7280a572a000e7e417905e1869a51d6e49ebbd601008f54585e07ee4ed01f2c4bc752bfe"
+        "sha1": "8040f4be65cd7892aa71ab98db62a2823028e5b5",
+        "sha512": "72d3d28646a29b9de6e29fccac2591321198dd8ad1a82f290cb39ff4220114fd1d3059b5730be9875ef9c79b2e2179a2e7082dfcc5934e405bdf0a6b0f1cd015"
       },
-      "size": 1791747,
+      "size": 1799262,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:37:06.566Z",
+      "updatedAt": "2026-08-21T15:37:06.566Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -407,20 +410,16 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "u6dRKJwZ",
-          "type": "optional",
-          "installed": false
-        },
-        {
           "projectId": "LNytGWDc",
           "type": "required",
-          "installed": false
+          "installed": true
+        },
+        {
+          "projectId": "u6dRKJwZ",
+          "type": "optional",
+          "installed": true
         }
-      ],
-      "versionNumber": "3.0.4+mc.1.21.1-neoforge",
-      "description": "All the copycats you've ever wanted, combined into a single mod!",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/UT2M39wf/17960b56556c644249686a22172eda0924f8bbe0_96.webp"
+      ]
     },
     {
       "filePath": "mods/sliceanddice-4.3.3-neoforge.jar",
@@ -701,22 +700,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/IZ3b4kEa/b8127477bb66a617b304e94234c0507588d2e95c_96.webp"
     },
     {
-      "filePath": "mods/createcontraptionterminals-1.21-1.3.0.jar",
-      "filename": "createcontraptionterminals-1.21-1.3.0.jar",
+      "filePath": "mods/createcontraptionterminals-1.21-1.4.0.jar",
+      "filename": "createcontraptionterminals-1.21-1.4.0.jar",
       "contentType": "mod",
       "name": "Create Contraption Terminals",
+      "description": "Allows Tom's Simple Storage Terminals to work on Create contraptions.",
+      "author": "tom5454",
+      "iconUrl": "https://cdn.modrinth.com/data/gOPAFzp0/52b05061fcf8c8368c3e92b6ca3a76c79041c3b7_96.webp",
       "projectId": "gOPAFzp0",
-      "versionId": "XrNWi3Wo",
+      "versionId": "gBvq8zOa",
+      "versionNumber": "1.21.1-1.4.0",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "65bef5b4ec20ba8d966ed2fd97ad2992c7fa7d8a",
-        "sha512": "ca77062010c4fa09a058d6cc4a0d84be4c1186cad7a4b014a3ef5b2fe82531e483a1252c3945b67acc9b7c4f3805af467da9bddb9e53f8cd0fda9d97923f1877"
+        "sha1": "ede963781ca5bf49c5117031087b8085043c7ab3",
+        "sha512": "7ee2c06c244223e6f8a49a80ce617f88983e57e68bb3d34f80a90989279e4982aad6914f44881e078db394bae4a2f2ce94e08f31b187e941fc1978f7951ad824"
       },
-      "size": 90967,
+      "size": 91226,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:35:41.718Z",
+      "updatedAt": "2026-08-21T15:35:41.718Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -726,20 +729,16 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "XZNI4Cpy",
-          "type": "required",
-          "installed": false
-        },
-        {
           "projectId": "LNytGWDc",
           "type": "required",
-          "installed": false
+          "installed": true
+        },
+        {
+          "projectId": "XZNI4Cpy",
+          "type": "required",
+          "installed": true
         }
-      ],
-      "versionNumber": "1.21.1-1.3.0",
-      "description": "Allows Tom's Simple Storage Terminals to work on Create contraptions.",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/gOPAFzp0/52b05061fcf8c8368c3e92b6ca3a76c79041c3b7_96.webp"
+      ]
     },
     {
       "filePath": "mods/mcw-bridges-3.1.2-mc1.21.1neoforge.jar",
@@ -942,25 +941,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/ysICqMga/8a794afd8471e2a79d55af26f303071a5555ca70.png"
     },
     {
-      "filePath": "mods/balm-neoforge-1.21.1-21.0.64.jar",
-      "filename": "balm-neoforge-1.21.1-21.0.64.jar",
+      "filePath": "mods/balm-neoforge-1.21.1-21.0.65.jar",
+      "filename": "balm-neoforge-1.21.1-21.0.65.jar",
       "contentType": "mod",
       "name": "Balm",
       "description": "Abstraction Layer for Multi-Loader Mods",
+      "author": "BlayTheNinth",
       "iconUrl": "https://cdn.modrinth.com/data/MBAkmtvl/285b7bcfd6e525c043e640b08f3efc0cde90f7dd_96.webp",
       "projectId": "MBAkmtvl",
-      "versionId": "AMOGoVGH",
-      "versionNumber": "21.0.64+neoforge-1.21.1",
+      "versionId": "KgypwTqX",
+      "versionNumber": "21.0.65+neoforge-1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "db544a4fb95f7847cd4b1de9479c39cfa31fd529",
-        "sha512": "e98dfb28aebd14888b4cb219bd88c269ab1991fab4526a3f3b727cdf6e2e919a2b9a8d551c0a37bbc48017089db7260535221555ad7b2eb2fb56d2318a55f4d3"
+        "sha1": "69e0b3b69dd23c132e85b7e82310f45ae96b263d",
+        "sha512": "779b4f9e9738ae6f010e87f71b2ed5a114eb9b1b3d5b55cf42ad538094e5b064a1d3f4ff00064aac90da1c841a144464d47378d9bffc448a71d87132cb954101"
       },
       "size": 783793,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:52:24.182Z",
-      "updatedAt": "2026-08-01T08:52:24.182Z",
+      "installedAt": "2026-08-21T15:36:34.320Z",
+      "updatedAt": "2026-08-21T15:36:34.320Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -1391,62 +1391,6 @@
       "iconUrl": "https://cdn.modrinth.com/data/46KJle7n/4de43b519c4b4ce09c5a3155e908da446dbf455a_96.webp"
     },
     {
-      "filePath": "mods/skill_tree-neoforge-1.5.3+1.21.1.jar",
-      "filename": "skill_tree-neoforge-1.5.3+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Skill Tree (RPG Series)",
-      "description": "⭐️ Choose your path - Skills that shape your class",
-      "iconUrl": "https://cdn.modrinth.com/data/PjDhruSC/bace75ef00b3f21b8a1bba68ba7888702c233067_96.webp",
-      "projectId": "PjDhruSC",
-      "versionId": "69gGRtdJ",
-      "versionNumber": "1.5.3+1.21.1-neoforge",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "b5f2005c6fb40d0d10784d88f9708af4c2c271c5",
-        "sha512": "53f84bf49ca9039b0cee3d5ecbd55ab0aa59550ae3d20481533120f5bb85c9897bd71261979723fd239c07e6af8e641ad42b89c2fd41712fe028bc0beb6ec969"
-      },
-      "size": 2716931,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:52:15.438Z",
-      "updatedAt": "2026-08-01T08:52:15.438Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "XvoWJaA2",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "hqQqvaa4",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "AqaIIO6D",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "ilvNBzFn",
-          "type": "required",
-          "installed": true
-        }
-      ]
-    },
-    {
       "filePath": "mods/culturaldelights-0.17.8.jar",
       "filename": "culturaldelights-0.17.8.jar",
       "contentType": "mod",
@@ -1524,22 +1468,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/dNLZ9VjB/bde5699e3b3e477cbce4c806c547866324509e63_96.webp"
     },
     {
-      "filePath": "mods/create-integrated-farming-1.2.6.jar",
-      "filename": "create-integrated-farming-1.2.6.jar",
+      "filePath": "mods/create-integrated-farming-1.3.2.jar",
+      "filename": "create-integrated-farming-1.3.2.jar",
       "contentType": "mod",
       "name": "Create: Integrated Farming",
+      "description": "Integrated farming automation for Create",
+      "author": "MarbleGateKeeper",
+      "iconUrl": "https://cdn.modrinth.com/data/9k1pAsfR/904e6311ef61f595854d872a7248a43fcbc9140d_96.webp",
       "projectId": "9k1pAsfR",
-      "versionId": "FlSODr7U",
+      "versionId": "JCe5naC7",
+      "versionNumber": "1.3.2",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "e545c5d164948cfd1fd2bb9c16731d8c51c81035",
-        "sha512": "b488efd5c241d5e2cbcde7fec4abdcb010f258bf596892f9eecc278bfd9c8acd475b17ac44205b3eeee619bb76c776f887b524dbf664b3fa1e32147669cb8718"
+        "sha1": "9b5428c4d9da589439493aa4457a59b741afb369",
+        "sha512": "4c76a626f8c27cc97ae834109beaa919c8e94e8d130dffb336b6f9807e7874cc03291b4676e6590278eb7e9d598a422ee51c022ba3348eab7d92d3ddfcfe5ef9"
       },
-      "size": 438847,
+      "size": 595923,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:36:09.336Z",
+      "updatedAt": "2026-08-21T15:36:09.336Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -1551,18 +1499,14 @@
         {
           "projectId": "dzb1a5WV",
           "type": "required",
-          "installed": false
+          "installed": true
         },
         {
           "projectId": "LNytGWDc",
           "type": "required",
-          "installed": false
+          "installed": true
         }
-      ],
-      "versionNumber": "1.2.6",
-      "description": "Integrated farming automation for Create",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/9k1pAsfR/904e6311ef61f595854d872a7248a43fcbc9140d_96.webp"
+      ]
     },
     {
       "filePath": "mods/mcw-lights-1.1.5-mc1.21.1neoforge.jar",
@@ -2174,22 +2118,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/oEhQIkOs/8f60f42787aa349d25279bf86be7eeeef0237840_96.webp"
     },
     {
-      "filePath": "mods/xaeroworldmap-neoforge-1.21.1-1.44.2.jar",
-      "filename": "xaeroworldmap-neoforge-1.21.1-1.44.2.jar",
+      "filePath": "mods/xaeroworldmap-neoforge-1.21.1-1.45.0.jar",
+      "filename": "xaeroworldmap-neoforge-1.21.1-1.45.0.jar",
       "contentType": "mod",
       "name": "Xaero's World Map",
+      "description": "Adds a full screen world map which shows you what you have explored in the world. Works great together with Xaero's Minimap.",
+      "author": "thexaero",
+      "iconUrl": "https://cdn.modrinth.com/data/NcUtCpym/354080f65407e49f486fcf9c4580e82c45ae63b8_96.webp",
       "projectId": "NcUtCpym",
-      "versionId": "55gtOc9Y",
+      "versionId": "fOv9QzLO",
+      "versionNumber": "neoforge-1.21.1-1.45.0",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "beea95c1a2ca78e1a6ca0a0ddc7770672101fb60",
-        "sha512": "4a6b128ca0a07290ad62bab03e98c2ed5c7b37014bb3a3e8e74e7422429ca2cad225c045f9f8f9681662dfda29809dd9cdb2701ba4774a3a57e2fc84eb497fa8"
+        "sha1": "f243d6877ab32333f27bf27ad1e9eb600361e6aa",
+        "sha512": "57a3175d91c237682b65e1b9df78be23ad8cd03f1c8ca074fc61e1672d280df8fa7335c88a173b46b1e17834af621e5121b80ac0d12cd7c9aba3e3ceb367d1eb"
       },
-      "size": 1418918,
+      "size": 1422531,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:35:40.543Z",
+      "updatedAt": "2026-08-21T15:35:40.543Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -2202,13 +2150,9 @@
         {
           "projectId": "gF3BGWvG",
           "type": "optional",
-          "installed": false
+          "installed": true
         }
-      ],
-      "versionNumber": "neoforge-1.21.1-1.44.2",
-      "description": "Adds a full screen world map which shows you what you have explored in the world. Works great together with Xaero's Minimap.",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/NcUtCpym/354080f65407e49f486fcf9c4580e82c45ae63b8_96.webp"
+      ]
     },
     {
       "filePath": "mods/lambdynamiclights-4.8.10+1.21.1.jar",
@@ -2295,6 +2239,7 @@
       "contentType": "mod",
       "name": "Jewelry (RPG Series)",
       "description": "💍 Find precious gems deep down, and craft them into powerful jewelry!",
+      "author": "ZsoltMolnarrr",
       "iconUrl": "https://cdn.modrinth.com/data/sNJAIjUm/2eece212d22ebb4387f0b64df55d945e496d6e8c_96.webp",
       "projectId": "sNJAIjUm",
       "versionId": "DGZ9I5i8",
@@ -2307,8 +2252,8 @@
       "size": 461650,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:52:09.155Z",
-      "updatedAt": "2026-08-01T08:52:09.155Z",
+      "installedAt": "2026-08-21T16:29:36.734Z",
+      "updatedAt": "2026-08-21T16:29:36.734Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -2319,7 +2264,7 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "AqaIIO6D",
+          "projectId": "LrYZi08Q",
           "type": "required",
           "installed": true
         },
@@ -2329,12 +2274,12 @@
           "installed": true
         },
         {
-          "projectId": "LrYZi08Q",
+          "projectId": "8ooWzSQP",
           "type": "required",
           "installed": true
         },
         {
-          "projectId": "8ooWzSQP",
+          "projectId": "AqaIIO6D",
           "type": "required",
           "installed": true
         },
@@ -2346,22 +2291,26 @@
       ]
     },
     {
-      "filePath": "mods/enchdesc-neoforge-1.21.1-21.1.10.jar",
-      "filename": "enchdesc-neoforge-1.21.1-21.1.10.jar",
+      "filePath": "mods/enchdesc-neoforge-1.21.1-21.1.11.jar",
+      "filename": "enchdesc-neoforge-1.21.1-21.1.11.jar",
       "contentType": "mod",
       "name": "Enchantment Descriptions",
+      "description": "Provides a way to get enchantment descriptions from enchanted books.",
+      "author": "Darkhax",
+      "iconUrl": "https://cdn.modrinth.com/data/UVtY3ZAC/1f857baf3d1f78e40343925176c084838c91a891_96.webp",
       "projectId": "UVtY3ZAC",
-      "versionId": "OuJDPGSM",
+      "versionId": "IktklYWh",
+      "versionNumber": "21.1.11",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "9a06a20881c5feb730aa249666cac2871ca99fda",
-        "sha512": "8932647d23f19ead791a921b0793f61fd7c36601824afef060a55dad9e1ace64f1cb50bd83490d43c9dff3a34661b68b89975f8c4f36b69f36b8e44592d0ad16"
+        "sha1": "4d453df785ac21e0e7389cba949f4fa460c3e267",
+        "sha512": "b12eb7f5fe460b865d54c23aee04bb72ea47fd9681d29cf46d96ad672cbe8e5bb5cbce5b87baafc69146aee468c567cf6eeedc42fec08169fb4395c39ef92252"
       },
-      "size": 82629,
+      "size": 82648,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:35:51.190Z",
+      "updatedAt": "2026-08-21T15:35:51.190Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -2373,18 +2322,14 @@
         {
           "projectId": "aaRl8GiW",
           "type": "required",
-          "installed": false
+          "installed": true
         },
         {
           "projectId": "uy4Cnpcm",
           "type": "required",
-          "installed": false
+          "installed": true
         }
-      ],
-      "versionNumber": "21.1.10",
-      "description": "Provides a way to get enchantment descriptions from enchanted books.",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/UVtY3ZAC/1f857baf3d1f78e40343925176c084838c91a891_96.webp"
+      ]
     },
     {
       "filePath": "mods/appleskin-neoforge-mc1.21-3.0.9.jar",
@@ -2642,26 +2587,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/cpqKG67r/31f1d6d6ea7036ef303af5b401944c94c38045de_96.webp"
     },
     {
-      "filePath": "mods/wakes-1.21.1-NeoForge-1.4.0.jar",
-      "filename": "wakes-1.21.1-NeoForge-1.4.0.jar",
+      "filePath": "mods/wakes-1.21.1-NeoForge-1.4.1.jar",
+      "filename": "wakes-1.21.1-NeoForge-1.4.1.jar",
       "contentType": "mod",
       "name": "Wakes Reforged",
       "description": "Wakes aims to add simple wakes that fit the spirit of vanilla",
       "author": "Leclowndu93150",
       "iconUrl": "https://cdn.modrinth.com/data/E0SdeAoH/f655ca1093b28f2c02cafd1577160513d121a8fa_96.webp",
       "projectId": "E0SdeAoH",
-      "versionId": "YQWPuboy",
-      "versionNumber": "1.4.0",
+      "versionId": "Z3Ic8n5N",
+      "versionNumber": "1.4.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "e88af30e54b031c31504649a0d7b2c08a3f860f9",
-        "sha512": "a09205ed90dfe7e235819a69f83675c130c9a36ba4d3d04caa817d2e1e98c6547cdbae07e3eb5c07f583aaa7dbab02615d477aff615c52de07cd477eccef1fde"
+        "sha1": "e55b63465e733b0faee50c9c336b82a5bca857a8",
+        "sha512": "a3bc9480250b9a76ef53dec894f149b0528fd64ed81bcf7cd1570e4da022683eb7842e00e2aa84ae3235419684110da8bfa9d3ee57c2e21cc356dd47ba94406c"
       },
-      "size": 212854,
+      "size": 222430,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-07T10:00:22.544Z",
-      "updatedAt": "2026-08-07T10:00:22.544Z",
+      "installedAt": "2026-08-21T15:36:21.999Z",
+      "updatedAt": "2026-08-21T15:36:21.999Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -2676,75 +2621,38 @@
           "installed": true
         },
         {
-          "projectId": "oWaK0Q19",
-          "type": "optional",
-          "installed": false
-        },
-        {
           "projectId": "T9PomCSv",
           "type": "optional",
-          "installed": false
+          "installed": true
+        },
+        {
+          "projectId": "oWaK0Q19",
+          "type": "optional",
+          "installed": true
         }
       ]
     },
     {
-      "filePath": "mods/gazebo-neoforge-2.1.0+1.21.1.jar",
-      "filename": "gazebo-neoforge-2.1.0+1.21.1.jar",
+      "filePath": "mods/gazebo-neoforge-2.2.0+1.21.1.jar",
+      "filename": "gazebo-neoforge-2.2.0+1.21.1.jar",
       "contentType": "mod",
       "name": "Gazebos (RPG Series)",
-      "projectId": "XIpMGI6r",
-      "versionId": "WqZjDLZg",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "50815a6c4fcf8ab501f9eae52ed4906e4174540e",
-        "sha512": "1156ceed0de36964064b9bd08896c2fffadb8dc69b52147982c6607e0a6a95d3792da3669ecaddb38abd9c776bcd64ac659cf3e32c90d886ea99fa76f9aebb83"
-      },
-      "size": 85007,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "beta",
-      "dependencies": [
-        {
-          "projectId": "LrYZi08Q",
-          "type": "required",
-          "installed": false
-        }
-      ],
-      "versionNumber": "2.1.0+1.21.1-neoforge",
       "description": "⛲️ Village structures hosting small spell libraries",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/XIpMGI6r/4194614b15b1c9286bd7e2e3f41110a2e790da5d_96.webp"
-    },
-    {
-      "filePath": "mods/paladins-neoforge-3.0.5+1.21.1.jar",
-      "filename": "paladins-neoforge-3.0.5+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Paladins & Priests (RPG Series)",
-      "description": "✨ Protect and heal your friends as a Paladin or a Priest",
       "author": "ZsoltMolnarrr",
-      "iconUrl": "https://cdn.modrinth.com/data/FxXkHaLe/0d64c2fad819691a42c9b6e436c4914c6ce4b413_96.webp",
-      "projectId": "FxXkHaLe",
-      "versionId": "SpQRKYSI",
-      "versionNumber": "3.0.5+1.21.1-neoforge",
+      "iconUrl": "https://cdn.modrinth.com/data/XIpMGI6r/4194614b15b1c9286bd7e2e3f41110a2e790da5d_96.webp",
+      "projectId": "XIpMGI6r",
+      "versionId": "ktRCCPX3",
+      "versionNumber": "2.2.0+1.21.1-neoforge",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "8dfa2368fc5e674313fe0b0acb57f3e2f31e553c",
-        "sha512": "18de311c30f246183beef3175f0d348910d1e84e324b634dc98e596c856f064581baf3011459096aea451a0782683ed6d1bfa960871a4e82dc57fdf519b8b6a5"
+        "sha1": "0ddeb9ccb65c8d78037c6858673c60d226013d00",
+        "sha512": "2346b1400e8f44567a6c0d939ce3ce1b2886ddef958915992c0cbc7886642a1991fcae1c8df01cfe84560cc9d412c8206edceb575b01131db4e927beb8ca4358"
       },
-      "size": 3096303,
+      "size": 112399,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-07T10:00:26.386Z",
-      "updatedAt": "2026-08-07T10:00:26.386Z",
+      "installedAt": "2026-08-21T15:36:38.563Z",
+      "updatedAt": "2026-08-21T15:36:38.563Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -2755,32 +2663,7 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "lP9Yrr1E",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "y9clIFY4",
-          "type": "required",
-          "installed": true
-        },
-        {
           "projectId": "LrYZi08Q",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "pduQXSbl",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "XvoWJaA2",
           "type": "required",
           "installed": true
         }
@@ -2884,22 +2767,25 @@
       "iconUrl": "https://cdn.modrinth.com/data/VRLhWB91/4564a530eaf62d3704796e407f700dc1f1fc22f8_96.webp"
     },
     {
-      "filePath": "mods/create-stuff-additions1.21.1_v2.1.4a.jar",
-      "filename": "create-stuff-additions1.21.1_v2.1.4a.jar",
+      "filePath": "mods/create-stuff-additions1.21.1_v2.1.4b.jar",
+      "filename": "create-stuff-additions1.21.1_v2.1.4b.jar",
       "contentType": "mod",
       "name": "Create Stuff 'N Additions",
+      "description": "🧲 Dominate your environment with Create technology",
+      "iconUrl": "https://cdn.modrinth.com/data/aq9qUUQG/5bdb5c6598670bae17d6295757066d43c7364d61_96.webp",
       "projectId": "aq9qUUQG",
-      "versionId": "5xWzE6Yk",
+      "versionId": "gMWQ1LX9",
+      "versionNumber": "2.1.4.b",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "cb0ab0117feba62a2ae04baa4dc754363c4eacc4",
-        "sha512": "43e9f5d6fe9faaf1a77b7f979c2f1b7643a90b08c0572d06ef09efcb201d309bb66c32c396ae8383d68c2217224a98dc770290b8291b98edfa37c9bc3fc19a32"
+        "sha1": "246915560f74b92e0186c22da26be8995380c443",
+        "sha512": "75cd8a0a2f898b3599cb267c26c02691e53f8ca8f6c6c4f16d1a82db8fea4494988f163559cc3a8b471683d5b52353ba065def8846a7ff2073bddf42e68b5e7d"
       },
-      "size": 1344545,
+      "size": 1347181,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:35:55.072Z",
+      "updatedAt": "2026-08-21T15:35:55.072Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -2907,11 +2793,7 @@
         "neoforge"
       ],
       "releaseType": "release",
-      "dependencies": [],
-      "versionNumber": "2.1.4.a",
-      "description": "🧲 Dominate your environment with Create technology",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/aq9qUUQG/5bdb5c6598670bae17d6295757066d43c7364d61_96.webp"
+      "dependencies": []
     },
     {
       "filePath": "mods/berserker_rpg-neoforge-2.6.0+1.21.1.jar",
@@ -3080,8 +2962,8 @@
       "size": 4500671,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-08T13:37:15.929Z",
-      "updatedAt": "2026-08-08T13:37:15.929Z",
+      "installedAt": "2026-08-21T15:58:39.114Z",
+      "updatedAt": "2026-08-21T15:58:39.114Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -3092,7 +2974,12 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "Aqlf1Shp",
+          "projectId": "9s6osm5g",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "gedNE4y2",
           "type": "required",
           "installed": true
         },
@@ -3102,12 +2989,7 @@
           "installed": true
         },
         {
-          "projectId": "9s6osm5g",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "gedNE4y2",
+          "projectId": "Aqlf1Shp",
           "type": "required",
           "installed": true
         },
@@ -3179,22 +3061,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/J5bVsBt9/b5c4bde6ce95fc4890d7572c25e3b0b2a170a84c.png"
     },
     {
-      "filePath": "mods/ranged_weapon_api-neoforge-2.3.3+1.21.1.jar",
-      "filename": "ranged_weapon_api-neoforge-2.3.3+1.21.1.jar",
+      "filePath": "mods/ranged_weapon_api-neoforge-2.3.4+1.21.1.jar",
+      "filename": "ranged_weapon_api-neoforge-2.3.4+1.21.1.jar",
       "contentType": "mod",
       "name": "Ranged Weapon API",
+      "description": "🏹 Create fully functional bows and crossbows, with ease",
+      "author": "ZsoltMolnarrr",
+      "iconUrl": "https://cdn.modrinth.com/data/AqaIIO6D/cf4d822d2fa89e72d37eebcfb1113a6389a0abe6_96.webp",
       "projectId": "AqaIIO6D",
-      "versionId": "6wUNDbSa",
+      "versionId": "o8J1QzYL",
+      "versionNumber": "2.3.4+1.21.1-neoforge",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "1c44e981e0bc99ddd0983577b0f28375bdf9f338",
-        "sha512": "46227d47045d1108a7fe34f55d36ea4b2dac46d6399df5fe587d208e0e9f32de58e4c18fc6d8eeeb17b526ba9370e05d3ca6229a3adb01cf671d317b3273fedf"
+        "sha1": "1f5bdf73cf3930951171acf691997aecc1186d86",
+        "sha512": "c0860665471bf4f7004759cfe527c2a6c1a9ba0090b0356b44306927063f857d61be75eed8d8424dd45b4b2b76db1c87060b90265b5f2b0077ddf41557b56a74"
       },
-      "size": 141442,
+      "size": 146715,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:35:07.992Z",
+      "updatedAt": "2026-08-21T15:35:07.992Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -3203,11 +3089,13 @@
         "neoforge"
       ],
       "releaseType": "release",
-      "dependencies": [],
-      "versionNumber": "2.3.3+1.21.1-neoforge",
-      "description": "🏹 Create fully functional bows and crossbows, with ease",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/AqaIIO6D/79c5fe2b39fc67907508b9bf9dd45c685b955062_96.webp"
+      "dependencies": [
+        {
+          "projectId": "fRiHVvU7",
+          "type": "optional",
+          "installed": false
+        }
+      ]
     },
     {
       "filePath": "mods/jei-1.21.1-neoforge-19.43.0.394.jar",
@@ -3241,22 +3129,26 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/create-central-kitchen-2.5.0.jar",
-      "filename": "create-central-kitchen-2.5.0.jar",
+      "filePath": "mods/create-central-kitchen-2.6.0.jar",
+      "filename": "create-central-kitchen-2.6.0.jar",
       "contentType": "mod",
       "name": "Create: Central Kitchen",
+      "description": "Offering more tools and methods to automate food processing of other mod in Create.",
+      "author": "RaymondBlaze",
+      "iconUrl": "https://cdn.modrinth.com/data/btq68HMO/d5c04195d567b0d7314bfadd993eb1ba44dd9c38_96.webp",
       "projectId": "btq68HMO",
-      "versionId": "kmHFmmpV",
+      "versionId": "1mQSm4Yb",
+      "versionNumber": "2.6.0",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "caa89b624caad7a9304872a236e74ea4c143972c",
-        "sha512": "a184285bd2dc3181c7a0cc1a3af8501e5ce6caa566fec14d7f3d06555707fcbac855c3b8f56d71c6e6e223df377c7f05024093046899f4375d5c65580cc62972"
+        "sha1": "f0dd0161de70f2177ba2e06c68ef0dbea08cdf2f",
+        "sha512": "9f42e5f3e557118a8dec364ee87fa9ee3d91f8f386eaf656ae2410dff6e5263bdeb0d532fe1af7dab51c3faf9fa6672d3089a28e5c04242e86b55407f41b7152"
       },
-      "size": 375492,
+      "size": 488390,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:36:28.195Z",
+      "updatedAt": "2026-08-21T15:36:28.195Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -3266,20 +3158,36 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "LNytGWDc",
+          "projectId": "dzb1a5WV",
           "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "foa4fGIH",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "AsUUCoXX",
+          "type": "optional",
           "installed": false
         },
         {
-          "projectId": "dzb1a5WV",
-          "type": "required",
+          "projectId": "8EEEXOzj",
+          "type": "optional",
           "installed": false
+        },
+        {
+          "projectId": "LNytGWDc",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "YttyNOFA",
+          "type": "optional",
+          "installed": true
         }
-      ],
-      "versionNumber": "2.5.0",
-      "description": "Offering more tools and methods to automate food processing of other mod in Create.",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/btq68HMO/d5c04195d567b0d7314bfadd993eb1ba44dd9c38_96.webp"
+      ]
     },
     {
       "filePath": "mods/citadel-1.21.1-2.7.6.jar",
@@ -3394,42 +3302,6 @@
       "description": "Automatic Enchanting, with Create",
       "author": "",
       "iconUrl": "https://cdn.modrinth.com/data/JWGBpFUP/9571cd419c5eee9f2017f0b6f7cf6e81c665723b_96.webp"
-    },
-    {
-      "filePath": "mods/spell_power-neoforge-1.5.0+1.21.1.jar",
-      "filename": "spell_power-neoforge-1.5.0+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Spell Power Attributes",
-      "description": "🔮 Spell Power entity attributes with related status effects and enchantments",
-      "iconUrl": "https://cdn.modrinth.com/data/8ooWzSQP/fb6ef3214dcfddc7d0062f5642e30eb45de6df32_96.webp",
-      "projectId": "8ooWzSQP",
-      "versionId": "80pIrhth",
-      "versionNumber": "1.5.0+1.21.1-neoforge",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "5b0302023ffd7573d2d6b16d60dab496081f7ef4",
-        "sha512": "d4a2b13054fcdbf8321cc909823b0c96baae6a734d0df652dffab751ad3b86d196d0fb620126ee6dc99973232941261a0b6a9ee3313ab37bb82fab423e4b144c"
-      },
-      "size": 196192,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:51:54.938Z",
-      "updatedAt": "2026-08-01T08:51:54.938Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": true
-        }
-      ]
     },
     {
       "filePath": "mods/reeses-sodium-options-neoforge-2.2.3+mc1.21.1.jar",
@@ -3648,22 +3520,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/C7I0BCni/7eb5e7816f887154e69a4001bee5bcc143242b32_96.webp"
     },
     {
-      "filePath": "mods/powergrid-mc1.21.1-0.5.5.1.jar",
-      "filename": "powergrid-mc1.21.1-0.5.5.1.jar",
+      "filePath": "mods/powergrid-mc1.21.1-0.6.0.1.jar",
+      "filename": "powergrid-mc1.21.1-0.6.0.1.jar",
       "contentType": "mod",
       "name": "Create: Power Grid",
+      "description": "Providing electricity to a world near you",
+      "author": "patryk3211",
+      "iconUrl": "https://cdn.modrinth.com/data/eWiBLJ9R/700288b560233276dd94ca5ac24cc98af79cab66_96.webp",
       "projectId": "eWiBLJ9R",
-      "versionId": "8EtGIOFr",
+      "versionId": "IhWvpljS",
+      "versionNumber": "0.6.0.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "06b0500d7101c5846e9e2c5bb4b53646a50ef133",
-        "sha512": "0dafe82438143270a762f9bfff3483c56e85a5db0bb382dba15302b6d6f6a886f252dee42fca08fb46c7a76eb9401f90430d41994b20133e9c009d5b876b8bb5"
+        "sha1": "68509bfa4863318a2d188ed232072c76465b2b13",
+        "sha512": "947ac20357e5f1529973cff59e7e4d1de6f7ecc2c50adb18febc678017e81bc20d010c459eaddb23351689c9a7adb4329dc452dfa4b4ef535f0d3b608e51dd9c"
       },
-      "size": 6252168,
+      "size": 7905734,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:36:54.197Z",
+      "updatedAt": "2026-08-21T15:36:54.197Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -3673,20 +3549,16 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "lhGA9TYQ",
-          "type": "required",
-          "installed": false
-        },
-        {
           "projectId": "LNytGWDc",
           "type": "required",
-          "installed": false
+          "installed": true
+        },
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
         }
-      ],
-      "versionNumber": "0.5.5.1",
-      "description": "Providing electricity to a world near you",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/eWiBLJ9R/700288b560233276dd94ca5ac24cc98af79cab66_96.webp"
+      ]
     },
     {
       "filePath": "mods/Chunky-NeoForge-1.4.23.jar",
@@ -3787,22 +3659,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/n8QN6Z1a/8a88e27c98582aca480db1caa155f90ec6ec2f8a_96.webp"
     },
     {
-      "filePath": "mods/FarmersDelight-1.21.1-1.3.2.jar",
-      "filename": "FarmersDelight-1.21.1-1.3.2.jar",
+      "filePath": "mods/FarmersDelight-1.21.1-1.3.3.jar",
+      "filename": "FarmersDelight-1.21.1-1.3.3.jar",
       "contentType": "mod",
       "name": "Farmer's Delight",
+      "description": "A cozy expansion to farming and cooking!",
+      "author": "vectorwing",
+      "iconUrl": "https://cdn.modrinth.com/data/R2OftAxM/8e7aa38ab94d94bb0a2894a218b69beb49002b34.png",
       "projectId": "R2OftAxM",
-      "versionId": "GbNuOZ4S",
+      "versionId": "wpkbWnVh",
+      "versionNumber": "1.21.1-1.3.3",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "bf7e7dede99e832de20e191b1f6c11f7a9b9a622",
-        "sha512": "da5a4236427df8010d75992201c8723ac84a8fa71efa55670551d333cac94a90ae8e8c536da63ae07a67f4d00dc2774ae4151030f41d26886e508f4a037c8694"
+        "sha1": "55ea87dec84a632690a748857db08a35941980b6",
+        "sha512": "57978eb985131dd25a0d098362b4c6eabf9c607d8048b1a639e231c4fcee53c1a05453cedfe6a4a52da4ab8bf4190cdb520a6c3097e8e0993cf7360ad693dc15"
       },
-      "size": 3163042,
+      "size": 3160883,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:35:34.541Z",
+      "updatedAt": "2026-08-21T15:35:34.541Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -3810,11 +3686,7 @@
         "neoforge"
       ],
       "releaseType": "release",
-      "dependencies": [],
-      "versionNumber": "1.21.1-1.3.2",
-      "description": "A cozy expansion to farming and cooking!",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/R2OftAxM/8e7aa38ab94d94bb0a2894a218b69beb49002b34.png"
+      "dependencies": []
     },
     {
       "filePath": "mods/ferritecore-7.0.3-neoforge.jar",
@@ -4086,26 +3958,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/K3yHebFL/11ec8985032c8b274cd5c22c3a1a55d699870b56_96.webp"
     },
     {
-      "filePath": "mods/chat_heads-0.15.6-neoforge-1.21.jar",
-      "filename": "chat_heads-0.15.6-neoforge-1.21.jar",
+      "filePath": "mods/chat_heads-0.15.7-neoforge-1.21.jar",
+      "filename": "chat_heads-0.15.7-neoforge-1.21.jar",
       "contentType": "mod",
       "name": "Chat Heads",
       "description": "See who you're chatting with!",
       "author": "Fourmisain",
       "iconUrl": "https://cdn.modrinth.com/data/Wb5oqrBJ/icon.png",
       "projectId": "Wb5oqrBJ",
-      "versionId": "HcpZ0l88",
-      "versionNumber": "0.15.6",
+      "versionId": "ZPylso9i",
+      "versionNumber": "0.15.7",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "37f276ee3449e785a32b68ba6260d6992974cf19",
-        "sha512": "4a127e5a7e24c2bcbfe8049b84296be78d342f38e2acd3386f5ee240c072106d83e7f4f0ba1041e28192af7f8c033093d7694f3ba81a6571fde80beb4ee95aed"
+        "sha1": "536b2af675229d2a33eb4cf5afbe7148a62d5f3f",
+        "sha512": "97ec4a08ffe54917591e7e05ba5ed9359e591719e4f3246745de36923a8080e68332aff28be437997c40a215b7aebc3537df892c99db4de6a5348ac7b4995144"
       },
-      "size": 91825,
+      "size": 91948,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-09T17:28:06.291Z",
-      "updatedAt": "2026-08-09T17:28:06.291Z",
+      "installedAt": "2026-08-21T15:37:00.582Z",
+      "updatedAt": "2026-08-21T15:37:00.582Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -4121,53 +3993,6 @@
           "installed": true
         }
       ]
-    },
-    {
-      "filePath": "mods/relics-neoforge-1.3.0+1.21.1.jar",
-      "filename": "relics-neoforge-1.3.0+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Relics (RPG Series)",
-      "projectId": "BDQucwF0",
-      "versionId": "9q085tSI",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "6c8ae8d5220ad4a6cf98eec5cb9daf4f1f8131f2",
-        "sha512": "51cb715909acf2d1897437435f3418a152fcff85e77f87da630da149362a370589e5c70a7f235d2473453a95605f110bac7d27adf32d7dc3648dd6a0260d3e37"
-      },
-      "size": 2129113,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "AqaIIO6D",
-          "type": "required",
-          "installed": false
-        },
-        {
-          "projectId": "XvoWJaA2",
-          "type": "required",
-          "installed": false
-        },
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": false
-        }
-      ],
-      "versionNumber": "1.3.0+1.21.1-neoforge",
-      "description": "🎖 Unleash your true potential with powerful trinkets! 🔮",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/BDQucwF0/6aac428c17df067875dfff8a37b6f2a3535ea2cc_96.webp"
     },
     {
       "filePath": "mods/bookshelf-neoforge-1.21.1-21.1.81.jar",
@@ -4273,25 +4098,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/9s6osm5g/ed8a2316cbb6f4fc5f510e8e13a59a85cbbbff4d_96.webp"
     },
     {
-      "filePath": "mods/gravestone-neoforge-1.21.1-1.0.38.jar",
-      "filename": "gravestone-neoforge-1.21.1-1.0.38.jar",
+      "filePath": "mods/gravestone-neoforge-1.21.1-1.0.40.jar",
+      "filename": "gravestone-neoforge-1.21.1-1.0.40.jar",
       "contentType": "mod",
       "name": "GraveStone Mod",
       "description": "Places a gravestone with your inventory items inside when you die",
+      "author": "henkelmax",
       "iconUrl": "https://cdn.modrinth.com/data/RYtXKJPr/ee9d4610b3892547c20ac61bcdb2517d1b3a4649_96.webp",
       "projectId": "RYtXKJPr",
-      "versionId": "3a6KIbgL",
-      "versionNumber": "neoforge-1.21.1-1.0.38",
+      "versionId": "rMGJpjaM",
+      "versionNumber": "neoforge-1.21.1-1.0.40",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "2b6d5ff95bb80d811eac78d0556ee384125bca9d",
-        "sha512": "ee97b54ab9c33cafbe236c7a9805298dfab2004b9f94144ce656e9929839ee9a50f29cdfb4dffde85b64faa5e3c0f989aacee4204c2d0f0ca9b80bfdffe5d12e"
+        "sha1": "97230b93af34ac6581ed36b0cc98f6b16b06c04e",
+        "sha512": "5504a222d4085da1898ff6d4dff8eb1821fd14a8caaaac785554277147f984262e63925a411db3f1a34e9c7874652fb6737176bea4c0c3f01243f5eae4ea6eaa"
       },
-      "size": 321850,
+      "size": 322082,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:52:01.022Z",
-      "updatedAt": "2026-08-01T08:52:01.022Z",
+      "installedAt": "2026-08-21T15:35:39.219Z",
+      "updatedAt": "2026-08-21T15:35:39.219Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -4352,22 +4178,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/c8JYP4m3/32d6160c5f54536e7fbc033cae3df79c30fdf15e_96.webp"
     },
     {
-      "filePath": "mods/lithostitched-1.7.13-neoforge-21.1.jar",
-      "filename": "lithostitched-1.7.13-neoforge-21.1.jar",
+      "filePath": "mods/lithostitched-1.8.0+beta4-neoforge-21.1.jar",
+      "filename": "lithostitched-1.8.0+beta4-neoforge-21.1.jar",
       "contentType": "mod",
       "name": "Lithostitched",
+      "description": "Library mod with new configurability and compatibility enhancements for worldgen",
+      "author": "Apollo",
+      "iconUrl": "https://cdn.modrinth.com/data/XaDC71GB/bc3425bcb318176adc7da99b6eec48787eed98d3.png",
       "projectId": "XaDC71GB",
-      "versionId": "qPASucBM",
+      "versionId": "81DDKTGJ",
+      "versionNumber": "1.8.0+beta4-neoforge-21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "771a104dde071e16e67c7cd3149f7c3015375483",
-        "sha512": "04409013edce65678d02489a7b830ba7d5e18e7c705243c8208f52661da62e7e337a09fe2797c85d7a00bc66cb50949b157b267afd216e7b900ddde9849dff32"
+        "sha1": "0edda78ec8500143cca898881c476b2b04dac75a",
+        "sha512": "f2bdbdd662d02d4357616a744f80edc14ae6ef866920ad6c177eba676a6591026d3bcf2241a05424f084c4bdad3a2bd00055daede58c5d06265d03add72769b3"
       },
-      "size": 852541,
+      "size": 954028,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:36:35.979Z",
+      "updatedAt": "2026-08-21T15:36:35.979Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -4375,11 +4205,7 @@
         "neoforge"
       ],
       "releaseType": "release",
-      "dependencies": [],
-      "versionNumber": "1.7.13-neoforge-21.1",
-      "description": "Library mod with new configurability and compatibility enhancements for worldgen",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/XaDC71GB/bc3425bcb318176adc7da99b6eec48787eed98d3.png"
+      "dependencies": []
     },
     {
       "filePath": "mods/rusticdelight-neoforge-1.21-1.7.1.jar",
@@ -4412,63 +4238,6 @@
       "dependencies": [
         {
           "projectId": "R2OftAxM",
-          "type": "required",
-          "installed": true
-        }
-      ]
-    },
-    {
-      "filePath": "mods/wizards-neoforge-3.0.4+1.21.1.jar",
-      "filename": "wizards-neoforge-3.0.4+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Wizards (RPG Series)",
-      "description": "🧙🏻‍♂️ Destroy your enemies with Arcane, Fire and Frost magic",
-      "author": "ZsoltMolnarrr",
-      "iconUrl": "https://cdn.modrinth.com/data/NkGaQMDA/06c5350c207bddffefdfea0b6fc80269d683bbd7_96.webp",
-      "projectId": "NkGaQMDA",
-      "versionId": "W76xF87G",
-      "versionNumber": "3.0.4+1.21.1-neoforge",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "1e01bd11745a569e0951189ecd3fdef6fbdf4aa6",
-        "sha512": "d265a36ea89287e64019f437e13006228ecbd7de60e6b3a9426d6ee4e7b072ffd00679588011100c8ee5fb16954013dbbee70c47b0db86b3bdf1cba678bc6922"
-      },
-      "size": 4465705,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-07T10:01:10.361Z",
-      "updatedAt": "2026-08-07T10:01:10.361Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "pduQXSbl",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "XvoWJaA2",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "lP9Yrr1E",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "LrYZi08Q",
           "type": "required",
           "installed": true
         }
@@ -4539,62 +4308,6 @@
       "description": "A crossplatform (Forge/Fabric) solution to connected block textures for 1.19.4+",
       "author": "",
       "iconUrl": "https://cdn.modrinth.com/data/b1ZV3DIJ/3dec7dd828894a4c5c6d98eaf960e9a418647b55_96.webp"
-    },
-    {
-      "filePath": "mods/archers-neoforge-3.0.3+1.21.1.jar",
-      "filename": "archers-neoforge-3.0.3+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Archers (RPG Series)",
-      "description": "🏹 Draw, Release, Conquer - Master the art of Archery!",
-      "iconUrl": "https://cdn.modrinth.com/data/QgooUXAJ/cd623d827366323dd4d604a25c4b7f74cfda353d_96.webp",
-      "projectId": "QgooUXAJ",
-      "versionId": "eYreTDVP",
-      "versionNumber": "3.0.3+1.21.1-neoforge",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "2200747efbe261fc0561db69ded34aa030468e87",
-        "sha512": "f6f6e83d7606fc01e14d5b9b075d9606a2d2bb5d72317ccfbfa889bfcf3893c5ce9225448ea4e67c20c7118f2e08982a557633f4c20cc21cf402a9c1bae12c2e"
-      },
-      "size": 895874,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:52:18.368Z",
-      "updatedAt": "2026-08-01T08:52:18.368Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "pduQXSbl",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "AqaIIO6D",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "XvoWJaA2",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "LrYZi08Q",
-          "type": "required",
-          "installed": true
-        }
-      ]
     },
     {
       "filePath": "mods/create_oxidized-0.1.3.jar",
@@ -4919,22 +4632,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/qMxbM4BQ/0d6f967d3ad184dd296c62a9891e2b2b7d45f61d.png"
     },
     {
-      "filePath": "mods/ImmediatelyFast-NeoForge-1.6.11+1.21.1.jar",
-      "filename": "ImmediatelyFast-NeoForge-1.6.11+1.21.1.jar",
+      "filePath": "mods/ImmediatelyFast-NeoForge-1.6.12+1.21.1.jar",
+      "filename": "ImmediatelyFast-NeoForge-1.6.12+1.21.1.jar",
       "contentType": "mod",
       "name": "ImmediatelyFast",
+      "description": "Speed up immediate mode rendering in Minecraft",
+      "author": "RaphiMC",
+      "iconUrl": "https://cdn.modrinth.com/data/5ZwdcRci/e57b6b451425692ac17ad322d5e14bea686a383a_96.webp",
       "projectId": "5ZwdcRci",
-      "versionId": "zxT50PTW",
+      "versionId": "B2MHnfkW",
+      "versionNumber": "1.6.12+1.21.1-neoforge",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "6594ea2759455f4e135b9479f807bacf4b4b0b43",
-        "sha512": "9f6a8d2f90f076cccbb40b519dcb014c832c0fbc28c3995fb9cb5e69e016eb3b8c9bf74c64809374b7c417fcc07545b117238da924c6608e899a6608f1bf64c9"
+        "sha1": "c9522e369d76885c7c6682f1c852cd8f9bfb6f78",
+        "sha512": "853c8746d0b28f97cd3eb7e9e55967f98d6c358f609b9db2c4d2d7afee76728d827bad8f3d73d6a0b7c5e36a820779f299cdcda70191e3832d5bd0f2cf034d56"
       },
-      "size": 361795,
+      "size": 362397,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:36:33.507Z",
+      "updatedAt": "2026-08-21T15:36:33.507Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -4943,11 +4660,7 @@
         "neoforge"
       ],
       "releaseType": "release",
-      "dependencies": [],
-      "versionNumber": "1.6.11+1.21.1-neoforge",
-      "description": "Speed up immediate mode rendering in Minecraft",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/5ZwdcRci/e57b6b451425692ac17ad322d5e14bea686a383a_96.webp"
+      "dependencies": []
     },
     {
       "filePath": "mods/create_trimmed.jar",
@@ -5034,57 +4747,6 @@
         {
           "projectId": "tagwiZkJ",
           "type": "optional",
-          "installed": true
-        }
-      ]
-    },
-    {
-      "filePath": "mods/rogues-neoforge-3.0.4+1.21.1.jar",
-      "filename": "rogues-neoforge-3.0.4+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Rogues & Warriors (RPG Series)",
-      "description": "🗡️ Silent Blades, Mighty Blows - Dominate with martial skills!",
-      "iconUrl": "https://cdn.modrinth.com/data/3MKqoGuP/5dc4e73e3a2fa08fdcba074961b28bd842847037_96.webp",
-      "projectId": "3MKqoGuP",
-      "versionId": "gfUSHEup",
-      "versionNumber": "3.0.4+1.21.1-neoforge",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "c2b0c7640110075e510cc278a75b4b3d16b4b0bd",
-        "sha512": "de5f9f79138d0ff168486604bb2efc0f667e7b000e285b4221421f0e8a571433b7e63c7d705f10f4df4e0ac8c73e98ddde0a1d8620e44c7450180ba0d3974a40"
-      },
-      "size": 1734813,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:52:06.152Z",
-      "updatedAt": "2026-08-01T08:52:06.152Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "XvoWJaA2",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "pduQXSbl",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "LrYZi08Q",
-          "type": "required",
           "installed": true
         }
       ]
@@ -5266,58 +4928,6 @@
       "iconUrl": "https://cdn.modrinth.com/data/LNytGWDc/61d716699bcf1ec42ed4926a9e1c7311be6087e2_96.webp"
     },
     {
-      "filePath": "mods/armory-neoforge-1.4.4+1.21.1.jar",
-      "filename": "armory-neoforge-1.4.4+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Armory (RPG Series)",
-      "description": "👑 Epic armor sets, with unique designs and set bonuses.",
-      "author": "ZsoltMolnarrr",
-      "iconUrl": "https://cdn.modrinth.com/data/PJvJUdGw/176c39adcee3e73c06265dd02e09a41b03cab9f6_96.webp",
-      "projectId": "PJvJUdGw",
-      "versionId": "xEl9TpYo",
-      "versionNumber": "1.4.4+1.21.1-neoforge",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "3b61476f90207fcc1374d73d0f6c0a8d3b33b873",
-        "sha512": "bef462d2f3d8bb216397a683723fbb94606a05ad89839f3e167b0ae1edff86c1ed996653084ea256496b4ba89c3de51f13013bd53deafd91befa47afa51075ae"
-      },
-      "size": 638544,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-08T13:37:13.726Z",
-      "updatedAt": "2026-08-08T13:37:13.726Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "XvoWJaA2",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "AqaIIO6D",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "pduQXSbl",
-          "type": "required",
-          "installed": true
-        }
-      ]
-    },
-    {
       "filePath": "mods/lne_wizards-neoforge-1.1.2+1.21.1.jar",
       "filename": "lne_wizards-neoforge-1.1.2+1.21.1.jar",
       "contentType": "mod",
@@ -5406,22 +5016,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/hFUzfDsn/00d81e9ffe285f0f0a28b08e2ab276d45f6807a9.png"
     },
     {
-      "filePath": "mods/runes-neoforge-1.2.2+1.21.1.jar",
-      "filename": "runes-neoforge-1.2.2+1.21.1.jar",
+      "filePath": "mods/runes-neoforge-1.3.1+1.21.1.jar",
+      "filename": "runes-neoforge-1.3.1+1.21.1.jar",
       "contentType": "mod",
       "name": "Runes",
+      "description": "🪨 Craft runes to serve as ammo for spells",
+      "author": "ZsoltMolnarrr",
+      "iconUrl": "https://cdn.modrinth.com/data/lP9Yrr1E/d80117583d3b45e7e8d902e3e7e27ef15ee9b4dd_96.webp",
       "projectId": "lP9Yrr1E",
-      "versionId": "l8zcXS3i",
+      "versionId": "UcYws3vj",
+      "versionNumber": "1.3.1+1.21.1-neoforge",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "d92afb6f63815742265bc0c3c8489c20232264f8",
-        "sha512": "c6f59b7244cce30415f20f46375098ecb3726ed215cc58cfd3bfada29fe9d3938d8518e466f6136b60086b915d68eff43049059aa72c18340bc0c899dbcfed75"
+        "sha1": "73cc1e2ab4009d1b3e7a8a0eaeee3fc0d0fbfb3a",
+        "sha512": "7057b315dd22b94524cc644430fb0817304ec129e1853a0a4936cb9ad4d1f8151318f1deb5d2797ac005bfca512a45f81157240a88ffe58af3e4c8844cc74bfb"
       },
-      "size": 320439,
+      "size": 326476,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:36:02.415Z",
+      "updatedAt": "2026-08-21T15:36:02.415Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -5432,20 +5046,11 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": false
-        },
-        {
           "projectId": "n8QN6Z1a",
           "type": "required",
-          "installed": false
+          "installed": true
         }
-      ],
-      "versionNumber": "1.2.2+1.21.1-neoforge",
-      "description": "🪨 Craft runes to serve as ammo for spells",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/lP9Yrr1E/d80117583d3b45e7e8d902e3e7e27ef15ee9b4dd_96.webp"
+      ]
     },
     {
       "filePath": "mods/neoforge-dungeonsdelight-1.21.1-1.5.0.jar",
@@ -5760,57 +5365,6 @@
       "iconUrl": "https://cdn.modrinth.com/data/JmybsfWs/10e9ec54bd09e581dda15fc57eb754eca199ef10_96.webp"
     },
     {
-      "filePath": "mods/arsenal-neoforge-1.4.3+1.21.1.jar",
-      "filename": "arsenal-neoforge-1.4.3+1.21.1.jar",
-      "contentType": "mod",
-      "name": "Arsenal (RPG Series)",
-      "description": "Legendary weapons from the past - not crafted, but conquered.",
-      "iconUrl": "https://cdn.modrinth.com/data/LiP9Q3KV/522a5c3cd60cca6637599eff5ececf33276029ba_96.webp",
-      "projectId": "LiP9Q3KV",
-      "versionId": "WzGfY2ij",
-      "versionNumber": "1.4.3+1.21.1-neoforge",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "4bf796e1106ce0a37712ec9310a68884cc972d91",
-        "sha512": "a65ccc4a15bba3b362eb9f23246af7084f8dc8011cfa5a6656416f8d695822cef87170223fd5766d0276e9773adb937d7b99f4d6420fffa07dc8a78effdbbde1"
-      },
-      "size": 1188101,
-      "enabled": true,
-      "origin": "modpack",
-      "installedAt": "2026-08-01T08:52:17.812Z",
-      "updatedAt": "2026-08-01T08:52:17.812Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "Aqlf1Shp",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "XvoWJaA2",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "AqaIIO6D",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "y9clIFY4",
-          "type": "required",
-          "installed": true
-        }
-      ]
-    },
-    {
       "filePath": "mods/medieval_buildings_nether_edition-1.21.1-1.0.2-neoforge.jar",
       "filename": "medieval_buildings_nether_edition-1.21.1-1.0.2-neoforge.jar",
       "contentType": "mod",
@@ -5984,22 +5538,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/jv0UKGOX/97b04ccf285a7920e4072bd8be760cdd06ce55c1_96.webp"
     },
     {
-      "filePath": "mods/open-parties-and-claims-neoforge-1.21.1-0.27.6.jar",
-      "filename": "open-parties-and-claims-neoforge-1.21.1-0.27.6.jar",
+      "filePath": "mods/open-parties-and-claims-neoforge-1.21.1-0.30.3.jar",
+      "filename": "open-parties-and-claims-neoforge-1.21.1-0.30.3.jar",
       "contentType": "mod",
       "name": "Open Parties and Claims",
+      "description": "Adds the ability to claim chunks and make player parties, integrates with Xaero's Minimap and World Map",
+      "author": "thexaero",
+      "iconUrl": "https://cdn.modrinth.com/data/gF3BGWvG/410c5443b268912b11709e7d03dd9ec3fda38ea5.png",
       "projectId": "gF3BGWvG",
-      "versionId": "Ff5rACGi",
+      "versionId": "AzM8UF04",
+      "versionNumber": "neoforge-1.21.1-0.30.3",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "90514af8a5b3c254f349d0b20490fd1fe65899e4",
-        "sha512": "7cbacdb823e23c66adf90b64bf9f7c3ac339f9cecc1ca3efa7f3f78d8f0cbe305c9fcf9e55613339b275d8acde0e95cf49c6e4c33e1ac5258f80c44180f344b3"
+        "sha1": "07d0dc7f42ad988065b1280d1452f3fed00f3fba",
+        "sha512": "2d4ad4946b44d0bb80fb2309c99e2eae87922f019cb1c4c988e452bcd81952af5d8eb64c4b6760cbe7ef440f2f946b0021411fbd54579a833bf96ac16a1411e5"
       },
-      "size": 1660003,
+      "size": 1821784,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-21T15:40:05.218Z",
+      "updatedAt": "2026-08-21T15:40:05.218Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -6008,11 +5566,7 @@
         "neoforge"
       ],
       "releaseType": "beta",
-      "dependencies": [],
-      "versionNumber": "neoforge-1.21.1-0.27.6",
-      "description": "Adds the ability to claim chunks and make player parties, integrates with Xaero's Minimap and World Map",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/gF3BGWvG/410c5443b268912b11709e7d03dd9ec3fda38ea5.png"
+      "dependencies": []
     },
     {
       "filePath": "mods/lionfishapi-3.1.jar",
@@ -6087,26 +5641,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/sc9lpPiU/4a32aa90ae93401808399ecc144247ab5b9ce859_96.webp"
     },
     {
-      "filePath": "mods/CreateDragonsPlus-1.11.4.jar",
-      "filename": "CreateDragonsPlus-1.11.4.jar",
+      "filePath": "mods/CreateDragonsPlus-1.11.7b.jar",
+      "filename": "CreateDragonsPlus-1.11.7b.jar",
       "contentType": "mod",
       "name": "Create: Dragons Plus",
       "description": "Provide convenient features to players and dev utilities for Create addon developers.",
       "author": "MarbleGateKeeper",
       "iconUrl": "https://cdn.modrinth.com/data/dzb1a5WV/b31b508ca740a1f8eadc18c753190f2605cb6651_96.webp",
       "projectId": "dzb1a5WV",
-      "versionId": "PsnDvjPV",
-      "versionNumber": "1.11.4",
+      "versionId": "zQDQbNih",
+      "versionNumber": "1.11.7b",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "4b76a8dec488cd6fd81d20106e4a05a72efdf54d",
-        "sha512": "6d2fd22ba66d878ea9a38f50ef0f9738fdc181298b7544059c351fc10ffc33d47d0fe414a14f4888163b228c49201bda15e6dc8af077fa7556ca484e41155267"
+        "sha1": "36085362f1123273a2d8e8e7e8af86c32ac10251",
+        "sha512": "4b86f50641b95532d8662e333b1805f0938bf49d1fd9ee7bd4920dca7a4c3707e11f95d44d6a6ce250acc0d534f08ffd2a7891308d587c4d63ce63be3377ae83"
       },
-      "size": 1029344,
+      "size": 1038830,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-07T10:01:05.553Z",
-      "updatedAt": "2026-08-07T10:01:05.553Z",
+      "installedAt": "2026-08-21T15:36:13.270Z",
+      "updatedAt": "2026-08-21T15:36:13.270Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6654,26 +6208,26 @@
       ]
     },
     {
-      "filePath": "mods/simulatedcoasters-0.1.4.jar",
-      "filename": "simulatedcoasters-0.1.4.jar",
+      "filePath": "mods/simulatedcoasters-0.1.5.jar",
+      "filename": "simulatedcoasters-0.1.5.jar",
       "contentType": "mod",
       "name": "Create: Coasters Simulated",
       "description": "Build real rollercoasters with physics, loops, and jumps in this add-on for the Create mod!",
       "author": "SilverGold",
       "iconUrl": "https://cdn.modrinth.com/data/W1ZUfWdr/6df7487798dd29205aef6a6b4d07b5e3bb0b736a_96.webp",
       "projectId": "W1ZUfWdr",
-      "versionId": "RIBBfVi3",
-      "versionNumber": "0.1.4",
+      "versionId": "PGhQoSBq",
+      "versionNumber": "0.1.5",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "55a002c63a1b053daf6b1882a3970af5c8c49006",
-        "sha512": "b0432abef09615d0f15e4105e2113c97b88e45b18a305834e6db80a29c5951e8603a80830ef44de1427e43460283284eb58f03bba572d45c52b30fadec205a56"
+        "sha1": "4d3381b781a1129f793358b8ae13e0abcd2e655b",
+        "sha512": "1fd31aaac63755e7cdf76de1498c9e0b38973977e66aaf49e380774ec30a1b09834f1c44e3e9ccc965403d440e4cafc46bce42f83307979bf790b6689d3cfb1f"
       },
-      "size": 1877867,
+      "size": 1892119,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-07T10:05:40.463Z",
-      "updatedAt": "2026-08-07T10:05:40.463Z",
+      "installedAt": "2026-08-21T15:36:00.724Z",
+      "updatedAt": "2026-08-21T15:36:00.724Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6683,38 +6237,38 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "T9PomCSv",
+          "projectId": "LNytGWDc",
           "type": "required",
           "installed": true
         },
         {
-          "projectId": "LNytGWDc",
+          "projectId": "T9PomCSv",
           "type": "required",
           "installed": true
         }
       ]
     },
     {
-      "filePath": "mods/sable-neoforge-1.21.1-2.0.3.jar",
-      "filename": "sable-neoforge-1.21.1-2.0.3.jar",
+      "filePath": "mods/sable-neoforge-1.21.1-2.0.5.jar",
+      "filename": "sable-neoforge-1.21.1-2.0.5.jar",
       "contentType": "mod",
       "name": "Sable",
       "description": "A library mod for interactive moving block structures, or \"sub-levels\"",
       "author": "ryanhcode",
       "iconUrl": "https://cdn.modrinth.com/data/T9PomCSv/8c0a8c64c9a5a8d446d0aa23d244cb9b52314a1d.png",
       "projectId": "T9PomCSv",
-      "versionId": "1L6XJqnY",
-      "versionNumber": "2.0.3+mc1.21.1",
+      "versionId": "U678xqle",
+      "versionNumber": "2.0.5+mc1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "f3ba9a497122ba29d9e94ebe6f9a3a3aaa5fa756",
-        "sha512": "c13c4da086001c205361905cd3a6c59a76e3c7d4c082265aaf3baf2fd30c79808f6634bca89aba29db5c096aa7da4066f76454093c306c3ae91c6c0d4d63ae0d"
+        "sha1": "05f666e973d32baaaf405acb9bbed6615b909971",
+        "sha512": "bf3d8c87bcc5efb99afffd50305fc978086ed48a63e106816e3a8a3901f8052f4480ea527dbd7d4003f7775ed4d020529098034f4e307aefac9cc42df2b4c19a"
       },
-      "size": 12889000,
+      "size": 12986136,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-07T10:05:46.282Z",
-      "updatedAt": "2026-08-07T10:05:46.282Z",
+      "installedAt": "2026-08-21T15:35:20.083Z",
+      "updatedAt": "2026-08-21T15:35:20.083Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6726,7 +6280,7 @@
         {
           "projectId": "LNytGWDc",
           "type": "optional",
-          "installed": false
+          "installed": true
         },
         {
           "projectId": "qy8EtCnG",
@@ -6771,62 +6325,26 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/createsa_tank_fix-1.3.jar",
-      "filename": "createsa_tank_fix-1.3.jar",
-      "contentType": "mod",
-      "name": "Create: Stuff 'N Additions - Tank Fix (Spout, Curios & Upgrade)",
-      "description": "Adds Spout filling, Curios slots, Immersive Aircraft, Furnace, and Sophisticated Core Tank Upgrade integration for Create SA Tanks on NeoForge 1.21.1.",
-      "author": "swzo",
-      "iconUrl": "https://cdn.modrinth.com/data/LANuxfjR/feda5fa2a67b08b0052fef77785740fde4dfb7d9_96.webp",
-      "projectId": "LANuxfjR",
-      "versionId": "4VObKKFd",
-      "versionNumber": "1.3",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "8e3214432c1d0137b34d6e098be30032874db3e4",
-        "sha512": "e1e55a15149dc1247c41cf1fda52c8e4c6f5703ed5e20b4c9fb3916fffb6001e03514cd229e4340d34366b8a6386250e2decd8432c166d81078ea988ecb3ebb6"
-      },
-      "size": 48514,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-07T10:10:22.151Z",
-      "updatedAt": "2026-08-07T10:10:22.151Z",
-      "gameVersions": [
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "aq9qUUQG",
-          "type": "required",
-          "installed": true
-        }
-      ]
-    },
-    {
-      "filePath": "mods/sophisticatedbackpacks-1.21.1-3.25.74.2056.jar",
-      "filename": "sophisticatedbackpacks-1.21.1-3.25.74.2056.jar",
+      "filePath": "mods/sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
+      "filename": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
       "contentType": "mod",
       "name": "Sophisticated Backpacks",
       "description": "Yet another backpack mod this time with backpack you can place in world, color in different color combinations, upgrade with more inventory and enhance with many functional upgrades",
       "author": "P3pp3rF1y",
       "iconUrl": "https://cdn.modrinth.com/data/TyCTlI4b/e31c7e2f8769d317339e25b2a8d1b40fbf312729_96.webp",
       "projectId": "TyCTlI4b",
-      "versionId": "4Ju8Y2P9",
-      "versionNumber": "1.21.1-3.25.74.2056",
+      "versionId": "6apvKKGZ",
+      "versionNumber": "1.21.1-3.25.78.2107",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "0d96b718cd032f77feeb320abad96ed6e45b24c7",
-        "sha512": "bf48bff7764a85766e93b130e28513c8ac161828b322e1beb74d7dd924fddbefde156a96aea66b08b1642a28ffc3bc5550341fb70957df6a7e22193fc1f480c5"
+        "sha1": "74192fd0039ead9680a5ede09889dae5b8f19ca7",
+        "sha512": "c2c9bc314068eb4a216dc8cd0826e7763ffa49f948595c9454a42ac80b1d0bd8e83a40752c6ee374ca5cdaafbf34be0577105b77947d7c2e60e1e7695630f7b7"
       },
-      "size": 1170985,
+      "size": 1172245,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-10T05:51:06.979Z",
-      "updatedAt": "2026-08-10T05:51:06.979Z",
+      "installedAt": "2026-08-21T15:35:30.571Z",
+      "updatedAt": "2026-08-21T15:35:30.571Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6836,7 +6354,27 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "vRYk0bv7",
+          "projectId": "BAscRYKm",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "nmoqTijg",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "vvuO3ImH",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "WRaRZdTd",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "DMu0oBKf",
           "type": "optional",
           "installed": false
         },
@@ -6846,58 +6384,38 @@
           "installed": false
         },
         {
-          "projectId": "BAscRYKm",
-          "type": "optional",
-          "installed": false
-        },
-        {
-          "projectId": "nmoqTijg",
-          "type": "required",
-          "installed": false
-        },
-        {
           "projectId": "u6dRKJwZ",
           "type": "optional",
-          "installed": false
+          "installed": true
         },
         {
-          "projectId": "WRaRZdTd",
-          "type": "optional",
-          "installed": false
-        },
-        {
-          "projectId": "vvuO3ImH",
-          "type": "optional",
-          "installed": false
-        },
-        {
-          "projectId": "DMu0oBKf",
+          "projectId": "vRYk0bv7",
           "type": "optional",
           "installed": false
         }
       ]
     },
     {
-      "filePath": "mods/sophisticatedcore-1.21.1-1.4.84.2248.jar",
-      "filename": "sophisticatedcore-1.21.1-1.4.84.2248.jar",
+      "filePath": "mods/sophisticatedcore-1.21.1-1.4.89.2291.jar",
+      "filename": "sophisticatedcore-1.21.1-1.4.89.2291.jar",
       "contentType": "mod",
       "name": "Sophisticated Core",
       "description": "Library mod for Sophisticated mods",
       "author": "P3pp3rF1y",
       "iconUrl": "https://cdn.modrinth.com/data/nmoqTijg/83f980596761b59f5c3e4e4d2c90d031d9d69ff6.png",
       "projectId": "nmoqTijg",
-      "versionId": "suP9XdTv",
-      "versionNumber": "1.21.1-1.4.84.2248",
+      "versionId": "Wxcy92XH",
+      "versionNumber": "1.21.1-1.4.89.2291",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "a65a2a4b80307934b76595386a90896b3e607d97",
-        "sha512": "c81a68002b24f8c81cbf072fa51e753430eac7fdfacf4441a5dc38e8b673f37711e2e7d2ae7bceca03e9f246729eb878abbc409474bd0998deb8819075a5d1b3"
+        "sha1": "8b314611f4124a2a9ac63b864cd4fdd3f635a916",
+        "sha512": "ac6ae564f3b363789db0bd66d8bb58712473ff81c3ee9142af75ef90898036e83b3de885713a7bcacfe4dbe4e54c49d29d040b8d7df53c8a212b5a91f3cff859"
       },
-      "size": 1676747,
+      "size": 1686851,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-10T05:50:36.339Z",
-      "updatedAt": "2026-08-10T05:50:36.339Z",
+      "installedAt": "2026-08-21T15:35:33.480Z",
+      "updatedAt": "2026-08-21T15:35:33.480Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6938,26 +6456,26 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/Cocktails-Delight-1.21.1-NeoForge-1.1.7.jar",
-      "filename": "Cocktails-Delight-1.21.1-NeoForge-1.1.7.jar",
+      "filePath": "mods/Cocktails-Delight-1.21.1-NeoForge-1.1.9.jar",
+      "filename": "Cocktails-Delight-1.21.1-NeoForge-1.1.9.jar",
       "contentType": "mod",
       "name": "Cocktails Delight",
       "description": "40+ New Cocktails for Brewin' & Chewin'!  Integrations for Thirst Was Taken and 12 other Farmer's Delight Add-Ons!",
       "author": "DraconicArcher",
       "iconUrl": "https://cdn.modrinth.com/data/hzcliQdE/f618f10d8f0c4b4e281e78a8aa9131e7be37b2e8.png",
       "projectId": "hzcliQdE",
-      "versionId": "HX9wHN0y",
+      "versionId": "EBBb1PG0",
       "versionNumber": "1.0.7",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "14764ac3a9aa3568021db4b527c18f67af12672b",
-        "sha512": "edb13e0605d7ffc2ec27d9a4e1cab67957bc8ab6ff886e811aced7778b8c106692505e02eeba93e7e5189e04011d5d68c570cce5b12eb41b918326e488fb180e"
+        "sha1": "f3aa2f8c616a674a3b92d13d9d5dba6eae091ede",
+        "sha512": "b449f43abc73c429d04b0a45ea90a83fb493732b1697de23f2111389a70cd6f3c0b16c224f96c0192471f22f18c2c1bcc1e6a88764f1178696c1c7fc7c3f3d97"
       },
-      "size": 570922,
+      "size": 571194,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-07T10:16:18.167Z",
-      "updatedAt": "2026-08-07T10:16:18.167Z",
+      "installedAt": "2026-08-21T15:36:06.895Z",
+      "updatedAt": "2026-08-21T15:36:06.895Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7294,26 +6812,26 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/supplementaries-1.21.1-3.8.8-neoforge.jar",
-      "filename": "supplementaries-1.21.1-3.8.8-neoforge.jar",
+      "filePath": "mods/supplementaries-1.21.1-3.9.1-neoforge.jar",
+      "filename": "supplementaries-1.21.1-3.9.1-neoforge.jar",
       "contentType": "mod",
       "name": "Supplementaries",
       "description": "Vanilla+ additions: Jars, signposts, faucets, weather vanes spring launchers, sconces, planters, lights, decoration and automation",
       "author": "Plantkillable",
       "iconUrl": "https://cdn.modrinth.com/data/fFEIiSDQ/e9f5f66fa3b67e54acb91258a1428d68311c58bc_96.webp",
       "projectId": "fFEIiSDQ",
-      "versionId": "qvhtxmU6",
-      "versionNumber": "1.21.1-3.8.8",
+      "versionId": "6vwrAvXf",
+      "versionNumber": "1.21.1-3.9.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "4e66106d496a130f9d37824d30aaa8b494225b8f",
-        "sha512": "1602507a1485e989490d3e702cfdeeff99da7d05f08a435f31270f839f7b80f3c3d29ee171b31aa58c27526b304ba5c6395a211980ab58f784b7f53573b04115"
+        "sha1": "d7684ee80a2760380e4561802dd452737b2693ce",
+        "sha512": "b72fad1d77d6d9dd536ce008f23a9014f4d47231ebf5c4e7d5c23156243f5135eacaf34b2d022a028412ffe5e803081b48abdf3ed61951c6930ad463633c9abb"
       },
-      "size": 13470208,
+      "size": 13531881,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-08T12:17:36.308Z",
-      "updatedAt": "2026-08-08T12:17:36.308Z",
+      "installedAt": "2026-08-21T15:36:25.335Z",
+      "updatedAt": "2026-08-21T15:36:25.335Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7330,26 +6848,26 @@
       ]
     },
     {
-      "filePath": "mods/moonlight-1.21.1-3.3.3-neoforge.jar",
-      "filename": "moonlight-1.21.1-3.3.3-neoforge.jar",
+      "filePath": "mods/moonlight-1.21.1-3.4.1-neoforge.jar",
+      "filename": "moonlight-1.21.1-3.4.1-neoforge.jar",
       "contentType": "mod",
       "name": "Moonlight Lib",
       "description": "dynamic data pack and registration, villager activities, custom map marker and a lot more",
       "author": "xelbayria",
       "iconUrl": "https://cdn.modrinth.com/data/twkfQtEc/icon.png",
       "projectId": "twkfQtEc",
-      "versionId": "Gh4IJiwq",
-      "versionNumber": "1.21.1-3.3.3",
+      "versionId": "3FbHoZqL",
+      "versionNumber": "1.21.1-3.4.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "3b149a020b5d8c398712adfa5fe7d8f10bc9c9c9",
-        "sha512": "6882c178f302c31551ceb2dcf9f2b8fddac28a03ba171576a7525483129cf2ba2b853f36f200b17c5ea7a5c47147ba926f6d197be4ed38c39b4087ec63e648e5"
+        "sha1": "9d7d5b0c60c916bec2a514d387c220c2a73753be",
+        "sha512": "da955dbc7e848229281aa4abec414daa489c3f190b430281b2bafd026fffd1f7cb236e422cefbe9f5b9c223855251700f8dfd37073dd3b0e5ee80277460cc212"
       },
-      "size": 2144662,
+      "size": 2167608,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-09T17:28:07.464Z",
-      "updatedAt": "2026-08-09T17:28:07.464Z",
+      "installedAt": "2026-08-21T15:36:26.877Z",
+      "updatedAt": "2026-08-21T15:36:26.877Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7438,48 +6956,6 @@
       ]
     },
     {
-      "filePath": "mods/pas-0.8.2-NFG-1.21.1.jar",
-      "filename": "pas-0.8.2-NFG-1.21.1.jar",
-      "contentType": "mod",
-      "name": "Player Armor Stands",
-      "description": "Now the armor stands look like players... but don't forget to rename them for that",
-      "author": "Danrus110_",
-      "iconUrl": "https://cdn.modrinth.com/data/PxcK9msP/70ab0e845947bcb8b164b88c6a670db6b1d8b6b8_96.webp",
-      "projectId": "PxcK9msP",
-      "versionId": "owePslaK",
-      "versionNumber": "0.8.2-NFG-1.21.1",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "81235774958b52ee6348d633c50b1c87b4003655",
-        "sha512": "d5fefeb7cece62d7232c4a19eaa68e36942f204f393b84fb56d3e8e35123acb7f28be89f9d9458d79201adc866a26d2951dc9efd8f4cb5190069833bf5e08b70"
-      },
-      "size": 299972,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-08T13:15:44.265Z",
-      "updatedAt": "2026-08-08T13:15:44.265Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "beta",
-      "dependencies": [
-        {
-          "projectId": "1eAoo2KR",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "PFwYNrHb",
-          "type": "optional",
-          "installed": false
-        }
-      ]
-    },
-    {
       "filePath": "mods/create_connected-1.3.2-mc1.21.1.jar",
       "filename": "create_connected-1.3.2-mc1.21.1.jar",
       "contentType": "mod",
@@ -7561,24 +7037,25 @@
       ]
     },
     {
-      "filePath": "mods/forgified-fabric-api-0.116.15+2.3.1+1.21.1.jar",
-      "filename": "forgified-fabric-api-0.116.15+2.3.1+1.21.1.jar",
+      "filePath": "mods/forgified-fabric-api-0.116.15+2.3.4+1.21.1.jar",
+      "filename": "forgified-fabric-api-0.116.15+2.3.4+1.21.1.jar",
       "contentType": "mod",
       "name": "Forgified Fabric API",
+      "description": "Fabric API implemented on top of NeoForge",
       "iconUrl": "https://cdn.modrinth.com/data/Aqlf1Shp/bcdcfed483b0365807f75181eea89b7960cd3b1b_96.webp",
       "projectId": "Aqlf1Shp",
-      "versionId": "L9bk5uA9",
-      "versionNumber": "0.116.15+2.3.1+1.21.1",
+      "versionId": "K4hHKnnI",
+      "versionNumber": "0.116.15+2.3.4+1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "f3b5ff6e2ca338d8d9338acc5a1e47393e7b1ad2",
-        "sha512": "de6cc76a406371c6cab8600621ea9bf630a796baaa64afa2103a75cddcc8ab52e0a15a5c3dec9b2ed2cf3efcd7d93c622434eb3e8d007361fdd54f2504c09757"
+        "sha1": "0788e3e4e736c138a7c151b651bec26713f6cfe4",
+        "sha512": "2de84db829cae926f7a90d8d828114b8d8d735ca230d518c6c3772f6f25b48838b209f75d7c198ba3bb6ec5a64d12094c7b7dacc76af387263a50e97e07c262e"
       },
-      "size": 5590061,
+      "size": 5613327,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-08T17:01:38.367Z",
-      "updatedAt": "2026-08-08T17:02:36.967Z",
+      "installedAt": "2026-08-21T15:35:23.984Z",
+      "updatedAt": "2026-08-21T15:35:23.984Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7586,8 +7063,7 @@
         "neoforge"
       ],
       "releaseType": "release",
-      "dependencies": [],
-      "description": "Fabric API implemented on top of NeoForge"
+      "dependencies": []
     },
     {
       "filePath": "mods/petrolpark-1.21.1-1.5.1.jar",
@@ -7620,25 +7096,25 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/create-aeronautics-bundled-1.21.1-1.3.0.jar",
-      "filename": "create-aeronautics-bundled-1.21.1-1.3.0.jar",
+      "filePath": "mods/create-aeronautics-bundled-1.21.1-1.3.1.jar",
+      "filename": "create-aeronautics-bundled-1.21.1-1.3.1.jar",
       "contentType": "mod",
       "name": "Create Aeronautics",
       "description": "Build anything from airships to planes and cars!",
       "iconUrl": "https://cdn.modrinth.com/data/oWaK0Q19/f66b5589924884ffd81acb27f3ccb775867a962e_96.webp",
       "projectId": "oWaK0Q19",
-      "versionId": "w7zlLnea",
-      "versionNumber": "1.3.0+mc1.21.1",
+      "versionId": "Vzp221Un",
+      "versionNumber": "1.3.1+mc1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "a2b08963ebc9f331f52c626aebcd65013e100d69",
-        "sha512": "2abba2e166a0ec8d42ab06108b63070d61f985420ecca8739c5b2300561b31486b69b3ad13310b0c459edb9edebeffb55a4cdf4ce493805833d32f5bde9ce778"
+        "sha1": "15d273d891578d583aa142354b63ed70f87fee62",
+        "sha512": "16ba7a2c8335443bdf6ad4777737b762f09452be2dd364f801fd20b35eb581473161763699ec37eb12d1aeaf8c18cf8299b2152e24334eedcc9fe662af5bbb27"
       },
-      "size": 33120013,
+      "size": 33121810,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-08T18:00:14.393Z",
-      "updatedAt": "2026-08-08T18:00:14.393Z",
+      "installedAt": "2026-08-21T15:37:11.188Z",
+      "updatedAt": "2026-08-21T15:37:11.188Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7648,12 +7124,12 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "LNytGWDc",
+          "projectId": "T9PomCSv",
           "type": "required",
           "installed": true
         },
         {
-          "projectId": "T9PomCSv",
+          "projectId": "LNytGWDc",
           "type": "required",
           "installed": true
         }
@@ -7696,26 +7172,26 @@
       ]
     },
     {
-      "filePath": "mods/mega_showdown-neoforge-1.9.3+1.7.3+1.21.1.jar",
-      "filename": "mega_showdown-neoforge-1.9.3+1.7.3+1.21.1.jar",
+      "filePath": "mods/mega_showdown-neoforge-1.9.4+1.7.3+1.21.1.jar",
+      "filename": "mega_showdown-neoforge-1.9.4+1.7.3+1.21.1.jar",
       "contentType": "mod",
       "name": "Cobblemon: Mega Showdown",
       "description": "Adding mega evolutions, z-moves, teralization, dynamax, ultra burst and fusions to the game",
       "author": "YajatKaul",
       "iconUrl": "https://cdn.modrinth.com/data/SszvX85I/62338ad15814a49df76dfbece1edba24ebca4135.png",
       "projectId": "SszvX85I",
-      "versionId": "g5RUs6ml",
-      "versionNumber": "1.9.3+1.7.3+1.21.1",
+      "versionId": "lLikG45V",
+      "versionNumber": "1.9.4+1.7.3+1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "2f2876b75d11ab6300e29153fc589dfbbf781511",
-        "sha512": "8a7bdd4b368fcf62479fbc3a6eec040bd5b4479b8b110ed0c5f5bae78ead9eddca9a418091791ee21ab534a5e6255e1bada1da4e95512a5be295cb71bc66d16b"
+        "sha1": "9e8275e811ccc6cdfbce0e2374ef3f29ed553dda",
+        "sha512": "bac6f893ccb472a4d8770cba61ed00d259c860f18bf2b706f03600257035da32c8053c7a69ade6d3a8998f5cab4c52b978b704c9cab6d77529e4ade901c075b5"
       },
-      "size": 18992788,
+      "size": 20073685,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-09T03:09:29.826Z",
-      "updatedAt": "2026-08-09T03:09:29.826Z",
+      "installedAt": "2026-08-21T15:34:59.474Z",
+      "updatedAt": "2026-08-21T15:34:59.474Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7725,22 +7201,22 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "MdwFAVRL",
-          "type": "required",
-          "installed": true
-        },
-        {
           "projectId": "ccKDOlHs",
           "type": "required",
           "installed": true
         },
         {
-          "projectId": "lhGA9TYQ",
+          "projectId": "jtmvUHXj",
           "type": "required",
           "installed": true
         },
         {
-          "projectId": "jtmvUHXj",
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "lhGA9TYQ",
           "type": "required",
           "installed": true
         }
@@ -7931,26 +7407,26 @@
       ]
     },
     {
-      "filePath": "mods/cobblemonraiddens-neoforge-0.11.5+1.21.1.jar",
-      "filename": "cobblemonraiddens-neoforge-0.11.5+1.21.1.jar",
+      "filePath": "mods/cobblemonraiddens-neoforge-0.11.6+1.21.1.jar",
+      "filename": "cobblemonraiddens-neoforge-0.11.6+1.21.1.jar",
       "contentType": "mod",
       "name": "Cobblemon Raid Dens",
       "description": "Introduces raid dens to Cobblemon!",
       "author": "necroso1",
       "iconUrl": "https://cdn.modrinth.com/data/GebWh45l/5b10c72afcadd5db4031c6b87fe86ccc9309f756_96.webp",
       "projectId": "GebWh45l",
-      "versionId": "GrZ3WR83",
-      "versionNumber": "0.11.5+1.21.1",
+      "versionId": "KfuSZLkT",
+      "versionNumber": "0.11.6+1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "b09fe380f535ba05dc369fcc97db40b4c23071a6",
-        "sha512": "3e959aa4be4570cd7d231f220015b0788ad38691f264a4ca7ed0754de109fb171662023bf8d5bcdb134f044f8976c4c558f6caf4d6b6328611bd34c6619e626b"
+        "sha1": "1ba5fed7a9ead4fc8525ad1a990d41c12e4cd1e8",
+        "sha512": "d4551265a35b7f29b6c08ce5c206c118bd8bc0ae5a5eeb5fc7c51688c928425af74477acfea05cf22f5504049ac09bb9b4f6aa108e14ec1be2f100ad9c80fa49"
       },
-      "size": 2716904,
+      "size": 2716955,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-08T18:11:46.858Z",
-      "updatedAt": "2026-08-08T18:11:46.858Z",
+      "installedAt": "2026-08-21T15:36:29.477Z",
+      "updatedAt": "2026-08-21T15:36:29.477Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7960,13 +7436,8 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "MdwFAVRL",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "8BmcQJ2H",
-          "type": "required",
+          "projectId": "nvQzSEkH",
+          "type": "optional",
           "installed": true
         },
         {
@@ -7975,14 +7446,19 @@
           "installed": true
         },
         {
-          "projectId": "nvQzSEkH",
-          "type": "optional",
+          "projectId": "8BmcQJ2H",
+          "type": "required",
           "installed": true
         },
         {
           "projectId": "s7N7AsqL",
           "type": "optional",
           "installed": false
+        },
+        {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
         }
       ]
     },
@@ -8059,26 +7535,26 @@
       ]
     },
     {
-      "filePath": "mods/cobblemon_manufactory-0.3.2.jar",
-      "filename": "cobblemon_manufactory-0.3.2.jar",
+      "filePath": "mods/cobblemon_manufactory-0.3.3.jar",
+      "filename": "cobblemon_manufactory-0.3.3.jar",
       "contentType": "mod",
       "name": "Create: Cobblemon Manufactory",
       "description": "Automate your Cobblemon world with machines from Create 6.0!",
       "author": "Ramen5914",
       "iconUrl": "https://cdn.modrinth.com/data/FMcIBFPB/761db8462c678c3e3f919e5aa5a232d839fb8cec_96.webp",
       "projectId": "FMcIBFPB",
-      "versionId": "WoMe3OLU",
-      "versionNumber": "0.3.2",
+      "versionId": "FvNHdVuo",
+      "versionNumber": "0.3.3",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "cacd2ba6d5be3be0ffbad75a2e19a609575cc3b4",
-        "sha512": "92e31a5c872806fd1de30936601102bfeab888a7594b4e8e4c762625273950d04175ad9e60642012b8e402243d8a6f7d50d82d285ca511182ee069aa9839264c"
+        "sha1": "9770430bab8582527551e53325d15436838ef034",
+        "sha512": "d5ede98af600c5036ee5788a48174c66d55d43dddbbc105f0c475e43e17d012efe84bddc39b842141ee11b0953c77cfadcc26917b9ce9d6d898d7492a79c00f1"
       },
-      "size": 457316,
+      "size": 439633,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-08T18:14:06.524Z",
-      "updatedAt": "2026-08-08T18:14:06.524Z",
+      "installedAt": "2026-08-21T15:35:26.152Z",
+      "updatedAt": "2026-08-21T15:35:26.152Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -8088,11 +7564,6 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "LNytGWDc",
-          "type": "required",
-          "installed": true
-        },
-        {
           "projectId": "MdwFAVRL",
           "type": "required",
           "installed": true
@@ -8101,6 +7572,11 @@
           "projectId": "fRiHVvU7",
           "type": "optional",
           "installed": false
+        },
+        {
+          "projectId": "LNytGWDc",
+          "type": "required",
+          "installed": true
         }
       ]
     },
@@ -8803,26 +8279,26 @@
       ]
     },
     {
-      "filePath": "mods/zamega-neoforge-1.7.5-hotfix.jar",
-      "filename": "zamega-neoforge-1.7.5-hotfix.jar",
+      "filePath": "mods/zamega-neoforge-1.7.6.jar",
+      "filename": "zamega-neoforge-1.7.6.jar",
       "contentType": "mod",
       "name": "Navas ZA Megas",
       "description": "Adds All Megas from Pokemon Legends ZA into Cobblemon! (MSD Required)",
       "author": "natusue233",
       "iconUrl": "https://cdn.modrinth.com/data/2V1Y86sc/c0f10eeeb1a3e5824ecfedc39b9a78a32652572e_96.webp",
       "projectId": "2V1Y86sc",
-      "versionId": "MFuRZOBA",
-      "versionNumber": "1.7.5-hotfix",
+      "versionId": "I2TIMyf4",
+      "versionNumber": "1.7.6",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "944a31d9246e49da7eb89564004b9529937efbab",
-        "sha512": "9b328c07a50f16718cf828201a6a5d4d14cffbd3f64bf950d54d44a470308d7420c8c9903c70d89cf81b3c74530a5b62f1614ebeb0e45f0225b44320e1ce7490"
+        "sha1": "b6ead367e26c6ece87df15da027c8446a1a1c009",
+        "sha512": "1912b54ad4f16f059c0a9b85454e0c220d4ebfb5ec068aee0ef260e839cb0e52d832d5e30557d4c11c5a36f23b6855d630f08ed9758db00aba9ced2228d19e20"
       },
-      "size": 848730,
+      "size": 1081856,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-10T05:47:30.889Z",
-      "updatedAt": "2026-08-10T05:47:30.889Z",
+      "installedAt": "2026-08-21T15:34:42.916Z",
+      "updatedAt": "2026-08-21T15:34:42.916Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -8831,11 +8307,6 @@
       ],
       "releaseType": "release",
       "dependencies": [
-        {
-          "projectId": "MdwFAVRL",
-          "type": "required",
-          "installed": true
-        },
         {
           "projectId": "lhGA9TYQ",
           "type": "required",
@@ -8847,12 +8318,17 @@
           "installed": true
         },
         {
-          "projectId": "jtmvUHXj",
+          "projectId": "ccKDOlHs",
           "type": "required",
           "installed": true
         },
         {
-          "projectId": "ccKDOlHs",
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "jtmvUHXj",
           "type": "required",
           "installed": true
         }
@@ -8949,26 +8425,26 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/sophisticatedstorage-1.21.1-1.5.85.2071.jar",
-      "filename": "sophisticatedstorage-1.21.1-1.5.85.2071.jar",
+      "filePath": "mods/sophisticatedstorage-1.21.1-1.5.91.2127.jar",
+      "filename": "sophisticatedstorage-1.21.1-1.5.91.2127.jar",
       "contentType": "mod",
       "name": "Sophisticated Storage",
       "description": "Storage mod with multiple tiers and functional upgrades",
       "author": "P3pp3rF1y",
       "iconUrl": "https://cdn.modrinth.com/data/hMlaZH8f/8c041db5cf8062e7471d5e239836c8b807853def_96.webp",
       "projectId": "hMlaZH8f",
-      "versionId": "GIf3F0BG",
-      "versionNumber": "1.21.1-1.5.85.2071",
+      "versionId": "H7wGZ8Sl",
+      "versionNumber": "1.21.1-1.5.91.2127",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "79ac76d0875a9dc28d9923d8e6464ad1c5571ea5",
-        "sha512": "922609bcc6afcd2999a7407d4981a72e1fab54eb95d73e546d271c03304b9ab0a84f8a9cc234c9d69148897d4b13a8633bf58ddcc8134a3d45e1847f1fc829a0"
+        "sha1": "395b6111d6fa0117f2c540fca9fd5389ac7e339c",
+        "sha512": "d8548870cb96a6fd6f50b22dc4822a8acc68168c85efb7a1878d2e0f853334011ff3e17a14dfdf2a7f3f7dde0e995046650a5ca12b9b881dc378ff3c3275375b"
       },
-      "size": 1865074,
+      "size": 1869204,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-10T05:50:34.492Z",
-      "updatedAt": "2026-08-10T05:50:34.492Z",
+      "installedAt": "2026-08-21T15:36:56.211Z",
+      "updatedAt": "2026-08-21T15:36:56.211Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -8978,12 +8454,7 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "WRaRZdTd",
-          "type": "optional",
-          "installed": false
-        },
-        {
-          "projectId": "DMu0oBKf",
+          "projectId": "vRYk0bv7",
           "type": "optional",
           "installed": false
         },
@@ -8993,9 +8464,9 @@
           "installed": false
         },
         {
-          "projectId": "b1fMg6sH",
+          "projectId": "BAscRYKm",
           "type": "optional",
-          "installed": false
+          "installed": true
         },
         {
           "projectId": "u6dRKJwZ",
@@ -9003,9 +8474,9 @@
           "installed": true
         },
         {
-          "projectId": "BAscRYKm",
+          "projectId": "DMu0oBKf",
           "type": "optional",
-          "installed": true
+          "installed": false
         },
         {
           "projectId": "nmoqTijg",
@@ -9013,7 +8484,12 @@
           "installed": true
         },
         {
-          "projectId": "vRYk0bv7",
+          "projectId": "WRaRZdTd",
+          "type": "optional",
+          "installed": false
+        },
+        {
+          "projectId": "b1fMg6sH",
           "type": "optional",
           "installed": false
         }
@@ -9634,67 +9110,26 @@
       "dependencies": []
     },
     {
-      "filePath": "resourcepacks/RCT Trainers+ [1.6] v2.1.zip",
-      "filename": "RCT Trainers+ [1.6] v2.1.zip",
-      "contentType": "resourcepack",
-      "name": "Radical Cobblemon Trainer Textures Plus",
-      "description": "A resource pack for the latest version of the Radical Cobblemon Trainers mod.",
-      "author": "forestfire",
-      "iconUrl": "https://cdn.modrinth.com/data/ARGDWSQq/0eddd91a58141336fb0c2e038f9eeae60f9caba1_96.webp",
-      "projectId": "ARGDWSQq",
-      "versionId": "2PwkXMie",
-      "versionNumber": "2.1",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "a9fc89788c172f5963adbeabcfb688846e5e46e4",
-        "sha512": "3b3e22864e14661652bac6632023d3294fccc84d66b54e0b6e365f1fa5d2c901ec5491662c7de6252cae6b63c777c67d992268c6411841d576a14252a1a4ba4e"
-      },
-      "size": 4905355,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-11T14:30:17.414Z",
-      "updatedAt": "2026-08-11T14:30:17.414Z",
-      "gameVersions": [
-        "1.21.1"
-      ],
-      "loaders": [
-        "minecraft"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "lRwTUnD7",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "CBfM2yw7",
-          "type": "required",
-          "installed": true
-        }
-      ]
-    },
-    {
-      "filePath": "mods/mebahelrpgrquest-2.0.0-fabric-1.21.1.jar",
-      "filename": "mebahelrpgrquest-2.0.0-fabric-1.21.1.jar",
+      "filePath": "mods/mebahelrpgrquest-2.0.4-fabric-1.21.1.jar",
+      "filename": "mebahelrpgrquest-2.0.4-fabric-1.21.1.jar",
       "contentType": "mod",
       "name": "Mebahel's RPG - Villager Quests and Companions",
       "description": "Mebahel's RPG: Villager Quests & Companions adds story-driven villager quests, branching choices, named enemies, rumors, quest tracking, companion recruitment, and RPG-style notifications to your world.",
       "author": "Mebahel",
-      "iconUrl": "https://cdn.modrinth.com/data/jNqtpcJu/e74a782532bcb4d4e1866313fa958e7cc3fbe8a2_96.webp",
+      "iconUrl": "https://cdn.modrinth.com/data/jNqtpcJu/c552dad35155b7663f296dfa43e8409e746ec37f_96.webp",
       "projectId": "jNqtpcJu",
-      "versionId": "pGluLEX0",
-      "versionNumber": "2.0.0-fabric-1.21.1",
+      "versionId": "ZPgE1qO3",
+      "versionNumber": "2.0.4-fabric-1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "cfdef73a8ef02e00f3d13376d6d73549dfbc1657",
-        "sha512": "76ebfa72866e00c02b7c7fbfb051d94481056a7672c0525bfd4633c789e53417d15bde3c8685d223f09f1fffb7ba7019240d9d5723a82f8ce5dc0ba5e631490b"
+        "sha1": "fcf355b26027ba920bf8eabb2d3d69c976e7222b",
+        "sha512": "eed446e63044e575710f6c8817b8c9a57b7c1d11869f066572546fb20013d88b333b432733200ebb2c9f12651843c26649da58d951dbc42acac4c1b565e25362"
       },
-      "size": 1161789,
+      "size": 1215679,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-11T14:45:01.823Z",
-      "updatedAt": "2026-08-11T14:45:01.823Z",
+      "installedAt": "2026-08-21T15:35:56.222Z",
+      "updatedAt": "2026-08-21T15:35:56.222Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -9741,6 +9176,380 @@
       "loaders": [
         "neoforge"
       ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "resourcepacks/RCT Trainers+ [1.7] v2.2.zip",
+      "filename": "RCT Trainers+ [1.7] v2.2.zip",
+      "contentType": "resourcepack",
+      "name": "Radical Cobblemon Trainer Textures Plus",
+      "description": "A resource pack for the latest version of the Radical Cobblemon Trainers mod.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/ARGDWSQq/0eddd91a58141336fb0c2e038f9eeae60f9caba1_96.webp",
+      "projectId": "ARGDWSQq",
+      "versionId": "C8AKk01H",
+      "versionNumber": "2.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "059b2585974230def7253a7384ce45a0b4568abd",
+        "sha512": "7cd1493790d41e50caee7783f5ad88e859f9698920769b25e551b14f2e7403a42d6ae9c1dec14c7b58e821095c0ec2585eb11e2e8b2917cd7f6be58cb64f6357"
+      },
+      "fingerprint": 1886320369,
+      "size": 4893539,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-19T05:17:58.186Z",
+      "updatedAt": "2026-08-19T05:17:58.186Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/create-easyfilling-dypiduo-1.21.1-2.0.0.jar",
+      "filename": "create-easyfilling-dypiduo-1.21.1-2.0.0.jar",
+      "contentType": "mod",
+      "name": "Create: EasyFilling",
+      "description": "Create: EasyFilling lets you fill CS'NA (Create Stuff 'N Additions) filling tank items directly via the Create Spout. Supports small/medium/large tanks, tooltip friendly, lightweight, server-client compatible.",
+      "author": "dypiduo",
+      "iconUrl": "https://cdn.modrinth.com/data/ZXVNO62w/7a56ef861ed87fe1009b78d5f905af885cad954e_96.webp",
+      "projectId": "ZXVNO62w",
+      "versionId": "jbnsM1He",
+      "versionNumber": "2.0.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "fbb2f0fc5deec9c4265c54e98c63c0869163e3e6",
+        "sha512": "dbb17014ae229614a64a046c032bb466b54c846024242b3230b012b8f004ca513bfc6b6404200178fe79201dc6759bf31bd62dc5ed6a8b193ce21b2e1dee5643"
+      },
+      "size": 2440256,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T15:35:17.797Z",
+      "updatedAt": "2026-08-21T15:35:17.797Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/ArmorStatues-v21.1.0-1.21.1-NeoForge.jar",
+      "filename": "ArmorStatues-v21.1.0-1.21.1-NeoForge.jar",
+      "contentType": "mod",
+      "name": "Armor Statues",
+      "description": "Unlock the full potential of armor stands! Works on vanilla servers, too.",
+      "author": "LunaPixelStudios",
+      "iconUrl": "https://cdn.modrinth.com/data/bbGCtEvb/005eb8a0a3b751e6a595757743a7032353776f44_96.webp",
+      "projectId": "bbGCtEvb",
+      "versionId": "SGpwIu7v",
+      "versionNumber": "v21.1.0-1.21.1-NeoForge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "ea74e8434f23b618d3298afda8cad1ccb76f0a94",
+        "sha512": "4160dd026b9dc03fb9c24cf8b1cac421f4393e2360862fe482ca182a3f379b70f92c0bc16bd5d8abdea826388a507fe9c9b2cd014e983ef4b2f97f276f3adc1a"
+      },
+      "size": 263404,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T15:38:47.009Z",
+      "updatedAt": "2026-08-21T15:38:47.009Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "QAGBst4M",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "5WeWGLoJ",
+          "type": "optional",
+          "installed": false
+        }
+      ]
+    },
+    {
+      "filePath": "mods/PuzzlesLib-v21.1.52-1.21.1-NeoForge.jar",
+      "filename": "PuzzlesLib-v21.1.52-1.21.1-NeoForge.jar",
+      "contentType": "mod",
+      "name": "Puzzles Lib",
+      "description": "Why is it called Puzzles? That's the puzzle.",
+      "author": "Fuzs",
+      "iconUrl": "https://cdn.modrinth.com/data/QAGBst4M/c78216c61f65b6ce82593e4e92e9c358402bb524_96.webp",
+      "projectId": "QAGBst4M",
+      "versionId": "5A6wiMVf",
+      "versionNumber": "v21.1.52-1.21.1-NeoForge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "66182c3affb9f99624d1d770ca168d2a63af83f6",
+        "sha512": "c195ebd7910dcb758cdc5bed1feb8b80fdb1a86e19b4521fd23a7a9d64838112c7b765cc8f5a6ea380fb0105ca1d09fc96956007bafa3edc423ec7ed0215324e"
+      },
+      "size": 1425176,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T15:38:56.414Z",
+      "updatedAt": "2026-08-21T15:38:56.414Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/archers-neoforge-3.0.3+1.21.1.jar",
+      "filename": "archers-neoforge-3.0.3+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Archers (RPG Series)",
+      "description": "🏹 Draw, Release, Conquer - Master the art of Archery!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/QgooUXAJ/cd623d827366323dd4d604a25c4b7f74cfda353d_96.webp",
+      "projectId": "QgooUXAJ",
+      "versionId": "eYreTDVP",
+      "versionNumber": "3.0.3+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "2200747efbe261fc0561db69ded34aa030468e87",
+        "sha512": "f6f6e83d7606fc01e14d5b9b075d9606a2d2bb5d72317ccfbfa889bfcf3893c5ce9225448ea4e67c20c7118f2e08982a557633f4c20cc21cf402a9c1bae12c2e"
+      },
+      "fingerprint": 2672863565,
+      "size": 895874,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T16:18:10.824Z",
+      "updatedAt": "2026-08-21T16:18:10.824Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/armory-neoforge-1.4.4+1.21.1.jar",
+      "filename": "armory-neoforge-1.4.4+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Armory (RPG Series)",
+      "description": "👑 Epic armor sets, with unique designs and set bonuses.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/PJvJUdGw/176c39adcee3e73c06265dd02e09a41b03cab9f6_96.webp",
+      "projectId": "PJvJUdGw",
+      "versionId": "xEl9TpYo",
+      "versionNumber": "1.4.4+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "3b61476f90207fcc1374d73d0f6c0a8d3b33b873",
+        "sha512": "bef462d2f3d8bb216397a683723fbb94606a05ad89839f3e167b0ae1edff86c1ed996653084ea256496b4ba89c3de51f13013bd53deafd91befa47afa51075ae"
+      },
+      "fingerprint": 3682064698,
+      "size": 638544,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T16:18:10.824Z",
+      "updatedAt": "2026-08-21T16:18:10.824Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/arsenal-neoforge-1.4.3+1.21.1.jar",
+      "filename": "arsenal-neoforge-1.4.3+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Arsenal (RPG Series)",
+      "description": "Legendary weapons from the past - not crafted, but conquered.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/LiP9Q3KV/522a5c3cd60cca6637599eff5ececf33276029ba_96.webp",
+      "projectId": "LiP9Q3KV",
+      "versionId": "WzGfY2ij",
+      "versionNumber": "1.4.3+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "4bf796e1106ce0a37712ec9310a68884cc972d91",
+        "sha512": "a65ccc4a15bba3b362eb9f23246af7084f8dc8011cfa5a6656416f8d695822cef87170223fd5766d0276e9773adb937d7b99f4d6420fffa07dc8a78effdbbde1"
+      },
+      "fingerprint": 2311693243,
+      "size": 1188101,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T16:18:10.824Z",
+      "updatedAt": "2026-08-21T16:18:10.824Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/paladins-neoforge-3.0.5+1.21.1.jar",
+      "filename": "paladins-neoforge-3.0.5+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Paladins & Priests (RPG Series)",
+      "description": "✨ Protect and heal your friends as a Paladin or a Priest",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/FxXkHaLe/0d64c2fad819691a42c9b6e436c4914c6ce4b413_96.webp",
+      "projectId": "FxXkHaLe",
+      "versionId": "SpQRKYSI",
+      "versionNumber": "3.0.5+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "8dfa2368fc5e674313fe0b0acb57f3e2f31e553c",
+        "sha512": "18de311c30f246183beef3175f0d348910d1e84e324b634dc98e596c856f064581baf3011459096aea451a0782683ed6d1bfa960871a4e82dc57fdf519b8b6a5"
+      },
+      "fingerprint": 2430073287,
+      "size": 3096303,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T16:18:10.824Z",
+      "updatedAt": "2026-08-21T16:18:10.824Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/relics-neoforge-1.3.0+1.21.1.jar",
+      "filename": "relics-neoforge-1.3.0+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Relics (RPG Series)",
+      "description": "🎖 Unleash your true potential with powerful trinkets! 🔮",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/BDQucwF0/6aac428c17df067875dfff8a37b6f2a3535ea2cc_96.webp",
+      "projectId": "BDQucwF0",
+      "versionId": "9q085tSI",
+      "versionNumber": "1.3.0+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "6c8ae8d5220ad4a6cf98eec5cb9daf4f1f8131f2",
+        "sha512": "51cb715909acf2d1897437435f3418a152fcff85e77f87da630da149362a370589e5c70a7f235d2473453a95605f110bac7d27adf32d7dc3648dd6a0260d3e37"
+      },
+      "fingerprint": 2769645746,
+      "size": 2129113,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T16:18:10.824Z",
+      "updatedAt": "2026-08-21T16:18:10.824Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/rogues-neoforge-3.0.4+1.21.1.jar",
+      "filename": "rogues-neoforge-3.0.4+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Rogues & Warriors (RPG Series)",
+      "description": "🗡️ Silent Blades, Mighty Blows - Dominate with martial skills!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/3MKqoGuP/5dc4e73e3a2fa08fdcba074961b28bd842847037_96.webp",
+      "projectId": "3MKqoGuP",
+      "versionId": "gfUSHEup",
+      "versionNumber": "3.0.4+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "c2b0c7640110075e510cc278a75b4b3d16b4b0bd",
+        "sha512": "de5f9f79138d0ff168486604bb2efc0f667e7b000e285b4221421f0e8a571433b7e63c7d705f10f4df4e0ac8c73e98ddde0a1d8620e44c7450180ba0d3974a40"
+      },
+      "fingerprint": 707710354,
+      "size": 1734813,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T16:18:10.824Z",
+      "updatedAt": "2026-08-21T16:18:10.824Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/skill_tree-neoforge-1.5.3+1.21.1.jar",
+      "filename": "skill_tree-neoforge-1.5.3+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Skill Tree (RPG Series)",
+      "description": "⭐️ Choose your path - Skills that shape your class",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/PjDhruSC/bace75ef00b3f21b8a1bba68ba7888702c233067_96.webp",
+      "projectId": "PjDhruSC",
+      "versionId": "69gGRtdJ",
+      "versionNumber": "1.5.3+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "b5f2005c6fb40d0d10784d88f9708af4c2c271c5",
+        "sha512": "53f84bf49ca9039b0cee3d5ecbd55ab0aa59550ae3d20481533120f5bb85c9897bd71261979723fd239c07e6af8e641ad42b89c2fd41712fe028bc0beb6ec969"
+      },
+      "fingerprint": 3746690410,
+      "size": 2716931,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T16:18:10.824Z",
+      "updatedAt": "2026-08-21T16:18:10.824Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/spell_power-neoforge-1.6.0+1.21.1.jar",
+      "filename": "spell_power-neoforge-1.6.0+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Spell Power Attributes",
+      "description": "🔮 Spell Power entity attributes with related status effects and enchantments",
+      "iconUrl": "https://cdn.modrinth.com/data/8ooWzSQP/fb6ef3214dcfddc7d0062f5642e30eb45de6df32_96.webp",
+      "projectId": "8ooWzSQP",
+      "versionId": "RFCD8Aio",
+      "versionNumber": "1.6.0+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "29a1f6bf29db1868b3b22f3a8cf287b26a429ab2",
+        "sha512": "b4f9ae2524783a2f1d4f16da73543f1073e17e7cb66a36235c4b54e74495d3b73892a342478cc760ec4c2bcf046578f3077af31013b48b04a9bde7facd48e281"
+      },
+      "size": 222955,
+      "enabled": true,
+      "origin": "modpack",
+      "installedAt": "2026-08-21T16:29:44.216Z",
+      "updatedAt": "2026-08-21T16:29:44.216Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/wizards-neoforge-3.0.4+1.21.1.jar",
+      "filename": "wizards-neoforge-3.0.4+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Wizards (RPG Series)",
+      "description": "🧙🏻‍♂️ Destroy your enemies with Arcane, Fire and Frost magic",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/NkGaQMDA/06c5350c207bddffefdfea0b6fc80269d683bbd7_96.webp",
+      "projectId": "NkGaQMDA",
+      "versionId": "W76xF87G",
+      "versionNumber": "3.0.4+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "1e01bd11745a569e0951189ecd3fdef6fbdf4aa6",
+        "sha512": "d265a36ea89287e64019f437e13006228ecbd7de60e6b3a9426d6ee4e7b072ffd00679588011100c8ee5fb16954013dbbee70c47b0db86b3bdf1cba678bc6922"
+      },
+      "fingerprint": 55132962,
+      "size": 4465705,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-21T16:18:10.824Z",
+      "updatedAt": "2026-08-21T16:18:10.824Z",
+      "gameVersions": [],
+      "loaders": [],
       "releaseType": "release",
       "dependencies": []
     }

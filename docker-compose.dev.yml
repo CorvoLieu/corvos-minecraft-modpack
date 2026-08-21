@@ -26,6 +26,12 @@ services:
       MODRINTH_MODPACK: "/mod.mrpack"
       MODRINTH_DEFAULT_VERSION_TYPE: "release"
       MODRINTH_LOADER: "neoforge"
+      # mc-image-helper's HTTP client defaults to a 30s response timeout,
+      # which a single slow/stalled Modrinth CDN file can blow through mid
+      # -download and hard-fail the whole install-modrinth-modpack run (see
+      # ReadTimeoutException). Bump it well above worst-case file transfer
+      # time for a mod jar on a slow connection.
+      FETCH_RESPONSE_TIMEOUT: "PT120S"
       LEVEL: "${PACK_NAME:-minecraft-modded}"
       ENTITY_BROADCAST_RANGE_PERCENTAGE: "70"
       SIMULATION_DISTANCE: "7"
@@ -41,6 +47,7 @@ services:
         /recipe give @p *
     volumes:
       - "./exports/mod.mrpack:/mod.mrpack:ro"
+      - ./data:/data/mods
     deploy:
       resources:
         limits:
