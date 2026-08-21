@@ -44,4 +44,5 @@ ENV EULA="TRUE" \
     ALLOW_FLIGHT="true" \
     OPS="CakeBoy" \
     RCON_CMDS_STARTUP="/gamerule playersSleepingPercentage 0\n/gamerule mobGriefing false" \
-    RCON_CMDS_ON_CONNECT="/recipe give @p *"
+    RCON_CMDS_ON_CONNECT="/recipe give @p *" \
+    FETCH_RESPONSE_TIMEOUT="PT120S"

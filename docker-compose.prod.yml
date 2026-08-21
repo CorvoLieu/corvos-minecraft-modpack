@@ -33,7 +33,7 @@ services:
       MODE: "survival"
       ONLINE_MODE: "false"
       FORCE_GAMEMODE: "true"
-      ENABLE_AUTOPAUSE: "true"
+      ENABLE_AUTOPAUSE: "false"
       ENTITY_BROADCAST_RANGE_PERCENTAGE: "70"
       SIMULATION_DISTANCE: "7"
       VIEW_DISTANCE: "7"
@@ -41,10 +41,16 @@ services:
       OPS: "${OPS:-CakeBoy}"
       RCON_CMDS_STARTUP: |
         /gamerule playersSleepingPercentage 0
-        /gamerule mobGriefing false
       RCON_CMDS_ON_CONNECT: |
         /recipe give @p *
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "false"
+      MAX_TICK_TIME: "1200000"
+      USE_AIKAR_FLAGS: "true"
+      # See docker-compose.dev.yml: this image's baked-in MODRINTH_MODPACK
+      # install still runs on first container start and fetches each mod
+      # jar from the Modrinth CDN, so it's exposed to the same
+      # ReadTimeoutException on a slow/stalled file without this.
+      FETCH_RESPONSE_TIMEOUT: "PT120S"
     volumes:
       - ./data:/data
     deploy:
