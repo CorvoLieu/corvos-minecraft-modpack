@@ -377,8 +377,14 @@ def build_mods_zip_only(args, mod_entries, excludes, version_id):
             filename = Path(entry["path"]).name
             print(f"Downloading {filename} ...")
             with tempfile.NamedTemporaryFile() as tmp:
+                tmp = tempfile.NamedTemporaryFile(delete=False)
+                tmp.close()
+            try:
                 download(url, Path(tmp.name))
                 zf.write(tmp.name, arcname=entry["path"])
+            finally:
+                os.unlink(tmp.name)
+
         for rel_path, abs_path in bundled_resolved:
             zf.write(abs_path, arcname=rel_path)
 
