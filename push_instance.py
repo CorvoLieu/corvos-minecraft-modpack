@@ -130,7 +130,7 @@ def sync_manifest_and_pack_json(
     shutil.copy2(manifest_src, MANIFEST_DIR / f"{PACK_NAME}.json")
     print(f"Synced manifest/{PACK_NAME}.json")
 
-    instances = json.loads(instances_json.read_text())
+    instances = json.loads(instances_json.read_text(encoding="utf-8"))
     instance_info = next((i for i in instances["instances"] if i["id"] == instance_id), None)
     if instance_info is None:
         raise SystemExit(f"instance '{instance_id}' not found in {instances_json}")
@@ -139,7 +139,7 @@ def sync_manifest_and_pack_json(
         "minecraftVersion": instance_info["minecraftVersion"],
         "loaderVersion": instance_info["loaderVersion"],
     }
-    (MANIFEST_DIR / "pack.json").write_text(json.dumps(pack, indent=2) + "\n")
+    (MANIFEST_DIR / "pack.json").write_text(json.dumps(pack, indent=2) + "\n", encoding="utf-8")
     print(f"Synced manifest/pack.json: {pack}")
 
 
@@ -154,7 +154,7 @@ def sync_local_content(
     build_mrpack.py can't reference from an online CDN (local source,
     drifted sha1, or curseforge with third-party downloads disabled). Used
     for both mods/ and datapacks/."""
-    manifest = json.loads(manifest_src.read_text())
+    manifest = json.loads(manifest_src.read_text(encoding="utf-8"))
     by_path = {e["filePath"]: e for e in manifest.get("content", [])}
 
     content_dir = instance_dir / content_subdir
