@@ -6,7 +6,7 @@
     "projectId": "local:blank",
     "versionId": "local:blank",
     "name": "CreativeWorld",
-    "versionNumber": "5.0.10",
+    "versionNumber": "5.0.11",
     "summary": "",
     "installedAt": "2026-08-01T08:30:46.145Z",
     "updatedAt": "2026-08-01T08:30:46.145Z",
@@ -6486,25 +6486,25 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/vietnams_delight_reborn-neoforge-1.21.1-2.0.0.jar",
-      "filename": "vietnams_delight_reborn-neoforge-1.21.1-2.0.0.jar",
+      "filePath": "mods/vietnams_delight_reborn-neoforge-1.21.1-1.1.0.jar",
+      "filename": "vietnams_delight_reborn-neoforge-1.21.1-1.1.0.jar",
       "contentType": "mod",
       "name": "Vietnam's Delight Reborn",
       "description": "This is a rework of Vietnam's Delight and with some more features in the future.",
       "iconUrl": "https://cdn.modrinth.com/data/BwoSkioe/e3d41952e0fa0579f2469aeeaf7283e1b0be8e53.png",
       "projectId": "BwoSkioe",
-      "versionId": "4A50T0k4",
-      "versionNumber": "2.0.0-1.21.1+neoforge",
+      "versionId": "twD4xHIX",
+      "versionNumber": "1.1.0-neoforge",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "924196a46301fe93668e719f9bc9064f8cf9d4bc",
-        "sha512": "efc16f69b4092bf50cb107ca620ce181511d25b7ff6a7f1c43c8c711116bd9076556397522e9ceb642c8d0b5328330304bbd1ecfb8b6e505be8140ebe29a0105"
+        "sha1": "40d58b4fc7f13ad3cd4d6fc79043beaead6c4128",
+        "sha512": "63f2603f6dcda12e83475ffb6642cbd21a614a47c832a7c908e812ce638ba529489fff04556a17ff069325130fed21fd7d13c4fd8ad84372c2efe5406e1cb59f"
       },
-      "size": 128384,
+      "size": 54857,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-29T09:34:52.866Z",
-      "updatedAt": "2026-08-29T09:34:52.866Z",
+      "installedAt": "2026-08-29T15:01:09.027Z",
+      "updatedAt": "2026-08-29T15:01:09.027Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6515,11 +6515,6 @@
       "dependencies": [
         {
           "projectId": "R2OftAxM",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "Kuz8xrPR",
           "type": "required",
           "installed": true
         }
