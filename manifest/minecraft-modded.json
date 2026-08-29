@@ -6,7 +6,7 @@
     "projectId": "local:blank",
     "versionId": "local:blank",
     "name": "CreativeWorld",
-    "versionNumber": "5.0.11",
+    "versionNumber": "5.0.12",
     "summary": "",
     "installedAt": "2026-08-01T08:30:46.145Z",
     "updatedAt": "2026-08-01T08:30:46.145Z",
@@ -9483,37 +9483,6 @@
       "gameVersions": [],
       "loaders": [],
       "releaseType": "release",
-      "dependencies": []
-    },
-    {
-      "filePath": "mods/DistantHorizons-3.2.0-b-1.21.1-fabric-neoforge.jar",
-      "filename": "DistantHorizons-3.2.0-b-1.21.1-fabric-neoforge.jar",
-      "contentType": "mod",
-      "name": "Distant Horizons",
-      "description": "Massively increase render distance without harming performance.",
-      "author": "TomTheFurry",
-      "iconUrl": "https://cdn.modrinth.com/data/uCdwusMi/e716cda9bb568b5373ff76e363fb4c6d7278fba6_96.webp",
-      "projectId": "uCdwusMi",
-      "versionId": "ZpKb4kZp",
-      "versionNumber": "3.2.0-b-1.21.1",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "df25e8cfe06917963778723a1d9a60610dd21bec",
-        "sha512": "d4199f92f992fbd2c75a3b0e4e81c8a98bee889013f7347f2149ffa62c86748bde22135e9b2c82a10875db94fa576571c661c5ee16d2f567bd8a93d6f255fd22"
-      },
-      "size": 30207268,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-29T09:22:48.329Z",
-      "updatedAt": "2026-08-29T09:22:48.329Z",
-      "gameVersions": [
-        "1.21.1"
-      ],
-      "loaders": [
-        "fabric",
-        "neoforge"
-      ],
-      "releaseType": "beta",
       "dependencies": []
     },
     {
