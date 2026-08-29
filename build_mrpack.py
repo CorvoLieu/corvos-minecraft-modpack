@@ -127,11 +127,11 @@ def url_is_downloadable(url: str) -> bool:
 
 
 def load_pack_info(pack_json_path: Path) -> dict:
-    return json.loads(pack_json_path.read_text())
+    return json.loads(pack_json_path.read_text(encoding="utf-8"))
 
 
 def load_content_entries(manifest_path: Path, path_prefix: str) -> list[dict]:
-    data = json.loads(manifest_path.read_text())
+    data = json.loads(manifest_path.read_text(encoding="utf-8"))
     # dedupe by filePath (last entry wins), same as SKLauncher's own semantics --
     # the manifest can carry stale duplicate entries when a mod's source changes
     # (e.g. re-added from CurseForge after originally coming from Modrinth).
@@ -153,7 +153,7 @@ def load_datapack_entries(manifest_path: Path) -> list[dict]:
 def load_excludes(exclude: list[str], exclude_file: Path | None) -> list[str]:
     excludes = list(exclude)
     if exclude_file is not None:
-        for line in exclude_file.read_text().splitlines():
+        for line in exclude_file.read_text(encoding="utf-8").splitlines():
             line = line.strip()
             if line and not line.startswith("#"):
                 excludes.append(line)
@@ -377,8 +377,14 @@ def build_mods_zip_only(args, mod_entries, excludes, version_id):
             filename = Path(entry["path"]).name
             print(f"Downloading {filename} ...")
             with tempfile.NamedTemporaryFile() as tmp:
+                tmp = tempfile.NamedTemporaryFile(delete=False)
+                tmp.close()
+            try:
                 download(url, Path(tmp.name))
                 zf.write(tmp.name, arcname=entry["path"])
+            finally:
+                os.unlink(tmp.name)
+
         for rel_path, abs_path in bundled_resolved:
             zf.write(abs_path, arcname=rel_path)
 

@@ -325,18 +325,18 @@ def sync_manifest_and_pack_json(
 ) -> bool:
     changed = False
 
-    manifest_content = MANIFEST_PATH.read_text()
-    if manifest_dest.exists() and manifest_dest.read_text() == manifest_content:
+    manifest_content = MANIFEST_PATH.read_text(encoding="utf-8")
+    if manifest_dest.exists() and manifest_dest.read_text(encoding="utf-8") == manifest_content:
         print("manifest: instance's SKLauncher manifest already up to date")
     else:
         print(f"manifest: writing {manifest_dest}")
         changed = True
         if apply:
             manifest_dest.parent.mkdir(parents=True, exist_ok=True)
-            manifest_dest.write_text(manifest_content)
+            manifest_dest.write_text(manifest_content, encoding="utf-8")
 
-    pack = json.loads(PACK_JSON_PATH.read_text())
-    instances = json.loads(instances_json.read_text())
+    pack = json.loads(PACK_JSON_PATH.read_text(encoding="utf-8"))
+    instances = json.loads(instances_json.read_text(encoding="utf-8"))
     instance_info = next((i for i in instances["instances"] if i["id"] == instance_id), None)
     if instance_info is None:
         raise SystemExit(
@@ -359,7 +359,7 @@ def sync_manifest_and_pack_json(
         if apply:
             instance_info["minecraftVersion"] = pack["minecraftVersion"]
             instance_info["loaderVersion"] = pack["loaderVersion"]
-            instances_json.write_text(json.dumps(instances, indent=2) + "\n")
+            instances_json.write_text(json.dumps(instances, indent=2) + "\n", encoding="utf-8")
 
     return changed
 
