@@ -382,25 +382,25 @@
       "iconUrl": "https://cdn.modrinth.com/data/n2fvCDlM/e764bf33a0a9d94fd33af84a63d8a47da7c85561_96.webp"
     },
     {
-      "filePath": "mods/copycats-3.0.7+mc.1.21.1-neoforge.jar",
-      "filename": "copycats-3.0.7+mc.1.21.1-neoforge.jar",
+      "filePath": "mods/copycats-3.0.8+mc.1.21.1-neoforge.jar",
+      "filename": "copycats-3.0.8+mc.1.21.1-neoforge.jar",
       "contentType": "mod",
       "name": "Create: Copycats+",
       "description": "All the copycats you've ever wanted, combined into a single mod!",
       "iconUrl": "https://cdn.modrinth.com/data/UT2M39wf/17960b56556c644249686a22172eda0924f8bbe0_96.webp",
       "projectId": "UT2M39wf",
-      "versionId": "8cABiKTp",
-      "versionNumber": "3.0.7+mc.1.21.1-neoforge",
+      "versionId": "ZwGlMBIk",
+      "versionNumber": "3.0.8+mc.1.21.1-neoforge",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "8040f4be65cd7892aa71ab98db62a2823028e5b5",
-        "sha512": "72d3d28646a29b9de6e29fccac2591321198dd8ad1a82f290cb39ff4220114fd1d3059b5730be9875ef9c79b2e2179a2e7082dfcc5934e405bdf0a6b0f1cd015"
+        "sha1": "ee0cddd7053622aa0a6964e7367bd69795273e7d",
+        "sha512": "85edd42d46ba2c331212584d1009bf2c7bd21782c89d2a1d994dbdd170a6812e20fee6aa51faf0aa9357bd75e973b692b460c30680093f8fc2c097c52dc60b08"
       },
-      "size": 1799262,
+      "size": 1799269,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-21T15:37:06.566Z",
-      "updatedAt": "2026-08-21T15:37:06.566Z",
+      "installedAt": "2026-08-29T09:34:00.599Z",
+      "updatedAt": "2026-08-29T09:34:00.599Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -410,13 +410,13 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "LNytGWDc",
-          "type": "required",
+          "projectId": "u6dRKJwZ",
+          "type": "optional",
           "installed": true
         },
         {
-          "projectId": "u6dRKJwZ",
-          "type": "optional",
+          "projectId": "LNytGWDc",
+          "type": "required",
           "installed": true
         }
       ]
@@ -1350,22 +1350,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/qQyHxfxd/icon.png"
     },
     {
-      "filePath": "mods/L_Ender's Cataclysm 1.21.1-3.32.jar",
-      "filename": "L_Ender's Cataclysm 1.21.1-3.32.jar",
+      "filePath": "mods/L_Ender's Cataclysm 1.21.1-3.33.jar",
+      "filename": "L_Ender's Cataclysm 1.21.1-3.33.jar",
       "contentType": "mod",
       "name": "L_Ender's Cataclysm",
+      "description": "Cataclysm is a mod that adds difficult dungeons, challenging boss-fights and powerful items.",
+      "author": "mcl_ender",
+      "iconUrl": "https://cdn.modrinth.com/data/46KJle7n/4de43b519c4b4ce09c5a3155e908da446dbf455a_96.webp",
       "projectId": "46KJle7n",
-      "versionId": "695vQRhD",
+      "versionId": "mYBUDZWl",
+      "versionNumber": "3.33",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "f16c6bf69232ebdf85cc861450a8dd5def310e5b",
-        "sha512": "0b34f16b499362e7bb00def8bcbb58eeab89f4d5aabbd124b18edf6e9734071a48ac041aca5ddf2eda53af11f6700fd3690f07af218bd16ce1312f5d13f64543"
+        "sha1": "5ff39c0eddfa08ea0e921bdcb17da7f32f0b00ce",
+        "sha512": "359ad3681aba479486519a79fd227afc608b66d2843afe1f6c7196da6807683792b4ecea761e824f15b03d13d6ff29380b439bdd5bb1d2472a065ae8e83743d9"
       },
-      "size": 73362730,
+      "size": 73375661,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-01T08:30:46.147Z",
-      "updatedAt": "2026-08-01T08:30:46.147Z",
+      "installedAt": "2026-08-29T09:34:10.642Z",
+      "updatedAt": "2026-08-29T09:34:10.642Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -1375,20 +1379,16 @@
       "releaseType": "release",
       "dependencies": [
         {
-          "projectId": "vvuO3ImH",
-          "type": "required",
-          "installed": false
-        },
-        {
           "projectId": "FoVacERa",
           "type": "required",
-          "installed": false
+          "installed": true
+        },
+        {
+          "projectId": "vvuO3ImH",
+          "type": "required",
+          "installed": true
         }
-      ],
-      "versionNumber": "3.32",
-      "description": "Cataclysm is a mod that adds difficult dungeons, challenging boss-fights and powerful items.",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/46KJle7n/4de43b519c4b4ce09c5a3155e908da446dbf455a_96.webp"
+      ]
     },
     {
       "filePath": "mods/culturaldelights-0.17.8.jar",
@@ -1468,26 +1468,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/dNLZ9VjB/bde5699e3b3e477cbce4c806c547866324509e63_96.webp"
     },
     {
-      "filePath": "mods/create-integrated-farming-1.3.2.jar",
-      "filename": "create-integrated-farming-1.3.2.jar",
+      "filePath": "mods/create-integrated-farming-1.3.3b.jar",
+      "filename": "create-integrated-farming-1.3.3b.jar",
       "contentType": "mod",
       "name": "Create: Integrated Farming",
       "description": "Integrated farming automation for Create",
       "author": "MarbleGateKeeper",
       "iconUrl": "https://cdn.modrinth.com/data/9k1pAsfR/904e6311ef61f595854d872a7248a43fcbc9140d_96.webp",
       "projectId": "9k1pAsfR",
-      "versionId": "JCe5naC7",
-      "versionNumber": "1.3.2",
+      "versionId": "dKO6eQ8q",
+      "versionNumber": "1.3.3b",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "9b5428c4d9da589439493aa4457a59b741afb369",
-        "sha512": "4c76a626f8c27cc97ae834109beaa919c8e94e8d130dffb336b6f9807e7874cc03291b4676e6590278eb7e9d598a422ee51c022ba3348eab7d92d3ddfcfe5ef9"
+        "sha1": "344990890a4d1d78e936a41176fe520564f8ad53",
+        "sha512": "e995e3e91481ab176d5bf1023fc2e714b5b4b3ea221683c01f7e63509b7f86bd050c69ba26f4884fb76d73a938d22b333d798d0ab656f1c4b2305eb456e3af94"
       },
-      "size": 595923,
+      "size": 629469,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-21T15:36:09.336Z",
-      "updatedAt": "2026-08-21T15:36:09.336Z",
+      "installedAt": "2026-08-29T09:34:37.305Z",
+      "updatedAt": "2026-08-29T09:34:37.305Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -3520,26 +3520,26 @@
       "iconUrl": "https://cdn.modrinth.com/data/C7I0BCni/7eb5e7816f887154e69a4001bee5bcc143242b32_96.webp"
     },
     {
-      "filePath": "mods/powergrid-mc1.21.1-0.6.0.1.jar",
-      "filename": "powergrid-mc1.21.1-0.6.0.1.jar",
+      "filePath": "mods/powergrid-mc1.21.1-0.6.1.jar",
+      "filename": "powergrid-mc1.21.1-0.6.1.jar",
       "contentType": "mod",
       "name": "Create: Power Grid",
       "description": "Providing electricity to a world near you",
       "author": "patryk3211",
       "iconUrl": "https://cdn.modrinth.com/data/eWiBLJ9R/700288b560233276dd94ca5ac24cc98af79cab66_96.webp",
       "projectId": "eWiBLJ9R",
-      "versionId": "IhWvpljS",
-      "versionNumber": "0.6.0.1",
+      "versionId": "ip4gJrgx",
+      "versionNumber": "0.6.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "68509bfa4863318a2d188ed232072c76465b2b13",
-        "sha512": "947ac20357e5f1529973cff59e7e4d1de6f7ecc2c50adb18febc678017e81bc20d010c459eaddb23351689c9a7adb4329dc452dfa4b4ef535f0d3b608e51dd9c"
+        "sha1": "bb0139368f141b0d3a60707ef81c8e010cc72df9",
+        "sha512": "d5d7075b1977b449f196468963cdf24910844823ea0c67d7a3698ac4702e399978337b38aaf60b6cf7ebb089f712cb8b2dc0c2920e6bf39273bae608de5c13c4"
       },
-      "size": 7905734,
+      "size": 7965088,
       "enabled": true,
       "origin": "modpack",
-      "installedAt": "2026-08-21T15:36:54.197Z",
-      "updatedAt": "2026-08-21T15:36:54.197Z",
+      "installedAt": "2026-08-29T09:34:14.266Z",
+      "updatedAt": "2026-08-29T09:34:14.266Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6396,26 +6396,26 @@
       ]
     },
     {
-      "filePath": "mods/sophisticatedcore-1.21.1-1.4.89.2291.jar",
-      "filename": "sophisticatedcore-1.21.1-1.4.89.2291.jar",
+      "filePath": "mods/sophisticatedcore-1.21.1-1.4.90.2299.jar",
+      "filename": "sophisticatedcore-1.21.1-1.4.90.2299.jar",
       "contentType": "mod",
       "name": "Sophisticated Core",
       "description": "Library mod for Sophisticated mods",
       "author": "P3pp3rF1y",
       "iconUrl": "https://cdn.modrinth.com/data/nmoqTijg/83f980596761b59f5c3e4e4d2c90d031d9d69ff6.png",
       "projectId": "nmoqTijg",
-      "versionId": "Wxcy92XH",
-      "versionNumber": "1.21.1-1.4.89.2291",
+      "versionId": "zvRSOlro",
+      "versionNumber": "1.21.1-1.4.90.2299",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "8b314611f4124a2a9ac63b864cd4fdd3f635a916",
-        "sha512": "ac6ae564f3b363789db0bd66d8bb58712473ff81c3ee9142af75ef90898036e83b3de885713a7bcacfe4dbe4e54c49d29d040b8d7df53c8a212b5a91f3cff859"
+        "sha1": "a7ab80bc6a5f069388325f552c8348a735dd6afb",
+        "sha512": "aa335c59b20d93aedb88e59ec85c04121fa682fab1ea4a080d7b88d7b545db83ef7c019f2334f0aee5605da2a6997c442e58a295cf9656b57bba986bf2427104"
       },
-      "size": 1686851,
+      "size": 1687195,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-21T15:35:33.480Z",
-      "updatedAt": "2026-08-21T15:35:33.480Z",
+      "installedAt": "2026-08-29T09:34:48.013Z",
+      "updatedAt": "2026-08-29T09:34:48.013Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6486,25 +6486,25 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/vietnams_delight_reborn-neoforge-1.21.1-1.1.0.jar",
-      "filename": "vietnams_delight_reborn-neoforge-1.21.1-1.1.0.jar",
+      "filePath": "mods/vietnams_delight_reborn-neoforge-1.21.1-2.0.0.jar",
+      "filename": "vietnams_delight_reborn-neoforge-1.21.1-2.0.0.jar",
       "contentType": "mod",
       "name": "Vietnam's Delight Reborn",
       "description": "This is a rework of Vietnam's Delight and with some more features in the future.",
-      "iconUrl": "https://cdn.modrinth.com/data/BwoSkioe/ad8571e7cefc101ac8d248f5383ac556aacb8cbd.png",
+      "iconUrl": "https://cdn.modrinth.com/data/BwoSkioe/e3d41952e0fa0579f2469aeeaf7283e1b0be8e53.png",
       "projectId": "BwoSkioe",
-      "versionId": "twD4xHIX",
-      "versionNumber": "1.1.0-neoforge",
+      "versionId": "4A50T0k4",
+      "versionNumber": "2.0.0-1.21.1+neoforge",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "40d58b4fc7f13ad3cd4d6fc79043beaead6c4128",
-        "sha512": "63f2603f6dcda12e83475ffb6642cbd21a614a47c832a7c908e812ce638ba529489fff04556a17ff069325130fed21fd7d13c4fd8ad84372c2efe5406e1cb59f"
+        "sha1": "924196a46301fe93668e719f9bc9064f8cf9d4bc",
+        "sha512": "efc16f69b4092bf50cb107ca620ce181511d25b7ff6a7f1c43c8c711116bd9076556397522e9ceb642c8d0b5328330304bbd1ecfb8b6e505be8140ebe29a0105"
       },
-      "size": 54857,
+      "size": 128384,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-07T10:20:46.184Z",
-      "updatedAt": "2026-08-07T10:20:46.184Z",
+      "installedAt": "2026-08-29T09:34:52.866Z",
+      "updatedAt": "2026-08-29T09:34:52.866Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6515,6 +6515,11 @@
       "dependencies": [
         {
           "projectId": "R2OftAxM",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "Kuz8xrPR",
           "type": "required",
           "installed": true
         }
@@ -6812,26 +6817,26 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/supplementaries-1.21.1-3.9.1-neoforge.jar",
-      "filename": "supplementaries-1.21.1-3.9.1-neoforge.jar",
+      "filePath": "mods/supplementaries-1.21.1-3.9.5-neoforge.jar",
+      "filename": "supplementaries-1.21.1-3.9.5-neoforge.jar",
       "contentType": "mod",
       "name": "Supplementaries",
       "description": "Vanilla+ additions: Jars, signposts, faucets, weather vanes spring launchers, sconces, planters, lights, decoration and automation",
       "author": "Plantkillable",
       "iconUrl": "https://cdn.modrinth.com/data/fFEIiSDQ/e9f5f66fa3b67e54acb91258a1428d68311c58bc_96.webp",
       "projectId": "fFEIiSDQ",
-      "versionId": "6vwrAvXf",
-      "versionNumber": "1.21.1-3.9.1",
+      "versionId": "eHN3ZS1s",
+      "versionNumber": "1.21.1-3.9.5",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "d7684ee80a2760380e4561802dd452737b2693ce",
-        "sha512": "b72fad1d77d6d9dd536ce008f23a9014f4d47231ebf5c4e7d5c23156243f5135eacaf34b2d022a028412ffe5e803081b48abdf3ed61951c6930ad463633c9abb"
+        "sha1": "b2c6d79293b49117a1a112f343d26ccb34d1cb50",
+        "sha512": "84cba24e291a382461e4d176833e27af7ebf8701c3954ef9bdd4cc847d8395702a553e2f52c0dac9d187dcecf4b3f9320d7fdaa3ecce00201773253c912de426"
       },
-      "size": 13531881,
+      "size": 13528390,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-21T15:36:25.335Z",
-      "updatedAt": "2026-08-21T15:36:25.335Z",
+      "installedAt": "2026-08-29T09:34:18.448Z",
+      "updatedAt": "2026-08-29T09:34:18.448Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -6848,26 +6853,26 @@
       ]
     },
     {
-      "filePath": "mods/moonlight-1.21.1-3.4.1-neoforge.jar",
-      "filename": "moonlight-1.21.1-3.4.1-neoforge.jar",
+      "filePath": "mods/moonlight-1.21.1-3.5.2-neoforge.jar",
+      "filename": "moonlight-1.21.1-3.5.2-neoforge.jar",
       "contentType": "mod",
       "name": "Moonlight Lib",
       "description": "dynamic data pack and registration, villager activities, custom map marker and a lot more",
       "author": "xelbayria",
       "iconUrl": "https://cdn.modrinth.com/data/twkfQtEc/icon.png",
       "projectId": "twkfQtEc",
-      "versionId": "3FbHoZqL",
-      "versionNumber": "1.21.1-3.4.1",
+      "versionId": "dOMcBcAi",
+      "versionNumber": "1.21.1-3.5.2",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "9d7d5b0c60c916bec2a514d387c220c2a73753be",
-        "sha512": "da955dbc7e848229281aa4abec414daa489c3f190b430281b2bafd026fffd1f7cb236e422cefbe9f5b9c223855251700f8dfd37073dd3b0e5ee80277460cc212"
+        "sha1": "d027c4d7cd90513bf743bd7b0205aa7e44f430cd",
+        "sha512": "613898da7a2f38375feeb238b92f437f0617a9513c1cd232878fe63b289e40e83ffa6d17a0bc7a4f1f017c8a2fdff017c74691bae86b468fbef2f233cef24eeb"
       },
-      "size": 2167608,
+      "size": 2201061,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-21T15:36:26.877Z",
-      "updatedAt": "2026-08-21T15:36:26.877Z",
+      "installedAt": "2026-08-29T09:34:23.301Z",
+      "updatedAt": "2026-08-29T09:34:23.301Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7037,25 +7042,25 @@
       ]
     },
     {
-      "filePath": "mods/forgified-fabric-api-0.116.15+2.3.4+1.21.1.jar",
-      "filename": "forgified-fabric-api-0.116.15+2.3.4+1.21.1.jar",
+      "filePath": "mods/forgified-fabric-api-0.116.15+2.3.5+1.21.1.jar",
+      "filename": "forgified-fabric-api-0.116.15+2.3.5+1.21.1.jar",
       "contentType": "mod",
       "name": "Forgified Fabric API",
       "description": "Fabric API implemented on top of NeoForge",
       "iconUrl": "https://cdn.modrinth.com/data/Aqlf1Shp/bcdcfed483b0365807f75181eea89b7960cd3b1b_96.webp",
       "projectId": "Aqlf1Shp",
-      "versionId": "K4hHKnnI",
-      "versionNumber": "0.116.15+2.3.4+1.21.1",
+      "versionId": "V9WdDUTx",
+      "versionNumber": "0.116.15+2.3.5+1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "0788e3e4e736c138a7c151b651bec26713f6cfe4",
-        "sha512": "2de84db829cae926f7a90d8d828114b8d8d735ca230d518c6c3772f6f25b48838b209f75d7c198ba3bb6ec5a64d12094c7b7dacc76af387263a50e97e07c262e"
+        "sha1": "1a2c41d2efbe1c60159b90a165557e7c06d03a5c",
+        "sha512": "2b44ecd839544e3668a02f8de86433d507417d068dcafeee7f698744fc2b12fd888a1bba509da57c8e2884d01dbaf344f49bbac0f22cdae599507356ed0cbe30"
       },
-      "size": 5613327,
+      "size": 5613159,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-21T15:35:23.984Z",
-      "updatedAt": "2026-08-21T15:35:23.984Z",
+      "installedAt": "2026-08-29T09:34:24.548Z",
+      "updatedAt": "2026-08-29T09:34:24.548Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7172,26 +7177,26 @@
       ]
     },
     {
-      "filePath": "mods/mega_showdown-neoforge-1.9.4+1.7.3+1.21.1.jar",
-      "filename": "mega_showdown-neoforge-1.9.4+1.7.3+1.21.1.jar",
+      "filePath": "mods/mega_showdown-neoforge-1.9.5+1.7.3+1.21.1.jar",
+      "filename": "mega_showdown-neoforge-1.9.5+1.7.3+1.21.1.jar",
       "contentType": "mod",
       "name": "Cobblemon: Mega Showdown",
       "description": "Adding mega evolutions, z-moves, teralization, dynamax, ultra burst and fusions to the game",
       "author": "YajatKaul",
       "iconUrl": "https://cdn.modrinth.com/data/SszvX85I/62338ad15814a49df76dfbece1edba24ebca4135.png",
       "projectId": "SszvX85I",
-      "versionId": "lLikG45V",
-      "versionNumber": "1.9.4+1.7.3+1.21.1",
+      "versionId": "IRPTcfIt",
+      "versionNumber": "1.9.5+1.7.3+1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "9e8275e811ccc6cdfbce0e2374ef3f29ed553dda",
-        "sha512": "bac6f893ccb472a4d8770cba61ed00d259c860f18bf2b706f03600257035da32c8053c7a69ade6d3a8998f5cab4c52b978b704c9cab6d77529e4ade901c075b5"
+        "sha1": "ce76eac1821ba9c74d4cde1601a5a1b7c194a838",
+        "sha512": "f65942f209b4098e1a7f86ae6faf2d82de64f686eba2fac026d08692764461e6fabcfa924eaedcc2363c7074fadc1754b579520299c21d14c28c50e47a4caf38"
       },
-      "size": 20073685,
+      "size": 20133719,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-21T15:34:59.474Z",
-      "updatedAt": "2026-08-21T15:34:59.474Z",
+      "installedAt": "2026-08-29T09:34:57.892Z",
+      "updatedAt": "2026-08-29T09:34:57.892Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7201,17 +7206,17 @@
       "releaseType": "release",
       "dependencies": [
         {
+          "projectId": "MdwFAVRL",
+          "type": "required",
+          "installed": true
+        },
+        {
           "projectId": "ccKDOlHs",
           "type": "required",
           "installed": true
         },
         {
           "projectId": "jtmvUHXj",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "MdwFAVRL",
           "type": "required",
           "installed": true
         },
@@ -8972,47 +8977,6 @@
       "dependencies": []
     },
     {
-      "filePath": "resourcepacks/EvenBetterEnchants_v2_r1.zip",
-      "filename": "EvenBetterEnchants_v2_r1.zip",
-      "contentType": "resourcepack",
-      "name": "Even Better Enchants",
-      "description": "Unique textures for Enchanted Books!",
-      "author": "mythitorium",
-      "iconUrl": "https://cdn.modrinth.com/data/6udpuGCH/fe7e8c5d669c98ccba1c808487edb338dfd9aec3.png",
-      "projectId": "6udpuGCH",
-      "versionId": "mXaMyhFE",
-      "versionNumber": "2-1.21",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "e1bb05c0a9d61c345bf020d50f0d13d27a233752",
-        "sha512": "ceababf87d3207819cb90a8dd6e9f494976ecd8f70afed4c01b908805bbb43673fa6ebd2deff9f168f627941104545d4cfa15e50fcf0d416c60dc3117c02a1ab"
-      },
-      "size": 242292,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-11T14:29:48.837Z",
-      "updatedAt": "2026-08-11T14:29:48.837Z",
-      "gameVersions": [
-        "1.20.6",
-        "1.21",
-        "1.21.1",
-        "1.21.2",
-        "1.21.3",
-        "1.21.4"
-      ],
-      "loaders": [
-        "minecraft"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "otVJckYQ",
-          "type": "required",
-          "installed": false
-        }
-      ]
-    },
-    {
       "filePath": "resourcepacks/Simple Grass Flowers v2.0.0.zip",
       "filename": "Simple Grass Flowers v2.0.0.zip",
       "contentType": "resourcepack",
@@ -9110,26 +9074,26 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/mebahelrpgrquest-2.0.4-fabric-1.21.1.jar",
-      "filename": "mebahelrpgrquest-2.0.4-fabric-1.21.1.jar",
+      "filePath": "mods/mebahelrpgrquest-2.0.6-fabric-1.21.1.jar",
+      "filename": "mebahelrpgrquest-2.0.6-fabric-1.21.1.jar",
       "contentType": "mod",
       "name": "Mebahel's RPG - Villager Quests and Companions",
       "description": "Mebahel's RPG: Villager Quests & Companions adds story-driven villager quests, branching choices, named enemies, rumors, quest tracking, companion recruitment, and RPG-style notifications to your world.",
       "author": "Mebahel",
-      "iconUrl": "https://cdn.modrinth.com/data/jNqtpcJu/c552dad35155b7663f296dfa43e8409e746ec37f_96.webp",
+      "iconUrl": "https://cdn.modrinth.com/data/jNqtpcJu/989101594dd5df8348ffbee508f345c4e1ed5955_96.webp",
       "projectId": "jNqtpcJu",
-      "versionId": "ZPgE1qO3",
-      "versionNumber": "2.0.4-fabric-1.21.1",
+      "versionId": "l33ZTsm2",
+      "versionNumber": "2.0.6-fabric-1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "fcf355b26027ba920bf8eabb2d3d69c976e7222b",
-        "sha512": "eed446e63044e575710f6c8817b8c9a57b7c1d11869f066572546fb20013d88b333b432733200ebb2c9f12651843c26649da58d951dbc42acac4c1b565e25362"
+        "sha1": "8b49a754cff72fc54dccdbbbcc7f84e4ba90fc97",
+        "sha512": "0060cc78328be38a594693a9fb0fae268dd071397c178f124ba340cb537ae50eab2ff6137cdb06b130236043c16d80ef31dc7f4f137f2db902b4c76c3978b4c0"
       },
-      "size": 1215679,
+      "size": 1215325,
       "enabled": true,
       "origin": "user",
-      "installedAt": "2026-08-21T15:35:56.222Z",
-      "updatedAt": "2026-08-21T15:35:56.222Z",
+      "installedAt": "2026-08-29T09:34:30.340Z",
+      "updatedAt": "2026-08-29T09:34:30.340Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -9145,7 +9109,7 @@
         {
           "projectId": "P7dR8mSH",
           "type": "required",
-          "installed": true
+          "installed": false
         }
       ]
     },
@@ -9176,33 +9140,6 @@
       "loaders": [
         "neoforge"
       ],
-      "releaseType": "release",
-      "dependencies": []
-    },
-    {
-      "filePath": "resourcepacks/RCT Trainers+ [1.7] v2.2.zip",
-      "filename": "RCT Trainers+ [1.7] v2.2.zip",
-      "contentType": "resourcepack",
-      "name": "Radical Cobblemon Trainer Textures Plus",
-      "description": "A resource pack for the latest version of the Radical Cobblemon Trainers mod.",
-      "author": "",
-      "iconUrl": "https://cdn.modrinth.com/data/ARGDWSQq/0eddd91a58141336fb0c2e038f9eeae60f9caba1_96.webp",
-      "projectId": "ARGDWSQq",
-      "versionId": "C8AKk01H",
-      "versionNumber": "2.2",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "059b2585974230def7253a7384ce45a0b4568abd",
-        "sha512": "7cd1493790d41e50caee7783f5ad88e859f9698920769b25e551b14f2e7403a42d6ae9c1dec14c7b58e821095c0ec2585eb11e2e8b2917cd7f6be58cb64f6357"
-      },
-      "fingerprint": 1886320369,
-      "size": 4893539,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-19T05:17:58.186Z",
-      "updatedAt": "2026-08-19T05:17:58.186Z",
-      "gameVersions": [],
-      "loaders": [],
       "releaseType": "release",
       "dependencies": []
     },
@@ -9550,6 +9487,182 @@
       "updatedAt": "2026-08-21T16:18:10.824Z",
       "gameVersions": [],
       "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/DistantHorizons-3.2.0-b-1.21.1-fabric-neoforge.jar",
+      "filename": "DistantHorizons-3.2.0-b-1.21.1-fabric-neoforge.jar",
+      "contentType": "mod",
+      "name": "Distant Horizons",
+      "description": "Massively increase render distance without harming performance.",
+      "author": "TomTheFurry",
+      "iconUrl": "https://cdn.modrinth.com/data/uCdwusMi/e716cda9bb568b5373ff76e363fb4c6d7278fba6_96.webp",
+      "projectId": "uCdwusMi",
+      "versionId": "ZpKb4kZp",
+      "versionNumber": "3.2.0-b-1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "df25e8cfe06917963778723a1d9a60610dd21bec",
+        "sha512": "d4199f92f992fbd2c75a3b0e4e81c8a98bee889013f7347f2149ffa62c86748bde22135e9b2c82a10875db94fa576571c661c5ee16d2f567bd8a93d6f255fd22"
+      },
+      "size": 30207268,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-29T09:22:48.329Z",
+      "updatedAt": "2026-08-29T09:22:48.329Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "fabric",
+        "neoforge"
+      ],
+      "releaseType": "beta",
+      "dependencies": []
+    },
+    {
+      "filePath": "resourcepacks/cubic-sun-moon-v1.8.5.zip",
+      "filename": "cubic-sun-moon-v1.8.5.zip",
+      "contentType": "resourcepack",
+      "name": "Cubic Sun & Moon",
+      "description": "Recreates the Sun and the Moon in 3D and is compatible with mods that add sky features.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/g4bSYbrU/30e1c67a699f5b334f8814f78e34d168fb173862_96.webp",
+      "projectId": "g4bSYbrU",
+      "versionId": "zHa4qeKn",
+      "versionNumber": "1.8.5",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "16c5dbbe6214e5f2d7560707afaca9c71a8107fe",
+        "sha512": "6136c94c0c1ba8251a378f791cdca1cdce021fc486c50f4d1c928769e361dd9dadfc6267a2a06c902bd9509136a99fa24ffa88f84395869b889c2257124929af"
+      },
+      "fingerprint": 207054576,
+      "size": 16194897,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-29T09:32:23.277Z",
+      "updatedAt": "2026-08-29T09:32:23.277Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "resourcepacks/Enchantment Outlines.zip",
+      "filename": "Enchantment Outlines.zip",
+      "contentType": "resourcepack",
+      "name": "Enchantment Outlines",
+      "description": "Adds an outline to all enchantable tools.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/A32gwfe8/9f4bd3edfdb3df167c64757f66b828eba664a616_96.webp",
+      "projectId": "A32gwfe8",
+      "versionId": "JtnHjGTs",
+      "versionNumber": "1.10.8",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "13907aed515111f8a8c4c4d0859259a94a23f248",
+        "sha512": "89217ab46b2e04a787e5c1ce3ffdab077f7ccc6a090fc8e60c9128a3c0ab2fd18c8cad3109f4f25bc6d50d2d7dae36363d73af291d5721af08b0a0880117c63b"
+      },
+      "fingerprint": 2055417239,
+      "size": 1108582,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-29T09:32:23.277Z",
+      "updatedAt": "2026-08-29T09:32:23.277Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "resourcepacks/Re-covered.zip",
+      "filename": "Re-covered.zip",
+      "contentType": "resourcepack",
+      "name": "Enchanted Books: Re-covered",
+      "description": "The new look of enchanted books' covers",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/6gN7YVi7/108492802aefe83903042a8f6ffb9872bd85212a.png",
+      "projectId": "6gN7YVi7",
+      "versionId": "Pl7b1oxK",
+      "versionNumber": "3.0-CIT-Resewn",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "89d7bc0513b2a5b0127abe111db3834a35181fe9",
+        "sha512": "9a85d235852dfad31575c753daa8088a3dcd7f26cef4d92ff77f75463e89d8b8f09abe109dda609d7ec6a58ae57f1611463bf552fbdbe9a6a9388e6e83a40c2f"
+      },
+      "fingerprint": 3032376721,
+      "size": 100728,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-29T09:32:23.277Z",
+      "updatedAt": "2026-08-29T09:32:23.277Z",
+      "gameVersions": [],
+      "loaders": [],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/nirvana-forge-2.0.11.jar",
+      "filename": "nirvana-forge-2.0.11.jar",
+      "contentType": "mod",
+      "name": "Nirvana",
+      "description": "Nirvana is a mod that aims to add Hemp and Herb in a vanilla friendly way! Get ready to make some Herb Rolled in Paper, Oddly Shaped Glasses, Herbal Salves, Burlap and much more.",
+      "author": "Yapetto",
+      "iconUrl": "https://media.forgecdn.net/avatars/thumbnails/1303/985/256/256/638847814671815684.png",
+      "projectId": "1278909",
+      "versionId": "8164363",
+      "versionNumber": "Neoforge 2.0.11",
+      "source": "curseforge",
+      "fileHash": {
+        "sha1": "95915c4f41ff1b7880155fe383d37b0e296be202",
+        "sha512": "09409041e7bb4c0a53162491347fa2f140818f7b1ce0846661d24949a20eb02b55faafeb7f69bf417699fcc44211183499a19efe891f4002a2364e12cd90bb41",
+        "md5": "51f2762ef88f9f92a6754cf83cb9bde9"
+      },
+      "size": 3963759,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-29T09:32:40.039Z",
+      "updatedAt": "2026-08-29T09:32:40.039Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/custombrewrecipes-1.3.2-neo.jar",
+      "filename": "custombrewrecipes-1.3.2-neo.jar",
+      "contentType": "mod",
+      "name": "CustomBrewRecipes",
+      "description": "A fabric mod that makes it easy for developers adding non-potion brewing recipes that support NBT data!",
+      "author": "Emafire003",
+      "iconUrl": "https://cdn.modrinth.com/data/Kuz8xrPR/e92b2f33eba0ddc03e85deea1078e412b8a5c3e0_96.webp",
+      "projectId": "Kuz8xrPR",
+      "versionId": "KAqCPWpp",
+      "versionNumber": "1.3.2-neo",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "830a770a96f3c5fea9e1a8f9b59e64d3a4473f4e",
+        "sha512": "c0695ca6d98fd5a2f87a9c63b17aeb359ea44b98c634e8e980aa035377164cf957ee80fcb548c7bbea477cd501d3666e3820492edd7fd75eaa9de7ed0be8fc00"
+      },
+      "size": 13605,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-08-29T09:34:54.243Z",
+      "updatedAt": "2026-08-29T09:34:54.243Z",
+      "gameVersions": [
+        "1.21.1",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
       "releaseType": "release",
       "dependencies": []
     }
