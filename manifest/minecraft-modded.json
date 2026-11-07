@@ -6,7 +6,7 @@
     "projectId": "local:blank",
     "versionId": "local:blank",
     "name": "CreativeWorld",
-    "versionNumber": "6.0.4",
+    "versionNumber": "6.0.5",
     "summary": "",
     "installedAt": "2026-08-01T08:30:46.145Z",
     "updatedAt": "2026-08-01T08:30:46.145Z",
@@ -2707,26 +2707,26 @@
       ]
     },
     {
-      "filePath": "mods/jei-1.21.1-neoforge-19.56.0.441.jar",
-      "filename": "jei-1.21.1-neoforge-19.56.0.441.jar",
+      "filePath": "mods/jei-1.21.1-neoforge-19.64.0.455.jar",
+      "filename": "jei-1.21.1-neoforge-19.64.0.455.jar",
       "contentType": "mod",
       "name": "Just Enough Items (JEI)",
       "description": "View Items and Recipes",
       "author": "mezz",
       "iconUrl": "https://cdn.modrinth.com/data/u6dRKJwZ/4a3f18ac0d096c9f8e9176984c44be4e58f94c89_96.webp",
       "projectId": "u6dRKJwZ",
-      "versionId": "ZWGz5dZX",
-      "versionNumber": "19.56.0.441",
+      "versionId": "iv3KiVkE",
+      "versionNumber": "19.64.0.455",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "e520422338d3eba053189d042fc08eb40eb22bb8",
-        "sha512": "cee8f743819fdeb99fde9a91cd72b9200c07a7fd7e581e3b2561843fd0ee59f0b7dc7e0b619c79cee80402c7557eb4ae3b218bd05ec3e6d9e79801f01b791fa3"
+        "sha1": "f6d6fc08d54c40752926b570a2220471e8c45c1a",
+        "sha512": "fdd02e57ce4dcf20b69860a5ace1b97d9a771486241179cf9edfe71e30c69bb4003b046d0cce8d8c4913b9689f1d8b04cf0542b0b04a6cf0b3b0465f3bb11702"
       },
-      "size": 2156268,
+      "size": 2375741,
       "enabled": true,
       "origin": "modpack",
       "installedAt": "2026-11-07T11:10:25.747Z",
-      "updatedAt": "2026-11-07T11:14:27.000Z",
+      "updatedAt": "2026-11-07T18:15:20.000Z",
       "gameVersions": [
         "1.21",
         "1.21.1"
@@ -2734,11 +2734,16 @@
       "loaders": [
         "neoforge"
       ],
-      "releaseType": "beta",
+      "releaseType": "release",
       "dependencies": [
         {
           "projectId": "7tEfOcA7",
           "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "BOHUKqOz",
+          "type": "optional",
           "installed": true
         }
       ]
@@ -6360,33 +6365,33 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/petrolpark-1.21.1-1.5.11.jar",
-      "filename": "petrolpark-1.21.1-1.5.11.jar",
+      "filePath": "mods/petrolpark-1.21.1-1.5.12.jar",
+      "filename": "petrolpark-1.21.1-1.5.12.jar",
       "contentType": "mod",
       "name": "Petrolpark's Library",
       "description": "A library of shared features and utilities for my mods",
       "author": "petrolpark",
       "iconUrl": "https://cdn.modrinth.com/data/ik2WZkTZ/3bb407298ce168f786b56e0ddc62a7539e94846f.png",
       "projectId": "ik2WZkTZ",
-      "versionId": "oTAOaxiw",
-      "versionNumber": "1.21.1-1.5.11",
+      "versionId": "iOye2uqD",
+      "versionNumber": "1.21.1-1.5.12",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "967edc04590d24232bfe45faa8c3ee66bface203",
-        "sha512": "4f739b42c9a0fc89c044e1299ab76e363fefbd7267a256b3d2679431748134979d66d7e81d8982be44debf4deb8d19e5358bd2ff28e91e5299bc70b08df9fa7f"
+        "sha1": "a8f014e70d6eddae7fbd68c0caf27278dc4117eb",
+        "sha512": "199669d7dafcf11002e4dc04d05560a9fbbbe5caaf62665bae5d5ec82a502864c6b205a9643c21b3bb1b94f81e18a4a0d61b331ab8832e50a29555d00253450b"
       },
-      "size": 7081034,
+      "size": 7086157,
       "enabled": true,
       "origin": "user",
       "installedAt": "2026-11-07T11:10:05.101Z",
-      "updatedAt": "2026-11-07T11:10:05.101Z",
+      "updatedAt": "2026-11-07T18:15:20.000Z",
       "gameVersions": [
         "1.21.1"
       ],
       "loaders": [
         "neoforge"
       ],
-      "releaseType": "release",
+      "releaseType": "beta",
       "dependencies": []
     },
     {
