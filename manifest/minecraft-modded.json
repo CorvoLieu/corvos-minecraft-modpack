@@ -8798,25 +8798,25 @@
       "dependencies": []
     },
     {
-      "filePath": "datapacks/creativeworld-ingredient-unify-1.1.0.zip",
-      "filename": "creativeworld-ingredient-unify-1.1.0.zip",
+      "filePath": "datapacks/creativeworld-ingredient-unify-1.2.0.zip",
+      "filename": "creativeworld-ingredient-unify-1.2.0.zip",
       "contentType": "datapack",
       "name": "CreativeWorld Ingredient Unify",
       "author": "CorvoLieu",
-      "description": "Merges duplicate Let's Do / Farmer's Delight ingredients via One Enough Item, and adds 1-item crafting conversions between duplicate stations, tools, wild crops and dishes.",
+      "description": "Merges duplicate Let's Do / Farmer's Delight ingredients via One Enough Item, adds 1-item crafting conversions between duplicate stations, tools, wild crops and dishes, and hides Alex's Caves biomes (found via Cave Biome Maps) from Nature's Compass.",
       "projectId": "local:creativeworld-ingredient-unify",
-      "versionId": "local:1.1.0",
-      "versionNumber": "1.1.0",
+      "versionId": "local:1.2.0",
+      "versionNumber": "1.2.0",
       "source": "local",
       "fileHash": {
-        "sha1": "36b85986a78da9a1587740cce07056e6ed4cfda8",
-        "sha512": "ced86c2c407940c3ba7fb0e1e8055991b448b398fc715ff954b4763ef2f1d02103a54165cf0fcc6b4bd13c4234c5b477c3a5d98ba6689c0d814b797145d2157d"
+        "sha1": "055ab6c6517d1f46a71ee23c42b5a06bc7f9741c",
+        "sha512": "7d4a0a92e40befa6bdb775c78c1e9059c42f147490f8395fb06b12ed0ce3b7b6c1a3b7d7ce08c3ef19f71e79114aa845e868b133dcabbadaaf6b4f326e44f5d5"
       },
-      "size": 15900,
+      "size": 16256,
       "enabled": true,
       "origin": "user",
       "installedAt": "2026-11-07T14:41:49.000Z",
-      "updatedAt": "2026-11-07T14:41:49.000Z",
+      "updatedAt": "2026-11-07T15:18:11.000Z",
       "gameVersions": [
         "1.21.1"
       ],
