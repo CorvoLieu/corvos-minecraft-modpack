@@ -5,3 +5,5 @@ data
 __pycache__/
 .env
 config/
+# Server-only config shipped via --extra-overrides-dir (see build_mrpack.py)
+!server-overrides/config/
