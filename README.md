@@ -92,6 +92,8 @@ Prod settings (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are ov
 
 **Resource packs:** manifest resource packs land at `resourcepacks/` in the client `.mrpack` only (the server build skips them). Players still enable them in the in-game Resource Packs menu.
 
+**Server-only config (`server-overrides/`):** every file under `server-overrides/` is bundled into the server `.mrpack` only (`make build-server` passes `--extra-overrides-dir server-overrides`), at the same relative path — e.g. `server-overrides/config/touhou_little_maid-common.toml` caps each player at 1 maid. These files replace the server's copy on every modpack install, so list only the settings being enforced (NeoForge fills in the rest with defaults) and change them here rather than on the server.
+
 ### Publishing the server image (CI)
 
 On every push to `main`, `.github/workflows/deploy.yml` builds the client modpack, bakes it into the `Dockerfile` image, and pushes `ghcr.io/<owner>/<repo>:latest` (plus `:sha-<short-sha>` for rollback/debugging) to GHCR using the workflow's own `GITHUB_TOKEN` — no extra secrets needed; the image name is derived from the GitHub repository, not `PACK_NAME` (default: `ghcr.io/corvolieu/corvos-minecraft-modpack`). Independent of `release.yml` (which publishes `.mrpack` files for players); both can run off the same push.

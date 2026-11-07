@@ -38,6 +38,14 @@ menu -- the build ships the files, not options.txt.
 servers.dat are always bundled directly in overrides/ (server per request),
 since there's no "online source" for local config state.
 
+Pass --extra-overrides-dir <dir> to bundle every file under <dir> into
+overrides/ at the same relative path. `make build-server` passes
+server-overrides/, so server-only config (e.g. a mod's common config that
+would otherwise clobber players' client-side settings) ships only in the
+server build. Such a file replaces the server's copy on every modpack
+install, so keep it minimal (only the settings you're enforcing) -- NeoForge
+fills in the rest with defaults on startup.
+
 Pass --exclude <substring> (repeatable) and/or --exclude-file <path>
 (newline-separated substrings) to drop mods/datapacks by filename match,
 e.g. for a server-only build that shouldn't ship client-only mods like
@@ -210,6 +218,14 @@ def parse_args(argv: list[str] | None = None):
         help=f"servers.dat to bundle as an override (default: {DEFAULT_SERVERS_DAT_PATH})",
     )
     parser.add_argument(
+        "--extra-overrides-dir",
+        type=Path,
+        default=None,
+        metavar="DIR",
+        help="bundle every file under DIR into overrides/ at the same relative path "
+        "(make build-server passes server-overrides/)",
+    )
+    parser.add_argument(
         "--output-dir",
         type=Path,
         default=DEFAULT_OUTPUT_DIR,
@@ -371,6 +387,18 @@ def build_server_overrides(servers_dat: Path):
     return overrides
 
 
+def build_extra_overrides(extra_dir: Path | None):
+    if extra_dir is None:
+        return []
+    if not extra_dir.is_dir():
+        raise SystemExit(f"--extra-overrides-dir not found: {extra_dir}")
+    return [
+        (p.relative_to(extra_dir).as_posix(), p)
+        for p in sorted(extra_dir.rglob("*"))
+        if p.is_file() and p.name != ".DS_Store"
+    ]
+
+
 def download(url: str, dest: Path):
     with urllib.request.urlopen(url) as resp, open(dest, "wb") as f:
         f.write(resp.read())
@@ -430,7 +458,14 @@ def build_mrpack(
         bundled_resourcepacks, args.local_resourcepacks_dir, "resource pack"
     )
     bundled_resolved += build_server_overrides(args.servers_dat)
+    extra_overrides = build_extra_overrides(args.extra_overrides_dir)
+    bundled_resolved += extra_overrides
 
+    if extra_overrides:
+        print(
+            f"Extra overrides: {len(extra_overrides)} file(s) from {args.extra_overrides_dir}: "
+            + ", ".join(rel for rel, _ in extra_overrides)
+        )
     print(
         f"Mods: {len(online_mods)} referenced online, "
         f"{len(bundled_mods)} bundled directly (local, or curseforge "

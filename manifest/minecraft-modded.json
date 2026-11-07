@@ -8934,6 +8934,96 @@
       ],
       "releaseType": "release",
       "dependencies": []
+    },
+    {
+      "filePath": "mods/touhoulittlemaid-1.5.3-neoforge+mc1.21.1.jar",
+      "filename": "touhoulittlemaid-1.5.3-neoforge+mc1.21.1.jar",
+      "contentType": "mod",
+      "name": "Touhou Little Maid",
+      "description": "A mod featuring maids and Touhou Project, adding Touhou Project style maid models.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/R0bDWFAW/63bf98269f3a9f695a4d04328b42a8c2a117c3fc_96.webp",
+      "projectId": "R0bDWFAW",
+      "versionId": "tXG1TkGx",
+      "versionNumber": "1.5.3-neoforge+mc1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "f96507810deaa2ffd8c3bd86a79d6ccbd56ca32e",
+        "sha512": "147bc10f5cc7159ee16c4918795155b3e52cf6bab5e09f588ed3fec14f8b47bbc512948bb8fef30346a47feba2692b6dbe20781c6cc1dc1d2c6b9377a9649bbe"
+      },
+      "size": 24408776,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T17:37:08.000Z",
+      "updatedAt": "2026-11-07T17:37:08.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/maidsoulkitchen-1.21.1-beta-v0.1.4.jar",
+      "filename": "maidsoulkitchen-1.21.1-beta-v0.1.4.jar",
+      "contentType": "mod",
+      "name": "Maidsoul Kitchen",
+      "description": "A touhoulittlemaid addon mod, is designed to teach maids how to use other mods for cooking and farming.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/Q5ZXy0QB/bca390205dc5113381eee7e646559a2f7f419254_96.webp",
+      "projectId": "Q5ZXy0QB",
+      "versionId": "JvPRj6e1",
+      "versionNumber": "0.1.4",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "59fd41b4abe99162afd3afd71bc78effd34cf9d2",
+        "sha512": "1ed68264c1ca746a4b12724029d3d98cd72283c261fddea6d47b92b840d31b7f384976e5ba15a045e794919ef05a7ad010a54df3b93ad2247abb1deaf1b4ec4f"
+      },
+      "size": 1025696,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T17:37:08.000Z",
+      "updatedAt": "2026-11-07T17:37:08.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "beta",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/dwarfs_tyranny-1.0.8b-neoforge-1.21.1.jar",
+      "filename": "dwarfs_tyranny-1.0.8b-neoforge-1.21.1.jar",
+      "contentType": "mod",
+      "name": "Dwarf's Tyranny",
+      "author": "Paraste",
+      "projectId": "1733245",
+      "versionId": "9421995",
+      "versionNumber": "Dwarf's Tyranny 1.0.8b - Neoforge 1.21.1",
+      "source": "curseforge",
+      "fileHash": {
+        "sha1": "209db5c42c7e6ff976051b6f278e9c6633b87dc6",
+        "sha512": "110c0cb0d2d2055112a8bf075b05fd4e9c7043f433176287a203523fd54e482b13872fc576d429e13ec1385cb49d0a2f9cefad4b6e0a090895fec3caf9f550f4",
+        "md5": "5583fe716593087f0eafe687ce777c98"
+      },
+      "fingerprint": 3164388755,
+      "size": 4686674,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T17:38:14.000Z",
+      "updatedAt": "2026-11-07T17:38:14.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
     }
   ]
 }
