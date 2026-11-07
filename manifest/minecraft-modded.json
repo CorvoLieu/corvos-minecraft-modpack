@@ -5774,25 +5774,25 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/vietnams_delight_reborn-neoforge-1.21.1-2.0.0.jar",
-      "filename": "vietnams_delight_reborn-neoforge-1.21.1-2.0.0.jar",
+      "filePath": "mods/vietnams_delight_reborn-neoforge-1.21.1-2.0.0-cwfix1.jar",
+      "filename": "vietnams_delight_reborn-neoforge-1.21.1-2.0.0-cwfix1.jar",
       "contentType": "mod",
       "name": "Vietnam's Delight Reborn",
-      "description": "This is a rework of Vietnam's Delight and with some more features in the future.",
+      "description": "Vietnam's Delight Reborn 2.0.0 with a server-crash fix (MobMixin no longer calls client-only Minecraft.getInstance()). Apache-2.0; see META-INF/NOTICE-CreativeWorld-modification.txt.",
       "iconUrl": "https://cdn.modrinth.com/data/BwoSkioe/e3d41952e0fa0579f2469aeeaf7283e1b0be8e53.png",
-      "projectId": "BwoSkioe",
-      "versionId": "4A50T0k4",
-      "versionNumber": "2.0.0-1.21.1+neoforge",
-      "source": "modrinth",
+      "projectId": "local:vietnams-delight-reborn-cwfix",
+      "versionId": "local:2.0.0-cwfix1",
+      "versionNumber": "2.0.0-cwfix1",
+      "source": "local",
       "fileHash": {
-        "sha1": "924196a46301fe93668e719f9bc9064f8cf9d4bc",
-        "sha512": "efc16f69b4092bf50cb107ca620ce181511d25b7ff6a7f1c43c8c711116bd9076556397522e9ceb642c8d0b5328330304bbd1ecfb8b6e505be8140ebe29a0105"
+        "sha1": "5b8ddcc7944d09dd8a7787324295f9646d03c857",
+        "sha512": "97b007a77f8e63f4f869903885c67f74c03ee0dd837a5551e96de45f99f248f86aa08230a684967220250da57f1357d166d44fbd24e018cee769c23872ee8a52"
       },
-      "size": 128384,
+      "size": 128606,
       "enabled": true,
       "origin": "user",
       "installedAt": "2026-11-07T11:09:04.090Z",
-      "updatedAt": "2026-11-07T11:09:04.090Z",
+      "updatedAt": "2026-11-07T17:06:45.000Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -5811,7 +5811,8 @@
           "type": "required",
           "installed": true
         }
-      ]
+      ],
+      "author": "MikeStorm03 (patched by CorvoLieu)"
     },
     {
       "filePath": "mods/youkaisfeasts-1.1.2.jar",
@@ -7778,39 +7779,6 @@
       "dependencies": []
     },
     {
-      "filePath": "mods/custombrewrecipes-1.3.2-neo.jar",
-      "filename": "custombrewrecipes-1.3.2-neo.jar",
-      "contentType": "mod",
-      "name": "CustomBrewRecipes",
-      "description": "A fabric mod that makes it easy for developers adding non-potion brewing recipes that support NBT data!",
-      "author": "Emafire003",
-      "iconUrl": "https://cdn.modrinth.com/data/Kuz8xrPR/e92b2f33eba0ddc03e85deea1078e412b8a5c3e0_96.webp",
-      "projectId": "Kuz8xrPR",
-      "versionId": "KAqCPWpp",
-      "versionNumber": "1.3.2-neo",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "830a770a96f3c5fea9e1a8f9b59e64d3a4473f4e",
-        "sha512": "c0695ca6d98fd5a2f87a9c63b17aeb359ea44b98c634e8e980aa035377164cf957ee80fcb548c7bbea477cd501d3666e3820492edd7fd75eaa9de7ed0be8fc00"
-      },
-      "size": 13605,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-11-07T11:09:05.577Z",
-      "updatedAt": "2026-11-07T11:09:05.577Z",
-      "gameVersions": [
-        "1.21.1",
-        "1.21.2",
-        "1.21.3",
-        "1.21.4"
-      ],
-      "loaders": [
-        "neoforge"
-      ],
-      "releaseType": "release",
-      "dependencies": []
-    },
-    {
       "filePath": "mods/mezz_config-1.21.1-neoforge-0.6.11-standalone.jar",
       "filename": "mezz_config-1.21.1-neoforge-0.6.11-standalone.jar",
       "contentType": "mod",
@@ -8933,6 +8901,39 @@
           "installed": true
         }
       ]
+    },
+    {
+      "filePath": "mods/custombrewrecipes-1.3.2-neo.jar",
+      "filename": "custombrewrecipes-1.3.2-neo.jar",
+      "contentType": "mod",
+      "name": "CustomBrewRecipes",
+      "description": "A fabric mod that makes it easy for developers adding non-potion brewing recipes that support NBT data!",
+      "author": "Emafire003",
+      "iconUrl": "https://cdn.modrinth.com/data/Kuz8xrPR/e92b2f33eba0ddc03e85deea1078e412b8a5c3e0_96.webp",
+      "projectId": "Kuz8xrPR",
+      "versionId": "KAqCPWpp",
+      "versionNumber": "1.3.2-neo",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "830a770a96f3c5fea9e1a8f9b59e64d3a4473f4e",
+        "sha512": "c0695ca6d98fd5a2f87a9c63b17aeb359ea44b98c634e8e980aa035377164cf957ee80fcb548c7bbea477cd501d3666e3820492edd7fd75eaa9de7ed0be8fc00"
+      },
+      "size": 13605,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T11:09:05.577Z",
+      "updatedAt": "2026-11-07T11:09:05.577Z",
+      "gameVersions": [
+        "1.21.1",
+        "1.21.2",
+        "1.21.3",
+        "1.21.4"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
     }
   ]
 }
