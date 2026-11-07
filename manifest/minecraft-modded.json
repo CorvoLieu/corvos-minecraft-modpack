@@ -9038,6 +9038,591 @@
       ],
       "releaseType": "beta",
       "dependencies": []
+    },
+    {
+      "filePath": "mods/YungsApi-1.21.1-NeoForge-5.1.9.jar",
+      "filename": "YungsApi-1.21.1-NeoForge-5.1.9.jar",
+      "contentType": "mod",
+      "name": "YUNG's API",
+      "description": "Library mod for YUNG's mods.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/Ua7DFN59/0fab1c351bf00926a8e1c91dc64b7c88832c3e1f_96.webp",
+      "projectId": "Ua7DFN59",
+      "versionId": "2prKITKh",
+      "versionNumber": "1.21.1-NeoForge-5.1.9",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "2c4b740c8ad27bbcb2a21b85b64f011b809aed91",
+        "sha512": "7e3cf0b429e8a1c51dca094c2d8eabf12245bb42cbcd8b6e3e54959f931bef93201b81a08d200b417059aaa438e8eb445c3978a09568597bfb588199b7775967"
+      },
+      "size": 413763,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar",
+      "filename": "YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better Dungeons",
+      "description": "A complete redesign of Minecraft's dungeons!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/o1C1Dkj5/9b54b2d932a5a5b6565c93814935c04902f3179b_96.webp",
+      "projectId": "o1C1Dkj5",
+      "versionId": "D6aZn0Em",
+      "versionNumber": "1.21.1-NeoForge-5.1.4",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "73a660c13063450e555e5e2c015ae24d606b32b4",
+        "sha512": "40513bacd13fa9860abcab507b1fc09dc51649af4b615ce466e0ec361557f02d35e6e44bea1cc17cb4120805f862aad01394eb185f46611e7be63dfd97f272df"
+      },
+      "size": 782160,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar",
+      "filename": "YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better Mineshafts",
+      "description": "A long-awaited and much-needed abandoned mineshaft overhaul!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/HjmxVlSr/4e41ef8344db48b8368cd3d6f35844c8a619f446_96.webp",
+      "projectId": "HjmxVlSr",
+      "versionId": "Go3nbneL",
+      "versionNumber": "1.21.1-NeoForge-5.1.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "6a14e1d8201f068ca87ef8333e471c5378955906",
+        "sha512": "8b01b386f53feeaa55f0c62697578b82e00501e45e428b2a68df6bda34efb6a4b3b4e3582abf13fe767ebcb61aef9368186f53c03999958bef38f31c41a7f8b2"
+      },
+      "size": 493967,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar",
+      "filename": "YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better Strongholds",
+      "description": "A complete redesign of Minecraft's strongholds!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/kidLKymU/bfb3cac4ca4d7d891fbbcb34a1d61eaa1d6f3e9a_96.webp",
+      "projectId": "kidLKymU",
+      "versionId": "8U0dIfSM",
+      "versionNumber": "1.21.1-NeoForge-5.1.3",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "5d06a5850af7c577612d4592706a8e156bbe1cbf",
+        "sha512": "385d67e07f2c67af5ea387d92d92949d8f671e8f99204457b6396dbe987ac3b14c2bff765df5fcbaa68016604f82a1fc6ec5a69c012ca22ad088d1a7c9bc135d"
+      },
+      "size": 461244,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar",
+      "filename": "YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better Desert Temples",
+      "description": "A complete redesign of Minecraft's desert temples!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/XNlO7sBv/32fc82949e922ad9281ac9a8fe965afc04261848_96.webp",
+      "projectId": "XNlO7sBv",
+      "versionId": "GQ9iNWkI",
+      "versionNumber": "1.21.1-NeoForge-4.1.5",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "90529257dbd92558998c65178294bc7b2fd16a64",
+        "sha512": "6454c955f75f66104810e967a59ae032ddf1ccc5a854346af6bfba6e44cd456e755cd8feb1e0968be4e9132ea6c5d1cb2126fe5e85d3eb18c8d3ea3c81ffdf9a"
+      },
+      "size": 905839,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar",
+      "filename": "YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better Ocean Monuments",
+      "description": "A complete redesign of Minecraft's ocean monuments!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/3dT9sgt4/05c04c64ab9e5bf523701fa7bc0ac54adec25337_96.webp",
+      "projectId": "3dT9sgt4",
+      "versionId": "yFjEcj2g",
+      "versionNumber": "1.21.1-NeoForge-4.1.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "fba629defdb92ad99ec4f411895afb6e19555a18",
+        "sha512": "77c864da36f1d2173e6460dc335996893a804954b8a5c274173fc95dfdbf437e80d9dce32f6060306a662fc35322566eecf5dfe24e2d3fab79bf7e0ff9fa4db6"
+      },
+      "size": 1025571,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBetterJungleTemples-1.21.1-NeoForge-3.1.2.jar",
+      "filename": "YungsBetterJungleTemples-1.21.1-NeoForge-3.1.2.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better Jungle Temples",
+      "description": "A complete redesign of Minecraft's jungle temples!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/z9Ve58Ih/a142b7d112fe6812592de7db2d2badb1398100a7_96.webp",
+      "projectId": "z9Ve58Ih",
+      "versionId": "P00i2hJn",
+      "versionNumber": "1.21.1-NeoForge-3.1.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "d6b7ce6cf351b09cbd23147ff166c35cfdc572e8",
+        "sha512": "eca4233e874a55886c63d2111b8685d479771d3627bad2922582e65b78c51ba74733dc4624aabf91f2a2178a940a72d9209ae33eef74e34f84f07d62256709d9"
+      },
+      "size": 795839,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1.jar",
+      "filename": "YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better Witch Huts",
+      "description": "Adds overhauled witch huts to swamps!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/t5FRdP87/20d3e930ec0a010723df61df091160104294e0b0_96.webp",
+      "projectId": "t5FRdP87",
+      "versionId": "AvedwcIe",
+      "versionNumber": "1.21.1-NeoForge-4.1.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "bbf6c91f4a2829c58bc024eaaab821986bc93de6",
+        "sha512": "9baa8a1f36a2a36efc3df58ab9347fd9f326b551ad78e3f600ed9d68862c619752ac0770804807efb15a46fcb4d9f6e2baf6a11f622d3ebb6c865662f6c7bcfd"
+      },
+      "size": 174789,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar",
+      "filename": "YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better Nether Fortresses",
+      "description": "A complete redesign of Minecraft's Nether fortresses!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/Z2mXHnxP/3c88dd70c00b5e47addd9fdeba53a7c96076088d_96.webp",
+      "projectId": "Z2mXHnxP",
+      "versionId": "iopJiJQp",
+      "versionNumber": "1.21.1-NeoForge-3.1.5",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "4061ece2141475227646649046fc14c2da505922",
+        "sha512": "18b461298d3df1215fa3b4d2c0cb2ef1c7ed76701d8a0bb140277b21923e31abd939f0fd9b400c5bd676d739f1cda31c43b4dc753f9187251542223f3424d336"
+      },
+      "size": 609639,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBetterEndIsland-1.21.1-NeoForge-3.1.2.jar",
+      "filename": "YungsBetterEndIsland-1.21.1-NeoForge-3.1.2.jar",
+      "contentType": "mod",
+      "name": "YUNG's Better End Island",
+      "description": "An overhaul of the main End Island where the dragon fight takes place!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/2BwBOmBQ/78c665ae3617a5b7e8902242b480d7f71ef04307_96.webp",
+      "projectId": "2BwBOmBQ",
+      "versionId": "I52NZ1qK",
+      "versionNumber": "1.21.1-NeoForge-3.1.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "832f2c17425debe74a9f267f4136f1a0f0221d19",
+        "sha512": "02923a1a97eb81ec13d69bdc6b7e8b36dfb9e6f1a98adfcf103707ec3afde35831ccd4b210e9b3a9c7662541c38ea593a3d94c12171b4072ea7feafa75c95f96"
+      },
+      "size": 398130,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsBridges-1.21.1-NeoForge-5.1.1.jar",
+      "filename": "YungsBridges-1.21.1-NeoForge-5.1.1.jar",
+      "contentType": "mod",
+      "name": "YUNG's Bridges",
+      "description": "Adds beautiful naturally generated bridges throughout the world!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/Ht4BfYp6/b465e98ac5f2742cf52292e6649b6abb76665e8f_96.webp",
+      "projectId": "Ht4BfYp6",
+      "versionId": "urkCzBf6",
+      "versionNumber": "1.21.1-NeoForge-5.1.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "18099c2d54acd16bb8ab90a66f40fa16496d065e",
+        "sha512": "20b07ae4c08974980f976bcae32f18ccb885745d6cd50d4a5d0156eb5c51c29e49f8b2bf7dc2ae160d39b62f2332513bd9850efc5cba13697e36a2ac2848bc3b"
+      },
+      "size": 136820,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsExtras-1.21.1-NeoForge-5.1.1.jar",
+      "filename": "YungsExtras-1.21.1-NeoForge-5.1.1.jar",
+      "contentType": "mod",
+      "name": "YUNG's Extras",
+      "description": "Extra structures, features, and vanilla+ content suitable for any modpack!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/ZYgyPyfq/153c00f1d64b90c8b5fd0c5136df91a65efc1df2_96.webp",
+      "projectId": "ZYgyPyfq",
+      "versionId": "N2EpMhR7",
+      "versionNumber": "1.21.1-NeoForge-5.1.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "62833733aaf407f36bdacf648ed4b2ef9940662b",
+        "sha512": "d4ef831a034977abdcaec40a7662adbc37c32cf141c68245250da501f6ada2ce193c5351166fbcf2ffb1c452b60bfca8ac578963332aa4a1b523e43912b8cb8c"
+      },
+      "size": 198183,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/YungsMenuTweaks-1.21.1-NeoForge-2.1.2.jar",
+      "filename": "YungsMenuTweaks-1.21.1-NeoForge-2.1.2.jar",
+      "contentType": "mod",
+      "name": "YUNG's Menu Tweaks",
+      "description": "A small, lightweight mod that makes browsing menus a lot easier",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/Hcy2DFKF/c54579d92c958af4066dd4c2a67b4b5fa423d7b2_96.webp",
+      "projectId": "Hcy2DFKF",
+      "versionId": "OB9hQTpQ",
+      "versionNumber": "1.21.1-NeoForge-2.1.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "da42e597009dae71faa37290e98b7b69bca52c25",
+        "sha512": "509327f5f5542246e2b98811b36cf2f7e26fe81b7538f3443b958c0134029e0e1ae8483165adaf1f2c4ee5a531bf8b57a2628305f7caf6bf1301cf34ad46b5fb"
+      },
+      "size": 157761,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "Ua7DFN59",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/cataclysm_betterfortresses-1.0.0.jar",
+      "filename": "cataclysm_betterfortresses-1.0.0.jar",
+      "contentType": "mod",
+      "name": "Cataclysm x YUNG's Better Nether Fortress",
+      "description": "Enables Ignited Berserker spawns in YUNG's Better Nether Fortresses",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/hllwjqw0/e5889eb5427f1e4e530e6839261d0cd1aed7a062_96.webp",
+      "projectId": "hllwjqw0",
+      "versionId": "uyStlDNm",
+      "versionNumber": "1.0.0",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "4903dad435f7a49d43f4effdb586c1521b03db52",
+        "sha512": "84d8d44ce6071a22a873a0741a2467026c2061859e904a44fb55ed033577c08a340796a078b066b3ae1dcc0f13ebf9cc49fd449cc0b4f9390988ce041d43ff73"
+      },
+      "size": 29869,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.20.1",
+        "1.21.1"
+      ],
+      "loaders": [
+        "forge",
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "46KJle7n",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "Z2mXHnxP",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/dungeons-and-taverns-v4.4.4.jar",
+      "filename": "dungeons-and-taverns-v4.4.4.jar",
+      "contentType": "mod",
+      "name": "Dungeons and Taverns",
+      "description": "A Structure Datapack adding dungeons, taverns and other structures to find while you explore the world.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/tpehi7ww/429ba22d212868940cdd82465df949ac51c9791e_96.webp",
+      "projectId": "tpehi7ww",
+      "versionId": "BYUUUeZA",
+      "versionNumber": "v4.4.4+mod",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "249a5bdd0e8622b8a11f88758e6f5fd5fda036a3",
+        "sha512": "83069dc336bcc212059f753923373d9522aa5953bf4b4fe2a8cfa666b4e28d2d017daa66c4b35e315c3be8d1ad60c2872879dd47cc1f47665ebbfd102da76976"
+      },
+      "size": 24859622,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T12:15:49.000Z",
+      "updatedAt": "2026-11-07T12:15:49.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/waystones-neoforge-1.21.1-21.1.46.jar",
+      "filename": "waystones-neoforge-1.21.1-21.1.46.jar",
+      "contentType": "mod",
+      "name": "Waystones",
+      "description": "Teleport from waystone to waystone or craft magical scrolls to warp.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/LOpKHB2A/d56c030a875582aff5bab477ddcfec317a1610f0_96.webp",
+      "projectId": "LOpKHB2A",
+      "versionId": "6Z6MQ6os",
+      "versionNumber": "21.1.46+neoforge-1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "75718161662d9ec957ba22e10e497788ec1687ba",
+        "sha512": "ca90b58d884d4bc2b08a870484ae7ede397e71d31eaaf01ff2603ad498d584763e099c2094e57031522385339705d2c011ed4910bf36efae688e64935b49ece9"
+      },
+      "size": 1223229,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T13:33:36.000Z",
+      "updatedAt": "2026-11-07T13:33:36.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "MBAkmtvl",
+          "type": "required",
+          "installed": true
+        }
+      ]
     }
   ]
 }
