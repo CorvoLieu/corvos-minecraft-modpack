@@ -6355,25 +6355,25 @@
       ]
     },
     {
-      "filePath": "mods/forgified-fabric-api-0.116.15+2.3.5+1.21.1.jar",
-      "filename": "forgified-fabric-api-0.116.15+2.3.5+1.21.1.jar",
+      "filePath": "mods/forgified-fabric-api-0.116.15+2.3.6+1.21.1.jar",
+      "filename": "forgified-fabric-api-0.116.15+2.3.6+1.21.1.jar",
       "contentType": "mod",
       "name": "Forgified Fabric API",
       "description": "Fabric API implemented on top of NeoForge",
       "iconUrl": "https://cdn.modrinth.com/data/Aqlf1Shp/bcdcfed483b0365807f75181eea89b7960cd3b1b_96.webp",
       "projectId": "Aqlf1Shp",
-      "versionId": "V9WdDUTx",
-      "versionNumber": "0.116.15+2.3.5+1.21.1",
+      "versionId": "C4eskNuR",
+      "versionNumber": "0.116.15+2.3.6+1.21.1",
       "source": "modrinth",
       "fileHash": {
-        "sha1": "1a2c41d2efbe1c60159b90a165557e7c06d03a5c",
-        "sha512": "2b44ecd839544e3668a02f8de86433d507417d068dcafeee7f698744fc2b12fd888a1bba509da57c8e2884d01dbaf344f49bbac0f22cdae599507356ed0cbe30"
+        "sha1": "1fe1ca9f440cd30c86186e42505694b70ececc11",
+        "sha512": "470ae4e8569484e6942a2f7e09a37ae58a58e0ad44f49f0d483db88024db19d41bfac3c68221c38623829871ade9d89bc5aa31cf0e682e798b2f9029b808011d"
       },
-      "size": 5613159,
+      "size": 5612888,
       "enabled": true,
       "origin": "user",
       "installedAt": "2026-08-29T09:34:24.548Z",
-      "updatedAt": "2026-08-29T09:34:24.548Z",
+      "updatedAt": "2026-11-07T09:43:46.000Z",
       "gameVersions": [
         "1.21.1"
       ],
@@ -7935,63 +7935,6 @@
       ]
     },
     {
-      "filePath": "resourcepacks/E19 Cobblemon Minimap Icons.zip",
-      "filename": "E19 Cobblemon Minimap Icons.zip",
-      "contentType": "resourcepack",
-      "name": "E19 - Cobblemon Minimap Icons",
-      "description": "Cobblemon icons from MBCMechachu for Xaero's Minimap.",
-      "author": "Emery319",
-      "iconUrl": "https://cdn.modrinth.com/data/Va3BanZa/cc0f6a4a8f279148d4e8b65212d67fe47000d6e7.png",
-      "projectId": "Va3BanZa",
-      "versionId": "YGgixlha",
-      "versionNumber": "1.4.4",
-      "source": "modrinth",
-      "fileHash": {
-        "sha1": "1aefc7a313b3c6f719d2fa53916afff18cd0792f",
-        "sha512": "8c7d5b964ee28456f8bd5ad6d8d0905e72b5287d38872b75e24762f9cbee6664d61c41ac52443283688dc939c6f9d36512e9a849af0f9118e69d64a55fece196"
-      },
-      "size": 19398814,
-      "enabled": true,
-      "origin": "user",
-      "installedAt": "2026-08-11T14:29:33.716Z",
-      "updatedAt": "2026-08-11T14:29:33.716Z",
-      "gameVersions": [
-        "1.21",
-        "1.21.1"
-      ],
-      "loaders": [
-        "minecraft"
-      ],
-      "releaseType": "release",
-      "dependencies": [
-        {
-          "projectId": "nHMcH3tj",
-          "type": "optional",
-          "installed": false
-        },
-        {
-          "projectId": "MdwFAVRL",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "BlIiMzsQ",
-          "type": "optional",
-          "installed": false
-        },
-        {
-          "projectId": "1bokaNcj",
-          "type": "required",
-          "installed": true
-        },
-        {
-          "projectId": "2PwY98im",
-          "type": "optional",
-          "installed": false
-        }
-      ]
-    },
-    {
       "filePath": "resourcepacks/Icon Xaero's 1.22.zip",
       "filename": "Icon Xaero's 1.22.zip",
       "contentType": "resourcepack",
@@ -9121,6 +9064,67 @@
           "installed": true
         }
       ]
+    },
+    {
+      "filePath": "mods/spark-1.10.124-neoforge.jar",
+      "filename": "spark-1.10.124-neoforge.jar",
+      "contentType": "mod",
+      "name": "spark",
+      "description": "spark is a performance profiler for Minecraft clients, servers and proxies.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/l6YH9Als/61a777dd08a8447ac93e8b6372e6d27d48cd1e1a_96.webp",
+      "projectId": "l6YH9Als",
+      "versionId": "v5qtqRQi",
+      "versionNumber": "1.10.124-neoforge-1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "9430cc2ab64ff89d698be593769fb9f9ee4efae6",
+        "sha512": "f86ce34f2759c69df82578c397ff55b666c84626229a98f598458b960c21b38c95d6bfef4772af7f963c4f4868e5e2d9aef6b99c1d51bab55bf45e0e6e6b5ed4"
+      },
+      "size": 3642581,
+      "enabled": true,
+      "origin": "modpack",
+      "installedAt": "2026-11-07T09:16:16.000Z",
+      "updatedAt": "2026-11-07T09:16:16.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/studious-keybinds-neoforge-1.21.1-1.0.8-beta.1.jar",
+      "filename": "studious-keybinds-neoforge-1.21.1-1.0.8-beta.1.jar",
+      "contentType": "mod",
+      "name": "Studious Keybinds",
+      "description": "A Keybind Mod That Displays Your Keyboard And Allows You To Make Changes Directly!",
+      "author": "StudiousGoose",
+      "iconUrl": "https://media.forgecdn.net/avatars/thumbnails/2099/182/256/256/639269617593883036.png",
+      "projectId": "1731572",
+      "versionId": "9106885",
+      "versionNumber": "studious-keybinds-neoforge-1.21.1-1.0.8.jar",
+      "source": "curseforge",
+      "fileHash": {
+        "sha1": "774dae2a81ba825edd5decde37f466b052aeeb5e",
+        "sha512": "6ff5dbcec683a0a8c01912c37a6c22971c571bf50e62720816c1854717e5d0ce3732867815f78af3d63c84ecea714e3e8238a8ae9e2c98facd608b4321b17abe",
+        "md5": "a4e2070221ffc44cae5fd5413cfad277"
+      },
+      "size": 50696,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T09:27:50.323Z",
+      "updatedAt": "2026-11-07T09:27:50.323Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
     }
   ]
 }
