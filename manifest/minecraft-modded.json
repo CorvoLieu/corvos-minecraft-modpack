@@ -8861,6 +8861,78 @@
       ],
       "releaseType": "release",
       "dependencies": []
+    },
+    {
+      "filePath": "mods/goblins_tyranny-1.2.4-neoforge-1.21.1.jar",
+      "filename": "goblins_tyranny-1.2.4-neoforge-1.21.1.jar",
+      "contentType": "mod",
+      "name": "Goblin's Tyranny",
+      "description": "Discover a new village with a lot of randomly generated structure in it with some unique goblins, structures, items, mounts and pets !",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/pR2fUOHY/65f35cebf65d427ee17402eaa9eab85413c50bcb_96.webp",
+      "projectId": "pR2fUOHY",
+      "versionId": "VjcZbZjq",
+      "versionNumber": "1.2.4",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "a7e7d4bb9f7abcadfcc1ac0063108488b71ec7ce",
+        "sha512": "16fcc0c8000542d3090ed3b277bfe7226b3d32539679928dccbc46ff89737e24531b9e0dec9e2555fafb6735e5c9668b1650f5611672fab8781eb5024b0a5fe0"
+      },
+      "size": 7650180,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T16:15:31.000Z",
+      "updatedAt": "2026-11-07T16:15:31.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "8BmcQJ2H",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/Dragon Mounts Remastered-1.21.1-1.9.2.jar",
+      "filename": "Dragon Mounts Remastered-1.21.1-1.9.2.jar",
+      "contentType": "mod",
+      "name": "Dragon Mounts Remastered",
+      "description": "Dragon mounts Remastered is the latest take in bringing back the beloved nature of the original Dragon Mounts Mod.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/DUx05jFK/47f705a8c9a9e1245b6fd1637f3a752724e86df6_96.webp",
+      "projectId": "DUx05jFK",
+      "versionId": "k5zQJ1Hr",
+      "versionNumber": "1.9.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "261c87d7fb0888622b26a27f54da039f01b25c06",
+        "sha512": "90bd999d0378d24312a13bc0f44c45f9d756c5637684ddde688f0ba5ee5724f654eca11c19098c0b61b83374b88f9804283d10a3a38a5e36bfc91540f6b5c079"
+      },
+      "size": 1308509,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T16:15:31.000Z",
+      "updatedAt": "2026-11-07T16:15:31.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "8BmcQJ2H",
+          "type": "required",
+          "installed": true
+        }
+      ]
     }
   ]
 }
