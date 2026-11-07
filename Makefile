@@ -79,7 +79,7 @@ build-client: install-hooks
 
 build-server: install-hooks
 	@echo "Building server .mrpack..."
-	@uv run python3 build_mrpack.py --pack-name "$$(printf '%s' "$(PACK_NAME)" | awk '{print toupper(substr($$0,1,1)) substr($$0,2)}')-Server" --output-name server --exclude-file server-excludes.txt
+	@uv run python3 build_mrpack.py --pack-name "$$(printf '%s' "$(PACK_NAME)" | awk '{print toupper(substr($$0,1,1)) substr($$0,2)}')-Server" --output-name server --exclude-file server-excludes.txt --extra-overrides-dir server-overrides
 
 build-mods-zip: install-hooks
 	@echo "Building mods-only zip..."
