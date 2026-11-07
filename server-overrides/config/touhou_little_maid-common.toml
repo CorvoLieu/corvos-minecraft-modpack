@@ -5,3 +5,9 @@
 [maid]
 	#The maximum number of maids the player own
 	OwnerMaxMaidNum = 1
+
+[misc]
+	#Maid fairy's spawn probability (zombie is 100, enderman is 10)
+	#Spawn weight, default 70 (~12% of overworld hostile spawns). 3 is ~0.5%:
+	#vanilla overworld hostiles weigh ~515 in total, so 3 / (515 + 3) = ~0.58%.
+	MaidFairySpawnProbability = 3
