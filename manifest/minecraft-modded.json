@@ -8618,6 +8618,219 @@
           "installed": true
         }
       ]
+    },
+    {
+      "filePath": "mods/letsdo-farm_and_charm-neoforge-1.1.29.jar",
+      "filename": "letsdo-farm_and_charm-neoforge-1.1.29.jar",
+      "contentType": "mod",
+      "name": "[Let's Do] Farm & Charm",
+      "description": "The farm calls: Experience the art of advanced agriculture and farmhouse cuisine! Use mincers, cooking pots, as well as new grains and fruit varieties to enhance your culinary and agricultural skills.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/HJetCzWo/7c6c372629b3efa41409621631d60df12963f005_96.webp",
+      "projectId": "HJetCzWo",
+      "versionId": "2eW1JdC8",
+      "versionNumber": "1.1.29",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "60b4e599fafc84fb6854d5ef771ee6ae8981a920",
+        "sha512": "b9ac57d7fd0056310603f926dcdf5dfe5821d6bd0a573ab7f626d57b32e273e5a24d30a789f028afe90674cee18107d7a99097871484f4d98f50bb54aa0e595c"
+      },
+      "size": 3414667,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T14:41:31.000Z",
+      "updatedAt": "2026-11-07T14:41:31.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/letsdo-bakery-neoforge-2.1.11.jar",
+      "filename": "letsdo-bakery-neoforge-2.1.11.jar",
+      "contentType": "mod",
+      "name": "[Let's Do] Bakery - Farm&Charm Compat",
+      "description": "Bake many variations of Bread, Cupcakes and Cakes! Eatable, placeable.\n\nThis version was made for improved compat with [Let's Do] Farm & Charm",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/oNB5jhlA/263380c2138f7f28f37639b719cc391334cbb7d5_96.webp",
+      "projectId": "oNB5jhlA",
+      "versionId": "4pEnkp1M",
+      "versionNumber": "2.1.11",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "4bedf5b71939e9f907b2f265a979389da4262ff6",
+        "sha512": "ab849ab847e0eeb34002f6f2207f4898f43af29a2cc228443457d87c2a4625944241540783c038b70dab53ab8a08aecce2d3e0973d887688a87744748c581cb2"
+      },
+      "size": 1649471,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T14:41:31.000Z",
+      "updatedAt": "2026-11-07T14:41:31.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "HJetCzWo",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/letsdocompat-neoforge-2.3.1.jar",
+      "filename": "letsdocompat-neoforge-2.3.1.jar",
+      "contentType": "mod",
+      "name": "[Let's Do Addon] Compat",
+      "description": "Adds compatibility for the Let's Do mods so you don't have to",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/FNi5IMiX/c17a77e495341578a099057a265436da68c4eafb.png",
+      "projectId": "FNi5IMiX",
+      "versionId": "vJUgfTU0",
+      "versionNumber": "2.3.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "5bc9d88a18793a808ecce9bab0218995c1b9f5c3",
+        "sha512": "22678b7094de594e1d8241ad709752a3fa2dce1b22706c768b18e95546c2133ad35d9b32ae70cc6925565d02bbeded9400e85d170fcb2f5c65d05792f3e761de"
+      },
+      "size": 28635,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T14:41:31.000Z",
+      "updatedAt": "2026-11-07T14:41:31.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "HJetCzWo",
+          "type": "optional",
+          "installed": true
+        },
+        {
+          "projectId": "lhGA9TYQ",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/OELib-neoforge-1.21.1-0.2.3.jar",
+      "filename": "OELib-neoforge-1.21.1-0.2.3.jar",
+      "contentType": "mod",
+      "name": "One Enough Lib",
+      "description": "A Lib for simplified development of the OE series",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/7ODqOXka/af8819b4143e4fc2b6b81a7d2aba3b321d466160_96.webp",
+      "projectId": "7ODqOXka",
+      "versionId": "GLkyyaFG",
+      "versionNumber": "0.2.3",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "8457b2423f62c896ef8c290ab511a0a71b442750",
+        "sha512": "bf5ffa8abad4b972a2b49ac109c7f7a7fad1c9eb84f51851185c1c3717941c7d3a0229c284e9ddfafcaf2bde8bd17df9e13ce5e991d567ede505346c42a60b1b"
+      },
+      "size": 840689,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T14:41:31.000Z",
+      "updatedAt": "2026-11-07T14:41:31.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/oneenoughitem-neoforge-1.21.1-1.0.8.jar",
+      "filename": "oneenoughitem-neoforge-1.21.1-1.0.8.jar",
+      "contentType": "mod",
+      "name": "One Enough Item",
+      "description": "With OEI, you can effortlessly replace duplicate items with a single designated representative item.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/7pCNymxz/dc833be38ea36a14840f1aedfa896006ef00e05a_96.webp",
+      "projectId": "7pCNymxz",
+      "versionId": "1gXNmHrU",
+      "versionNumber": "1.0.8",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "c1acb64060602f5a9c7397224832d1ef75f9146b",
+        "sha512": "cfb459b24ad65646b2c1abfd3ed23d92e14c69bc1b973cd164d31ccbc2861611220b323be4dfafd14308e448eed7dc25a0703e0a6793a03325032ee802f52a80"
+      },
+      "size": 260782,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T14:41:31.000Z",
+      "updatedAt": "2026-11-07T14:41:31.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "datapacks/creativeworld-ingredient-unify-1.1.0.zip",
+      "filename": "creativeworld-ingredient-unify-1.1.0.zip",
+      "contentType": "datapack",
+      "name": "CreativeWorld Ingredient Unify",
+      "author": "CorvoLieu",
+      "description": "Merges duplicate Let's Do / Farmer's Delight ingredients via One Enough Item, and adds 1-item crafting conversions between duplicate stations, tools, wild crops and dishes.",
+      "projectId": "local:creativeworld-ingredient-unify",
+      "versionId": "local:1.1.0",
+      "versionNumber": "1.1.0",
+      "source": "local",
+      "fileHash": {
+        "sha1": "36b85986a78da9a1587740cce07056e6ed4cfda8",
+        "sha512": "ced86c2c407940c3ba7fb0e1e8055991b448b398fc715ff954b4763ef2f1d02103a54165cf0fcc6b4bd13c4234c5b477c3a5d98ba6689c0d814b797145d2157d"
+      },
+      "size": 15900,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T14:41:49.000Z",
+      "updatedAt": "2026-11-07T14:41:49.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "datapack"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "one-enough-item",
+          "type": "required",
+          "installed": true
+        }
+      ]
     }
   ]
 }
