@@ -8424,6 +8424,200 @@
           "installed": true
         }
       ]
+    },
+    {
+      "filePath": "mods/codxlib-1.6.1-neoforge+1.21.1.jar",
+      "filename": "codxlib-1.6.1-neoforge+1.21.1.jar",
+      "contentType": "mod",
+      "name": "CodxLib",
+      "description": "A library with shared functions for all Codx mods.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/6oyMM4yX/2dd9f0d8cde0b81386e1dd85d7f640a770f95fdb_96.webp",
+      "projectId": "6oyMM4yX",
+      "versionId": "MMcDASmX",
+      "versionNumber": "1.6.1+neoforge-1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "d11c51c10d86420c4ba9a18ce42b5b7bbc1fd3ca",
+        "sha512": "11e1404f14eefd5483fcc17e681c619a1f5c7e45f11f2ea5bb53b672917511add06cfdf5ad97869769d3db3124a3fdc88e7883fa30bfe88304e56d75f2fabcbd"
+      },
+      "size": 193045,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T13:51:07.000Z",
+      "updatedAt": "2026-11-07T13:51:07.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/alexsmobs-2.3.0-neoforge+1.21.1.jar",
+      "filename": "alexsmobs-2.3.0-neoforge+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Alex's Mobs Continued",
+      "description": "Alex's Mobs - Updated and ported",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/kYIaHHfw/726a49d0dff25c06c85e76928431673d6a24d29d_96.webp",
+      "projectId": "kYIaHHfw",
+      "versionId": "W1GpuQLg",
+      "versionNumber": "2.3.0+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "334e83466ebbe1f9261cbe0a313066142c283472",
+        "sha512": "d26a6175aaafb1e0139487f0d7833a3559e22afeefede71422e1c025ed6e5e83730a0f84e27fe5c8ce68ae6813da3132426983b2dab399ac7d5fb4b48b084cda"
+      },
+      "size": 27476475,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T13:51:07.000Z",
+      "updatedAt": "2026-11-07T13:51:07.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "6oyMM4yX",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/alexscaves-1.1.3-neoforge+1.21.1.jar",
+      "filename": "alexscaves-1.1.3-neoforge+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Alex's Caves Continued",
+      "description": "Alex's Caves Continued aims to port and update the original mod to keep it alive and working for newer versions.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/cO2CvXug/3abb43c034ecdbb0ea5c3065168bd6b123c46b55.png",
+      "projectId": "cO2CvXug",
+      "versionId": "ReYW4B9C",
+      "versionNumber": "1.1.3+neoforge-1.21.1",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "830099d350b8e80860a952e8491714ff7d78d957",
+        "sha512": "d090711aaaa6562f84288b82e0587521e6fb6d68162e68e6205a93f52c9ef0f406ab834d6e834e6c3f45f49f41efe209071ffb5a3621f8ed50bad256e1aeb0b9"
+      },
+      "size": 75290877,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T13:51:07.000Z",
+      "updatedAt": "2026-11-07T13:51:07.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "6oyMM4yX",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/amcdelight-1.0.1-neoforge+1.21.1.jar",
+      "filename": "amcdelight-1.0.1-neoforge+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Alex's Mobs Continued Delight",
+      "description": "Alexs Mobs Continued now compatible with Farmers Delight & Farmers Delight Refabricated",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/iY124w4e/de7ea08e8a7d9a8d81c31745e46f6168f1771b53.png",
+      "projectId": "iY124w4e",
+      "versionId": "1wR7GVQk",
+      "versionNumber": "1.0.1+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "9cbac8c99e4a7748ae81d7e0c8dbe7ffa83900fd",
+        "sha512": "875dd0dd5c703128063e593e87ad3fd3191c428176f70ca8ebf31450661c1a1695bcc8f927e21afc41aa0976dbfec423dd71b4c9f625c591996449554e145614"
+      },
+      "size": 132348,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T14:04:33.000Z",
+      "updatedAt": "2026-11-07T14:04:33.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "kYIaHHfw",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "R2OftAxM",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "6oyMM4yX",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/accdelight-1.0.0-neoforge+1.21.1.jar",
+      "filename": "accdelight-1.0.0-neoforge+1.21.1.jar",
+      "contentType": "mod",
+      "name": "Alex's Caves Continued Delight",
+      "description": "A cooking bridge between Alex's Caves and Farmer's Delight. Cutting-board cuts for every cave drop, butchery for the mobs that gave you nothing, and seventeen dishes cooked out of the six caves. 36 items, 57 recipes.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/7sC7Bn8p/a162512e468d87bd96084432f41256983dc5b611.png",
+      "projectId": "7sC7Bn8p",
+      "versionId": "PUv3omh9",
+      "versionNumber": "1.0.0+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "dd90b8405ed83ad00064b5f2c8925588f40ddce3",
+        "sha512": "3cef330c0516026ec7c5af6eca74f0e6feff654e27827a00f18b3fabe6afcee0687412e4d35642047b58c61ec8785118911d8a8c0e8cdd78d6297fe071f8dc33"
+      },
+      "size": 104485,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-07T14:04:33.000Z",
+      "updatedAt": "2026-11-07T14:04:33.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "6oyMM4yX",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "cO2CvXug",
+          "type": "required",
+          "installed": true
+        },
+        {
+          "projectId": "R2OftAxM",
+          "type": "required",
+          "installed": true
+        }
+      ]
     }
   ]
 }
