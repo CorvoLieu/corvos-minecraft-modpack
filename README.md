@@ -88,7 +88,9 @@ Two compose files:
 
 Prod settings (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are overridable per-deploy without rebuilding: copy `.env.example` to `.env` and edit — Compose loads it and substitutes `${VAR}` automatically. Unset vars fall back to the `Dockerfile` defaults. `docker-compose.dev.yml`'s `LEVEL` isn't a separate override — it derives directly from `PACK_NAME` (see above).
 
-**`LEVEL` and datapacks:** manifest datapacks are baked into the built `.mrpack` at `overrides/<world>/datapacks/`, matching the world/level name Minecraft actually loads per-world datapacks from — this is `PACK_NAME` (`build_mrpack.py`'s `DATAPACK_WORLD_NAME`, `minecraft-modded` by default) to match the `LEVEL` default used everywhere else in this repo. If you ever override `LEVEL` in `docker-compose.prod.yml`/`stg.yml` to something other than `PACK_NAME`, datapacks will stop taking effect until `DATAPACK_WORLD_NAME`/`PACK_NAME` is updated to match.
+**Datapacks:** manifest datapacks land at the instance-root `datapacks/` in the built `.mrpack` (client and server). On the server, `DATAPACKS=/data/datapacks` (set in the `Dockerfile` and every `docker-compose.*.yml`) has the itzg image copy them into `/data/$LEVEL/datapacks` on every start, whatever `LEVEL` is, and `REMOVE_OLD_DATAPACKS=true` prunes outdated `*.zip`s there — so don't hand-place other zips in the world's `datapacks/`, add them to the manifest instead. A new or existing world picks them up automatically on start (`Found new data pack ..., loading it automatically` in the log); nothing to run by hand.
+
+**Resource packs:** manifest resource packs land at `resourcepacks/` in the client `.mrpack` only (the server build skips them). Players still enable them in the in-game Resource Packs menu.
 
 ### Publishing the server image (CI)
 

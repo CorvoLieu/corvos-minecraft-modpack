@@ -30,6 +30,10 @@ services:
       NEOFORGE_VERSION: "21.1.265"
       MEMORY: "${MEMORY:-13312M}"
       LEVEL: "${LEVEL:-world}"
+      # See docker-compose.dev.yml: copies the modpack's staged datapacks
+      # into whichever world LEVEL names.
+      DATAPACKS: "/data/datapacks"
+      REMOVE_OLD_DATAPACKS: "true"
       DIFFICULTY: "normal"
       MODE: "survival"
       ONLINE_MODE: "false"
