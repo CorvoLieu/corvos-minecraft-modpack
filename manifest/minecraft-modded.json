@@ -9071,25 +9071,25 @@
       ]
     },
     {
-      "filePath": "datapacks/creativeworld-onboarding-1.0.0.zip",
-      "filename": "creativeworld-onboarding-1.0.0.zip",
+      "filePath": "datapacks/creativeworld-onboarding-1.0.1.zip",
+      "filename": "creativeworld-onboarding-1.0.1.zip",
       "contentType": "datapack",
       "name": "CreativeWorld Onboarding",
       "author": "CorvoLieu",
       "description": "Season onboarding: new players float above a random scanned village and choose Accept, Reroll (max 5) or Join a friend; 10-minute window. Village list from scripts/scan_villages.py.",
       "projectId": "local:creativeworld-onboarding",
-      "versionId": "local:1.0.0",
-      "versionNumber": "1.0.0",
+      "versionId": "local:1.0.1",
+      "versionNumber": "1.0.1",
       "source": "local",
       "fileHash": {
-        "sha1": "b731bb25975d4b7b95827ab3691b0beb87758a4f",
-        "sha512": "759eb5535b265652392ad924ef658c315e93f01c80a58f01c5c1930f4ad86dd481cfae05657f1b9ddfb4491696c70a3c938463fe6c33ea59d5b51162f7f04491"
+        "sha1": "9aa395478c0288c90066f2453bad36535cbab4b2",
+        "sha512": "c9487c3390c95d81d1e3a05dabd1627f6c858e8c1232c3b42b7b0baf35da900d819eea8deb2492914000f24404d501fe0b2137c149fc7986f21f5303eb7a97b6"
       },
-      "size": 13695,
+      "size": 14215,
       "enabled": true,
       "origin": "user",
       "installedAt": "2026-11-08T07:49:19.000Z",
-      "updatedAt": "2026-11-08T07:49:19.000Z",
+      "updatedAt": "2026-11-08T12:00:00.000Z",
       "gameVersions": [
         "1.21.1"
       ],
