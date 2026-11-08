@@ -53,8 +53,8 @@ def grid(radius: int, step: int):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--container", default="minecraft-server", help="server container name (default: minecraft-server)")
-    parser.add_argument("--radius", type=int, default=3000, help="keep villages within this many blocks of 0,0 (default: 3000)")
-    parser.add_argument("--step", type=int, default=600, help="grid spacing between locate points (default: 600)")
+    parser.add_argument("--radius", type=int, default=1000, help="keep villages within this many blocks of 0,0 (default: 1000)")
+    parser.add_argument("--step", type=int, default=400, help="grid spacing between locate points (default: 400)")
     parser.add_argument("--dry-run", action="store_true", help="only print the villages found; don't write them to the world")
     args = parser.parse_args()
 
