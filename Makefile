@@ -51,7 +51,7 @@ pull:
 	@uv run python3 pull_instance.py
 	@echo "Done."
 
-# Once per season, after the new world is generated: find villages within 1000
+# Once per season, after the new world is generated: find villages within 1500
 # blocks of 0,0 and store them for the onboarding datapack (random village spawn).
 # CONTAINER defaults to the prod container; use minecraft-server-s3 for `make dev`.
 # Standard library only, so plain python3 works on servers without uv.
