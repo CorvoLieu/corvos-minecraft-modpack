@@ -15,6 +15,7 @@ services:
   mc:
     # Published by .github/workflows/deploy.yml on every push to main.
     image: ${IMAGE_NAME:-ghcr.io/corvolieu/corvos-minecraft-modpack}:staging
+    pull_policy: always
     tty: true
     container_name: minecraft-server
     stdin_open: true
