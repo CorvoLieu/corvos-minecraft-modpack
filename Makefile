@@ -1,5 +1,5 @@
 DEFAULT_GOAL := dev
-.PHONY: dev dev-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop install-hooks push pull
+.PHONY: dev dev-watch log stop build-client build-server build-mods-zip build-all build-image prod-up prod-log prod-stop install-hooks push pull scan-villages
 
 # Loads PACK_NAME (and anything else) from .env if present, so `make` targets
 # stay in sync with the same single value the Python scripts read via
@@ -50,6 +50,12 @@ pull:
 	@echo "Pulling repo state into the local SKLauncher instance..."
 	@uv run python3 pull_instance.py
 	@echo "Done."
+
+# Once per season, after the new world is generated: find villages within 3000
+# blocks of 0,0 and store them for the onboarding datapack (random village spawn).
+# CONTAINER defaults to the prod container; use minecraft-server-s3 for `make dev`.
+scan-villages:
+	@uv run python3 scripts/scan_villages.py --container "$(or $(CONTAINER),minecraft-server)"
 
 # Dev (default): local bind-mounted mod.mrpack (server build, staged from
 # exports/server.mrpack), see docker-compose.dev.yml.
