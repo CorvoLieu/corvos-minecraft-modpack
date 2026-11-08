@@ -54,8 +54,9 @@ pull:
 # Once per season, after the new world is generated: find villages within 3000
 # blocks of 0,0 and store them for the onboarding datapack (random village spawn).
 # CONTAINER defaults to the prod container; use minecraft-server-s3 for `make dev`.
+# Standard library only, so plain python3 works on servers without uv.
 scan-villages:
-	@uv run python3 scripts/scan_villages.py --container "$(or $(CONTAINER),minecraft-server)"
+	@$$(command -v uv >/dev/null 2>&1 && echo "uv run python3" || echo python3) scripts/scan_villages.py --container "$(or $(CONTAINER),minecraft-server)"
 
 # Dev (default): local bind-mounted mod.mrpack (server build, staged from
 # exports/server.mrpack), see docker-compose.dev.yml.
