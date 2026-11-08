@@ -9029,6 +9029,75 @@
       ],
       "releaseType": "release",
       "dependencies": []
+    },
+    {
+      "filePath": "mods/villagespawnpoint-1.21.1-6.0.jar",
+      "filename": "villagespawnpoint-1.21.1-6.0.jar",
+      "contentType": "mod",
+      "name": "Village Spawn Point",
+      "description": "🏙 Sets the spawn point in a new world to the center of a village.",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/KplTt9Ku/d182b43a621ede83c53e8d6fcf3f5cf2376ea519_96.webp",
+      "projectId": "KplTt9Ku",
+      "versionId": "VIEiumTs",
+      "versionNumber": "1.21.1-6.0-fabric+forge+neo",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "c6d3c35ccad1ce88b37f3a981049006c996c1886",
+        "sha512": "6acc2fbbb9a53322feacb27e84c14c3d8b390a1f1c80edcde96040f906fb74f7582632f9cc79a8dbdd966107075faf08bf81cd12705a00e156b048b771d6afd3"
+      },
+      "size": 59799,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-08T07:04:37.000Z",
+      "updatedAt": "2026-11-08T07:04:37.000Z",
+      "gameVersions": [
+        "1.21",
+        "1.21.1"
+      ],
+      "loaders": [
+        "fabric",
+        "forge",
+        "neoforge",
+        "quilt"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "e0M1UDsY",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "datapacks/creativeworld-onboarding-1.0.0.zip",
+      "filename": "creativeworld-onboarding-1.0.0.zip",
+      "contentType": "datapack",
+      "name": "CreativeWorld Onboarding",
+      "author": "CorvoLieu",
+      "description": "Season onboarding: new players float above a random scanned village and choose Accept, Reroll (max 5) or Join a friend; 10-minute window. Village list from scripts/scan_villages.py.",
+      "projectId": "local:creativeworld-onboarding",
+      "versionId": "local:1.0.0",
+      "versionNumber": "1.0.0",
+      "source": "local",
+      "fileHash": {
+        "sha1": "b731bb25975d4b7b95827ab3691b0beb87758a4f",
+        "sha512": "759eb5535b265652392ad924ef658c315e93f01c80a58f01c5c1930f4ad86dd481cfae05657f1b9ddfb4491696c70a3c938463fe6c33ea59d5b51162f7f04491"
+      },
+      "size": 13695,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-08T07:49:19.000Z",
+      "updatedAt": "2026-11-08T07:49:19.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "datapack"
+      ],
+      "releaseType": "release",
+      "dependencies": []
     }
   ]
 }

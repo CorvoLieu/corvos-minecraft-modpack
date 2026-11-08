@@ -94,6 +94,14 @@ Prod settings (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are ov
 
 **Server-only config (`server-overrides/`):** every file under `server-overrides/` is bundled into the server `.mrpack` only (`make build-server` passes `--extra-overrides-dir server-overrides`), at the same relative path — e.g. `server-overrides/config/touhou_little_maid-common.toml` caps each player at 1 maid. These files replace the server's copy on every modpack install, so list only the settings being enforced (NeoForge fills in the rest with defaults) and change them here rather than on the server.
 
+**Season onboarding (random village spawn):** the `creativeworld-onboarding` datapack (separate from the `creativeworld-ingredient-unify` one) places each new player 24 blocks above a random village and freezes them until they choose: **Accept** (drop in, village becomes their spawn point), **Reroll** (up to 5 times), or **Join a friend** (an online, already-settled player gets 60 seconds to accept; then the player is teleported to them and spawns there). Accepting ends onboarding; after 10 minutes the current village is accepted automatically. The village list is per world, so once per season, after the new world is generated:
+
+1. Pre-generate at least the 3000-block radius with Chunky. Placing a player in ungenerated chunks makes the server generate them on the spot, which lags everyone online.
+2. `make scan-villages` (or `CONTAINER=minecraft-server-s3 make scan-villages` against `make dev`) on the machine running the server. It locates villages within 3000 blocks of 0,0 over RCON, writes them into the world (`storage creativeworld:onboarding villages`) and saves. Re-running replaces the list.
+3. In game (op): `/function creativeworld:onboarding/admin/status` shows how many villages are loaded; `/function creativeworld:onboarding/admin/reset_me` redoes onboarding for yourself.
+
+With no list, players just start at the normal world spawn (the village picked by Village Spawn Point). Floating players need `ALLOW_FLIGHT=true` (already set in every compose file), otherwise the server kicks them for flying.
+
 ### Publishing the server image (CI)
 
 On every push to `main`, `.github/workflows/deploy.yml` builds the client modpack, bakes it into the `Dockerfile` image, and pushes `ghcr.io/<owner>/<repo>:latest` (plus `:sha-<short-sha>` for rollback/debugging) to GHCR using the workflow's own `GITHUB_TOKEN` — no extra secrets needed; the image name is derived from the GitHub repository, not `PACK_NAME` (default: `ghcr.io/corvolieu/corvos-minecraft-modpack`). Independent of `release.yml` (which publishes `.mrpack` files for players); both can run off the same push.
