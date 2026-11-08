@@ -8399,6 +8399,205 @@
       ]
     },
     {
+      "filePath": "mods/teleport_animation-1.21.1-neoforge-21.1.259-1.4.3.jar",
+      "filename": "teleport_animation-1.21.1-neoforge-21.1.259-1.4.3.jar",
+      "contentType": "mod",
+      "name": "Teleport Animation",
+      "description": "GTA V-style camera zoom-out / fly-over / zoom-in transition for Waystones teleports.",
+      "author": "SKD",
+      "projectId": "1608291",
+      "versionId": "9282071",
+      "versionNumber": "Teleport Animation (1.4.3)",
+      "source": "curseforge",
+      "fileHash": {
+        "sha1": "bb94767ddb9e04c410c46926ae781f436b2eb01d",
+        "sha512": "112c25ac390c68afab5b789ab2117ae8c5e3b16a8c866ec4b8fa010e5facd99f17da2b38ae75fa2a9499590873c02ef25f853285049faa1665391cb8192c0a78",
+        "md5": "33b614672c72cfb7c397e3ce52413460"
+      },
+      "fingerprint": 4221810647,
+      "size": 2920525,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-08T14:10:00.000Z",
+      "updatedAt": "2026-11-08T14:10:00.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar",
+      "filename": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar",
+      "contentType": "mod",
+      "name": "YetAnotherConfigLib (YACL)",
+      "description": "A builder-based configuration library for Minecraft!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/1eAoo2KR/08c0cd32515e260f4bb20bbc0696510041523f9a_96.webp",
+      "projectId": "1eAoo2KR",
+      "versionId": "7TVdVtxF",
+      "versionNumber": "3.8.2+1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "fe270c9f6e0a8142cf316944087f5109cef08bbb",
+        "sha512": "583de19b927ce8050c2b7d5e60b75accc69e325e5aac85c27994c82a9dec2e4e078343fa1d4c3a10d4bd7e0e524e0b3b246a18cf03db01e363a1e6f865adcf48"
+      },
+      "size": 1118651,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-08T15:00:00.000Z",
+      "updatedAt": "2026-11-08T15:00:00.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/tiny_takeover_backport-neoforge-1.21.1-1.8.2.jar",
+      "filename": "tiny_takeover_backport-neoforge-1.21.1-1.8.2.jar",
+      "contentType": "mod",
+      "name": "Tiny Takeover Backport",
+      "description": "A Minecraft mod that brings the complete Tiny Takeover drop to older Minecraft versions!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/F4TmfqsY/e21ef5f74f2f2662956547fa1aa5b3144911745a_96.webp",
+      "projectId": "F4TmfqsY",
+      "versionId": "aSR5yq34",
+      "versionNumber": "1.8.2-1.21.1-neoforge",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "780d881cc13f96eb41a89973835018d43e777275",
+        "sha512": "b7b4108ee8f78b03bbfa6cc3204fb7e495ed19e846a7f850f399e46d3beb7bcba50cc24a544ff2b4aad0f3e98eeff8bf84ca4f3d48e2f7a4ebd631f6e8eeb671"
+      },
+      "size": 2250711,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-08T15:00:00.000Z",
+      "updatedAt": "2026-11-08T15:00:00.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "1eAoo2KR",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/Platform-neoforge-1.21.1-1.4.2.jar",
+      "filename": "Platform-neoforge-1.21.1-1.4.2.jar",
+      "contentType": "mod",
+      "name": "Platform",
+      "description": "Cross-platform library mod based on Architectury to access both Forge and Fabric APIs",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/i6fiqm5y/845fd627768b2d473416066a024c2c86bb3d9942_96.webp",
+      "projectId": "i6fiqm5y",
+      "versionId": "rh4p4ixM",
+      "versionNumber": "1.4.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "38947983b65b08bffdcbbc347949a7bc5c6426e1",
+        "sha512": "24f9640cc830ffc9b921f89187aaa2ee41aeb9949b36a9ab11b94313c9f4eebb94e5aa7ee3089237f677d3c72aa860bb2bf332c900030c8f7dd5bbcc25ece73a"
+      },
+      "size": 550771,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-08T15:00:00.000Z",
+      "updatedAt": "2026-11-08T15:00:00.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": []
+    },
+    {
+      "filePath": "mods/VanillaBackport-neoforge-1.21.1-1.2.2.jar",
+      "filename": "VanillaBackport-neoforge-1.21.1-1.2.2.jar",
+      "contentType": "mod",
+      "name": "Vanilla Backport",
+      "description": "Backports modern minecraft features to previous versions, trying to keep it as accurate as vanilla Minecraft",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/6xwxDTgf/9b2a6826b723d74570e293ab6b96dbe28f4fd993_96.webp",
+      "projectId": "6xwxDTgf",
+      "versionId": "mGS7BxD4",
+      "versionNumber": "1.2.2",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "12871e5330f8b33df7740a975047fc9a584d0387",
+        "sha512": "89b0fbe66fb26cbc74d8ba55d2e6c76ea9652a0812582a955b1f32604a1d033f2be59f06df7cd4232520b8edba6074ac724525136d5ceaa1cfce88a53ab7d9a0"
+      },
+      "size": 63870495,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-08T15:00:00.000Z",
+      "updatedAt": "2026-11-08T15:00:00.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "i6fiqm5y",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
+      "filePath": "mods/vb-compat-2.3-1.21.1.jar",
+      "filename": "vb-compat-2.3-1.21.1.jar",
+      "contentType": "mod",
+      "name": "Vanilla Backport Compat",
+      "description": "Adds Vanilla Backport features to modded biomes!",
+      "author": "",
+      "iconUrl": "https://cdn.modrinth.com/data/jcYHXHwz/5903f4397eeac53abafd4d63f22d61bdf0b4600b_96.webp",
+      "projectId": "jcYHXHwz",
+      "versionId": "cIu6DvNo",
+      "versionNumber": "2.3",
+      "source": "modrinth",
+      "fileHash": {
+        "sha1": "a3a9b377ba4f8ae9cc2b46a74542258d7a328ac1",
+        "sha512": "59e9a7a0cac41855738eb166024539428a11c41ed9cf4d2256bb11d1fd609cb019bd099e95065f142f77421c2ed88f4820ec6810e454d57e46362878e24973e6"
+      },
+      "size": 63564,
+      "enabled": true,
+      "origin": "user",
+      "installedAt": "2026-11-08T15:00:00.000Z",
+      "updatedAt": "2026-11-08T15:00:00.000Z",
+      "gameVersions": [
+        "1.21.1"
+      ],
+      "loaders": [
+        "neoforge"
+      ],
+      "releaseType": "release",
+      "dependencies": [
+        {
+          "projectId": "6xwxDTgf",
+          "type": "required",
+          "installed": true
+        }
+      ]
+    },
+    {
       "filePath": "mods/codxlib-1.6.1-neoforge+1.21.1.jar",
       "filename": "codxlib-1.6.1-neoforge+1.21.1.jar",
       "contentType": "mod",
