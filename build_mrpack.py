@@ -19,22 +19,32 @@ For each mod entry in the manifest:
     -> the jar is expected to be committed under local-mods/, and gets
     bundled directly.
 
-Datapack entries (filePath under datapacks/) are handled the same way, with
-one difference: datapacks are per-world, not instance-root, so they can't be
-installed at their manifest filePath ("datapacks/foo.zip") the way mods can.
-They're placed at <DATAPACK_WORLD_NAME>/datapacks/foo.zip instead, matching
-the world/level name this pack's server always runs as (LEVEL defaults to
-PACK_NAME in the Dockerfile/docker-compose.dev.yml/.env.example) -- that's
-the path the itzg server image's overrides/ extraction (and mrpack "files"
-downloads) actually land at world-load time. Datapacks are marked
-client-"unsupported" in the built index since they're server/world-
-authoritative content a client install has no use for. If LEVEL is ever
-overridden to something other than PACK_NAME, DATAPACK_WORLD_NAME must be
-updated to match (i.e. PACK_NAME must track it too), or datapacks will
-silently stop taking effect again.
+Datapack entries (filePath under datapacks/) are handled the same way and
+land at their manifest filePath ("datapacks/foo.zip"), for both client and
+server. Datapacks are per-world, so that instance-root folder is only a
+staging area: on the server, the itzg image's DATAPACKS=/data/datapacks
+(set in the Dockerfile and every docker-compose.*.yml) copies it into
+/data/$LEVEL/datapacks on each start, whatever LEVEL is, and
+REMOVE_OLD_DATAPACKS=true prunes outdated zips there. On a client it
+mirrors SKLauncher's own instance layout, so players have the file on hand
+to drop into a singleplayer world's datapacks/ folder.
+
+Resource pack entries (filePath under resourcepacks/) are handled the same
+way too, falling back to local-resourcepacks/ for non-Modrinth sources.
+They land at the instance-root resourcepacks/ and are client-only (marked
+server-"unsupported"). Players still enable them in the Resource Packs
+menu -- the build ships the files, not options.txt.
 
 servers.dat are always bundled directly in overrides/ (server per request),
 since there's no "online source" for local config state.
+
+Pass --extra-overrides-dir <dir> to bundle every file under <dir> into
+overrides/ at the same relative path. `make build-server` passes
+server-overrides/, so server-only config (e.g. a mod's common config that
+would otherwise clobber players' client-side settings) ships only in the
+server build. Such a file replaces the server's copy on every modpack
+install, so keep it minimal (only the settings you're enforcing) -- NeoForge
+fills in the rest with defaults on startup.
 
 Pass --exclude <substring> (repeatable) and/or --exclude-file <path>
 (newline-separated substrings) to drop mods/datapacks by filename match,
@@ -81,13 +91,10 @@ DEFAULT_MANIFEST_PATH = SCRIPT_DIR / "manifest" / f"{PACK_NAME}.json"
 DEFAULT_PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"
 DEFAULT_LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
 DEFAULT_LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
+DEFAULT_LOCAL_RESOURCEPACKS_DIR = SCRIPT_DIR / "local-resourcepacks"
 # DEFAULT_CONFIG_DIR = SCRIPT_DIR / "config"
 DEFAULT_SERVERS_DAT_PATH = SCRIPT_DIR / "servers.dat"
 DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "exports"
-
-# World/level name this pack's server always runs as (see docstring above).
-# Datapacks must land at <DATAPACK_WORLD_NAME>/datapacks/ to actually load.
-DATAPACK_WORLD_NAME = PACK_NAME
 
 
 def sha1_of(path: Path) -> str:
@@ -150,6 +157,10 @@ def load_datapack_entries(manifest_path: Path) -> list[dict]:
     return load_content_entries(manifest_path, "datapacks/")
 
 
+def load_resourcepack_entries(manifest_path: Path) -> list[dict]:
+    return load_content_entries(manifest_path, "resourcepacks/")
+
+
 def load_excludes(exclude: list[str], exclude_file: Path | None) -> list[str]:
     excludes = list(exclude)
     if exclude_file is not None:
@@ -188,6 +199,12 @@ def parse_args(argv: list[str] | None = None):
         default=DEFAULT_LOCAL_DATAPACKS_DIR,
         help=f"dir with non-Modrinth datapack zips (default: {DEFAULT_LOCAL_DATAPACKS_DIR})",
     )
+    parser.add_argument(
+        "--local-resourcepacks-dir",
+        type=Path,
+        default=DEFAULT_LOCAL_RESOURCEPACKS_DIR,
+        help=f"dir with non-Modrinth resource pack zips (default: {DEFAULT_LOCAL_RESOURCEPACKS_DIR})",
+    )
     # parser.add_argument(
     #     "--config-dir",
     #     type=Path,
@@ -199,6 +216,14 @@ def parse_args(argv: list[str] | None = None):
         type=Path,
         default=DEFAULT_SERVERS_DAT_PATH,
         help=f"servers.dat to bundle as an override (default: {DEFAULT_SERVERS_DAT_PATH})",
+    )
+    parser.add_argument(
+        "--extra-overrides-dir",
+        type=Path,
+        default=None,
+        metavar="DIR",
+        help="bundle every file under DIR into overrides/ at the same relative path "
+        "(make build-server passes server-overrides/)",
     )
     parser.add_argument(
         "--output-dir",
@@ -316,18 +341,24 @@ def build_mod_lists(mod_entries: list[dict], excludes: list[str]):
     )
 
 
-def datapack_dest_path(filename: str) -> str:
-    return f"{DATAPACK_WORLD_NAME}/datapacks/{filename}"
-
-
 def build_datapack_lists(datapack_entries: list[dict], excludes: list[str]):
+    # Staged at instance-root datapacks/ -- the server's DATAPACKS env var
+    # copies them into the world, clients copy them by hand (see docstring).
     return build_content_lists(
         datapack_entries,
         excludes,
-        dest_path_fn=lambda entry: datapack_dest_path(entry["filename"]),
-        # Datapacks are server/world-authoritative -- a client install has no
-        # use for the file itself (only the server's world needs it).
-        env={"client": "unsupported", "server": "required"},
+        dest_path_fn=lambda entry: entry["filePath"],
+        env={"client": "required", "server": "required"},
+    )
+
+
+def build_resourcepack_lists(resourcepack_entries: list[dict], excludes: list[str]):
+    return build_content_lists(
+        resourcepack_entries,
+        excludes,
+        dest_path_fn=lambda entry: entry["filePath"],
+        # Resource packs are client-side assets -- a dedicated server never loads them.
+        env={"client": "required", "server": "unsupported"},
     )
 
 
@@ -354,6 +385,18 @@ def build_server_overrides(servers_dat: Path):
     if servers_dat.exists():
         overrides.append(("servers.dat", servers_dat))
     return overrides
+
+
+def build_extra_overrides(extra_dir: Path | None):
+    if extra_dir is None:
+        return []
+    if not extra_dir.is_dir():
+        raise SystemExit(f"--extra-overrides-dir not found: {extra_dir}")
+    return [
+        (p.relative_to(extra_dir).as_posix(), p)
+        for p in sorted(extra_dir.rglob("*"))
+        if p.is_file() and p.name != ".DS_Store"
+    ]
 
 
 def download(url: str, dest: Path):
@@ -393,12 +436,17 @@ def build_mods_zip_only(args, mod_entries, excludes, version_id):
     print(f"  {total} mod file(s): {len(online_files)} downloaded, {len(bundled_resolved)} local")
 
 
-def build_mrpack(args, mod_entries, datapack_entries, excludes, pack_info, version_id):
+def build_mrpack(
+    args, mod_entries, datapack_entries, resourcepack_entries, excludes, pack_info, version_id
+):
     online_mods, bundled_mods, excluded_mod_names = build_mod_lists(mod_entries, excludes)
     online_datapacks, bundled_datapacks, excluded_datapack_names = build_datapack_lists(
         datapack_entries, excludes
     )
-    excluded_names = excluded_mod_names + excluded_datapack_names
+    online_resourcepacks, bundled_resourcepacks, excluded_resourcepack_names = (
+        build_resourcepack_lists(resourcepack_entries, excludes)
+    )
+    excluded_names = excluded_mod_names + excluded_datapack_names + excluded_resourcepack_names
     if excluded_names:
         print(f"Excluding {len(excluded_names)} file(s): {', '.join(excluded_names)}")
 
@@ -406,8 +454,18 @@ def build_mrpack(args, mod_entries, datapack_entries, excludes, pack_info, versi
     bundled_resolved += resolve_bundled_content_paths(
         bundled_datapacks, args.local_datapacks_dir, "datapack"
     )
+    bundled_resolved += resolve_bundled_content_paths(
+        bundled_resourcepacks, args.local_resourcepacks_dir, "resource pack"
+    )
     bundled_resolved += build_server_overrides(args.servers_dat)
+    extra_overrides = build_extra_overrides(args.extra_overrides_dir)
+    bundled_resolved += extra_overrides
 
+    if extra_overrides:
+        print(
+            f"Extra overrides: {len(extra_overrides)} file(s) from {args.extra_overrides_dir}: "
+            + ", ".join(rel for rel, _ in extra_overrides)
+        )
     print(
         f"Mods: {len(online_mods)} referenced online, "
         f"{len(bundled_mods)} bundled directly (local, or curseforge "
@@ -416,10 +474,14 @@ def build_mrpack(args, mod_entries, datapack_entries, excludes, pack_info, versi
     print(
         f"Datapacks: {len(online_datapacks)} referenced online, "
         f"{len(bundled_datapacks)} bundled directly, "
-        f"landing at {DATAPACK_WORLD_NAME}/datapacks/"
+        "landing at datapacks/ (copied into the world by the server's DATAPACKS env var)"
+    )
+    print(
+        f"Resource packs: {len(online_resourcepacks)} referenced online, "
+        f"{len(bundled_resourcepacks)} bundled directly, landing at resourcepacks/ (client only)"
     )
 
-    online_files = online_mods + online_datapacks
+    online_files = online_mods + online_datapacks + online_resourcepacks
 
     args.output_dir.mkdir(exist_ok=True)
     output_name = args.output_name or "client"
@@ -467,7 +529,16 @@ def main(argv: list[str] | None = None):
     else:
         pack_info = load_pack_info(args.pack_json)
         datapack_entries = load_datapack_entries(args.manifest)
-        build_mrpack(args, mod_entries, datapack_entries, excludes, pack_info, version_id)
+        resourcepack_entries = load_resourcepack_entries(args.manifest)
+        build_mrpack(
+            args,
+            mod_entries,
+            datapack_entries,
+            resourcepack_entries,
+            excludes,
+            pack_info,
+            version_id,
+        )
 
 
 if __name__ == "__main__":

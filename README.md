@@ -88,7 +88,19 @@ Two compose files:
 
 Prod settings (`OPS`, `MEMORY`, `LEVEL`, difficulty, RCON commands, etc.) are overridable per-deploy without rebuilding: copy `.env.example` to `.env` and edit — Compose loads it and substitutes `${VAR}` automatically. Unset vars fall back to the `Dockerfile` defaults. `docker-compose.dev.yml`'s `LEVEL` isn't a separate override — it derives directly from `PACK_NAME` (see above).
 
-**`LEVEL` and datapacks:** manifest datapacks are baked into the built `.mrpack` at `overrides/<world>/datapacks/`, matching the world/level name Minecraft actually loads per-world datapacks from — this is `PACK_NAME` (`build_mrpack.py`'s `DATAPACK_WORLD_NAME`, `minecraft-modded` by default) to match the `LEVEL` default used everywhere else in this repo. If you ever override `LEVEL` in `docker-compose.prod.yml`/`stg.yml` to something other than `PACK_NAME`, datapacks will stop taking effect until `DATAPACK_WORLD_NAME`/`PACK_NAME` is updated to match.
+**Datapacks:** manifest datapacks land at the instance-root `datapacks/` in the built `.mrpack` (client and server). On the server, `DATAPACKS=/data/datapacks` (set in the `Dockerfile` and every `docker-compose.*.yml`) has the itzg image copy them into `/data/$LEVEL/datapacks` on every start, whatever `LEVEL` is, and `REMOVE_OLD_DATAPACKS=true` prunes outdated `*.zip`s there — so don't hand-place other zips in the world's `datapacks/`, add them to the manifest instead. A new or existing world picks them up automatically on start (`Found new data pack ..., loading it automatically` in the log); nothing to run by hand.
+
+**Resource packs:** manifest resource packs land at `resourcepacks/` in the client `.mrpack` only (the server build skips them). Players still enable them in the in-game Resource Packs menu.
+
+**Server-only config (`server-overrides/`):** every file under `server-overrides/` is bundled into the server `.mrpack` only (`make build-server` passes `--extra-overrides-dir server-overrides`), at the same relative path — e.g. `server-overrides/config/touhou_little_maid-common.toml` caps each player at 1 maid. These files replace the server's copy on every modpack install, so list only the settings being enforced (NeoForge fills in the rest with defaults) and change them here rather than on the server.
+
+**Season onboarding (random village spawn):** the `creativeworld-onboarding` datapack (separate from the `creativeworld-ingredient-unify` one) places each new player 24 blocks above a random village and freezes them until they choose: **Accept** (drop in, village becomes their spawn point), **Reroll** (up to 5 times), or **Join a friend** (an online, already-settled player gets 60 seconds to accept; then the player is teleported to them and spawns there). Accepting ends onboarding; after 10 minutes of playtime the current village is accepted automatically. Leaving pauses that timer and any friend request, and keeps the village and rerolls used; on rejoin the menu is shown again. The village list is per world, so once per season, after the new world is generated:
+
+1. Pre-generate at least the 1500-block radius with Chunky (`chunky radius 1500`, then `chunky start`). Placing a player in ungenerated chunks makes the server generate them on the spot, which lags everyone online.
+2. `make scan-villages` (or `CONTAINER=minecraft-server-s3 make scan-villages` against `make dev`) on the machine running the server. It locates villages within 1500 blocks of 0,0 (`--radius` to change) over RCON, writes them into the world (`storage creativeworld:onboarding villages`) and saves. Re-running replaces the list.
+3. In game (op): `/function creativeworld:onboarding/admin/status` shows how many villages are loaded; `/function creativeworld:onboarding/admin/reset_me` redoes onboarding for yourself.
+
+With no list, players just start at the normal world spawn (the village picked by Village Spawn Point). Floating players need `ALLOW_FLIGHT=true` (already set in every compose file), otherwise the server kicks them for flying.
 
 ### Publishing the server image (CI)
 

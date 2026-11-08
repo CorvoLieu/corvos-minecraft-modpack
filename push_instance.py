@@ -24,8 +24,8 @@ What gets pushed:
   local-datapacks/       - same idea as local-mods/, but for the instance's
                            top-level datapacks/ dir (SKLauncher's own bucket
                            for datapack content, not a per-world folder).
-                           Empty today since every datapack we ship is
-                           Modrinth-sourced.
+  local-resourcepacks/   - same idea again, for the instance's resourcepacks/
+                           dir.
 
 Configure which SKLauncher instance directory to push from, in priority order:
   1. --instance-dir <path> (or -i <path>) CLI flag -- full path override
@@ -62,6 +62,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 MANIFEST_DIR = SCRIPT_DIR / "manifest"
 LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
 LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
+LOCAL_RESOURCEPACKS_DIR = SCRIPT_DIR / "local-resourcepacks"
 # CONFIG_DIR = SCRIPT_DIR / "config"
 SERVERS_DAT = SCRIPT_DIR / "servers.dat"
 # build_mrpack's import above triggers its module-level load_dotenv(), so
@@ -153,7 +154,7 @@ def sync_local_content(
     """Mirrors instance_dir/content_subdir into local_dir for every file that
     build_mrpack.py can't reference from an online CDN (local source,
     drifted sha1, or curseforge with third-party downloads disabled). Used
-    for both mods/ and datapacks/."""
+    for mods/, datapacks/ and resourcepacks/."""
     manifest = json.loads(manifest_src.read_text(encoding="utf-8"))
     by_path = {e["filePath"]: e for e in manifest.get("content", [])}
 
@@ -203,6 +204,12 @@ def sync_local_datapacks(instance_dir: Path, manifest_src: Path):
     sync_local_content(instance_dir, manifest_src, "datapacks", "datapacks/", LOCAL_DATAPACKS_DIR)
 
 
+def sync_local_resourcepacks(instance_dir: Path, manifest_src: Path):
+    sync_local_content(
+        instance_dir, manifest_src, "resourcepacks", "resourcepacks/", LOCAL_RESOURCEPACKS_DIR
+    )
+
+
 # def sync_config(instance_dir: Path):
 #     src = instance_dir / "config"
 #     if CONFIG_DIR.exists():
@@ -249,6 +256,7 @@ def main():
     sync_manifest_and_pack_json(instance_id, manifest_src, instances_json)
     sync_local_mods(instance_dir, manifest_src)
     sync_local_datapacks(instance_dir, manifest_src)
+    sync_local_resourcepacks(instance_dir, manifest_src)
     # sync_config(instance_dir)
     sync_servers_dat(instance_dir)
     print("Done.")

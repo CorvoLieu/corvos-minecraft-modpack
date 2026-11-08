@@ -20,29 +20,39 @@ services:
     container_name: minecraft-server
     stdin_open: true
     restart: unless-stopped
+    stop_grace_period: 3m
     ports:
       - "25565:25565"
       - "24454:24454"
       - "24454:24454/udp"
     environment:
       VERSION: "1.21.1"
-      NEOFORGE_VERSION: "21.1.248"
-      MEMORY: "${MEMORY:-15360M}"
+      NEOFORGE_VERSION: "21.1.265"
+      MEMORY: "${MEMORY:-13312M}"
       LEVEL: "${LEVEL:-world}"
+      # See docker-compose.dev.yml: copies the modpack's staged datapacks
+      # into whichever world LEVEL names.
+      DATAPACKS: "/data/datapacks"
+      REMOVE_OLD_DATAPACKS: "true"
       DIFFICULTY: "normal"
       MODE: "survival"
       ONLINE_MODE: "false"
       FORCE_GAMEMODE: "true"
       ENABLE_AUTOPAUSE: "false"
       ENTITY_BROADCAST_RANGE_PERCENTAGE: "70"
-      SIMULATION_DISTANCE: "7"
+      SIMULATION_DISTANCE: "6"
       VIEW_DISTANCE: "7"
+      # Lets the OS batch chunk saves instead of blocking on each one. Much
+      # less disk stall; a host crash or power cut can lose the last few
+      # seconds of chunk changes, so keep backups.
+      SYNC_CHUNK_WRITES: "false"
+      # Time allowed for the world save on shutdown. stop_grace_period and
+      # WATCHTOWER_TIMEOUT below must stay longer than this.
+      STOP_DURATION: "150"
       ALLOW_FLIGHT: "true"
       OPS: "${OPS:-CakeBoy}"
       RCON_CMDS_STARTUP: |
         /gamerule playersSleepingPercentage 0
-      RCON_CMDS_ON_CONNECT: |
-        /recipe give @p *
       ANNOUNCE_PLAYER_ACHIEVEMENTS: "false"
       MAX_TICK_TIME: "1200000"
       USE_AIKAR_FLAGS: "true"
@@ -57,7 +67,9 @@ services:
       resources:
         limits:
           cpus: "3.5"
-          memory: "15G"
+          # Container total. MEMORY (heap) stays ~3G below this: the JVM also needs
+          # native memory, and going over the limit gets the server OOM-killed.
+          memory: "16G"
     labels:
       # Only this container gets touched by Watchtower (--label-enable below).
       com.centurylinklabs.watchtower.enable: "true"
@@ -75,3 +87,5 @@ services:
       WATCHTOWER_LABEL_ENABLE: "true"
       WATCHTOWER_POLL_INTERVAL: "60"
       WATCHTOWER_CLEANUP: "true"
+      # Default is 10s, which would kill the server mid-save on every update.
+      WATCHTOWER_TIMEOUT: "180s"

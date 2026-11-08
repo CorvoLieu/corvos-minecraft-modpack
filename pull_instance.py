@@ -44,7 +44,10 @@ What gets pulled INTO the instance, from repo state:
                             folder -- see build_mrpack.py's docstring for why
                             the .mrpack build itself has to place these
                             differently to actually take effect.
-  config/                - if config/ exists in the repo, reconciled the same
+  resourcepacks/         -> reconciled the same way as mods/, from the
+                            manifest's resourcepacks/ entries, falling back to
+                            local-resourcepacks/ for non-Modrinth sources.
+  config/               - if config/ exists in the repo, reconciled the same
                             additive/subtractive way as mods/ (see "Design
                             decisions" below).
   servers.dat            - copied as-is (repo is always authoritative).
@@ -110,6 +113,7 @@ from build_mrpack import (
     curseforge_cdn_url,
     load_datapack_entries,
     load_mod_entries,
+    load_resourcepack_entries,
     modrinth_cdn_url,
     sha1_of,
     url_is_downloadable,
@@ -124,6 +128,7 @@ MANIFEST_PATH = SCRIPT_DIR / "manifest" / f"{PACK_NAME}.json"
 PACK_JSON_PATH = SCRIPT_DIR / "manifest" / "pack.json"
 LOCAL_MODS_DIR = SCRIPT_DIR / "local-mods"
 LOCAL_DATAPACKS_DIR = SCRIPT_DIR / "local-datapacks"
+LOCAL_RESOURCEPACKS_DIR = SCRIPT_DIR / "local-resourcepacks"
 CONFIG_DIR = SCRIPT_DIR / "config"
 SERVERS_DAT = SCRIPT_DIR / "servers.dat"
 
@@ -219,7 +224,8 @@ def sync_content(
     """Reconciles instance_dir/content_subdir to match `entries` exactly:
     Modrinth/downloadable-CurseForge entries are downloaded from their CDN,
     everything else is copied from local_dir (matched by sha1). Files present
-    but not in `entries` are removed. Used for both mods/ and datapacks/."""
+    but not in `entries` are removed. Used for mods/, datapacks/ and
+    resourcepacks/."""
     target_dir = instance_dir / content_subdir
     target_dir.mkdir(exist_ok=True)
 
@@ -291,6 +297,17 @@ def sync_mods(instance_dir: Path, mod_entries: list[dict], apply: bool):
 def sync_datapacks(instance_dir: Path, datapack_entries: list[dict], apply: bool):
     return sync_content(
         instance_dir, "datapacks", datapack_entries, LOCAL_DATAPACKS_DIR, "datapack", apply
+    )
+
+
+def sync_resourcepacks(instance_dir: Path, resourcepack_entries: list[dict], apply: bool):
+    return sync_content(
+        instance_dir,
+        "resourcepacks",
+        resourcepack_entries,
+        LOCAL_RESOURCEPACKS_DIR,
+        "resource pack",
+        apply,
     )
 
 
@@ -393,16 +410,28 @@ def main():
 
     mod_entries = load_mod_entries(MANIFEST_PATH)
     datapack_entries = load_datapack_entries(MANIFEST_PATH)
+    resourcepack_entries = load_resourcepack_entries(MANIFEST_PATH)
 
     def run(apply: bool) -> tuple[int, bool]:
         """Runs every sync step in the given mode. Returns (removed mod jar
-        + datapack count, whether anything changed) -- used to decide the
-        confirmation prompt and the final summary."""
+        + datapack + resource pack count, whether anything changed) -- used
+        to decide the confirmation prompt and the final summary."""
         mods_added, mods_updated, mods_removed = sync_mods(instance_dir, mod_entries, apply)
         dp_added, dp_updated, dp_removed = sync_datapacks(instance_dir, datapack_entries, apply)
-        removed = mods_removed + dp_removed
+        rp_added, rp_updated, rp_removed = sync_resourcepacks(
+            instance_dir, resourcepack_entries, apply
+        )
+        removed = mods_removed + dp_removed + rp_removed
         changed = bool(
-            mods_added or mods_updated or mods_removed or dp_added or dp_updated or dp_removed
+            mods_added
+            or mods_updated
+            or mods_removed
+            or dp_added
+            or dp_updated
+            or dp_removed
+            or rp_added
+            or rp_updated
+            or rp_removed
         )
 
         if not args.skip_config:
@@ -434,7 +463,10 @@ def main():
 
     prompt = "\nApply these changes?"
     if removed:
-        prompt += f" This will DELETE {removed} mod jar(s)/datapack(s) not in the manifest."
+        prompt += (
+            f" This will DELETE {removed} mod jar(s)/datapack(s)/resource pack(s) "
+            "not in the manifest."
+        )
     answer = input(prompt + " [y/N] ").strip().lower()
     if answer not in ("y", "yes"):
         print("Aborted -- no changes made.")
